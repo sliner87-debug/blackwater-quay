@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Onyx Wake - TTRPG Vessel Manual and Fleet Dossier</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Georgia&family=Montserrat:wght@400;600&display=swap');
+    
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #121016;
+      color: #e2dfeb;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cover-page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0d0614 0%, #030107 100%);
+      color: #fcfaf2;
+      border: 20px double #5d369c;
+      box-sizing: border-box;
+      padding: 40px;
+    }
+
+    .cover-title {
+      font-family: 'Cinzel', serif;
+      font-size: 3.8rem;
+      font-weight: 800;
+      color: #b088f5;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(176, 136, 245, 0.4), 2px 2px 4px rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+    }
+
+    .cover-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      color: #df97ff;
+    }
+
+    .cover-credits {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-top: 100px;
+      color: #a8a5b5;
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cinzel', serif;
+      color: #b088f5;
+      border-bottom: 2px solid #5d369c;
+      padding-bottom: 8px;
+      margin-top: 45px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 35px;
+      text-shadow: 0 0 10px rgba(176, 136, 245, 0.2);
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      border-bottom: 2px solid #4a2a80;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      border-bottom: 1px dashed #5d369c;
+      color: #df97ff;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      border-bottom: none;
+      color: #cfb9fa;
+      margin-top: 25px;
+    }
+
+    p {
+      text-indent: 20px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    p.no-indent {
+      text-indent: 0;
+    }
+
+    ul, ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    .ttrpg-block {
+      background-color: #1a1622;
+      border: 1px solid #5d369c;
+      border-left: 6px solid #b088f5;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .ttrpg-block h4 {
+      margin-top: 0;
+      border-bottom: 1px solid #5d369c;
+      padding-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .ttrpg-block p {
+      text-indent: 0;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .ttrpg-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      background-color: #17141f;
+    }
+
+    .ttrpg-table th {
+      background-color: #271f34;
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      padding: 10px 12px;
+      text-align: left;
+      border: 1px solid #5d369c;
+    }
+
+    .ttrpg-table td {
+      border: 1px solid #4a2a80;
+      padding: 10px 12px;
+    }
+
+    .ttrpg-table tr:nth-child(even) {
+      background-color: #1c1826;
+    }
+
+    .vessel-ascii {
+      background-color: #0b090f;
+      border: 1px solid #3c2266;
+      color: #b088f5;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      overflow-x: auto;
+      border-radius: 4px;
+      margin: 25px 0;
+      white-space: pre;
+    }
+
+    .ttrpg-map {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border: 4px double #5d369c;
+      border-radius: 4px;
+      margin: 25px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .content-container {
+        max-width: 100%;
+        padding: 0;
+      }
+      .cover-page {
+        border-color: #000000;
+        color: #000000;
+        background: none;
+        height: 95vh;
+      }
+      .cover-title {
+        color: #000000;
+        text-shadow: none;
+      }
+      .cover-subtitle {
+        color: #000000;
+      }
+      .cover-credits {
+        color: #000000;
+      }
+      h1, h2, h3, h4 {
+        color: #000000;
+        border-color: #000000;
+        text-shadow: none;
+      }
+      .ttrpg-block {
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        border-left: 6px solid #000000;
+        color: #000000;
+        box-shadow: none;
+      }
+      .ttrpg-block h4 {
+        color: #000000;
+        border-color: #000000;
+      }
+      .ttrpg-table {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .ttrpg-table th {
+        background-color: #f0f0f0;
+        color: #000000;
+        border-color: #000000;
+      }
+      .ttrpg-table td {
+        border-color: #000000;
+      }
+      .ttrpg-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .vessel-ascii {
+        background-color: #ffffff;
+        border-color: #000000;
+        color: #000000;
+      }
+      .ttrpg-map {
+        border-color: #000000;
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+      strong {
+        color: #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-page">
+    <div class="cover-title">THE ONYX WAKE</div>
+    <div class="cover-subtitle">Abyssal Dread-Carrier & Tri-Weave Flagship</div>
+    <div style="border-top: 3px double #5d369c; width: 150px; margin: 25px auto;"></div>
+    <div style="font-family: 'Cinzel', serif; font-size: 1.15rem; letter-spacing: 4px; text-transform: uppercase; color: #cfb9fa;">D&D 3.5 / Pathfinder 1E Campaign Asset</div>
+    <div class="cover-credits">
+      Prepared for Campaign Release<br>
+      Sablehook Armada Chronicles & Fleet Operations Guide
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="content-container">
+    
+    <section class="chapter-section">
+      <h1>Captain Kael's Flagship: The Onyx Wake</h1>
+      <h2>Complete TTRPG Vehicle Manual, Armament Catalog & Tactical Guide</h2>
+      <h3>System Compatibility: D&D 3.5 / Pathfinder 1E</h3>
+      
+      <p>The <em>Onyx Wake</em> is the absolute dreadnought—the "Death Star" of the Blackwater Quay fleet. It is a colossal mobile fortress engineered specifically for fleet interception, heavy siege operations, and reality-warping battlefield control. While Suture's ship, <em>The Bleeding Needle</em>, serves as a quiet mobile laboratory and surgical sanctuary, the <em>Onyx Wake</em> is a weapon of direct, terrifying violence, leading Kael's corsair flotilla against the remnants of the Thessalan Consortium and any who challenge the sovereignty of Sablehook.</p>
+      
+      <p>Sheathed in brutalist iron plating, fused demon-bone, and weeping necrotic wood, the ship weeps a constant trail of thick, black necrotic oil directly into the pitch-black Underdark currents. Powered by the agonizing vibrations of a planar soul-combustion engine and wielding a devastating battery of Tri-Weave (Arcane, Psionic, and Divine) weaponry, the <em>Onyx Wake</em> stands as the crowning achievement of the Vael-Kaelor clan's defiance against the Thessalan Consortium.</p>
+
+      <h2>1. VESSEL SPECIFICATIONS & INFRASTRUCTURE</h2>
+
+      <div class="vessel-ascii">
+         +-------------------------------------------------------+
+         |                    THE ONYX WAKE                      |
+         +-------------------------------------------------------+
+         |  [DECK I: WEATHER DECK] -> Spinal Masts & Helm       |
+         |  [DECK II: GUN DECK]    -> Cursed Cannons & Quarters  |
+         |  [DECK III: HOLD]       -> Pit, Bunks & Soul Cages    |
+         |  [DECK IV: BLACK LABS]  -> Hybridization Vats & Labs  |
+         |  [CORE / KEEL]          -> Soul Engine & Sphere Spine |
+         +-------------------------------------------------------+
+      </div>
+
+      <ul>
+        <li><strong>Vessel Class:</strong> Abyssal Dread-Carrier / Heavy Ironclad Dreadnought / Stygian Privateer</li>
+        <li><strong>Dimensions:</strong> 260 ft. long, 55 ft. wide, drawing 26 ft. of water.</li>
+        <li><strong>Hull Armor:</strong> Reinforced Brutalist Iron Plating over a frame of fossilized kraken-bone and weeping necrotic wood.</li>
+        <li><strong>Propulsion Systems:</strong>
+          <ol>
+            <li><strong>Planar Soul-Combustion Engine:</strong> The ship does not sail on wind or steam. Deep within the keel, a massive furnace burns the residual spiritual energy of captured enemies. The internal memory-combustion engine hums with the agonizing vibration of planar soul-combustion, driving heavy copper paddle-screws that propel the ship against any current.</li>
+            <li><strong>Spinal Masts & Shadow Sails:</strong> Two massive masts constructed from the fused spinal columns of slain subterranean giants. They are rigged with sails of ragged, light-devouring shadow-weave cloth that catch planar winds and subterranean thermal drafts.</li>
+          </ol>
+        </li>
+      </ul>
+
+      <h3>Tactical Battlemaps</h3>
+      <h4>Decks 1, 2 & 4 (Master Map)</h4>
+      <h5>Grid Version</h5>
+      <img src="Maps/onyx_wake_grid.png" class="ttrpg-map" alt="The Onyx Wake Decks 1, 2 & 4 (Grid Version)">
+      <h5>No-Grid Version</h5>
+      <img src="Maps/onyx_wake_nogrid.png" class="ttrpg-map" alt="The Onyx Wake Decks 1, 2 & 4 (No Grid Version)">
+
+      <h4>Deck 3: Crew Quarters & Holding Cells</h4>
+      <h5>Grid Version</h5>
+      <img src="Maps/onyx_wake_deck3_grid.png" class="ttrpg-map" alt="The Onyx Wake Deck 3 (Grid Version)">
+      <h5>No-Grid Version</h5>
+      <img src="Maps/onyx_wake_deck3_nogrid.png" class="ttrpg-map" alt="The Onyx Wake Deck 3 (No Grid Version)">
+
+      <h4>Captain's Quarters (The Sovereign's Sanctuary - Extra-Dimensional Space)</h4>
+      <h5>Grid Version</h5>
+      <img src="Maps/onyx_wake_quarters_grid.png" class="ttrpg-map" alt="The Onyx Wake Captain's Quarters (Grid Version)">
+      <h5>No-Grid Version</h5>
+      <img src="Maps/onyx_wake_quarters_nogrid.png" class="ttrpg-map" alt="The Onyx Wake Captain's Quarters (No Grid Version)">
+
+      <div class="ttrpg-block">
+        <h4>The Onyx Wake — TTRPG Statistics</h4>
+        <p><strong>Colossal Vehicle:</strong> Space 260 ft. by 55 ft.; Height 50 ft. (plus masts).</p>
+        <p><strong>Seaworthiness:</strong> +14; <strong>Ship Handling:</strong> +8 (coordinated by the Eternal Sentinel and Kael's crew).</p>
+        <p><strong>Speed:</strong> Swim 40 ft. (soul-combusted paddle-screws); <strong>Overall AC:</strong> 24 (-8 size, +22 natural/iron plating).</p>
+        <p><strong>Hardness:</strong> 20; <strong>HP:</strong> 1,200 (Break threshold 400); <strong>Rigging HP:</strong> 200.</p>
+        <p><strong>Base Ram:</strong> 15d6 bludgeoning damage (modified to 20d6 by the Gravitic Singular-Ram, ignoring hardness).</p>
+      </div>
+
+      <h2>2. DECK-BY-DECK ARCHITECTURE</h2>
+
+      <h3>DECK I: THE WEATHER DECK (THE MAIN DECK / KILLING FLOOR)</h3>
+      <p>The uppermost deck is built exceptionally wide and open, specifically designed to serve as a clearing floor for violent boarding actions. It measures 140 feet long by 40 feet wide.</p>
+      <ul>
+        <li><strong>Atmosphere:</strong> The deck is perpetually shrouded in a sickly green Stygian mist that clings to the boots. The entire space is illuminated by pale purple Hellfire rising from three heavy iron braziers. Patches of the deck timber are permanently slick with congealed blood and river slime.</li>
+        <li><strong>The Helm:</strong> Elevated 10 feet on a raised aft quarterdeck. The ship’s wheel is forged from a massive, multi-horned demon skull. The handles are the demon's cracked horns, polished smooth by Kael’s clawed hands.</li>
+        <li><strong>The Eternal Sentinel (The Mainmast):</strong> The mentally hollowed body of the drow commander <strong>Valas Noquar</strong> is melded directly into the vertebrae of the giant-spine mainmast. Fused via the Brute Tri-Weave, he acts as a living sensor array and autopilot coordinator, his empty eyes staring forward as his mind reads the surrounding water and stone.</li>
+      </ul>
+
+      <h3>DECK II: THE GUN DECK & CAPTAIN'S CABIN</h3>
+      <p>The tactical heart of the vessel, measuring 120 feet long by 40 feet wide. It is cramped, loud, dark, and filled with the smell of sulfur and damp iron.</p>
+      <ul>
+        <li><strong>Atmosphere:</strong> The only ambient light filters through the narrow 1-foot-wide gunports and a single rusted lantern hanging from the center beam. The port and starboard channels are considered <strong>difficult terrain</strong> due to loose mooring chains, rolling iron shot, and discarded powder kegs that shift with the vessel's movement.</li>
+        <li><strong>The Captain's Quarters (The Sovereign's Sanctuary):</strong> Located at the absolute aft, behind a heavy, rune-carved iron door. The threshold is warded by a permanent <strong>Extra-Dimensional Spatial Enchantment</strong> (a custom Tri-Weave folding weave). Stepping inside reveals a chamber that expands far beyond the physical constraints of the ship's hull, presenting a vaulted 60x60 foot private sanctuary of dark, stolen opulence. It features floor-to-ceiling library shelves of ancient planar lore, a massive mahogany desk, a velvet-lined armchair, glowing planar star charts, and weapon racks displaying captured magical blades. The space is completely insulated from the rest of the vessel's mechanical soul-combustion vibrations and ambient planar noise.</li>
+      </ul>
+
+      <h3>DECK III: CREW QUARTERS & HOLDING CELLS</h3>
+      <p>The living space for the ship's violent crew, measuring 100 feet long by 35 feet wide.</p>
+      <ul>
+        <li><strong>Atmosphere:</strong> The air is warm, stale, and smells of wet fur and sour ale. The deck is lit only by smoldering coals in corner braziers.</li>
+        <li><strong>The Fighting Pit:</strong> A 15x15 foot black-stained wooden ring situated directly in the center of the deck. Disputes between the corsairs are settled here by fist or blade, with the crew gathering around the rails to gamble.</li>
+        <li><strong>Mercenary Bunks:</strong> Located aft, featuring tiered, filthy canvas cots, grinding stones for sharpening blades, and a warped table stained with grease where the crew plays dice and cards.</li>
+        <li><strong>The Soul Cages:</strong> Positioned at the fore of the deck. Heavy, cold-iron cages etched with divine containment runes. These cages are designed to hold captured spellcasters and extraplanar entities before they are fed into the soul-combustion engine below.</li>
+      </ul>
+
+      <h3>DECK IV: THE BLACK LABS / FLESH VAULTS</h3>
+      <p>The lowest deck, serving as the surgical atelier of the darkwood flesh-stitcher, <strong>Suture</strong>.</p>
+      <ul>
+        <li><strong>Atmosphere:</strong> Stained with preservative brine and alchemical run-off. This deck acts as a workspace for monstrous hybridization. Here, Suture performs biomantic grafts and implants alchemical fuel sumps into war-beasts like <strong>Trench the Scrag</strong>, turning them into armored, regenerating line-breakers for the corsair fleet.</li>
+      </ul>
+
+      <h2>3. SOVEREIGN ARMAMENTS & TRI-WEAVE WEAPONRY</h2>
+      <p>The <em>Onyx Wake</em> is outfitted with an array of reality-bending weapons that fuse arcane transmutations, psionic telekinesis, and divine blood-magic, making it the most heavily armed vessel in the Underdark.</p>
+
+      <div class="ttrpg-block">
+        <h4>Weapon Systems & Mechanics</h4>
+        
+        <p><strong>A. The Sovereign Anchor Core</strong><br>
+        A massive <em>Adamantine Sphere</em> is surgically sutured into the ship's primary structural spine in the keel. The sphere distorts the surrounding water, creating a perpetual displacement effect that grants the <em>Onyx Wake</em> a +4 deflection bonus to AC. The ship is immune to <em>dimensional anchor</em>, <em>teleport block</em>, and gravity-altering spells unless the sphere is targeted and disabled.</p>
+
+        <p><strong>B. The Gravitic Singular-Ram (Prow Mandible)</strong><br>
+        The prow features a massive, jagged mandible of black iron. It uses the Adamantine Sphere's mass-control properties to manipulate gravity on impact, increasing the ship's effective mass by a factor of 50 and inducing a gravity collapse.<br>
+        <em>TTRPG Mechanics:</em> Deal 20d6 bludgeoning and gravity damage (ignoring up to 20 points of hardness). The target vessel must succeed on a DC 25 Reflex save or have its hull structural framing fold inward, pinning it to the mandible and throwing all crew on deck prone.</p>
+
+        <p><strong>C. The Sovereign Void-Lapse Lance (Siege Weapon)</strong><br>
+        Mounted on the bowsprit, this weapon combines the <em>Resonance-Amplified Array</em> and the <em>Sovereign Soul-Burner</em>, braiding void energy and transmutative fire into a ship-breaking beam.<br>
+        <em>TTRPG Mechanics:</em> Firing requires a full round of charge. It fires a 300-ft. line, 10 ft. wide. All targets in the line take 15d6 disintegrate damage (Reflex DC 22 half). Vehicles and structures take double damage (30d6) and ignore hardness. Slain targets have their souls siphoned into the fuel cells. Cooldown: 10 minutes (100 rounds).</p>
+
+        <p><strong>D. The Infernal Batteries (6 Brass Cannons)</strong><br>
+        Demonic cannons (3 port, 3 starboard) possessed by minor fire-demons, firing heavy iron shot coated in hellfire.<br>
+        <em>TTRPG Mechanics:</em> Attack +8 ranged (range increment 150 ft.). Damage: 6d6 bludgeoning and fire damage. The target ship must succeed on a DC 18 Will save or be afflicted with the <strong>Curse of the Shadow-Weave</strong>, causing the target's sails/rigging to take 2d6 cold damage each round and introducing a 50% spell/power failure rate to anyone casting or manifesting aboard for 1 minute.</p>
+
+        <p><strong>E. Boarding Harpoons (4 winches)</strong><br>
+        Winch-loaded harpoon ballistae lining the rails of Deck I, using heavy iron chains.<br>
+        <em>TTRPG Mechanics:</em> Attack +10 ranged (range increment 100 ft.). Damage: 3d8 piercing. On a hit, the target vessel is grappled. Winding the windlasses (requires 2 crew or 1 construct) drags the target vessel 30 ft. closer at the start of the <em>Onyx Wake</em>'s turn.</p>
+      </div>
+
+      <h2>4. THE COMMAND TRIAD & CREW ROSTER</h2>
+
+      <h3>A. The Command Triad</h3>
+      <p><strong>1. Captain Mikhailis Vael-Kaelor (Kael — Sovereign Corsair):</strong><br>
+      A towering, 8-foot-tall half-minotaur fey monstrosity with phase-shifting wings, displacer tentacles, and eldritch claws. He steers the ship with a wild, manic laugh, his chronal senses aligned with the ship's <em>Sovereign Anchor</em> to feel gravity fluctuations.</p>
+      
+      <p><strong>2. First Mate Dreadjaw Rellis (CR 14 Orc Enforcer — Barbarian 12 / Fighter 2):</strong><br>
+      Originally the fragile-jawed "Glassjaw Rellis" of Blackwater Quay, rebuilt through Suture's surgery and Mikhailis's Tri-Weave fey-metal jaw grafting. A towering, heavily armored Orc whose lower face is a brutal fey-metal plate. He leads boarding actions with a heavy greataxe, bellowing concussive Dread-Shouts to knock enemies prone, coordinates the Vanguard silently via his Phrenic-Node telepathy graft, and is completely immune to stunning or paralysis.</p>
+      
+      <p><strong>3. The Eternal Sentinel (Commander Valas Noquar):</strong><br>
+      A drow commander in worn leather armor, his lower limbs and spine completely grown into the wood of the mainmast. His eyes are blank white spheres, and his mouth twitches in silent calculations. He allows the ship to react instantly to subterranean threats, granting the ship blindsense 120 ft., mindsight 60 ft., and a +4 bonus on initiative and handling checks.</p>
+
+      <h3>B. Core Officers & Specialists</h3>
+      <ul>
+        <li><strong>Chief Navigator Serris Vae (CR 11 Fey-Drow Chrono-Seer):</strong> <a href="monsters.md#7-chief-navigator-serris-vae-fey-drow-chrono-seer--cr-11">Serris Vae character sheet</a>. A pale fey-drow Chronomancer who operates the <em>Hellfire Navigation Array</em> on the bridge, plotting paths through non-Euclidean coordinates.</li>
+        <li><strong>Chief Engineer Thrain Vrunn (CR 11 Duergar Steam-Smith):</strong> <a href="monsters.md#8-chief-engineer-thrain-vrunn-duergar-steam-smith--cr-11">Thrain Vrunn character sheet</a>. A soot-covered duergar who manages the soul-combustion furnace in Deck III and can overload the boilers.</li>
+        <li><strong>Trench (Slake) the Scrag (CR 15 Vanguard / Frenzied Berserker):</strong> <a href="monsters.md#9-slake-trench-the-deep-trench-scrag-heavy-vanguard--frenzied-berserker--cr-15">Slake character sheet</a>. A massive, armor-plated aquatic scrag upgraded by Suture to serve as a shipbreaker, wielding a black-steel Harpoon-Cannon.</li>
+      </ul>
+
+      <h3>C. The Fleet Force</h3>
+      <ul>
+        <li><strong>30x Shadar-Kai Corsairs (CR 6):</strong> <a href="monsters.md#10-shadar-kai-corsair-sablehook-shock-trooper--cr-6">Shadar-Kai Corsair sheet</a>. Cold, pragmatic shadow-fey pirates armed with spiked chains. Grafted with Phase-Stutter Skin (20% concealment, 10 ft. teleport 3/day) and Spinal Surge mindsight.</li>
+        <li><strong>15x Sea-Wolf Hybrids (CR 6):</strong> <a href="monsters.md#6-sea-wolf-hybrid-sablehook-fleet-sentinel--cr-6">Sea-Wolf Hybrid sheet</a>. Mutated aquatic sentinels with Aqueous Camouflage (+8 Hide underwater), Thermal Nullification, electrified claws/bites, and adamantine chest plates.</li>
+        <li><strong>20x Skeletal Stokers:</strong> Reanimated skeletal thralls bound to the furnace room on Deck III, shoveling coal, brimstone, and soul-shards into the boilers.</li>
+      </ul>
+
+      <h2>5. TTRPG CAMPAIGN MECHANICS & ABILITIES</h2>
+
+      <div class="ttrpg-block">
+        <h4>Flagship In-Game Upgrades & Modifications</h4>
+        
+        <p><strong>A. Sovereign Ascension (Living Construct Symbiosis)</strong><br>
+        Suture grafted the Abyssal Hunter-Squid directly into the ship's keel and Stygian fuel-intake. The <em>Onyx Wake</em> is now a <strong>Living Construct</strong>. Its iron hull pulses with a biological heartbeat, allowing Kael or the helmsman to command the ship telepathically as an extension of their own body. This grants the ship a +4 bonus on all handling checks and allows it to repair up to 2d6 points of hull damage per hour via natural regeneration.</p>
+
+        <p><strong>B. The Sovereign Anchor (Adamantine Sphere Graft)</strong><br>
+        The Adamantine Sphere is mounted on the bow, serving as a localized reality-stabilizer and an unconventional gravitic weapon controlled by Kael's phrenic lattice:
+        <br><em>1. Defensive Anchor:</em> Projects a <strong>500-foot aura</strong> that automatically blocks all enemy teleportation and planar-boarding tactics (e.g., <em>Dimension Door</em>, <em>Dimension Slide</em>, or psionic teleportation).
+        <br><em>2. Gravitic Singular-Ram:</em> During a ramming maneuver, Kael can instantly increase the ship's effective mass by a factor of fifty, inducing a localized gravity collapse at the contact point. This deals <strong>12d6 crushing damage</strong>, ignoring armor class and hardness, folding the target's hull structure inward into the gravitational cavity.
+        <br><em>3. Hydrodynamic Shockwave:</em> When breaching or charging, the Anchor distorts local water geometry, sending a crushing barometric shockwave in a 120-ft. cone. Targets take <strong>6d6 bludgeoning damage</strong> (Reflex DC 22 half) and are pushed 30 ft. backward; stationary structures or piers are buckled.</p>
+
+        <p><strong>C. The Sovereign Void-Lapse Lance</strong><br>
+        The flagship's primary bow weapon, powered by the Adamantine Sphere:
+        <br><em>1. Discharge:</em> Projects a 300-ft. long, 10-ft. wide line of kinetic force and fire, dealing <strong>10d6 unholy force damage</strong> and <strong>10d6 fire damage</strong> (Reflex DC 22 half) to all targets in the path. Targets must make a DC 24 Will save or be paralyzed for 1d4 rounds by the void-vacuum.
+        <br><em>2. Cavitation Implosion (The Snap-Back):</em> Firing the lance flash-boils seawater and creates an absolute vacuum void along the 300-ft. path. When the weapon shuts down, the ocean implodes to fill the void. This creates a concussive shockwave in a <strong>150-foot radius</strong>, dealing <strong>6d6 bludgeoning and sonic damage</strong> (DC 20 Reflex half) and forcing a DC 22 Fortitude save to avoid being <strong>stunned</strong> for 1d3 rounds. Paralyzed targets feed their kinetic energy back, recharging ship shields and fuel.</p>
+
+        <p><strong>D. Gravity-Slurry Hull Hardening</strong><br>
+        The hull of the <em>Onyx Wake</em> drank Suture's alchemical gravity-slurry, turning the ship into an immovable object. The ship gains a permanent <strong>+10 bonus to Hardness</strong> and is immune to collision damage from creatures or vessels smaller than Gargantuan size.</p>
+
+        <p><strong>E. Phrenic Cloaking Field</strong><br>
+        Governed by Chief Helmsman Corvax, the ship can shift its phrenic lattice to cast a phrenic-cloaking field. This cloaks the flagship and up to 3 trailing ships, rendering them completely invisible to infravision, blindsense, and magical scrying at ranges greater than 120 ft. Even when detected, the ship's <em>Displacement Weave</em> grants it a permanent <strong>20% miss chance</strong> against all ranged attacks and siege engines.</p>
+      </div>
+
+      <div class="ttrpg-block">
+        <h4>Tactical Campaign Abilities</h4>
+        
+        <p><strong>A. Chronal Glide (Temporal Slip)</strong><br>
+        Once per day, utilizing Kael’s fractured chronal sense and the Adamantine Sphere, the <em>Onyx Wake</em> can slip 1.5 seconds out of the current timeline. The ship gains a <strong>+8 dodge bonus to AC</strong> against a single incoming attack (such as a Githyanki spelljammer's psychic volley or a red dragon's breath weapon) or can phase directly through a physical blockade up to 60 ft. wide without taking damage.</p>
+
+        <p><strong>B. Soul-Combustion Overdrive</strong><br>
+        Once per encounter, Chief Engineer Thrain Vrunn can overload the boilers. The ship's swim speed increases to <strong>80 ft. for 3 rounds</strong>. However, the furnace deck takes 5d6 fire damage, and all crew members on Deck III must make a DC 15 Fortitude save or be <em>sickened</em> for 1d4 rounds by the toxic soul-fumes.</p>
+
+        <p><strong>C. The Kael Strike (Renown Reward)</strong><br>
+        When players achieve Renown +10 (The Severing Edge) with Sablehook, they can call in a Kael Strike once per campaign. The <em>Onyx Wake</em> emerges from a folding rift, firing the <em>Sovereign Void-Lapse Lance</em> and a full salvo of <em>Infernal Batteries</em> at a designated target area. All targets in a 100-ft. radius take <strong>10d6 unholy fire damage</strong> and <strong>10d6 disintegrate damage</strong> (Reflex DC 22 half). All surviving structures are set ablaze, and the area is filled with Stygian mist for 1 hour.</p>
+
+        <p><strong>D. The Sovereign Network (Phrenic Hive-Mind)</strong><br>
+        The Command Triad (Kael, Dreadjaw, Valas) and key officers are telepathically bound through the Phrenic-Node graft. During naval combat, this absolute, silent coordination grants the ship a permanent <strong>+4 tactical bonus on Initiative</strong> and <strong>+4 on all Profession (Sailor) checks</strong>. Crew members within 100 ft. of any Command Triad member are immune to being flanked and gain a <strong>+2 morale bonus on attack rolls</strong>.</p>
+
+        <p><strong>E. The Kraken-Drop Boarding Protocol</strong><br>
+        Once per encounter, the ship can deploy Slake (Trench) astride the <em>Abyssal Dread-Carrier</em> (the Hunter-Squid) for a surprise undersea breach:
+        <br><em>1. Submerged Breach:</em> The Carrier approaches submerged under <em>Deeper Darkness</em> and slams its spiked feeding tentacles into the target vessel's hull (Attack +20, deals 4d10+10 bludgeoning, ignoring hardness up to 10).
+        <br><em>2. Boarding Bridge:</em> The tentacles lock on, forming stable bridges. Boarding troops (Shadar-Kai and Sea-Wolves) charge, ignoring difficult terrain and gaining a <strong>+4 morale bonus on attacks and damage</strong> during the first round.
+        <br><em>3. Underkeel Sunder:</em> After delivering troops, the Carrier submerges to crush the target ship's rudder or keel, dealing <strong>6d6+15 bludgeoning damage per round</strong> to the vessel's structure.</p>
+
+        <p><strong>F. The Extra-Dimensional Spatial Sanctuary</strong><br>
+        The Captain's Quarters (Sovereign's Sanctuary) is warded by a permanent extra-dimensional enchantment, expanding its interior to 60x60 ft. and insulating it from all exterior noise, vibrations, and tracking. Any creature resting within the sanctuary recovers hit points and ability damage at <strong>double the normal rate</strong>. Furthermore, the room functions as a permanent <em>Dimensional Lock</em> against any teleportation or planar travel, unless authorized by Captain Kael.</p>
+
+        <p><strong>G. Shadow-Weave Rigging (Umbral Veil)</strong><br>
+        When sailing under total magical blackout (shadow-weave sails fully unfurled), the <em>Onyx Wake</em> becomes an umbral ghost ship. It gains a <strong>+15 bonus on Hide checks</strong> (Profession: Sailor checks to run silent) and is completely immune to infravision, blindsense, and mundane detection at ranges greater than 120 ft. Even when detected, the ship's <em>Displacement Weave</em> grants it a permanent <strong>20% miss chance</strong> against all ranged attacks and siege engines.</p>
+      </div>
+
+    </section>
+  </div>
+
+</body>
+</html>

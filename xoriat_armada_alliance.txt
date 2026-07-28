@@ -1,0 +1,59 @@
+========================================================================
+XORIAT PLANAR ALLIANCE & ARMADA: GITHZERAI, THE ELDER NODE, AND DEEP-SPACE SEALS
+========================================================================
+
+This document redesigns Scenario 4 (Sealing a Tear to Xoriat) to align with Eberron-style planar cosmology and your custom novel elements, integrating Githzerai lore, the Elder Node, and the characters Banki and Kael.
+
+------------------------------------------------------------------------
+THE XORIAT & ELDER NODE CONNECTION
+------------------------------------------------------------------------
+
+In this cosmology, Xoriat (the Realm of Madness) is the home of the Daelkyr (lords of flesh-warping and corruption). The Githzerai have a tragic, direct tie to this:
+1. Gith Origin: Githzerai and Githyanki are refugees from a previous reality destroyed by the Daelkyr.
+2. The twisted cousins: Mind Flayers (and by extension, the Elder Node / Elder Brain entities) were originally engineered by the Daelkyr (specifically Dyrrn the Corruptor) by twisting Gith stock.
+3. The Elder Node below the city is a localized collective intelligence. It acts as a telepathic signal booster and anchor, reaching toward the rift in an attempt to reopen the pathways to Xoriat and summon its Daelkyr creators.
+
+------------------------------------------------------------------------
+COMPATIBLE ALLIED GROUPS (REPLACING THE RED WIZARDS)
+------------------------------------------------------------------------
+
+Instead of the Forgotten Realms' Red Wizards of Thay, several factions fit this Eberron-adjacent setting perfectly to align with the Githzerai:
+
+1. THE GATEKEEPERS (Druidic Sealer Sect)
+   - Profile: An ancient druidic order (originally Orcs) tasked with protecting the material plane from extraplanar aberrations. 
+   - Role in Armada: They hold the ancient primal magic and earth-anchoring ritual wards originally used to bind the Daelkyr in Khyber. Their ships are organic, living wood-barges capable of withstanding Xoriat's reality-warping corrosion.
+   - Synergy: Githzerai psionics provide the psychic defense, while the Gatekeepers supply the dimensional seals to close the tear.
+
+2. THE KALASHTAR & THE PATH OF LIGHT
+   - Profile: Monastic, psionic humanoids bound to spirits of light (quori) who value absolute mental discipline, balance, and clarity.
+   - Role in Armada: They serve as the spiritual and mental anchors of the fleet. Their psionics focus on defense, sanctuary, and telepathic networks that are immune to Xoriat's madness.
+   - Synergy: Working in tandem with Githzerai monks, they can weave a massive psychic barrier (a "Mind-Shield Dome") around the armada, preventing the Elder Node's whispers from corrupting the crew.
+
+3. THE KECH VOLAAR (Dhakaani Goblins)
+   - Profile: Goblinoids dedicated to preserving the martial purity of the ancient Dhakaani Empire, which fought the Daelkyr.
+   - Role in Armada: They wield weapons made of "byeshk" (a heavy, lustrous purple metal that breaks the flesh-regeneration of Xoriat's aberrations) and possess "duur'kala" (dirgesingers) whose martial songs inspire ironclad discipline.
+   - Synergy: They provide heavy infantry and ship boarding parties that are completely unaffected by magical/psionic charm due to their psychological conditioning.
+
+4. THE DRAGONS OF THE CHAMBER (Argonnessen)
+   - Profile: Powerful draconic agents who monitor the Draconic Prophecy.
+   - Role in Armada: They provide the raw arcane power and scale of magic needed to physically drag a planar tear closed.
+   - Synergy: They act as the "heavy battleships" of the fleet, using draconic magic to alter the local space-time around the tear while the Githzerai navigate the shifting gravity.
+
+------------------------------------------------------------------------
+INTEGRATING BANKI, KAEL, AND THE ELDER NODE
+------------------------------------------------------------------------
+
+The traumatic exposures of Banki and Kael to Xoriat, along with Banki's PixIllithid nature, create intense narrative and mechanical synergy:
+
+1. THE COMPASS: KAEL'S EXPOSURE
+   - Traumatic Connection: Kael's multiple exposures to Xoriat have left him with a "fractured chronal sense." He can perceive the shifting, non-Euclidean geometry of the Xoriat tear.
+   - Tactical Role: Kael is the only one who can navigate the armada through the "Void-Swells" surrounding the rift. However, the Elder Node constantly tries to exploit his psychic scars, whispering in his mind to guide the fleet into traps.
+
+2. THE NEGATOR: BANKI'S TRI-WEAVE & THE NULL-FANG
+   - Traumatic Connection: Banki is a PixIllithid hybrid, meaning he carries the biological mark of the Daelkyr's ancient twisting of the Gith. The Githzerai will initially view him with deep, instinctual horror and hostility, seeing him as a potential agent of the Elder Node.
+   - Tactical Role: Banki's custom implement, the Null-Fang, is enchanted through the Tri-Weave (arcane, psionic, and divine channels) to enforce systematic negation of spells and psionics.
+   - The Crux: Because Xoriat's energy operates outside standard planar physics, standard psionics or arcane magic cannot close the rift—they are absorbed. Banki's Null-Fang is the only tool that can physically *negate* Xoriat's reality-warping bleed, allowing the Gatekeepers to apply their sealing wards.
+
+3. THE TETHER: THE ELDER NODE'S SIGNAL
+   - The Conflict: The Elder Node is using the tear to pull Xoriat closer, using the telepathic echo of its victims (like Tovin's memory) to bypass surface protections.
+   - The Battle: The armada must launch a dual-front assault. While Githzerai and Gatekeeper ships engage the Elder Node's thralls and Xoriat void-monsters in the skies, Banki must use the Null-Fang to sever the Node's tether to Xoriat, while Kael guides the fleet's shields to withstand the backlash of the collapsing plane.

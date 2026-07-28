@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Deepmind Tear - Campaign Master Module</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Georgia&family=Montserrat:wght@400;600&display=swap');
+    
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fcfaf2;
+      color: #2c2c2c;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cover-page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1a0808 0%, #2c0e0e 100%);
+      color: #fcfaf2;
+      border: 20px double #c5a059;
+      box-sizing: border-box;
+      padding: 40px;
+    }
+
+    .cover-title {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: #c5a059;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .cover-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      color: #e0d0b0;
+    }
+
+    .cover-credits {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 100px;
+    }
+
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      color: #800000;
+      border-bottom: 2px solid #c5a059;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      border-bottom: 1px dashed #c5a059;
+    }
+
+    p {
+      text-indent: 20px;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    .ttrpg-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .ttrpg-table td {
+      border: 1px solid #c5a059;
+      padding: 8px 12px;
+    }
+
+    .ttrpg-table tr:nth-child(even) {
+      background-color: #f5eedc;
+    }
+
+    .ttrpg-map {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      border: 4px double #c5a059;
+      border-radius: 4px;
+      margin: 25px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .content-container {
+        max-width: 100%;
+        padding: 0;
+      }
+      .cover-page {
+        border-color: #000000;
+        color: #000000;
+        background: none;
+        height: 95vh;
+      }
+      .cover-title {
+        color: #000000;
+      }
+      h1, h2, h3 {
+        color: #000000;
+        border-color: #000000;
+      }
+      .ttrpg-map {
+        border-color: #000000;
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-page">
+    <div class="cover-title">THE DEEPMIND TEAR</div>
+    <div class="cover-subtitle">A Campaign Module for Levels 10 - 13</div>
+    <div style="border-top: 3px solid #c5a059; width: 100px; margin: 20px auto;"></div>
+    <div style="font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase;">D&D 3.5 / Pathfinder 1E Rules</div>
+    <div class="cover-credits">
+      Prepared for Campaign Release<br>
+      Blackwater Quay Underworld Chronicles
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="content-container">
+    
+      <section class="chapter-section">
+        <h1>The Deepmind Tear: Campaign Master Guide</h1>
+<h2>A TTRPG Adventure Arc for Levels 10–13 (D&D 3.5 / Pathfinder 1E)</h2>
+<p>---</p>
+<h2>1. INTRODUCTION & ADVENTURE BACKGROUND</h2>
+<h3>The Campaign Premise</h3>
+<em>The Deepmind Tear</em> is a dark fantasy, planar-political campaign set in the damp, fog-shrouded streets and deep subterranean vaults of the city-state of <strong>Blackwater Quay</strong>. The campaign centers on an alliance of convenience between <strong>Sablehook</strong> (a criminal syndicate of biomantic outcasts and survivors of the Thessalan Consortium), <strong>The Tarkanan's Marked Syndicate</strong> (the Sharn-style aberrant dragonmark underworld), and the <strong>Lords of Dust</strong> (an ancient cabal of shape-shifting fiends). 
+<p>Together, they must prevent the <strong>Elder Node</strong>—a massive, subterranean mind flayer overmind—from opening a permanent rift to <strong>The Void of Madness (the Realm of Madness)</strong>. If the rift opens, the alien lords of flesh-warping, the Daelkyr, will break their seals and dissolve the region into formless chaos.</p>
+<p>---</p>
+<h3>History of the Thessalan Consortium's Downfall</h3>
+The Thessalan Consortium was once a prestigious cabal of wizards and biomancers who operated deep-underground research labs beneath the Quay. They specialized in cross-breeding magical beasts and harnessing planar energy. Ten years ago, an experiment involving The Void of Madness bleeding went horribly wrong. 
+<p>The planar radiation dissolved their primary containment cells, warping the researchers into compliant thralls and unleashing the Elder Node's telepathic net. The survivors of these experiments—a mixture of spliced humanoids, fey, and aberrations—banded together under the leadership of Banki to form <strong>Sablehook</strong>, occupying the old foundations and swearing to prevent another planar tear.</p>
+<p>---</p>
+<h3>The Role of Banki and Kael</h3>
+<ul><li>  <strong>Banki (The PixIllithid):</strong> The leader of Sablehook. Originally a fey pixie, he was subjected to agonizing neural splicing by the Thessalan Consortium, merging his biology with an illithid. However, he is <em>not</em> connected to the Elder Brain's hive mind. Instead, he and the other survivors share a closed-loop collective consciousness. Banki's implement, the <strong>Null-Fang</strong>, channels the <strong>Tri-Weave</strong> (arcane, psionic, divine) to negate spells and psionics.</li>
+<li>  <strong>Captain Mikhailis Vael-Kaelor (Kael):</strong> The "Sovereign Corsair" and "Severing Edge" of the Vael-Kaelor clan. A towering, half-minotaur fey monstrosity with phase-shifting wings, displacer tentacles, and eldritch claws. He leads a corsair flotilla from his flagship, the <em>Onyx Wake</em>. While he mockingly wears the title "Auditor" to humor his brother Banki's rigid mindset, Kael is a brutal, chaotic pirate. His fractured chronal sense (gained from The Void of Madness exposure) allows him to read gravity and time distortions, making him the only guide capable of navigating the Deepmind Annex.</li>
+<p>---</p>
+<h3>The Elder Node's Shadow (Daily Intrusion Table)</h3>
+To simulate the ever-present threat of the Elder Node's telepathic net, the DM rolls <strong>1d20</strong> at the start of each in-game day. This determines how the overmind's network disrupts the characters:
+<table class="ttrpg-table"><tr><td>Roll (1d20)</td><td>Event</td><td>Mechanical Effect</td></tr><tr><td>:---</td><td>:---</td><td>:---</td></tr><tr><td><strong>1–5</strong></td><td><em>Quiet Timeline</em></td><td>The Elder Node is quiet, focusing its energies on the rift core. No intrusion occurs.</td></tr><tr><td><strong>6–9</strong></td><td><em>Psychic Whisper</em></td><td>Telepathic static echoes in the players' minds. All characters must succeed on a DC 14 Will save or take a -1 penalty to Initiative and Charisma-based checks for the next 24 hours.</td></tr><tr><td><strong>10–12</strong></td><td><em>Gravity Distortion</em></td><td>The local gravity fluctuates. For 1d4 hours, characters move at a +10 ft. bonus to speed, but suffer a -2 penalty on melee attack rolls as they float off the stone.</td></tr><tr><td><strong>13–15</strong></td><td><em>Compliance Sweep</em></td><td>The Choir of the Below sends hunters. The next combat encounter is joined on Round 3 by <strong>1d4 Compliant Sewer Enforcers</strong> seeking to capture the party.</td></tr><tr><td><strong>16–18</strong></td><td><em>Fleshwarped Flare</em></td><td>A localized wave of planar energy erupts. Living creatures within 30 ft. of the surge must succeed on a DC 16 Fortitude save or take 1d4 points of Dexterity damage as their joints temporarily fuse.</td></tr><tr><td><strong>19–20</strong></td><td><em>Mind Blast Beacon</em></td><td>The party triggers a psychic alarm. A strike team consisting of <strong>2 Dolgaunts</strong> and <strong>1 Thessalan Displacer Beast</strong> ambushes them within 1d4 hours.</td></tr></table>
+<p>---</p>
+<h2>2. CAMPAIGN STRUCTURE & ACTS</h2>
+<p>The campaign is structured into four distinct acts, taking the characters from street-level investigations to a high-stakes planar siege.</p>
+<div class="mermaid">graph TD
+    Act1["Act I: Whispers in the Sluices (Level 10)<br>Infiltrate the Sluice Districts & Expose the Chemical Rings"] --> Act2["Act II: The Fleshwarped Foundry (Level 11)<br>Raid the Thessalan Consortium's Subterranean Vats"]
+    Act2 --> Act3["Act III: Crimson Sails Over the Quay (Level 12)<br>Defend against the Githyanki Air Raid & Forge the Tri-Weave Shroud"]
+    Act3 --> Act4["Act IV: The Deepmind Annex (Level 13)<br>Descend into the Brine-Veins & Seal the The Void of Madness Tear"]</div>
+<p>---</p>
+<h3>ACT I: WHISPERS IN THE SLUICES (Level 10)</h3>
+<li>  <strong>Goal:</strong> Discover how the Elder Node is manipulating the city's surface.</li>
+<li>  <strong>Summary:</strong> The characters are hired by Sable (Banki's tactical commander) to investigate a series of kidnappings in the Northern Sluices. They discover that a local cult, the <strong>Choir of the Below</strong>, is distributing "Elder Node derivative compounds" to chemically comply the populace. By working with The Tarkanan's Marked Syndicate scouts, the party traces the supply line to a flooded sewer vault, where they defeat the Node's surface avatar, uncovering plans for a planar rift.</li>
+<p>#### Boxed Text (Read-Aloud Scene):
+> <em>The air in the Northern Sluices is thick with the stench of vinegar, rotting refuse, and sulfurous sewage gas. Sludge overflows the stone gutters, weeping down from the brick vaults above in greasy streaks. Below the hanging wooden shacks of the city's outcasts, you can hear the telepathic resonance—a low, rhythmic thrumming that vibrates in the back of your skull. Red, glowing sigils of the Choir of the Below are painted on the iron lock doors, marking the entry to the flooded vaults.</em></p>
+<p><li>  <strong>Encounter Outline:</strong></li>
+    <em>   </em>Encounter I-1:* Sluice Blockade (4 Sewer Thugs, 2 Compliant Thralls; CR 10).
+    <em>   </em>Encounter I-2:* The Acidic Locks (Sewage hazard, 1 Thessalan Displacer Beast prototype; CR 11).
+    <em>   </em>Encounter I-3:* Cult Altar (1 Choir Priest, 2 Dolgaunt Cell-Guards; CR 12).
+<li>  <strong>Tactical Environment:</strong> Flooded walkways. Combatants must succeed on a DC 14 Balance check to run. Slipping causes the character to fall into the 5-ft deep sludge channels, dealing 1d6 points of acid damage and exposing them to sewer rot.</li></p>
+<p>---</p>
+<h3>ACT II: THE FLESHWARPED FOUNDRY (Level 11)</h3>
+<li>  <strong>Goal:</strong> Destroy the Thessalan Consortium's local stronghold and secure their biological suppressants.</li>
+<li>  <strong>Summary:</strong> The Thessalan Consortium has established a secret "Fleshwarped Foundry" in the Belowmarket Deep, breeding mutated displacer-beasts and war-beasts. The characters must coordinate a diversionary surface riot with The Tarkanan's Marked Syndicate while Kael's boarding crew (led by the alchemist Suture and first mate Dreadjaw Rellis) holds the surrounding canal vectors. Infiltrating the foundry, the characters must destroy the growth vats and secure the Consortium's research journals containing the formulas needed to neutralize the Elder Node's secretion chains.</li>
+<p>#### Boxed Text (Read-Aloud Scene):
+> <em>The Belowmarket Deep opens into a gargantuan cavern illuminated by volcanic fissures. Amidst the duergar forges and crowded market stalls, a dark basalt fortress looms over the green-sludge canal vectors. Heavy copper pipes run along the exterior walls, pulsing with glowing green chemical slurries. The iron gates are locked, and from the security grates above, the smell of burnt hair and chemical acid drifts over the docks. Steam whistles from venting valves, echoing like the breathing of a massive beast.</em></p>
+<p><li>  <strong>Encounter Outline:</strong></li>
+    <em>   </em>Encounter II-1:* Canal Gates (4 Consortium Guards, 1 Mutated Sea-Wolf; CR 11).
+    <em>   </em>Encounter II-2:* The Vat Room (Vespera the Fleshwarper, 2 Thessalan Displacer Beasts; CR 12).
+    <em>   </em>Encounter II-3:* The Archives (1 Flesh Golem prototype, 2 Dolgaunts; CR 12).
+<li>  <strong>Tactical Environment:</strong> Growing vats. The room is filled with large glass cylinders. Hitting a canister (AC 10, HP 15) shatters it, releasing green acid in a 10-ft radius (dealing 3d6 acid damage and spawning a mutated crawling claw natural hazard).</li></p>
+<p>---</p>
+<h3>ACT III: CRIMSON SAILS OVER THE QUAY (Level 12)</h3>
+<li>  <strong>Goal:</strong> Defend Sablehook from a Githyanki air raid and steal the displacement shield technology.</li>
+<li>  <strong>Summary:</strong> A Githyanki raiding fleet attacks Blackwater Quay, hunting down the deserter Zaniph, the rift-sealer Kaelen Grey, and the "aberrant" fey pirate Kael. As Githyanki spelljamming galleons rain psychic fire, The Tarkanan's Marked Syndicate grounds their skiffs and Terik (the rakshasa) projects a displacement shield over the harbor. The party must defend Sablehook's walls alongside Kael's crew. Inside the vaults, Kaelen Grey ("Suture") scans the shield's stressed runes, allowing Banki to reverse-engineer it. The act ends with a daring boarding action on the flagship, <em>Vlaakith's Pride</em>, launched from the deck of Kael's flagship, the <em>Onyx Wake</em>. Banki uses the contract loophole to keep the silver sword, triggering the <strong>Tri-Weave Shroud</strong> to hide Sablehook.</li>
+<p>#### Boxed Text (Read-Aloud Scene):
+> <em>The ceiling of the subterranean harbor cracks as three massive Githyanki spelljamming galleons break through the upper rock strata. Their silver hulls catch the green glow of the quay's alchemical lights, and from their ballista ports, psychic fire rain down onto the stone docks. Sablehook’s bells ring in alarm. The harbor water churns as Captain Mikhailis's flagship, the Onyx Wake, pivots to intercept, its sails of dark fey-metal catching the air. From the sky, Githyanki raiders slide down ropes, their silver blades drawing arcs of light in the fog.</em></p>
+<p><li>  <strong>Encounter Outline:</strong></li>
+    <em>   </em>Encounter III-1:* Harbor Walls (4 Githyanki Raiders, 1 Red Dragon Wyrmling; CR 12).
+    <em>   </em>Encounter III-2:* Flagship Boarding (Commander Zaniph's former captain, 3 Githyanki Knights; CR 13).
+    <em>   </em>Encounter III-3:* The Shroud Core (Defending Banki from Githyanki astral stalkers; CR 13).</p>
+<p>#### Siege of Sablehook Victory Tracker
+During the Githyanki air raid in Act III, the party accumulates <strong>Victory Points (VP)</strong> based on their tactical successes. The final tally determines the condition of the survivors and starting assets in Act IV:</p>
+<p><li>  <strong>VP Opportunities:</strong></li>
+    <em>   </em>Activate the Shroud:* Complete the shield scan and start the Tri-Weave Shroud (<strong>+3 VP</strong>).
+    <em>   </em>Deploy Tarkanan Snipers:* Secure the harbor towers (<strong>+2 VP</strong>).
+    <em>   </em>Repel the Harbor Boarders:* Lead Kael's sailors to protect the fleet docks (<strong>+2 VP</strong>).
+    <em>   </em>Defeat the Githyanki Commander:<em> Slay Commander Zaniph's former captain on the deck of the </em>Pride* (<strong>+4 VP</strong>).
+    <em>   </em>Protect the Ritualists:* Prevent Kaelen Grey or Banki from taking damage during the scans (<strong>+2 VP</strong>).</p>
+<p><li>  <strong>Campaign Outcomes:</strong></li>
+    *   <strong>11+ VP (Epic Victory):</strong> Sablehook stands tall. The Tri-Weave Shroud works at 100% efficiency. The players begin Act IV with full supplies, a +2 bonus on all faction renown tracks, and a <strong>Chronal Chronometer</strong> already in their inventory.
+    *   <strong>7–10 VP (Pyrrhic Victory):</strong> Sablehook is damaged. Several of Kael's crew are wounded. The Shroud flickers. The players must spend 3,000 gp in supplies to repair the docks, and their starting renown is unmodified.
+    <em>   <strong>6 or less VP (Disastrous Retreat):</strong> Sablehook is overrun. The harbor burns. Survivors retreat into the deep caverns. In Act IV, all characters start with a permanent </em>fatigued* condition due to sleep deprivation and minor injuries, which cannot be removed until they reach the Cathedral of Whispers.</p>
+<p>---</p>
+<h3>ACT IV: THE DEEPMIND ANNEX (Level 13)</h3>
+<li>  <strong>Goal:</strong> Seal the The Void of Madness Tear and survive the rakshasa double-cross.</li>
+<li>  <strong>Summary:</strong> Compiled as a standalone module (<em>Act_IV_Descent_into_the_Deepmind_Annex</em>). The party descends into the brine-veins, navigates the gravity flues, completes the sealing ritual while combating the dragon Oraxis, and utilizes Kael's temporal loop to reverse Hruujj's betrayal.</li>
+<p>---</p>
+<h2>3. ADVENTURE HOOKS & PLAYER MOTIVATIONS</h2>
+<p><li>  <strong>The Aberrant Mark Hook (Tarkanan):</strong> One or more PCs bear aberrant dragonmarks. The proximity of the The Void of Madness rift is causing their marks to weep blood and discharge erratic magic. To save their own lives, they must help Sablehook seal the tear.</li>
+<li>  <strong>The Planar Scholar Hook (Lords of Dust):</strong> The PCs are contacted by a disguised rakshasa who offers them access to ancient draconic prophecy fragments if they help a local "syndicate" (Sablehook) deal with an extraplanar threat in the harbor.</li>
+<li>  <strong>The Escapee Hook (Consortium):</strong> The PCs are former test subjects who escaped the Thessalan Consortium's annex along with Banki. They must protect their new sanctuary (Sablehook) from being reclaimed.</li></p>
+<p>---</p>
+<h2>4. MILESTONE PROGRESSION & WEALTH BY LEVEL (WBL) INDEX</h2>
+<p>To ensure a balanced campaign, character progression and treasure distribution are indexed to standard D&D 3.5 / Pathfinder WBL progression:</p>
+<h3>Milestone XP Pacing</h3>
+<li>  <strong>Start of Campaign:</strong> Characters begin at <strong>Level 10</strong>.</li>
+<li>  <strong>End of Act I:</strong> Level up to <strong>Level 11</strong> upon defeating the surface avatar in the Northern Sluices.</li>
+<li>  <strong>End of Act II:</strong> Level up to <strong>Level 12</strong> after destroying the growth vats in the Fleshwarped Foundry.</li>
+<li>  <strong>End of Act III:</strong> Level up to <strong>Level 13</strong> after boarding <em>Vlaakith's Pride</em> and sealing the harbor.</li>
+<li>  <strong>Act IV Climax:</strong> Reaching the end of the campaign at Level 13.</li>
+<h3>Wealth By Level (WBL) Target Progression</h3>
+<li>  <strong>Level 10 (Start):</strong> 49,000 gp starting gear.</li>
+<li>  <strong>Level 11 (Act II):</strong> 66,000 gp. </li>
+    <em>   </em>Key Item Found:* <strong>Formula of Thessalan Suppressants</strong> (Allows Suture to brew 3 free healing mutagens).
+<li>  <strong>Level 12 (Act III):</strong> 88,000 gp. </li>
+    <em>   </em>Key Item Found:* <strong>Tri-Weave Silver Blade</strong> (+3 silver short sword that ignores spell and power resistance).
+<li>  <strong>Level 13 (Act IV):</strong> 110,000 gp.</li></ul>
+    <em>   </em>Key Item Found:* <strong>The Null-Fang</strong> (Wielded by Banki; anchors the Sovereign Thread. Grants PCs access to its magic negation field).
+
+      </section>
+      <div class="page-break"></div>
+    
+      <section class="chapter-section">
+        <h1>Gazetteer & Faction Renown: Blackwater Quay Underworld</h1>
+<h2>Campaign Setting Guide and Reputation Mechanics</h2>
+<p>This guide provides the Dungeon Master (DM) with a detailed overview of the city-state of <strong>Blackwater Quay</strong> and introduces the <strong>Faction Renown System</strong>, allowing players to track their standing, earn mechanical favors, and navigate the shifting alliances of the campaign.</p>
+<p>---</p>
+<h1>PART I: THE BLACKWATER QUAY GAZETTEER</h1>
+<p>Blackwater Quay is a subterranean port city carved into the massive cavern systems of the Underdark, directly beneath a major maritime trade route. It is a city of damp stone, green-filmed water channels, and perpetual fog, illuminated only by bioluminescent mosses, alchemical lanterns, and the glowing runes of smuggling ships.</p>
+<pre><code>+---------------------------------+
+                |      THE HARBOR & LOCKS         |
+                +---------------------------------+
+                                ||
+                +---------------------------------+
+                |     THE NORTHERN SLUICES        |
+                +---------------------------------+
+                                ||
+                +---------------------------------+
+                |     THE BELOWMARKET DEEP        |
+                +---------------------------------+
+                                ||
+                +---------------------------------+
+                |      SABLEHOOK COMPOUND         |
+                +---------------------------------+</code></pre>
+<p>---</p>
+<h2>1. THE DISTRICTS & NEIGHBORHOODS OF THE QUAY</h2>
+<h3>The Northern Sluices (The Sewage Hub)</h3>
+<ul><li>  <strong>Atmosphere:</strong> Damp, cramped, and foul-smelling. The air is thick with sulfurous sewage gases and alchemical runoff from the surface city above.</li>
+<li>  <strong>Description:</strong> A maze of stone walkways, iron grates, and deep drainage channels where the city's waste is filtered. The poorest citizens and outcasts build hanging wooden shacks over the channels.</li>
+<li>  <strong>Key Location: The Gull & Gasket Vaults:</strong> A repurposed sluice station that serves as a low-profile tavern and smuggling depot. Beneath its beer cellars lie the heavily warded vaults where Sablehook coordinates their surface intelligence.</li>
+<h3>The Belowmarket Deep (The Subterranean Bazaar)</h3>
+<li>  <strong>Atmosphere:</strong> Chaotic, loud, and smelling of roasting meat, ozone, and wet fur.</li>
+<li>  <strong>Description:</strong> A massive, multi-tiered cavern that serves as the black-market trade hub of the region. Anything can be bought here for the right price, from forbidden fleshwarped beasts to illicit soul-gems.</li>
+<li>  <strong>Key Location: The Obsidian Anvil:</strong> A duergar forge run by Hroth. The forge is built directly over a volcanic fissure, sheathing smuggling vessels in light-devouring blackwater ironwood.</li>
+<li>  <strong>Key Location: The Barnacle Vault:</strong> A coral cavern where Mother Gutter resides, offering deep-sea enchantments to desperate sailors.</li>
+<h3>Sablehook's Territory (The Inner Sanctuary)</h3>
+<li>  <strong>Atmosphere:</strong> Sterile, quiet, and tense. The smell of vinegar and cold iron hangs in the air.</li>
+<li>  <strong>Description:</strong> Located in the high-security vaults of the city's old foundations. Unlike the chaotic bazaar, Sablehook's territory is run with clockwork efficiency.</li>
+<li>  <strong>Key Location: Suture's Clinic:</strong> A clean, white-tiled laboratory where Kael's apprentice, Suture, performs biomantic surgeries, harvests biological samples, and grafts physical enhancements onto the syndicate's enforcers.</li>
+<p>---</p>
+<h2>2. SABLEHOOK HAVEN DIRECTORY & SERVICES</h2>
+<p>This directory details the functional services, merchant inventories, and rumor networks available to the party in the Sablehook safehouse.</p>
+<h3>A. The Blackwater Taproom (The Gull & Gasket)</h3>
+<li>  <strong>Proprietor:</strong> Barnaby (a retired sea-wolf hybrid).</li>
+<li>  <strong>Safe Rest Rules:</strong> Staying at the taproom costs 5 sp per night. It acts as a safe haven; resting here allows characters to heal an extra +1 HP per level and recover 1 point of temporary ability damage (such as from psionic strain or Blue-Drop withdrawal) per night.</li>
+<li>  <strong>Carousing & Rumors:</strong> For 5 gp (requires a Gather Information check DC 12), a character can roll on the Underworld Rumor Table to uncover vital clues:</li>
+<table class="ttrpg-table"><tr><td>d20 Roll</td><td>Underworld Whisper / Rumor</td><td>Target Event</td></tr><tr><td>:---</td><td>:---</td><td>:---</td></tr><tr><td><strong>1</strong></td><td><em>"Spies say spelljamming ships are cruising the Astral borders, looking for a deserter named Zaniph."</em></td><td>Act III Foreshadowing</td></tr><tr><td><strong>2</strong></td><td><em>"Suture has been buying up troll blood. Rumor is he's splicing tissue to heal severed limbs."</em></td><td>Act II / Grafts</td></tr><tr><td><strong>3</strong></td><td><em>"A bronze dragon named Oraxis has been spotted in the outer caverns. The Chamber is watching."</em></td><td>Act IV Standalone</td></tr><tr><td><strong>4</strong></td><td><em>"They say Banki's Null-Fang can tear through magic like paper, but it drains his mind to use."</em></td><td>Act IV Climax</td></tr><tr><td><strong>5</strong></td><td><em>"The Consortium's foundry in the Belowmarket is breeding displacer prototypes. Vespera is running the vats."</em></td><td>Act II Stronghold</td></tr><tr><td><strong>6</strong></td><td><em>"Banki is looking for the pieces of an ancient Dhakaani silver blade. He needs it to forge the Shroud."</em></td><td>Act III Shroud</td></tr><tr><td><strong>7</strong></td><td><em>"Thora is planning a sewer strike on the watch. She needs a distraction on the surface."</em></td><td>Act II Diversion</td></tr><tr><td><strong>8</strong></td><td><em>"Terik has been spending ancient coinage. He's buying up lead and silver. Why does a merchant need sealing metal?"</em></td><td>Act IV Betrayal</td></tr><tr><td><strong>9</strong></td><td><em>"Watch out for the blue drops. The watch is putting it in the outer wells to keep the poor compliant."</em></td><td>Act I Chemical Ring</td></tr><tr><td><strong>10</strong></td><td><em>"Captain Mikhailis was seen arguing with Banki. The pirate wanted to raid the Githyanki flagship directly."</em></td><td>Act III Flight</td></tr><tr><td><strong>11</strong></td><td><em>"Deep caverns are shifting. The gravity flues are flowing backward. You'll need a guide who reads timelines."</em></td><td>Act IV Standalone</td></tr><tr><td><strong>12</strong></td><td><em>"First mate Rellis got his metal jaw from a fey-foundry. They say it echoes when he shouts."</em></td><td>Act II Boss Info</td></tr><tr><td><strong>13</strong></td><td><em>"A merchant sold a fiendish siphon core to Terik. It's designed to lock down planar relics."</em></td><td>Act IV Trap Setup</td></tr><tr><td><strong>14</strong></td><td><em>"Commander Zaniph has a bounty. The Vlaakith loyalists want her dead or alive."</em></td><td>Act III Ally Info</td></tr><tr><td><strong>15</strong></td><td><em>"Consortium vats contain troll-flesh and acid. If you throw a torch in there, the whole block will blow."</em></td><td>Act II Vulnerability</td></tr><tr><td><strong>16</strong></td><td><em>"Kessler is recruiting aberrant marks for a defense line. He's paying in cold iron."</em></td><td>Act III Preparations</td></tr><tr><td><strong>17</strong></td><td><em>"Mother Gutter has fey-metal caltrops. They slice right through wild shape and fey skin."</em></td><td>Act II Tactics</td></tr><tr><td><strong>18</strong></td><td><em>"The Sovereign Anchor enforces law on reality. When active, portals lock down and teleportation fails."</em></td><td>Act IV Sealing</td></tr><tr><td><strong>19</strong></td><td><em>"Duergar smiths are making lead-silver armor wards to hide from mind flayers."</em></td><td>Act III Shielding</td></tr><tr><td><strong>20</strong></td><td><em>"The mind flayer node isn't just a brain; it's a doorway. The Void of Madness is bleeding through the bottom."</em></td><td>Campaign Finale</td></tr></table>
+<h3>B. Suture's Clinic (Biomantic Services)</h3>
+Suture is a level 12 alchemist/fleshwarper. He offers the following services to PCs (costs in gold and renown):
+<li>  <strong>Graft Surgeries:</strong> Suture can apply any graft from the <em>Player's Guide</em>. His base Heal check modifier is <strong>+18</strong> (+23 if using Grafting Salts).</li>
+<li>  <strong>Healing Services:</strong></li>
+    <em>   </em>Remove Disease / Neutralize Poison:* 150 gp (requires Sablehook Renown +2).
+    <em>   </em>Restoration (Ability Restoration):* 250 gp (requires Sablehook Renown +4).
+    <em>   </em>Heal Spell:* 600 gp (requires Sablehook Renown +5).
+<li>  <strong>Consortium Secrets:</strong> If the players bring Suture a fresh aberration core, he can refine it into a <strong>Mutagenic Infusion</strong> (heals 3d8+5 HP, but grants a -2 penalty to Will saves for 24 hours).</li>
+<h3>C. The Ironwood Exchange</h3>
+A smuggling warehouse run by a bugbear rogue named Grish.
+<li>  <strong>Inventory & Weapon Upgrades:</strong></li>
+    <em>   </em>Blackwater Ironwood Shield:* +150 gp. Reduces spell damage from sonic/acid by 2.
+    <em>   </em>Fey-Metal Coating:* 300 gp. Applies cold iron coating to one weapon, bypassing DR/cold iron for 1 week.
+    <em>   </em>Lead-Silver Lining:* 200 gp. Adds lead backing to a pouch or chest, shielding contents from detection spells.
+    <em>   </em>Blue-Drop Dose:* 150 gp (requires Sablehook Renown +2).
+<p>---</p>
+<h1>PART II: FACTION RENOWN & THE FAVOR SYSTEM</h1>
+<p>As the players complete missions, their choices will alter their reputation with the three core factions of the alliance, as well as their <strong>Suspicion Level</strong> with the city authorities.</p>
+<h2>1. HOW IT WORKS</h2>
+Renown is tracked on a scale of <strong>-10 to +10</strong> for each faction. Players begin at 0 (Neutral).
+<li>  <strong>Positive Renown (+1 to +10):</strong> Unlocks Faction Favors, discounts, and mechanical support.</li>
+<li>  <strong>Negative Renown (-1 to -10):</strong> Factions become hostile, send hit squads, or refuse to trade.</li>
+<pre><code>Hostile (-10 to -3) <---> Neutral (-2 to +2) <---> Allied (+3 to +10)</code></pre>
+<p>---</p>
+<h2>2. THE FACTION TRACKS</h2>
+<h3>A. SABLEHOOK (The Syndicate)</h3>
+Led by Banki and coordinated by Sable, Sablehook offers biological enhancements and intelligence network support.
+<p><li>  <strong>Renown -5 (Marked Target):</strong> Sablehook smugglers actively ambush the party in the sewer locks. PCs suffer a -2 penalty to all Charisma checks with underworld entities in Blackwater Quay.</li>
+<li>  <strong>Renown +2 (Associate):</strong> Access to Suture's alchemical shop. The party receives a 10% discount on alchemical items, potions, and basic grafts.</li>
+<li>  <strong>Renown +5 (Lieutenant):</strong> <strong>Tri-Weave Cloaking.</strong> Sablehook provides the PCs with warded lead cases that shield their items from all psionic and arcane scans. The PCs can call on a Sablehook smuggling crew to transport assets through the locks undetected.</li>
+<li>  <strong>Renown +8 (Sovereign Ally):</strong> <strong>Vael-Kaelor Comm Link.</strong> Banki grants the party access to the outer loop of the Vael-Kaelor collective consciousness. Once per day, the party can communicate telepathically with anyone in Blackwater Quay without a roll, bypassing wards.</li>
+<li>  <strong>Renown +10 (The Severing Edge):</strong> The party can request a <strong>Kael Strike</strong>. Once per campaign, Captain Mikhailis (Kael) deploys the <em>Onyx Wake</em> to blast a path through an enemy flotilla or incinerate an entire dockside block to clear their escape.</li></p>
+<p>---</p>
+<h3>B. HOUSE TARKANAN (The Aberrant Mark Underworld)</h3>
+Led by Thora, The Tarkanan's Marked Syndicate offers tactical assassin networks and aberrant mark enhancements.
+<p><li>  <strong>Renown -5 (Contract Out):</strong> Tarkanan shadows track the party. During random encounters on the surface, there is a 50% chance a Tarkanan assassin attacks from stealth, launching a poisoned bolt (Fort DC 16 or sleep).</li>
+<li>  <strong>Renown +2 (Marked Friend):</strong> Safehouse Access. The party is granted access to the Tarkanan sewer bunkers, providing a secure location to rest where they cannot be tracked by mundane or magical means.</li>
+<li>  <strong>Renown +5 (Mark-Bearer):</strong> <strong>Aberrant Weaponry.</strong> Thora grants the party access to their private smiths. Weapon attacks made by the party can be coated in Tarkanan acid (dealing +1d6 acid damage on hits, lasts for 1 hour; cost 50 gp per vial).</li>
+<li>  <strong>Renown +8 (Shadow Agent):</strong> <strong>Tarkanan Support.</strong> Once per combat, when operating in the Sluice Districts or surface, the party can call in a sniper strike. One target takes 5d6 sneak attack damage from a hidden crossbowman (Ref DC 18 half).</li>
+<li>  <strong>Renown +10 (Dragonmark Lord):</strong> <strong>Aberrant Synergy.</strong> The party can buy custom magic items that enhance aberrant dragonmarks, allowing them to cast their mark spells an extra time per day without taking the usual physical toll.</li></p>
+<p>---</p>
+<h3>C. THE LORDS OF DUST (The Fiends)</h3>
+Coordinated by Terik (Hruujj), the Lords of Dust offer ancient secrets, raw wealth, and occult manipulation.
+<p><li>  <strong>Renown -5 (Prophecy Curse):</strong> The fiends shift their calculations. The party suffers a permanent -2 penalty on all saving throws against spells of the Enchantment or Illusion school as the Lords of Dust weave fate against them.</li>
+<li>  <strong>Renown +2 (Mercenary):</strong> <strong>Fiendish Insight.</strong> Terik provides the party with historical intelligence, granting a +4 bonus on History or Arcana checks relating to ancient fiends or the Draconic Prophecy.</li>
+<li>  <strong>Renown +5 (Contractor):</strong> <strong>Rakshasa Shroud.</strong> Terik provides the party with 3 <em>Disguise Tokens</em>. When cracked, they cast <em>Disguise Self</em> (Caster Level 10) and shield the user's alignment from detection for 8 hours.</li>
+<li>  <strong>Renown +8 (Prophecy Weaver):</strong> <strong>Ancient Pact.</strong> The Lords of Dust offer a contract to rewrite a single event. Once per campaign, the party can reroll any failed saving throw or attack roll with a +5 bonus. However, doing so increases the city's <strong>Suspicion Level</strong> by 2 as fate bends erratically.</li>
+<li>  <strong>Renown +10 (Ascendant Agent):</strong> <strong>Fiendish Weaponry.</strong> Terik grants the party access to ancient weapons sheathed in evil energy (adding the <em>Unholy</em> or <em>Anarchic</em> property to one weapon of their choice).</li></p>
+<p>---</p>
+<h3>D. THE SYSTEMIC COUNTER-TRACK: SUSPICION (The Heat)</h3>
+This track represents how aware the local templars and city watch are of the party's illicit operations. It starts at <strong>0</strong> and maxes at <strong>10</strong>.
+<p><li>  <strong>Suspicion 2:</strong> City watch guards are more alert. Disguise and Hide checks in public areas suffer a -2 penalty.</li>
+<li>  <strong>Suspicion 5:</strong> Sewer patrols are doubled. Random encounters with Templar inquisitors become common.</li>
+<li>  <strong>Suspicion 8:</strong> Warrants are issued. The city gates and harbor locks are closed to the party. Smuggling checks suffer a -5 penalty.</li>
+<li>  <strong>Suspicion 10:</strong> <strong>The Purge.</strong> The Templars launch a full inquisitorial sweep of the Sluices. Sablehook must engage the <strong>Tri-Weave Shroud</strong> immediately, locking down the compound and preventing all trade.</li></ul></p>
+      </section>
+      <div class="page-break"></div>
+    
+      <section class="chapter-section">
+        <h1>Player Options, Feats, and Underworld Equipment</h1>
+<h2>Campaign Player's Guide (D&D 3.5 / Pathfinder 1E)</h2>
+<p>This chapter provides players with thematic character options, custom feats, and specialized equipment to help integrate their characters into the campaign's setting and mechanics.</p>
+<p>---</p>
+<h1>PART I: THEMATIC CAMPAIGN TRAITS</h1>
+<p>Traits are minor background benefits that help anchor a character's history in the setting of Blackwater Quay. Each character may select two traits at character creation.</p>
+<h3>Consortium Escapee</h3>
+<ul><li>  <strong>Background:</strong> You spent months or years in the Thessalan Consortium's containment pens before escaping with Banki's survivors. Your body has built up a high resistance to their experiments.</li>
+<li>  <strong>Benefit:</strong> You gain a +2 trait bonus on saving throws against poison, acid, and transmutation effects.</li>
+<h3>Sovereign Corsair</h3>
+<li>  <strong>Background:</strong> You serve in Captain Mikhailis's flotilla, navigating the dangerous waterways of the Underdark on the <em>Onyx Wake</em> or its sister ships.</li>
+<li>  <strong>Benefit:</strong> You gain a +1 trait bonus on Acrobatics and Swim checks, and Swim is always a class skill for you.</li>
+<h3>Aberrant Scion</h3>
+<li>  <strong>Background:</strong> You bear an aberrant dragonmark that marks you as an outcast, drawing you to The Tarkanan's Marked Syndicate's protection.</li>
+<li>  <strong>Benefit:</strong> You gain a +2 trait bonus on saves against dragonmark effects, and your caster level for your aberrant dragonmark's spell-like ability increases by 1.</li>
+<h3>Sewer Rat</h3>
+<li>  <strong>Background:</strong> You have spent years hiding in the Northern Sluices, learning to navigate the damp, dark tunnels beneath the city.</li>
+<li>  <strong>Benefit:</strong> You gain a +2 trait bonus on Hide and Move Silently checks when inside sewers, caverns, or subterranean areas.</li>
+<h3>Tarkanan Shadow</h3>
+<li>  <strong>Background:</strong> You were trained by Thora's elite assassins to handle poisons and blend into the architectural shadows of the Quay.</li>
+<li>  <strong>Benefit:</strong> You gain a +2 trait bonus on Sleight of Hand checks made to conceal small weapons or apply poisons, and you are immune to accidental self-poisoning.</li>
+<h3>Planar Exile</h3>
+<li>  <strong>Background:</strong> You have spent time stranded near pocket rifts or planar boundaries, adjusting your body to the harsh physics of other realms.</li>
+<li>  <strong>Benefit:</strong> You gain a +1 trait bonus on Survival checks, and you gain a +2 trait bonus on Fortitude saves made to resist environmental hazards caused by planar alignment or gravity shifts.</li>
+<p>---</p>
+<h1>PART II: CUSTOM CAMPAIGN FEATS</h1>
+<p>These feats are designed to reflect the unique magic, psionics, and biological modifications found in the Blackwater Quay conflict.</p>
+<h3>Sovereign Resonance [General]</h3>
+You can channel a minuscule fraction of the Sovereign Thread's absolute authority to enforce your spells or psionics.
+<li>  <strong>Prerequisites:</strong> Able to cast spells or manifest psionics, Wisdom 15.</li>
+<li>  <strong>Benefit:</strong> Once per day, when casting a spell or manifesting a psionic power, you can choose to bypass the target's Spell Resistance or Power Resistance automatically.</li>
+<li>  <strong>Special:</strong> Utilizing this foundational rule of law is thoroughly mentally taxing. You take 1d3 points of temporary Intelligence damage immediately after the spell or power is resolved.</li>
+<h3>Sovereign Anchor [General]</h3>
+Your connection to the Sovereign Thread allows you to shield others from planar or magical disruption.
+<li>  <strong>Prerequisites:</strong> Sovereign Resonance, Charisma 15.</li>
+<li>  <strong>Benefit:</strong> You can use your Sovereign Resonance twice per day. When you activate it, you can choose to extend a 5-ft. radius field around yourself. All allies within this area gain a +4 deflection bonus to AC and a +4 resistance bonus on saving throws against spells, psionics, and extraplanar abilities for 1 round.</li>
+<h3>Aberrant Surge [General]</h3>
+You can force your aberrant dragonmark to discharge magic in rapid succession, at a heavy physical cost.
+<li>  <strong>Prerequisites:</strong> Possess an aberrant dragonmark, Great Fortitude.</li>
+<li>  <strong>Benefit:</strong> As a swift action, you can expend one of your Hit Dice to instantly recharge the daily use of your aberrant dragonmark's spell-like ability.</li>
+<li>  <strong>Special:</strong> The physical strain is immense. You are <em>sickened</em> for 1d4 rounds after activating this ability, and your aberrant mark weeps blood, causing a -2 penalty to Charisma-based checks for 24 hours.</li>
+<h3>Fleshwarped Resilience [General]</h3>
+Your body has been altered by Suture's clinics or Consortium experiments, hardening your flesh.
+<li>  <strong>Prerequisites:</strong> Constitution 15, Great Fortitude.</li>
+<li>  <strong>Benefit:</strong> You gain Damage Reduction 2/Byeshk. You also gain a +4 racial bonus on saving throws against transmutation and fleshwarping effects.</li>
+<h3>Tentacle Graft Mastery [Fleshwarped]</h3>
+You have successfully adapted a displacer tentacle graft, turning it into a lethal limb.
+<li>  <strong>Prerequisites:</strong> Fleshwarped Resilience, Base Attack Bonus +4.</li>
+<li>  <strong>Benefit:</strong> You grow a secondary natural weapon (a displacer tentacle). Once per round, you can make a tentacle attack as a secondary natural weapon (1d6 bludgeoning damage for Medium characters) with a 10-foot reach. This attack does not provoke attacks of opportunity.</li>
+<h3>Eldritch Claw Attunement [Fleshwarped]</h3>
+Your natural weapons or unarmed strikes phase through energy shields and physical defenses.
+<li>  <strong>Prerequisites:</strong> Base Attack Bonus +6, Strength 13.</li>
+<li>  <strong>Benefit:</strong> Your natural attacks (including claw grafts or unarmed strikes) ignore deflection bonuses to AC and force-based spells (such as <em>Mage Armor</em>, <em>Shield</em>, or <em>Wall of Force</em>).</li>
+<h3>Closed-Loop Resiliency [General]</h3>
+Your mind is partially shielded by the Vael-Kaelor collective loop, protecting you from mental decay.
+<li>  <strong>Prerequisites:</strong> Wisdom 13, must be aligned with Sablehook.</li>
+<li>  <strong>Benefit:</strong> You are completely immune to confusion, insanity, and feeblemind effects.</li>
+<li>  <strong>Special:</strong> Because your mind is locked into a private network, you cannot receive beneficial telepathic commands or spells (such as <em>Telepathic Bond</em> or <em>Message</em>) from entities outside the collective loop.</li>
+<h3>Tri-Weave Attunement [Metamagic / Metapsionic]</h3>
+You have studied Banki's Tri-Weave channels, allowing you to blend arcane, psionic, and divine energies.
+<li>  <strong>Prerequisites:</strong> Spellcraft 5 ranks, Psicraft 5 ranks.</li>
+<li>  <strong>Benefit:</strong> As a full-round action, you can cast a spell and manifest a psionic power in the same round, provided both the spell and the power are of 2nd level or lower. You must pay all standard spell slot and power point costs.</li>
+<h3>Fractured Chronal Sense [General]</h3>
+Your mind has been exposed to the shifting corridors of The Void of Madness, leaving you with a broken perception of time and space that allows you to read gravity and time distortions.
+<li>  <strong>Prerequisites:</strong> Wisdom 13, must have survived a planar bleeding event or The Void of Madness exposure.</li>
+<li>  <strong>Benefit:</strong> You are completely immune to the <em>disorientation</em> and <em>nausea</em> effects caused by shifting gravity or dimensional pocket rifts. You automatically detect spatial rifts, portals, or displaced/phased creatures within 30 feet as faint, shimmering outlines.</li>
+<li>  <strong>Chronal Foresight (Su):</strong> As a swift action, you can read the chronal drift to predict local gravity shifts or planar distortions 1 round before they occur. By calling out early warnings, you grant all allies within 30 feet a +4 insight bonus on saving throws to resist falling damage, spatial disorientation, or kinetic impacts from planar shifts for 1 round.</li>
+<li>  <strong>Time-Slip (Su):</strong> Once per day, as an immediate action, when you are targeted by an attack, spell, or psionic effect, you can slip your personal timeline fractionally. This grants you a +4 dodge bonus to AC and a +4 resistance bonus on saving throws against that specific effect, or forces the attacker to reroll their attack roll (your choice).</li>
+<li>  <strong>Drawback (The Void of Madness Vulnerability):</strong> Because your mind is permanently open to the chaotic, whispering timeline of the Realm of Madness, you suffer a -2 penalty on saving throws against mind-affecting effects cast by aberrations. If you fail such a save, you are <em>confused</em> for 1d4 rounds in addition to the spell's normal effects.</li>
+<p>---</p>
+<h1>PART III: UNDERWORLD EQUIPMENT, DRUGS, & GRAFTS</h1>
+<p>This equipment is traded on the black market of the Belowmarket Deep and utilized by the factions of Sablehook.</p>
+<h3>1. ALCHEMICAL DRUGS & MUTAGENS</h3>
+<table class="ttrpg-table"><tr><td>Item</td><td>Cost</td><td>Weight</td></tr></table> Craft (Alchemy) DC | Effect |
+<table class="ttrpg-table"><tr><td>:---</td><td>:---</td><td>:---</td></tr></table> :--- | :--- |
+<table class="ttrpg-table"><tr><td><strong>Blue-Drop</strong> (Vial)</td><td>150 gp</td><td>—</td></tr></table> DC 25 | +4 Int, +5 PP for 1 hour. Followed by -4 Wis, -2 Will saves for 24 hours. (Addictive) |
+<table class="ttrpg-table"><tr><td><strong>Siphon Syringe</strong></td><td>50 gp</td><td>1 lb.</td></tr></table> DC 20 | Extracts fluids from fallen aberrations to create a healing mutagen (heals 3d8+5 hp, but causes hallucinations). |
+<table class="ttrpg-table"><tr><td><strong>Acidic Mutagen</strong></td><td>30 gp</td><td>1 lb.</td></tr></table> DC 18 | Splash weapon. Deals 2d6 acid damage, and target must make a Fort DC 15 save or be <em>sickened</em> for 1d3 rounds. |
+<table class="ttrpg-table"><tr><td><strong>Planar Lock-Wax</strong></td><td>25 gp</td><td>1 lb.</td></tr></table> DC 15 | Applies to door frames. Increases DC of teleportation/planar transit through the portal by +5 for 24 hours. |
+<table class="ttrpg-table"><tr><td><strong>Fey-Metal Caltrops</strong></td><td>10 gp</td><td>2 lbs.</td></tr></table> DC 12 | Caltrops that deal damage that bypasses DR/cold iron. |
+<p>#### Blue-Drop Addiction Rules
+Blue-Drop is a derivative compound created by the Elder Node to chemically comply the populace. 
+<li>  <strong>Addiction Rating:</strong> Extreme.</li>
+<li>  <strong>Withdrawal Symptoms:</strong> If a character goes 24 hours without a dose, they must succeed on a Will DC 20 check or suffer 1d4 points of temporary Wisdom damage. This check must be made every 24 hours until the character is cured via <em>Remove Disease</em> or <em>Neutralize Poison</em>.</li></p>
+<p>---</p>
+<h3>2. BIOMANTIC FLESHWARPED GRAFTS</h3>
+Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate agents. Applying a graft requires a Heal check (DC equals 15 + graft level) and 24 hours of recovery. 
+<p>A character can bear a maximum number of grafts equal to their Constitution modifier (minimum 1). Grafts are semi-permanent; removing one requires a surgical operation (Heal DC 25) that deals 2d6 Constitution damage.</p>
+<pre><code>+---------------------------------------------------------+
+       |                  GRAFT SLOTS & OPTIONS                  |
+       +---------------------------------------------------------+
+       |  [HEAD]  --> Illithid Feeding Tentacles / Vocal Mesh   |
+       |  [EYES]  --> Shatterglass Corneas / Aqueous Gaze        |
+       |  [ARMS]  --> Eldritch Claws / Spliced Manipulators      |
+       |  [LEGS]  --> Webbed Digits / Spring-Steel Sinews         |
+       |  [TORSO] --> Troll-Blood Infusion / Displacer Fur       |
+       |  [SPINE] --> Choker Spine / Planar Anchor Node          |
+       |  [SKIN]  --> Lead-Silver Runes                          |
+       +---------------------------------------------------------+</code></pre>
+<p>#### A. HEAD SLOT GRAFTS</p>
+<p>##### Illithid Feeding Tentacles
+<li>  <strong>Cost:</strong> 5,000 gp.</li>
+<li>  <strong>Description:</strong> Two thick, purple tentacles are grafted beneath the jawline, hidden inside a high-collared coat until uncoiled.</li>
+<li>  <strong>Effect:</strong> You gain a secondary natural attack with your tentacles, dealing 1d4 bludgeoning damage. If you hit a Medium or smaller creature with a tentacle attack, you can attempt to start a grapple as a free action without provoking attacks of opportunity.</li></p>
+<p>##### High Cantor's Vocal Mesh
+<li>  <strong>Cost:</strong> 6,500 gp.</li>
+<li>  <strong>Description:</strong> Your larynx is hollowed out and replaced with a resonant fey-metal mesh infused with necrotic cantor marrow.</li>
+<li>  <strong>Effect:</strong> Once per day, as a standard action, you can release a concussive scream in a 15-ft. cone. All creatures in the area take 4d6 sonic damage and are <em>deafened</em> for 1d4 rounds (Fort DC 16 half, negates deafened).</li></p>
+<p>---</p>
+<p>#### B. EYES SLOT GRAFTS</p>
+<p>##### Shatterglass Corneas
+<li>  <strong>Cost:</strong> 3,500 gp.</li>
+<li>  <strong>Description:</strong> Your eyes are replaced with crystalline lenses that refract light in shifting, prismatic colors.</li>
+<li>  <strong>Effect:</strong> You gain low-light vision and are completely immune to gaze attacks and blinding effects (such as <em>Blindness/Deafness</em> or <em>Color Spray</em>).</li></p>
+<p>##### Aqueous Gaze
+<li>  <strong>Cost:</strong> 4,000 gp.</li>
+<li>  <strong>Description:</strong> Spliced eyes harvested from aquatic sea-wolves, reflecting light with a silver mirror-sheen.</li>
+<li>  <strong>Effect:</strong> You gain darkvision 60 ft. You can see clearly through water, mist, or silt up to 60 ft., completely ignoring concealment penalties caused by murky liquids or fog.</li></p>
+<p>---</p>
+<p>#### C. ARMS SLOT GRAFTS</p>
+<p>##### Eldritch Claws
+<li>  <strong>Cost:</strong> 5,500 gp.</li>
+<li>  <strong>Description:</strong> Rusted darkwood claws are grafted directly onto your fingertips, wired to your nervous system.</li>
+<li>  <strong>Effect:</strong> You gain two natural claw attacks, dealing 1d6 slashing damage (Medium). These claws bypass Damage Reduction as if they were magic weapons.</li></p>
+<p>##### Spliced Manipulators
+<li>  <strong>Cost:</strong> 4,500 gp.</li>
+<li>  <strong>Description:</strong> A pair of small, jointed chitinous limbs are grafted beneath your primary shoulders.</li>
+<li>  <strong>Effect:</strong> These limbs are too weak to hold weapons, but they grant a +4 racial bonus on Sleight of Hand, Climb, and Disable Device checks. You can hold minor items (such as potions or lockpicks) in these limbs, allowing you to draw them as a free action.</li></p>
+<p>---</p>
+<p>#### D. LEGS SLOT GRAFTS</p>
+<p>##### Webbed Digits
+<li>  <strong>Cost:</strong> 3,000 gp.</li>
+<li>  <strong>Description:</strong> Suture stretches fey skin and webs the joints between your toes.</li>
+<li>  <strong>Effect:</strong> You gain a Swim speed of 30 ft. If you already have a swim speed, it increases by +10 ft. You also gain a +4 racial bonus on Swim checks.</li></p>
+<p>##### Spring-Steel Sinews
+<li>  <strong>Cost:</strong> 6,500 gp.</li>
+<li>  <strong>Description:</strong> Spliced troll sinew and coiled fey-metal wiring replace your calf muscles.</li>
+<li>  <strong>Effect:</strong> Your land speed increases by +10 ft. (enhancement bonus). You also gain a +8 enhancement bonus on Jump checks, and you always count as having a running start for jump checks.</li></p>
+<p>---</p>
+<p>#### E. TORSO SLOT GRAFTS</p>
+<p>##### Troll-Blood Infusion
+<li>  <strong>Cost:</strong> 12,000 gp.</li>
+<li>  <strong>Description:</strong> Your lymphatic system is rewired to a gland that continuously secretes hyper-regenerative scrag blood.</li>
+<li>  <strong>Effect:</strong> You gain Fast Healing 2.</li>
+<li>  <strong>Drawback:</strong> The metabolic demand is high. You must consume double the normal amount of food and water daily. You also suffer a -2 penalty on saving throws against fire and acid effects.</li></p>
+<p>##### Displacer Hide Sheathing
+<li>  <strong>Cost:</strong> 10,000 gp.</li>
+<li>  <strong>Description:</strong> Shorn strips of displacer beast fur and hide are grafted onto your chest, back, and shoulders.</li>
+<li>  <strong>Effect:</strong> The shifting properties of the hide grant you a permanent +2 deflection bonus to AC, and all ranged attacks against you suffer a 20% miss chance.</li></p>
+<p>##### Dire Displacer Tentacles (Apex Graft)
+<li>  <strong>Graft Slot:</strong> Torso and Spine (consumes both slots due to size and muscular strain).</li>
+<li>  <strong>Requirements:</strong> Sablehook Renown +8 (Sovereign Ally), 18,000 gp, 2 fresh cores of a <em>Thessalan Displacer Beast</em> (harvested within 24 hours of surgery), and 10 lbs of <em>blackwater ironwood</em> to stabilize the bone-anchor mounts.</li>
+<li>  <strong>Surgical Risk:</strong> Heal DC 30. If the roll fails by 5 or more, the recipient's body rejects the tissue, dealing 4d6 points of permanent Constitution damage (can only be restored by <em>Wish</em> or <em>Miracle</em>).</li>
+<li>  <strong>Description:</strong> Suture bolts two massive, blue-furred displacer beast tentacles directly into your shoulder blades, reinforcing the bone-connections with blackwater ironwood anchors and copper injection conduits.</li>
+<li>  <strong>Effect:</strong> You gain two secondary natural tentacle attacks dealing 1d8 bludgeoning + Strength modifier damage, with a <strong>15-foot reach</strong> (10-ft reach for Small characters). You can make attacks of opportunity against any creature entering or moving within your 15-ft threat range.</li>
+<li>  <strong>Refractive Shielding:</strong> The tentacles warp light around your torso, granting you a permanent 20% miss chance against all physical attacks.</li>
+<li>  <strong>Drawback:</strong> The massive weight and kinetic spasms of the tentacles place an ongoing strain on your nervous system, inflicting a permanent -2 penalty to Dexterity and a -4 penalty on Hide checks made on land.</li></p>
+<p>---</p>
+<p>#### F. SPINE SLOT GRAFTS</p>
+<p>##### Choker Spine
+<li>  <strong>Cost:</strong> 8,000 gp.</li>
+<li>  <strong>Description:</strong> A modified choker spine is spliced alongside your vertebrae, expanding your reflexes.</li>
+<li>  <strong>Effect:</strong> Once per day, as a swift action, you can activate the graft to gain the benefits of a <em>Haste</em> spell for 3 rounds.</li></p>
+<p>##### Planar Anchor Node
+<li>  <strong>Cost:</strong> 7,500 gp.</li>
+<li>  <strong>Description:</strong> A heavy lead-silver bracket is bolted directly into your thoracic vertebrae.</li>
+<li>  <strong>Effect:</strong> You are immune to teleportation attempts made by hostile entities. You also gain a +8 bonus on checks to resist telekinetic shoves, wind gusts, and planar gravity pulls.</li></p>
+<p>---</p>
+<p>#### G. SKIN SLOT GRAFTS</p>
+<p>##### Lead-Silver Runes
+<li>  <strong>Cost:</strong> 3,000 gp.</li>
+<li>  <strong>Description:</strong> Runes of silver wire and lead foil are etched directly into your flesh, humming with abjuration magic.</li>
+<li>  <strong>Effect:</strong> You gain Spell Resistance 15 against Divination spells and telepathic scans. Attempting to locate you via scrying fails automatically.</li></p>
+<p>---</p>
+<h3>3. SPECIALIZED SMUGGLING GEAR</h3>
+<p>#### Lead-Silver Armor Wards
+<li>  <strong>Cost:</strong> +500 gp (applied to any suit of armor).</li>
+<li>  <strong>Weight:</strong> +5 lbs.</li>
+<li>  <strong>Description:</strong> Thin plates of lead and silver wire are sewn into the lining of the armor.</li>
+<li>  <strong>Benefit:</strong> The wearer is completely immune to telepathic tracking, scrying, and mind-reading spells. Additionally, the wearer gains a +2 deflection bonus to AC against attacks made by aberrations.</li></p>
+<p>#### Alchemical Burn Masks
+<li>  <strong>Cost:</strong> 15 gp.</li>
+<li>  <strong>Weight:</strong> 2 lbs.</li>
+<li>  <strong>Description:</strong> Heavy leather masks with thick glass goggles and filters soaked in vinegar.</li>
+<li>  <strong>Benefit:</strong> The wearer gains a +4 circumstance bonus on saves against sewer gas, chemical vapors, and inhaled poisons.</li></ul></p>
+      </section>
+      <div class="page-break"></div>
+    
+      <section class="chapter-section">
+        <h1>Campaign NPC Roster: Faction Patrons and Legendary Entities</h1>
+<h2>Character Dossiers and Narrative Integration</h2>
+<p>In this campaign module, the primary characters of your novel are positioned as <strong>Faction Patrons and Legendary Entities</strong>. They do not function as standard combat companions or targets; their power scales are narrative forces. Mikhailis Vael-Kaelor is a biomantic terror, and Banki is the sovereign anchor of Sablehook. The players (the PCs) are the active field agents operating under their guidance and coordination.</p>
+<p>---</p>
+<h2>1. DR. MIKHAILIS VAEL-KAELOR (Kael)</h2>
+<ul><li>  <strong>Role:</strong> Faction Patron (Sablehook) / Planar Compass</li>
+<li>  <strong>Classification:</strong> Legendary Entity / Biomantic Horror (Not combatable)</li>
+<li>  <strong>Overview:</strong> Mikhailis is a biological nuclear weapon. A terrifying fey monstrosity of the House of the Silver Lattice (Clan Vael-Kaelor), he has been subjected to extreme bio-magical modifications. Beneath his Shadar-kai mortal disguise, Kael's true form is a towering Half-Minotaur frame with rows of razor-sharp fey fangs, massive leathery phase-shifting wings, 4 writhing Dire Displacer Tentacles, and 6 Eldritch Claws that can phase straight through physical armor. He is a brutal, chaotic, Viking-themed pirate captain (the "Sovereign Corsair" or the "Severing Edge") who takes joy in physical plunder. His mind is scarred with drift-fire and The Void of Madness's non-Euclidean geometry, which he uses to guide the flotilla.</li>
+<h3>Dialogue Cues & Personality</h3>
+<li>  <em>Quote:</em> <em>"A lock is just a door that hasn't met the right timeline. Stand back, little sparks, let's see how this stone tasted ten winters ago."</em></li>
+<li>  <em>Mannerisms:</em> Speaks in a manic, booming voice, constantly cracking his knuckles. He walks with a rolling sea-swagger, and his wings twitch when he senses gravity shifts.</li>
+<li>  <em>Roleplaying Tip:</em> Play him as larger-than-life, chaotic, and fiercely protective of his crew. He treats his brother Banki's rules with mock compliance but will kill anyone who threatens the PixIllithid.</li>
+<h3>Narrative Powers (System Rules)</h3>
+<li>  <strong>Biological Disassembly (Su):</strong> If any creature attempts to attack Mikhailis, he can mentally disassemble their cellular structure with a thought. In game terms, any hostile action directed at him triggers an immediate Fortitude DC 30 save; failure results in the attacker being dissolved into raw biomantic slurry.</li>
+<li>  <strong>The Fractured Compass (Su):</strong> Mikhailis guides the party through the shifting geometry of the Deepmind Annex. While within 60 ft. of his presence, the PCs gain a +10 bonus to navigate planar distortions and are immune to The Void of Madness's madness.</li>
+<li>  <strong>Collective Whispers:</strong> Mikhailis can tap into the Vael-Kaelor closed loop to communicate telepathically with Banki at any distance, coordinating battle tactics across the city.</li>
+<p>---</p>
+<h2>2. BANKI (The PixIllithid)</h2>
+<li>  <strong>Role:</strong> Faction Patron (Leader of Sablehook)</li>
+<li>  <strong>Classification:</strong> Legendary Entity / Sovereign Anchor</li>
+<li>  <strong>Overview:</strong> Banki III is Kael's brother, also a scion of the House of the Silver Lattice. Spliced by the Consortium, he is a fey pixie hybridized with illithid biology. Unlike standard illithids, he has no connection to the Elder Brain, sharing a closed-loop collective consciousness with the Vael-Kaelor survivors. He carries the Tri-Weave flail, the <em>Null-Fang</em>, and has exclusive access to the Sovereign Thread. He is the cold, logical, highly mathematical sovereign authority of Sablehook, ruling the syndicate from the shadows.</li>
+<h3>Dialogue Cues & Personality</h3>
+<li>  <em>Quote:</em> <em>"The equation of this Quay has only one solution: compliance or termination. Suture, prepare the vats; we have variables to extract."</em></li>
+<li>  <em>Mannerisms:</em> Completely calm and detached. He floats 2 feet off the ground at all times. His four purple facial tentacles writhe lazily as he calculates coordinates.</li>
+<li>  <em>Roleplaying Tip:</em> Play him as cold, analytical, and highly structured. He views emotions as biological noise, but his actions are entirely driven by a desire to keep the surviving Consortium escapees safe.</li>
+<h3>Narrative Powers (System Rules)</h3>
+<li>  <strong>Anchor of the Tri-Weave Shroud (Su):</strong> Banki maintains the massive cloaking field over the Sablehook compound. By anchoring the Sovereign Thread—an immutable Rule of Law more foundational than Divinity—he keeps the compound completely invisible to all mortal, magical, and divine detection. Maintaining this is thoroughly mentally taxing, requiring him to remain in a trance-like state inside the vaults.</li>
+<li>  <strong>Tri-Weave Negation Field (Su):</strong> During major encounters (such as the Githyanki air raid in Act III), Banki can project a negation aura through the Null-Fang. This acts as an environmental field effect: all hostile spells, psionic powers, or extraplanar summons within 100 ft. of Sablehook's inner vaults are automatically negated without a roll.</li>
+<p>---</p>
+<h2>3. SABLE & KESSLER (Faction Lieutenants)</h2>
+<h3>SABLE (Sablehook Coordinator) — CR 11</h3>
+<em>A cold, pragmatic female Shadar-kai rogue who wears a heavy, lead-lined leather coat and coordinates syndicate operations with clockwork precision.</em>
+<li>  <strong>Class/Race:</strong> Rogue 11</li>
+<li>  <strong>Hit Dice:</strong> 11d6+22 (63 hp)</li>
+<li>  <strong>Initiative:</strong> +8</li>
+<li>  <strong>Speed:</strong> 30 ft.</li>
+<li>  <strong>Armor Class:</strong> 21 (+5 Dex, +5 leather armor +2, +1 ring of protection), touch 16, flat-footed 16</li>
+<li>  <strong>Base Attack/Grapple:</strong> +8/+9</li>
+<li>  <strong>Attacks:</strong> Shortbow +14/+9 ranged (1d6+2/x3 plus sleep poison) or Dagger +13 melee (1d4+2/19-20)</li>
+<li>  <strong>Special Attacks:</strong> Sneak Attack +6d6, Crippling Strike.</li>
+<li>  <strong>Saves:</strong> Fort +5, Ref +12, Will +4</li>
+<li>  <strong>Abilities:</strong> Str 12, Dex 20, Con 14, Int 14, Wis 12, Cha 8</li>
+<li>  <strong>Tactics:</strong> Sable stays at range, using stealth to snipe targets with poisoned arrows while directing enforcers. She will retreat if reduced to under 15 HP.</li>
+<h3>KESSLER (Tarkanan Commander) — CR 11</h3>
+<em>A scarred human fighter bearing an acid-dripping aberrant dragonmark that crawls like vines up her neck.</em>
+<li>  <strong>Class/Race:</strong> Human Fighter 7 / Tarkanan Assassin 4</li>
+<li>  <strong>Hit Dice:</strong> 7d10+14 plus 4d6+8 (78 hp)</li>
+<li>  <strong>Initiative:</strong> +6</li>
+<li>  <strong>Speed:</strong> 30 ft.</li>
+<li>  <strong>Armor Class:</strong> 22 (+2 Dex, +8 breastplate +2, +2 heavy steel shield), touch 12, flat-footed 20</li>
+<li>  <strong>Base Attack/Grapple:</strong> +10/+13</li>
+<li>  <strong>Attacks:</strong> Longsword +15/+10 melee (1d8+5/19-20 plus 1d6 acid)</li>
+<li>  <strong>Special Attacks:</strong> Death Attack (DC 16), Poison Use, Aberrant Mark (can cast <em>Acid Arrow</em> 3/day, caster level 11th).</li>
+<li>  <strong>Saves:</strong> Fort +9, Ref +7, Will +4</li>
+<li>  <strong>Abilities:</strong> Str 17, Dex 15, Con 14, Int 12, Wis 10, Cha 8</li>
+<li>  <strong>Tactics:</strong> Kessler charges into combat, using her shield to bash targets flat-footed before executing sneak attacks and releasing acid marks.</li>
+<p>---</p>
+<h2>4. NPC STAT BLOCKS (Combatable Entities)</h2>
+<p>The characters that <em>do</em> have standard combat stat blocks in the module are the mercenary commanders, Githyanki raiders, and rakshasa coordinators.</p>
+<h3>ZANIPH (Githyanki Deserter) — CR 10</h3>
+<em>A scarred Githyanki warrior who chose survival over Vlaakith's service. His silver sword is broken, but he fights with its jagged remnant as a heavy dagger.</em>
+<li>  <strong>Class/Race:</strong> Githyanki Fighter 10</li>
+<li>  <strong>Hit Dice:</strong> 10d10+30 (85 hp)</li>
+<li>  <strong>Initiative:</strong> +6</li>
+<li>  <strong>Speed:</strong> 30 ft. (in medium armor)</li>
+<li>  <strong>Armor Class:</strong> 22 (+2 Dex, +8 full plate, +2 deflection), touch 12, flat-footed 20</li>
+<li>  <strong>Base Attack/Grapple:</strong> +10/+13</li>
+<li>  <strong>Attacks:</strong> Broken Silver Dagger +15/+10 melee (1d6+5/19-20 plus psionic disruption)</li>
+<li>  <strong>Special Attacks:</strong> <strong>Psionic Disruption:</strong> On hit with his silver dagger, the target must succeed on a Will DC 18 save or be unable to manifest psionics or cast spells for 1 round.</li>
+<li>  <strong>Saves:</strong> Fort +10, Ref +5, Will +4</li>
+<li>  <strong>Abilities:</strong> Str 16, Dex 15, Con 16, Int 12, Wis 10, Cha 8</li>
+<li>  <strong>Feats:</strong> Weapon Focus (Dagger), Weapon Specialization (Dagger), Power Attack, Cleave, Great Cleave, Improved Initiative, Iron Will.</li>
+<li>  <strong>Tactics:</strong> Zaniph uses Power Attack to shred the defenses of spellcasters and psionicists, targeting them first to trigger his dagger's disruption field.</li>
+<h3>TERIK / HRUUJJ (Rakshasa Middleman) — CR 11</h3>
+<em>A shape-shifting agent of the Lords of Dust disguised as a tiefling merchant. In combat, he sheds his disguise, revealing a golden-furred tiger-headed fiend with backward hands.</em>
+<li>  <strong>Class/Race:</strong> Rakshasa Sorcerer 4</li>
+<li>  <strong>Hit Dice:</strong> 7d8+21 plus 4d4+12 (81 hp)</li>
+<li>  <strong>Initiative:</strong> +2</li>
+<li>  <strong>Speed:</strong> 40 ft.</li>
+<li>  <strong>Armor Class:</strong> 21 (+2 Dex, +9 natural), touch 12, flat-footed 19</li>
+<li>  <strong>Base Attack/Grapple:</strong> +7/+9</li>
+<li>  <strong>Attacks:</strong> Claw +10 melee (1d4+2) and Bite +5 melee (1d6+1)</li>
+<li>  <strong>Special Attacks:</strong> Detect Thoughts (Su, DC 18), Spells (Sorcerer level 8th).</li>
+<li>  <strong>Spells Known (Caster Level 8th):</strong></li>
+    <em>   </em>3rd (4/day):<em> </em>Displacement, Lightning Bolt* (DC 17)
+    <em>   </em>2nd (6/day):<em> </em>Mirror Image, Invisibility, Touch of Idiocy*
+    <em>   </em>1st (7/day):<em> </em>Charm Person<em> (DC 15), </em>Mage Armor, Magic Missile, Shield*
+    <em>   </em>0 (6/day):<em> </em>Detect Magic, Mage Hand, Read Magic, Ghost Sound*
+<li>  <strong>Saves:</strong> Fort +8, Ref +9, Will +10</li>
+<li>  <strong>Damage Reduction:</strong> DR 15/Good and Piercing</li>
+<li>  <strong>Abilities:</strong> Str 14, Dex 14, Con 16, Int 15, Wis 12, Cha 18</li>
+<li>  <strong>Feats:</strong> Alertness, Combat Casting, Dodge, Spell Focus (Evocation).</li>
+<li>  <strong>Tactics:</strong> Terik casts <em>Mirror Image</em> and <em>Shield</em> before combat. He remains invisible while casting <em>Touch of Idiocy</em> on physical attackers, then releases <em>Lightning Bolt</em> from safe corners.</li></ul>
+
+      </section>
+      <div class="page-break"></div>
+    
+      <section class="chapter-section">
+        <h1>Campaign Bestiary: Aberrations, Horrors, and Draconic Bosses</h1>
+<h2>TTRPG Stat Blocks (D&D 3.5 / Pathfinder 1E)</h2>
+<p>---</p>
+<h2>1. THE CHIRG-ILLITHID (Elder Node Avatar) — CR 11</h2>
+<em>A bloated, slime-covered humanoid whose face is a mass of weeping purple tentacles. Its skin is translucent, revealing pulsing brain matter beneath. It is a biological extension of the subterranean Elder Node, acting as its voice and hands on the surface.</em>
+<ul><li>  <strong>Size/Type:</strong> Large Aberration (Psi-Active)</li>
+<li>  <strong>Hit Dice:</strong> 10d8+50 (95 hp)</li>
+<li>  <strong>Initiative:</strong> +4</li>
+<li>  <strong>Speed:</strong> 30 ft.</li>
+<li>  <strong>Armor Class:</strong> 22 (-1 size, +4 Dex, +9 natural), touch 13, flat-footed 18</li>
+<li>  <strong>Base Attack/Grapple:</strong> +7/+16</li>
+<li>  <strong>Attacks:</strong> 4 Tentacles +11 melee (1d6+5 plus attach)</li>
+<li>  <strong>Space/Reach:</strong> 10 ft. / 10 ft.</li>
+<li>  <strong>Special Attacks:</strong> </li>
+    <em>   </em>Mind Blast (Sp):* 60-ft. cone, stun 1d4 rounds, Will DC 20 negates (usable once every 1d4 rounds).
+    <em>   </em>Extract Brain (Ex):* If the Chirg-Illithid begins its turn with at least one tentacle attached to a grappled foe, it can make a grapple check to maintain. If successful, it attaches all remaining tentacles and extracts the brain, instantly killing the target.
+<li>  <strong>Special Qualities:</strong> Spell Resistance 22, Telepathy 100 ft., Secretion Aura.</li>
+<li>  <strong>Saves:</strong> Fort +8, Ref +7, Will +9</li>
+<li>  <strong>Abilities:</strong> Str 20, Dex 18, Con 20, Int 19, Wis 15, Cha 16</li>
+<li>  <strong>Feats:</strong> Combat Casting, Improved Initiative, Multiattack, Weapon Focus (Tentacle).</li>
+<h3>Lore Checks (Knowledge: Dungeon)</h3>
+<li>  <em>DC 15:</em> A bloated mind-flayer variant spliced by the Elder Node. Its tentacles attach to feed.</li>
+<li>  <em>DC 20:</em> It projects a chemical mist (Secretion Aura) that fatigues characters and reduces their willpower, making them vulnerable to psychic control.</li>
+<li>  <em>DC 25:</em> Its translucent skin is weak to sonic attacks; sonic damage ignores its natural armor for 1 round.</li>
+<h3>Combat Tactics</h3>
+1.  <strong>Round 1:</strong> Casts <em>Mind Blast</em> to stun as many targets as possible.
+2.  <strong>Round 2:</strong> Charges the nearest stunned target, using tentacles to grapple.
+3.  <strong>Round 3:</strong> Attempts to maintain the grapple and extract the brain, while its Secretion Aura fatigues nearby defenders.
+<p>---</p>
+<h2>2. THE THESSALAN DISPLACER BEAST (Consortium Prototype) — CR 9</h2>
+<em>A sleek, feline predator with dark blue fur, but mutated with six eyes, a skeletal jaw, and two long tentacles lined with copper needles and chemical conduits that bleed acidic mutagens.</em>
+<p><li>  <strong>Size/Type:</strong> Large Magical Beast</li>
+<li>  <strong>Hit Dice:</strong> 9d10+36 (85 hp)</li>
+<li>  <strong>Initiative:</strong> +3</li>
+<li>  <strong>Speed:</strong> 40 ft.</li>
+<li>  <strong>Armor Class:</strong> 20 (-1 size, +3 Dex, +8 natural), touch 12, flat-footed 17</li>
+<li>  <strong>Base Attack/Grapple:</strong> +9/+18</li>
+<li>  <strong>Attacks:</strong> 2 Tentacles +13 melee (1d8+5 plus mutagenic acid) and Bite +8 melee (1d8+2)</li>
+<li>  <strong>Special Attacks:</strong> </li>
+    <em>   </em>Mutagenic Acid (Ex):<em> Tentacles deal an extra 1d6 acid damage. The target must succeed on a Fort DC 18 save or be </em>sickened* for 1d4 rounds.
+<li>  <strong>Special Qualities:</strong> </li>
+    <em>   </em>Displacement (Su):* The creature warps light, granting a permanent 50% miss chance against all physical and spell attacks. True seeing bypasses this effect.
+    <em>   </em>Spell Resistance 18.*
+<li>  <strong>Saves:</strong> Fort +10, Ref +9, Will +5</li>
+<li>  <strong>Abilities:</strong> Str 21, Dex 17, Con 18, Int 6, Wis 12, Cha 8</li>
+<li>  <strong>Feats:</strong> Alertness, Combat Reflexes, Dodge, Mobility.</li></p>
+<h3>Lore Checks (Knowledge: Arcana)</h3>
+<li>  <em>DC 15:</em> A displacer beast prototype bred by the Thessalan Consortium.</li>
+<li>  <em>DC 20:</em> Its tentacles secrete a sickening mutagenic acid.</li>
+<li>  <em>DC 25:</em> If hit with cold iron weapons, its displacement effect is suppressed for 1 round.</li>
+<h3>Combat Tactics</h3>
+<li>  The beast uses its speed and Combat Reflexes to strike from 10 feet away. It circles the party, attacking spellcasters to disrupt casting with its sickening acid.</li>
+<p>---</p>
+<h2>3. DOLGAUNT CELL-GUARD (The Void of Madness Aberration) — CR 6</h2>
+<em>A gaunt, hairless humanoid with leather-like skin, no eyes, and a mouth filled with needle-sharp teeth. Two long, fleshy tentacles grow from its shoulders, writhing in search of prey.</em>
+<p><li>  <strong>Size/Type:</strong> Medium Aberration</li>
+<li>  <strong>Hit Dice:</strong> 6d8+12 (39 hp)</li>
+<li>  <strong>Initiative:</strong> +3</li>
+<li>  <strong>Speed:</strong> 30 ft.</li>
+<li>  <strong>Armor Class:</strong> 18 (+3 Dex, +5 natural), touch 13, flat-footed 15</li>
+<li>  <strong>Base Attack/Grapple:</strong> +4/+7</li>
+<li>  <strong>Attacks:</strong> 2 Tentacles +7 melee (1d4+3 plus strength drain) and 2 Slams +2 melee (1d3+1)</li>
+<li>  <strong>Special Attacks:</strong> </li>
+    <em>   </em>Strength Drain (Su):* When a tentacle hits, the target must succeed on a Fort DC 15 save or lose 1 point of Strength.
+<li>  <strong>Special Qualities:</strong> Blind-sight 60 ft., Damage Reduction 5/Byeshk or Magic.</li>
+<li>  <strong>Saves:</strong> Fort +4, Ref +5, Will +6</li>
+<li>  <strong>Abilities:</strong> Str 16, Dex 16, Con 14, Int 10, Wis 12, Cha 8</li>
+<li>  <strong>Feats:</strong> Combat Reflexes, Dodge, Weapon Focus (Tentacle).</li></p>
+<h3>Combat Tactics</h3>
+<li>  Dolgaunts crawl along walls and ceilings in dark caverns. They use their blind-sight to attack in total darkness, targeting martial characters to drain their Strength.</li>
+<p>---</p>
+<h2>4. ORAXIS (Dragon of the Chamber) — CR 16</h2>
+<em>An ancient bronze dragon operating in Khorvaire. In his mortal form, he appears as a tall, blind monk wearing saffron robes and carrying a simple wooden staff. In his true form, he is a massive bronze dragon whose breath weapon is a crackling storm of lightning or repulsion gas.</em>
+<p><li>  <strong>Size/Type:</strong> Huge Dragon</li>
+<li>  <strong>Hit Dice:</strong> 18d12+108 (225 hp)</li>
+<li>  <strong>Initiative:</strong> +0</li>
+<li>  <strong>Speed:</strong> 40 ft., fly 150 ft. (Poor)</li>
+<li>  <strong>Armor Class:</strong> 32 (-2 size, +24 natural), touch 8, flat-footed 32</li>
+<li>  <strong>Base Attack/Grapple:</strong> +18/+36</li>
+<li>  <strong>Attacks:</strong> Bite +26 melee (2d8+10), 2 Claws +21 melee (2d6+5), 2 Wings +21 melee (1d8+5)</li>
+<li>  <strong>Space/Reach:</strong> 15 ft. / 10 ft. (15 ft. with bite)</li>
+<li>  <strong>Special Attacks:</strong> </li>
+    <em>   </em>Breath Weapon (Su):* 100-ft. line of lightning (12d6 electricity, Reflex DC 25 half) or 50-ft. cone of repulsion gas (Will DC 25 or be repelled 40 ft. away from the dragon).
+<li>  <strong>Special Qualities:</strong> Damage Reduction 10/Magic, Spell Resistance 25, Alternate Form, Blindsight 60 ft., Prophecy Shield.</li>
+<li>  <strong>Saves:</strong> Fort +17, Ref +11, Will +16</li>
+<li>  <strong>Abilities:</strong> Str 31, Dex 10, Con 23, Int 20, Wis 21, Cha 20</li>
+<li>  <strong>Feats:</strong> Alertness, Combat Casting, Hover, Wing Attack, Spell Focus (Evocation), Iron Will.</li></p>
+<h3>Lore Checks (Knowledge: History)</h3>
+<li>  <em>DC 20:</em> Oraxis is an agent of the Chamber, monitoring the Prophecy.</li>
+<li>  <em>DC 25:</em> His blind monk form is immune to mind reading, and attempts to read his mind deal damage to the scanner.</li>
+<h3>Combat Tactics</h3>
+<li>  Oraxis uses his repulsion breath first to clear the sealing team. He hovers over the cavern, using his line of lightning to strike characters trying to cap the The Void of Madness tears.</li>
+<p>---</p>
+<h2>5. DREADJAW RELLIS (Orc First Mate) — CR 8</h2>
+<em>Formerly "Glassjaw Rellis," this towering Orc has been upgraded by Kael and Suture. His lower face is a metal plate of cold-iron and fey-metal, housing a jaw infused with the High Cantor's marrow, allowing him to release concussive sound waves.</em>
+<p><li>  <strong>Size/Type:</strong> Medium Humanoid (Orc)</li>
+<li>  <strong>Hit Dice:</strong> 8d10+24 (68 hp)</li>
+<li>  <strong>Initiative:</strong> +1</li>
+<li>  <strong>Speed:</strong> 30 ft. (in leather apron)</li>
+<li>  <strong>Armor Class:</strong> 17 (+1 Dex, +6 natural jaw/iron plate), touch 11, flat-footed 16</li>
+<li>  <strong>Base Attack/Grapple:</strong> +8/+12</li>
+<li>  <strong>Attacks:</strong> Greataxe +13/+8 melee (1d12+6/x3)</li>
+<li>  <strong>Special Attacks:</strong> </li>
+    <em>   </em>Dread-Shout (Su):* 30-ft. cone of sonic energy, 6d6 sonic damage, Fort DC 17 half, plus knocked prone on failure (usable 3 times/day).
+<li>  <strong>Special Qualities:</strong> Darkvision 60 ft., Ferocity.</li>
+<li>  <strong>Saves:</strong> Fort +9, Ref +3, Will +2</li>
+<li>  <strong>Abilities:</strong> Str 19, Dex 12, Con 16, Int 10, Wis 10, Cha 8</li>
+<li>  <strong>Feats:</strong> Power Attack, Cleave, Great Cleave.</li></p>
+<h3>Combat Tactics</h3>
+<li>  Rellis bellows his Dread-Shout immediately in melee, knocking opponents down before rushing forward with his greataxe.</li>
+<p>---</p>
+<h2>6. SEA-WOLF HYBRID (Sablehook Fleet Sentinel) — CR 5</h2>
+<em>A sleek, wolf-like humanoid with webbed digits, silver-filmed mirror eyes, and a fur coat that shifts color in water.</em>
+<p><li>  <strong>Size/Type:</strong> Medium Humanoid (Shapechanger)</li>
+<li>  <strong>Hit Dice:</strong> 5d8+10 (32 hp)</li>
+<li>  <strong>Initiative:</strong> +3</li>
+<li>  <strong>Speed:</strong> 30 ft., swim 40 ft.</li>
+<li>  <strong>Armor Class:</strong> 17 (+3 Dex, +4 natural), touch 13, flat-footed 14</li>
+<li>  <strong>Base Attack/Grapple:</strong> +3/+5</li>
+<li>  <strong>Attacks:</strong> Bite +5 melee (1d6+2 plus trip)</li>
+<li>  <strong>Special Attacks:</strong> Trip (on successful bite check).</li>
+<li>  <strong>Special Qualities:</strong> Aqueous Camouflage (grants +8 on Hide checks in water), Low-light vision.</li>
+<li>  <strong>Saves:</strong> Fort +6, Ref +7, Will +2</li>
+<li>  <strong>Abilities:</strong> Str 14, Dex 16, Con 14, Int 10, Wis 12, Cha 8</li>
+<li>  <strong>Feats:</strong> Combat Reflexes, Stealthy.</li></p>
+<h3>Combat Tactics</h3>
+<li>  These sentinels hide in water channels, pulling passing targets under and tripping them to keep them pinned.</li></ul>
+
+      </section>
+      <div class="page-break"></div>
+    
+      <section class="chapter-section">
+        <h1>Campaign Locations & Encounter Keys: The Subterranean Vaults</h1>
+<h2>Dungeon Maps, Hazards, and Room Keys</h2>
+<p>---</p>
+<h2>1. THE NORTHERN SLUICES (Act I Sewer Crawl)</h2>
+<p><em>The sewers beneath the Northern Sluice District are a labyrinth of wet stone, iron grates, and flooded conduits. They have been occupied by the Choir of the Below, who use them to distribute the Elder Node's chemical compounds.</em></p>
+<img src="Maps/northern_sluices_map.png" class="ttrpg-map" alt="The Northern Sluices Sewer Dungeon Map">
+<h3>Room Keys</h3>
+<p>#### S-1: The Sluice Gate
+<ul><li>  <strong>Boxed Text:</strong></li>
+    > <em>A heavy iron gate blocks the mouth of the sewer canal, its bars encrusted with green rust and black slime. Beyond the gate, the vaulted stone ceiling arches over a narrow stone walkway slick with green moss, flanked by a deep channel of sluggish, dark water. Two figures in stained leather aprons stand on the walkway, holding iron-tipped spears and lanterns that cast long, dancing shadows on the brick walls.</em>
+<li>  <strong>Encounter:</strong> <strong>2 Compliant Thugs</strong> (Sentry guards).</li>
+<li>  <strong>Trap: Pipe Flush Tripwire:</strong> A thin cord stretched across the walkway (Search DC 15 to spot). If tripped, a pressure valve opens, flushing acidic sewage gas from a side pipe in a 10-ft cone. All targets in the area must succeed on a DC 15 Reflex save or be knocked prone into the canal and take 2d6 acid damage.</li>
+<li>  <strong>Loot:</strong> Sluice key ring, 15 gp, 1 flask of low-grade alchemical oil.</li></p>
+<p>#### S-2: Drainage Pipe
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>The passage narrows here, forcing you into a low, circular stone conduit. The walkway disappears beneath knee-deep, foul-smelling water that flows with sluggish force. The air is stagnant, warm, and carries a faint sweet scent that burns the nostrils—the unmistakable smell of sewer gas trapped in the masonry.</em>
+<li>  <strong>Hazard: Sewer Gas:</strong> Any open flame (torches, fire spells) triggers an immediate explosion in the 60-ft pipe corridor. All creatures must make a DC 15 Reflex save, taking 3d6 fire damage on a failure (half on success). The explosion alerts the vaults.</li>
+<li>  <strong>Terrain:</strong> Slippery moss. Running requires a DC 15 Balance check; failure results in falling prone in the sewage water.</li></p>
+<p>#### S-3: The Distribution Vault
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>The narrow pipe opens into a wide, vaulted brick chamber supported by thick stone pillars. Wooden platforms are built over the deep sewer channels, crowded with crates, scales, and alchemical distillation glass. At the center of the room, a priest in robes of deep violet stands over a boiling copper vat, chanting in a discordant telepathic tongue as he pours glowing blue droplets into glass vials.</em>
+<li>  <strong>Encounter:</strong> <strong>1 Choir Cleric</strong> and <strong>3 Compliant Enforcers</strong>.</li>
+<li>  <strong>Tactics:</strong> The cleric stands behind the pillars, casting <em>Command</em> and <em>Doom</em> on the party while the enforcers block the wooden walkways. On Round 2, the cleric throws a vial of <em>Acidic Mutagen</em> (splash weapon, 2d6 acid).</li>
+<li>  <strong>Loot:</strong> 3 crates of Blue-Drop (15 vials total worth 2,250 gp on the black market), a locked strongbox containing 400 gp in ancient Dhakaani coinage.</li></p>
+<p>#### S-4: Scribe's Den
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>A dry, brick-lined side chamber that served as a dwarven control room. Metal desks are covered in parchment ledgers, trade manifests, and maps of the city's underbelly. A faint blue glow emanates from a warded drawer on the main desk.</em>
+<li>  <strong>Lore Secret:</strong> Investigating the desk manifests (Search DC 18) reveals that the Choir is receiving massive gold shipments from a tiefling merchant named Terik, linking the operation directly to the Belowmarket Deep.</li>
+<li>  <strong>Loot:</strong> <em>Lens of Detection</em>, scroll of <em>Disguise Self</em>, journal detailing the Choir's activities, and 150 gp.</li></p>
+<p>---</p>
+<h2>2. THE FLESHWARPED FOUNDRY (Act II Dungeon)</h2>
+<p><em>The Thessalan Consortium's subterranean stronghold is constructed from ancient dwarven ruins, reinforced with brass pipes, copper vats, and lead-lined containment cages.</em></p>
+<img src="Maps/fleshwarped_foundry_map.png" class="ttrpg-map" alt="The Fleshwarped Foundry Dungeon Map">
+<h3>Room Keys</h3>
+<p>#### F-1: The Lift Chamber
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>The stone corridor ends at a massive, circular shaft. A platform of rusted iron plates and brass gears hangs from thick iron chains. A series of heavy copper pipes run down the walls, venting hiss of steam, and a large iron wheel controls the water valves that operate the lift.</em>
+<li>  <strong>Puzzle: Valve Override:</strong> The lift wheel is locked by a heavy chain. A character can pick the lock (Open Locks DC 20) or manually turn the wheel with a DC 22 Strength check. Turning the wheel manually takes 2 rounds and attracts guards from F-2 due to the squealing gears.</li></p>
+<p>#### F-2: Guard Barracks
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>This rectangular stone chamber is lined with iron bunks and weapon racks. The walls are covered in blueprints of mutated beasts. A large iron brazier at the center of the room burns coal, casting a red glare over the stone floor.</em>
+<li>  <strong>Encounter:</strong> <strong>4 Consortium Sentries</strong> and <strong>1 Splicer Assistant</strong>.</li>
+<li>  <strong>Tactics:</strong> The sentries form a shield wall to block the door, while the assistant throws alchemical flash powder (DC 15 Fortitude save or be blinded for 1 round).</li>
+<li>  <strong>Loot:</strong> Guard sergeant's key (unlocks F-1 and F-3), 120 gp, and 2 potions of <em>Cure Moderate Wounds</em>.</li></p>
+<p>#### F-3: Testing Pens
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>The smell of wet fur, iron, and chemical acid is overwhelming. The corridor is lined with heavy iron cages. Inside, shifting blue shapes pace behind the bars, their tentacles twitching against the metal doors.</em>
+<li>  <strong>Encounter:</strong> <strong>1 Thessalan Displacer Beast prototype</strong>.</li>
+<li>  <strong>Mechanic: Release Lever:</strong> The guards in F-2 will pull a wall lever to release the beast if they are losing the fight. A rogue can disable the release mechanism (Disable Device DC 18) to keep the cages locked.</li></p>
+<p>#### F-4: The Vat Room
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>A massive, multi-tiered chamber dominated by four glowing green copper vats. Copper pipes run from the ceiling, dumping raw organic slurries into the bubbling liquid. A tiefling woman with biological grafts covering her arms stands on a raised metal walkway, holding a glowing wand and barking orders at her assistants.</em>
+<li>  <strong>Encounter:</strong> <strong>Dr. Vespera Thran</strong> (level 9 transmuter/fleshwarper) and <strong>2 Splicer technicians</strong>.</li>
+<li>  <strong>Tactics:</strong> Vespera casts <em>Haste</em> on her assistants and uses <em>Web</em> to trap characters on the walkways. If cornered, she uses her wand to rupture a vat valve, spraying mutagenic acid onto the floor (dealing 2d6 acid damage per round to anyone not on a walkway).</li>
+<li>  <strong>Loot:</strong> <em>Ring of Acid Resistance 10</em>, Vespera's spellbook (containing all her transmutation spells), and 1,200 gp in biomantic components.</li></p>
+<p>#### F-5: Mikhailis' Old Laboratory
+<li>  <strong>Boxed Text:</strong></li>
+    > <em>A quiet, warded sanctuary filled with dusty bookshelves, glass jars containing biological specimens, and a large iron desk. The walls are etched with glowing silver runes that hum with abjuration magic.</em>
+<li>  <strong>Puzzle: Fey Silver Lattice Sigil:</strong> The door is locked by Kael's private sigil. A caster must cast a Transmutation spell or manifest a physical psionic power to activate the sigil, or succeed on a DC 25 Knowledge (Arcana) check to bypass the ward.</li>
+<li>  <strong>Loot:</strong> <strong>Consortium Research Journals</strong> (outlining the Elder Node's compliance formulas), shards of the <strong>Tri-Weave Silver Blade</strong>, and 3 flasks of <em>Troll-Blood Serum</em> (heals 3d8+5 HP and grants Fast Healing 1 for 1 minute).</li></p>
+<p>---</p>
+<h2>3. THE DEEPMIND ANNEX (Act IV Standalone)</h2>
+<li>  <strong>Note to Dungeon Master:</strong> The cavern maps, non-Euclidean hazards, room keys, and climax encounters for the final act are detailed in the standalone module: <strong>[Act_IV_Descent_into_the_Deepmind_Annex.pdf](file:///H:/Antigravity/Novel/Campaign_Module/Act_IV_Descent_into_the_Deepmind_Annex.pdf)</strong>.</li></ul>
+
+      </section>
+      
+    
+  </div>
+
+</body>
+</html>

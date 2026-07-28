@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackwater Quay & Sablehook — Dark Fantasy Campaign Portal</title>
+    
+    <!-- Link to external styling -->
+    <link rel="stylesheet" href="webpage.css">
+    
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+
+    <!-- SITE HEADER & NAVIGATION -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="#" class="logo-link">
+                <span class="logo-text">SABLEHOOK COVENANT</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#antihero">Dark Hero</a></li>
+                <li class="nav-item"><a href="#map">Interactive Map</a></li>
+                <li class="nav-item"><a href="#districts">Districts</a></li>
+                <li class="nav-item"><a href="#characters">Characters</a></li>
+                <li class="nav-item"><a href="#factions">Faction Standing</a></li>
+                <li class="nav-item"><a href="#timeline">Chronal Timeline</a></li>
+                <li class="nav-item"><a href="#intrusions">Sewer Intrusions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ANTIHERO & LORE LANDING SECTION -->
+    <section id="antihero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">Planar-Political Underworld Campaign Guide</span>
+            <h1 class="hero-title">Antiheroes & Outcasts of the Quay</h1>
+            <p class="hero-description">
+                "Good people are the most dangerous people in the world. Strike the healer, blind the detector, break the leader, and wear whatever skin the world requires to survive."
+            </p>
+            <div class="hero-buttons">
+                <a href="#characters" class="btn btn-primary">Meet the Syndicate</a>
+                <a href="#factions" class="btn btn-secondary">Check Factions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE MAP SECTION -->
+    <section id="map" class="container">
+        <div class="section-header">
+            <span class="section-tag">Cartography of the Abyss</span>
+            <h2 class="section-title">Interactive Map of Blackwater Quay</h2>
+        </div>
+        <div id="leaflet-map" style="height: 600px; width: 100%; border: 2px solid var(--primary-color); border-radius: 8px; margin-top: 20px;"></div>
+    </section>
+
+    <!-- DISTRICTS SECTION -->
+    <section id="districts" class="container">
+        <div class="section-header">
+            <span class="section-tag">A Gazetteer of the Underways</span>
+            <h2 class="section-title">The Districts of Blackwater Quay</h2>
+        </div>
+        
+        <div class="districts-layout">
+            <!-- Left Tab Selectors -->
+            <div class="district-tabs">
+                <button class="district-tab-btn active" data-district="sluices">
+                    <h3>Northern Sluices</h3>
+                    <span>District of Waste & Chemical Rings</span>
+                </button>
+                <button class="district-tab-btn" data-district="belowmarket">
+                    <h3>Belowmarket Deep</h3>
+                    <span>The Subterranean Black Market</span>
+                </button>
+                <button class="district-tab-btn" data-district="sablehook">
+                    <h3>Sablehook Haven</h3>
+                    <span>The Syndicate Safehouse Vaults</span>
+                </button>
+            </div>
+            
+            <!-- Right Dynamic Panel -->
+            <div id="district-content" class="district-content-panel">
+                <div class="district-img-container">
+                    <img src="images/plate03_district_blackwater_quay.png" alt="Northern Sluices" class="district-img">
+                </div>
+                <div class="district-details">
+                    <div class="district-header-row">
+                        <h2 class="district-name">Northern Sluices</h2>
+                        <span class="district-vibe">Sulfurous sewer fumes, weeping brickwork, alchemical runoff</span>
+                    </div>
+                    <p class="district-desc">
+                        A sprawling network of stone conduits, iron lock gates, and sludge channels where the city's waste is filtered. Above the channels, the poorest citizens build hanging wooden structures. The Choir of the Below has established distribution vectors here for compliance serums.
+                    </p>
+                    <div>
+                        <h3 class="district-spots-title">Key Interest Locations</h3>
+                        <ul class="district-spots">
+                            <li class="district-spot-item">
+                                <strong>The Gull & Gasket Vaults</strong> A repurposed sluice station acting as a low-profile tavern. Heavily warded vaults below hide Sablehook's surface intelligence.
+                            </li>
+                            <li class="district-spot-item">
+                                <strong>Sluice Gate S-1</strong> A heavily rusted iron blockade guarded by compliant cult thugs.
+                            </li>
+                            <li class="district-spot-item">
+                                <strong>The Distribution Vault S-3</strong> Where Choir priests brew and pack the alchemical Blue-Drop droplets.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHARACTERS SECTION -->
+    <section id="characters" class="container" style="background: rgba(4,7,10,0.6); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="section-header">
+            <span class="section-tag">Syndicate Leaders & Planar Shadows</span>
+            <h2 class="section-title">Antihero & Faction Roster</h2>
+        </div>
+        
+        <div class="characters-grid">
+            <!-- BANKI -->
+            <div class="char-card banki">
+                <div class="banki-form-selector">
+                    <button class="form-btn active" data-form="human">Human</button>
+                    <button class="form-btn" data-form="pixie">Pixie</button>
+                    <button class="form-btn" data-form="pixillithid">PixIllithid</button>
+                </div>
+                <div class="char-img-container">
+                    <img src="images/banki_human_form_1781797072911.png" alt="Banki" class="char-img">
+                </div>
+                <div class="char-details">
+                    <div class="char-header">
+                        <h3 class="char-name">Banki (Human Disguise)</h3>
+                        <span class="char-role">Sovereign Anchor</span>
+                    </div>
+                    <p class="char-quote">"Survival belongs to the thing that can become unrecognizable."</p>
+                    <p class="char-bio">A middle-aged man of average build and grey-green eyes, appearing as an ordinary sellsword. This shape hides his true nature from prying eyes.</p>
+                    
+                    <h4 class="char-powers-title">Faction Influence & Powers</h4>
+                    <ul class="char-powers">
+                        <li class="char-power-item"><strong>Tri-Weave Negation:</strong> All magic and psionics within 100 ft of the inner vaults are automatically negated.</li>
+                        <li class="char-power-item"><strong>Shroud Anchor:</strong> Maintains the Tri-Weave Shroud to keep Sablehook invisible to all detection.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MIKHAILIS (KAEL) -->
+            <div class="char-card kael">
+                <div class="char-img-container">
+                    <img src="images/mikhailis_true_form_1784503724852.png" alt="Mikhailis Vael-Kaelor" class="char-img">
+                </div>
+                <div class="char-details">
+                    <div class="char-header">
+                        <h3 class="char-name">Dr. Mikhailis Vael-Kaelor</h3>
+                        <span class="char-role">Planar Compass</span>
+                    </div>
+                    <p class="char-quote">"A lock is just a door that hasn't met the right timeline. Stand back, let's see how this stone tasted."</p>
+                    <p class="char-bio">Kael is a fey monstrosity of the Clan Vael-Kaelor. Beneath his Shadar-kai disguise is a towering minotaur-framed horror with displacer tentacles, claws, and phase-wings. He leads a corsair fleet from the flagship Onyx Wake.</p>
+                    
+                    <h4 class="char-powers-title">Faction Influence & Powers</h4>
+                    <ul class="char-powers">
+                        <li class="char-power-item"><strong>Biomantic Disassembly:</strong> Dissolves target's cells with a thought. Attackers face immediate destruction.</li>
+                        <li class="char-power-item"><strong>Fractured Compass:</strong> Guides allies through non-Euclidean layouts, granting immunity to Xoriat madness.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SABLE -->
+            <div class="char-card sable">
+                <div class="char-img-container">
+                    <img src="images/sable_standing_1781797114339.png" alt="Sable" class="char-img">
+                </div>
+                <div class="char-details">
+                    <div class="char-header">
+                        <h3 class="char-name">Sable</h3>
+                        <span class="char-role">Tactical Coordinator</span>
+                    </div>
+                    <p class="char-quote">"If you want to live in the Quay, count the seconds between the guard's sweeps."</p>
+                    <p class="char-bio">A cold, pragmatic female Shadar-kai rogue who wears a heavy, lead-lined coat. She manages day-to-day operations and coordinates field agents with clockwork efficiency.</p>
+                    
+                    <h4 class="char-powers-title">Faction Influence & Powers</h4>
+                    <ul class="char-powers">
+                        <li class="char-power-item"><strong>Sneak Attack +6d6:</strong> Devastating striker from the shadows using sleep-poisoned arrows.</li>
+                        <li class="char-power-item"><strong>Lead Shielding:</strong> Distributes warded lead cases shielding magic items from detection scans.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- KESSLER -->
+            <div class="char-card kessler">
+                <div class="char-img-container">
+                    <img src="images/kestrel_resting_1781797182225.png" alt="Kessler" class="char-img">
+                </div>
+                <div class="char-details">
+                    <div class="char-header">
+                        <h3 class="char-name">Kessler</h3>
+                        <span class="char-role">Tarkanan Commander</span>
+                    </div>
+                    <p class="char-quote">"My mark doesn't ask for permission. It just burns."</p>
+                    <p class="char-bio">A battle-scarred fighter with an acid-weeping aberrant dragonmark climbing her neck. She leads House Tarkanan's tactical strike units and coordinates surface diversions.</p>
+                    
+                    <h4 class="char-powers-title">Faction Influence & Powers</h4>
+                    <ul class="char-powers">
+                        <li class="char-power-item"><strong>Aberrant Mark:</strong> Channels acid blasts and death attacks. Synergizes with dragonmark magic items.</li>
+                        <li class="char-power-item"><strong>Shadow Assassins:</strong> Coordinates sniper support bolts in the sluices and surface streets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ZANIPH -->
+            <div class="char-card zaniph">
+                <div class="char-img-container">
+                    <img src="images/aldric_standing_1781797200586.png" alt="Zaniph" class="char-img">
+                </div>
+                <div class="char-details">
+                    <div class="char-header">
+                        <h3 class="char-name">Zaniph</h3>
+                        <span class="char-role">Githyanki Deserter</span>
+                    </div>
+                    <p class="char-quote">"Vlaakith's knights think the silver sword makes them gods. A broken blade cuts just as deep."</p>
+                    <p class="char-bio">A scarred Githyanki who deserted the lich-queen's fleet. Pursued by astral stalkers, Zaniph fights with the jagged remnant of a shattered silver sword.</p>
+                    
+                    <h4 class="char-powers-title">Faction Influence & Powers</h4>
+                    <ul class="char-powers">
+                        <li class="char-power-item"><strong>Psionic Disruption:</strong> Attacks disable target's casting and manifestations for 1 round.</li>
+                        <li class="char-power-item"><strong>Silver Cleave:</strong> Heavy power attacker focusing on shutting down planar summons.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TERIK (HRUUJJ) -->
+            <div class="char-card terik">
+                <div class="char-img-container">
+                    <img src="images/tovin_standing_1781797943829.png" alt="Terik / Hruujj" class="char-img">
+                </div>
+                <div class="char-details">
+                    <div class="char-header">
+                        <h3 class="char-name">Terik / Hruujj</h3>
+                        <span class="char-role">Rakshasa Broker</span>
+                    </div>
+                    <p class="char-quote">"Coins bear many faces. Fortunately, so do I. Shall we write a new transaction?"</p>
+                    <p class="char-bio">A shape-shifting rakshasa representing the Lords of Dust. He coordinates black market trade and occult transactions under the guise of a tiefling merchant.</p>
+                    
+                    <h4 class="char-powers-title">Faction Influence & Powers</h4>
+                    <ul class="char-powers">
+                        <li class="char-power-item"><strong>Detect Thoughts & Disguise:</strong> Master of social evasion and magical alignment shielding.</li>
+                        <li class="char-power-item"><strong>Sorcerer Spellcasting:</strong> Manifests lightning and displacement fields with sorcerous efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACTIONS SECTION -->
+    <section id="factions" class="container">
+        <div class="section-header">
+            <span class="section-tag">Influence & Reputation Mechanics</span>
+            <h2 class="section-title">Underworld Faction Standing</h2>
+        </div>
+        
+        <div class="factions-layout">
+            <!-- Left Side: Interactive Sliders -->
+            <div class="renown-sliders-container">
+                <!-- Sablehook -->
+                <div class="faction-slider-group sablehook">
+                    <div class="faction-slider-header">
+                        <div class="faction-title-wrapper">
+                            <div class="faction-icon"></div>
+                            <h3 class="faction-slider-title">Sablehook Syndicate</h3>
+                        </div>
+                        <span id="sablehook-badge" class="renown-badge">0</span>
+                    </div>
+                    <div class="range-slider-container">
+                        <input type="range" min="-10" max="10" value="0" class="renown-slider" data-faction="sablehook">
+                        <div class="slider-ticks">
+                            <span>Hostile (-10)</span>
+                            <span>Neutral (0)</span>
+                            <span>Allied (+10)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- House Tarkanan -->
+                <div class="faction-slider-group tarkanan">
+                    <div class="faction-slider-header">
+                        <div class="faction-title-wrapper">
+                            <div class="faction-icon"></div>
+                            <h3 class="faction-slider-title">House Tarkanan</h3>
+                        </div>
+                        <span id="tarkanan-badge" class="renown-badge">0</span>
+                    </div>
+                    <div class="range-slider-container">
+                        <input type="range" min="-10" max="10" value="0" class="renown-slider" data-faction="tarkanan">
+                        <div class="slider-ticks">
+                            <span>Hostile (-10)</span>
+                            <span>Neutral (0)</span>
+                            <span>Allied (+10)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lords of Dust -->
+                <div class="faction-slider-group dust">
+                    <div class="faction-slider-header">
+                        <div class="faction-title-wrapper">
+                            <div class="faction-icon"></div>
+                            <h3 class="faction-slider-title">Lords of Dust</h3>
+                        </div>
+                        <span id="dust-badge" class="renown-badge">0</span>
+                    </div>
+                    <div class="range-slider-container">
+                        <input type="range" min="-10" max="10" value="0" class="renown-slider" data-faction="dust">
+                        <div class="slider-ticks">
+                            <span>Hostile (-10)</span>
+                            <span>Neutral (0)</span>
+                            <span>Allied (+10)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suspicion (Systemic Counter-Track) -->
+                <div class="faction-slider-group suspicion">
+                    <div class="faction-slider-header">
+                        <div class="faction-title-wrapper">
+                            <div class="faction-icon"></div>
+                            <h3 class="faction-slider-title">Templar Suspicion (The Heat)</h3>
+                        </div>
+                        <span id="suspicion-badge" class="renown-badge">0</span>
+                    </div>
+                    <div class="range-slider-container">
+                        <input type="range" min="0" max="10" value="0" class="renown-slider" data-faction="suspicion">
+                        <div class="slider-ticks">
+                            <span>Clear (0)</span>
+                            <span>Wanted (8)</span>
+                            <span>Purge (10)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side: Dynamic Rewards Card -->
+            <div id="reward-panel" class="faction-reward-panel">
+                <div class="reward-title-row">
+                    <h3 class="reward-faction-name">Sablehook Syndicate</h3>
+                    <span class="reward-standing">Neutral (0)</span>
+                </div>
+                <div>
+                    <h4 class="reward-perk-name">Smuggler Contacts</h4>
+                    <p class="reward-perk-desc">Standard black market rates. Rumors can be gathered at the Gull & Gasket vaults.</p>
+                </div>
+                <div class="reward-effect-box">
+                    <strong>Rule Mod:</strong> No active modifications.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTREPID TIMELINES & INTRUSIONS -->
+    <section id="intrusions" class="container" style="background: rgba(4,7,10,0.6); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="section-header">
+            <span class="section-tag">Overmind Network Intrusion</span>
+            <h2 class="section-title">The Elder Node's Psychic Network</h2>
+        </div>
+        
+        <div class="intrusion-layout">
+            <!-- Left Side: Roller Card -->
+            <div class="roller-card">
+                <div class="dice-container">
+                    <svg id="d20-svg" class="d20-svg" viewBox="0 0 100 100">
+                        <polygon points="50,15 15,35 15,65 50,85 85,65 85,35" />
+                        <polygon points="50,15 50,85" />
+                        <polygon points="15,35 85,35" />
+                        <polygon points="15,65 85,65" />
+                        <line x1="15" y1="35" x2="50" y2="85" />
+                        <line x1="85" y1="35" x2="50" y2="85" />
+                        <line x1="15" y1="65" x2="50" y2="15" />
+                        <line x1="85" y1="65" x2="50" y2="15" />
+                    </svg>
+                    <div id="dice-number" class="dice-number">20</div>
+                </div>
+                <button id="roll-btn" class="btn btn-primary">Roll for Intrusion</button>
+                <div class="roller-result-container">
+                    <h4 id="result-title" class="roller-result-title">Timeline Stable</h4>
+                    <p id="result-text" class="roller-result-text">Click the D20 to test daily psychic intrusions.</p>
+                </div>
+            </div>
+            
+            <!-- Right Side: Intrusion Table -->
+            <div class="table-container">
+                <table class="intrusion-table">
+                    <thead>
+                        <tr>
+                            <th>Roll (d20)</th>
+                            <th>Event</th>
+                            <th>Mechanical Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row-quiet" class="intrusion-row">
+                            <td>1 - 5</td>
+                            <td>Quiet Timeline</td>
+                            <td>The Elder Node is quiet, focusing its energies on the rift core. No intrusion occurs.</td>
+                        </tr>
+                        <tr id="row-whisper" class="intrusion-row">
+                            <td>6 - 9</td>
+                            <td>Psychic Whisper</td>
+                            <td>Telepathic static echoes. All characters must succeed on a DC 14 Will save or take a -1 penalty to Initiative and Charisma-based checks for the next 24 hours.</td>
+                        </tr>
+                        <tr id="row-gravity" class="intrusion-row">
+                            <td>10 - 12</td>
+                            <td>Gravity Distortion</td>
+                            <td>Local gravity fluctuates. For 1d4 hours, characters gain +10 ft. speed bonus, but take a -2 penalty on melee attack rolls as they float.</td>
+                        </tr>
+                        <tr id="row-compliance" class="intrusion-row">
+                            <td>13 - 15</td>
+                            <td>Compliance Sweep</td>
+                            <td>The Choir sends hunters. Next combat encounter is joined on Round 3 by 1d4 Compliant Sewer Enforcers seeking capture.</td>
+                        </tr>
+                        <tr id="row-flare" class="intrusion-row">
+                            <td>16 - 18</td>
+                            <td>Fleshwarped Flare</td>
+                            <td>A wave of planar energy erupts. Living creatures within 30 ft. of the surge must succeed on a DC 16 Fortitude save or take 1d4 Dex damage as joints fuse.</td>
+                        </tr>
+                        <tr id="row-beacon" class="intrusion-row">
+                            <td>19 - 20</td>
+                            <td>Mind Blast Beacon</td>
+                            <td>The party triggers a psychic alarm. A strike team consisting of 2 Dolgaunts and 1 Thessalan Displacer Beast prototype ambushes them within 1d4 hours.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMPAIGN ACTS TIMELINE -->
+    <section id="timeline" class="container">
+        <div class="section-header">
+            <span class="section-tag">Adventure Arc progression</span>
+            <h2 class="section-title">The Campaign Narrative</h2>
+        </div>
+        
+        <div class="timeline-container">
+            <!-- ACT I -->
+            <div class="timeline-item expanded">
+                <div class="timeline-header">
+                    <div class="timeline-title-group">
+                        <span class="timeline-act-badge">Act I</span>
+                        <h3 class="timeline-title">Whispers in the Sluices</h3>
+                    </div>
+                    <svg class="timeline-arrow" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
+                </div>
+                <div class="timeline-body">
+                    <div class="timeline-body-content">
+                        <p class="timeline-goal">Goal: Discover how the Elder Node is manipulating the city's surface.</p>
+                        <div class="timeline-grid">
+                            <div class="timeline-left">
+                                <p class="timeline-summary">
+                                    The characters are hired by Sable to investigate a series of kidnappings in the Northern Sluices. They discover that a local cult, the Choir of the Below, is distributing "Elder Node derivative compounds" to chemically comply the populace.
+                                </p>
+                                <div class="read-aloud-box">
+                                    The air in the Northern Sluices is thick with the stench of vinegar, rotting refuse, and sulfurous sewage gas. Sludge overflows the stone gutters, weeping down from the brick vaults above in greasy streaks. Below the hanging wooden shacks of the city's outcasts, you can hear the telepathic resonance—a low, rhythmic thrumming that vibrates in the back of your skull.
+                                </div>
+                            </div>
+                            <div class="timeline-right">
+                                <h4 class="timeline-encounters-title">Act Encounters</h4>
+                                <ul class="timeline-encounters-list">
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">I-1: Sluice Blockade</span>
+                                        <span class="timeline-cr-badge">CR 10</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">I-2: The Acidic Locks</span>
+                                        <span class="timeline-cr-badge">CR 11</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">I-3: Cult Altar (Choir Priest)</span>
+                                        <span class="timeline-cr-badge">CR 12</span>
+                                    </li>
+                                </ul>
+                                <div class="timeline-tactical-box">
+                                    <strong>Tactical Environment: Flooded Walkways</strong>
+                                    Walkways require a DC 14 Balance check to run. Slipping plunges characters into 5-ft deep sewage canals, dealing 1d6 acid damage and exposing them to sewer rot.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACT II -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title-group">
+                        <span class="timeline-act-badge">Act II</span>
+                        <h3 class="timeline-title">The Fleshwarped Foundry</h3>
+                    </div>
+                    <svg class="timeline-arrow" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
+                </div>
+                <div class="timeline-body">
+                    <div class="timeline-body-content">
+                        <p class="timeline-goal">Goal: Destroy the Thessalan Stronghold & secure biological suppressants.</p>
+                        <div class="timeline-grid">
+                            <div class="timeline-left">
+                                <p class="timeline-summary">
+                                    The Thessalan Consortium has established a secret foundry in the Belowmarket Deep, breeding mutated prototypes. The characters must coordinate a surface riot with House Tarkanan while Kael's boarding crew holds the canal vectors.
+                                </p>
+                                <div class="read-aloud-box">
+                                    The Belowmarket Deep opens into a gargantuan cavern illuminated by volcanic fissures. Amidst duergar forges, a dark basalt fortress looms over the green-sludge canal vectors. Heavy copper pipes run along the exterior walls, pulsing with glowing green chemical slurries.
+                                </div>
+                            </div>
+                            <div class="timeline-right">
+                                <h4 class="timeline-encounters-title">Act Encounters</h4>
+                                <ul class="timeline-encounters-list">
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">II-1: Canal Gates (Mutated Sea-Wolf)</span>
+                                        <span class="timeline-cr-badge">CR 11</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">II-2: The Vat Room (Vespera Thran)</span>
+                                        <span class="timeline-cr-badge">CR 12</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">II-3: The Archives (Flesh Golem Prototype)</span>
+                                        <span class="timeline-cr-badge">CR 12</span>
+                                    </li>
+                                </ul>
+                                <div class="timeline-tactical-box">
+                                    <strong>Tactical Environment: Growth Vats</strong>
+                                    Shattering large glass cylinders (AC 10, HP 15) releases green mutagenic acid in a 10-ft radius (3d6 acid damage) and spawns a mutated crawling claw natural hazard.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACT III -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title-group">
+                        <span class="timeline-act-badge">Act III</span>
+                        <h3 class="timeline-title">Crimson Sails Over the Quay</h3>
+                    </div>
+                    <svg class="timeline-arrow" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
+                </div>
+                <div class="timeline-body">
+                    <div class="timeline-body-content">
+                        <p class="timeline-goal">Goal: Defend Sablehook from Githyanki air raid & steal shield tech.</p>
+                        <div class="timeline-grid">
+                            <div class="timeline-left">
+                                <p class="timeline-summary">
+                                    Githyanki ships breach the subterranean vaults. You must defend Sablehook alongside Kael's crew. In the chaos, scan the Githyanki displacement shield runes to reverse-engineer them, culminating in a boarding action on Vlaakith's Pride.
+                                </p>
+                                <div class="read-aloud-box">
+                                    The ceiling of the subterranean harbor cracks as three massive Githyanki spelljamming galleons break through the upper rock strata. Their silver hulls catch the green glow of the quay's alchemical lights, and from their ballista ports, psychic fire rains down.
+                                </div>
+                            </div>
+                            <div class="timeline-right">
+                                <h4 class="timeline-encounters-title">Act Encounters</h4>
+                                <ul class="timeline-encounters-list">
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">III-1: Harbor Walls Defence</span>
+                                        <span class="timeline-cr-badge">CR 12</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">III-2: Flagship Boarding (Githyanki Knights)</span>
+                                        <span class="timeline-cr-badge">CR 13</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">III-3: The Shroud Core (Astral Stalkers)</span>
+                                        <span class="timeline-cr-badge">CR 13</span>
+                                    </li>
+                                </ul>
+                                <div class="timeline-tactical-box">
+                                    <strong>Victory Tracker Outcomes</strong>
+                                    Accumulate Victory Points (VP) by repelling boarders and starting the Shroud. 11+ VP secures a full victory; 6 or less VP results in an overrun and permanent fatigue for Act IV.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACT IV -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title-group">
+                        <span class="timeline-act-badge">Act IV</span>
+                        <h3 class="timeline-title">The Deepmind Annex</h3>
+                    </div>
+                    <svg class="timeline-arrow" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
+                </div>
+                <div class="timeline-body">
+                    <div class="timeline-body-content">
+                        <p class="timeline-goal">Goal: Descend into the brine-veins and seal the Xoriat Tear.</p>
+                        <div class="timeline-grid">
+                            <div class="timeline-left">
+                                <p class="timeline-summary">
+                                    Deep beneath the Quay lies the Annex, a non-Euclidean gateway controlled by the Elder Node. Guided by Captain Mikhailis's timeline senses, navigate the gravity flues, combat the dragon Oraxis, and utilize chronal loopholes to bypass the rakshasa double-cross.
+                                </p>
+                                <div class="read-aloud-box">
+                                    Reality unravels below. Gravity does not pull—it twists. Sluggish saltwater rises toward the high vaults, hanging in mid-air in massive floating bubbles. Glowing green nerves stretch across the stone pillars like cables, pulsing to the telepathic rhythm of the overmind.
+                                </div>
+                            </div>
+                            <div class="timeline-right">
+                                <h4 class="timeline-encounters-title">Act Encounters</h4>
+                                <ul class="timeline-encounters-list">
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">IV-1: Gravity Flues Navigation</span>
+                                        <span class="timeline-cr-badge">CR 13</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">IV-2: The Cathedral of Whispers</span>
+                                        <span class="timeline-cr-badge">CR 13</span>
+                                    </li>
+                                    <li class="timeline-encounter-item">
+                                        <span class="timeline-encounter-name">IV-3: Oraxis & Sealing the Tear</span>
+                                        <span class="timeline-cr-badge">CR 14</span>
+                                    </li>
+                                </ul>
+                                <div class="timeline-tactical-box">
+                                    <strong>Tactical Environment: Chronal & Gravity Distortions</strong>
+                                    Failing gravity shifts coordinates randomly. Only Kael's presence within 60 ft protects players from Xoriat's compliance madness.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span class="footer-logo">BLACKWATER QUAY</span>
+            <p class="footer-credits">
+                Setting Guide & Campaign Companion Portal. All character profiles, map templates, and mechanical systems are integrated relative to the master novel assets.
+            </p>
+            <ul class="footer-links">
+                <li><a href="#antihero">Back to Top</a></li>
+                <li><a href="#districts">Districts</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#factions">Factions</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Link to external scripts -->
+    <script src="webpage.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

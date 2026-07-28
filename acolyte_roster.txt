@@ -1,0 +1,181 @@
+====================================================================
+      SUTURE'S SURGICAL ASSISTANTS - 18 HOUSE ACOLYTES DOSSIERS
+====================================================================
+System Compatibility: D&D 3.5 / Pathfinder 1E
+Linage Context: Captive Hostages (Living Reparations) turned Loyal Supporters
+
+Because the noble houses of Blackwater Quay directly profited from or ignored the Thessalan Consortium's decade-spanning kidnapping and experimentation rings—which held Kael and Banki in cages for decades—the brothers have demanded these firstborn heirs as "living reparations" (the "Flesh Debt" clause of the Shadow-Vassal Decree). In Suture's abattoir, these former aristocrats are forced to confront the visceral reality of the biomancy that bought their houses' comfort, and they are growing into Kael's most fanatical supporters.
+
+====================================================================
+                        HOUSE VAE DOSSIERS
+====================================================================
+Drow/Fey nobility of high-magic pedigree. They manage the Phrenic Core and gestation calculations of the Birthing Sacks.
+
+1. KAELEN VAE (Lead Navigator)
+   - Age: 19 | Race: Fey-Drow | Class: Wizard (Diviner) 4 / Loremaster 1
+   - Visual: Tall, silver braid, grease-stained velvet robes, carrying a bronze astrolabe.
+   - Hopes: To see House Vae restored to its ancestral seat in the Silver Lattice.
+   - Interests: Subterranean cartography, planar astrology, playing the fey lute.
+   - Desires: Secretly wants to master Kael's chronal stepping to undo the Consortium's rise.
+   - TTRPG Stats: Str 8, Dex 14, Con 10, Int 18, Wis 14, Cha 12. Key Skills: Knowledge (dungeoneering) +14, Psicraft +12. Signature Spell: Detect Scrying.
+
+2. LYDIA VAE (Temporal Analyst)
+   - Age: 18 | Race: Fey-Drow | Class: Wizard (Transmuter) 5
+   - Visual: Pale, ink-stained fingers, dark eye circles, carrying three brass hourglasses.
+   - Hopes: To mathematically stabilize the temporal fields of the Black Labs.
+   - Interests: Chronic-flux mathematics, hourglass collecting, cataloging anomalies.
+   - Desires: Wants to earn Suture's respect and prove alchemy is subservient to temporal geometry.
+   - TTRPG Stats: Str 8, Dex 15, Con 11, Int 19, Wis 12, Cha 10. Key Skills: Spellcraft +13. Signature Spell: Haste.
+
+3. VALERIUS VAE (Core Custodian)
+   - Age: 17 | Race: Fey-Drow | Class: Psion (Shaper) 5
+   - Visual: Aristocratic, sharp features, lead-lined gloves to handle phrenic crystals.
+   - Hopes: To funnel psionic crystals back to his family's private vaults.
+   - Interests: Crystal cutting, psionic resonance, collecting rare wines.
+   - Desires: Seeks to construct a personal psionic shield to block Kael's mindsight.
+   - TTRPG Stats: Str 9, Dex 14, Con 12, Int 17, Wis 13, Cha 11. Key Skills: Psicraft +12. Signature Power: Ectoplasmic Cocoon.
+
+4. MYRELLA VAE (Incubation Assistant)
+   - Age: 16 | Race: Fey-Drow | Class: Druid (Aquatic) 5
+   - Visual: Wide blue eyes, sharkskin apron, webbed gill-slits on neck.
+   - Hopes: To breed a Vanguard construct that can survive deep toxic sulfur pools.
+   - Interests: Marine biology, deep-sea botany, whispering to Birthing Sack membranes.
+   - Desires: Desires to live permanently in the lightless trench, away from politics.
+   - TTRPG Stats: Str 10, Dex 13, Con 14, Int 14, Wis 16, Cha 11. Key Skills: Handle Animal +11. Signature Spell: Summon Nature's Ally III.
+
+5. ZAREK VAE (Ledger Keeper)
+   - Age: 18 | Race: Fey-Drow | Class: Rogue 3 / Archivist 2
+   - Visual: Short, scroll harness, silver quill behind pointed ear.
+   - Hopes: To compile an anatomical archive allowing Vae to replicate Suture's grafts.
+   - Interests: Cryptography, anatomical sketching, collecting forbidden texts.
+   - Desires: Desires to discover a blackmail hook on Sable to secure his family's freedom.
+   - TTRPG Stats: Str 10, Dex 16, Con 12, Int 16, Wis 12, Cha 10. Key Skills: Decipher Script +13. Signature Ability: Dark Knowledge (Tactics).
+
+6. TESSA VAE (Phrenic Linker)
+   - Age: 15 | Race: Fey-Drow | Class: Wilder 5
+   - Visual: Small and frail, white hair, lead-plated circlet to quiet telepathic noise.
+   - Hopes: To silence the mental noise of the Quay and find peace in Kael's quiet loops.
+   - Interests: Mind-linking, sensory telepathy, sketching the shapes of thoughts.
+   - Desires: Wants to become Kael’s personal telepathic proxy.
+   - TTRPG Stats: Str 7, Dex 14, Con 10, Int 12, Wis 15, Cha 18. Key Skills: Autohypnosis +10. Signature Power: Mindlink.
+
+
+====================================================================
+                       HOUSE CARTHEN DOSSIERS
+====================================================================
+Human/Fey mercantile lines. They manage the Specimen Cabin and catalog chemical extracts.
+
+7. ORIN CARTHEN (Specimen Registrar)
+   - Age: 20 | Race: Human (Void-Touched) | Class: Expert 5
+   - Visual: Methodical, leather eye patch, heavy linen apron.
+   - Hopes: To pay off Carthen's debt and regain surface custom-house permits.
+   - Interests: Taxonomy, preservation fluids, labeling jar catalogs.
+   - Desires: Wants to catalog a new deep-sea aberration species and name it after himself.
+   - TTRPG Stats: Str 12, Dex 10, Con 14, Int 16, Wis 14, Cha 8. Key Skills: Profession (apothecary) +12. Signature Feat: Diligent.
+
+8. SYLVIA CARTHEN (Extract Tester)
+   - Age: 17 | Race: Human | Class: Alchemist (Vivisectionist) 5
+   - Visual: Wild red hair, acid-scarred sleeves, carrying glass test tubes in her vest.
+   - Hopes: To isolate the chemical stabilizer that makes the Thessalan Essence Flask non-toxic.
+   - Interests: Toxin extraction, distillation, tasting non-lethal mutagens.
+   - Desires: Wants to write a book of "unethical recipes" and open an independent street-clinic.
+   - TTRPG Stats: Str 10, Dex 16, Con 13, Int 18, Wis 11, Cha 9. Key Skills: Craft (alchemy) +14. Signature Attack: Sneak Attack +3d6.
+
+9. CORIN CARTHEN (Sanitation Warden)
+   - Age: 19 | Race: Human | Class: Paladin of Tyranny 5
+   - Visual: Grim, lead-lined plate armor, carrying a bone shovel and a silver-plated brush.
+   - Hopes: To keep the lower decks orderly and prevent biological waste from spreading.
+   - Interests: Runic containment, scrubbing techniques, polishing plate armor.
+   - Desires: Wants to prove to Banki that order can be maintained even inside Suture's abattoir.
+   - TTRPG Stats: Str 15, Dex 10, Con 14, Int 10, Wis 12, Cha 14. Key Skills: Intimidate +10. Signature Ability: Aura of Despair.
+
+10. MAEVE CARTHEN (Resonance Harvester)
+    - Age: 18 | Race: Human (Void-Touched) | Class: Bard (Dirgesinger) 5
+    - Visual: Eerie voice, silver nails, music box containing lockets of deceased Carthen nobles.
+    - Hopes: To weave Carthen ancestral memories into protective wards for the ship's keel.
+    - Interests: Memory harvesting, ghost stories, mourning songs.
+    - Desires: Wants to summon her grandfather's spirit to locate the family's secret ledger.
+    - TTRPG Stats: Str 9, Dex 13, Con 12, Int 14, Wis 12, Cha 17. Key Skills: Perform (singing) +12. Signature Ability: Song of Sorrow.
+
+
+====================================================================
+                        HOUSE VRUNN DOSSIERS
+====================================================================
+Duergar scrap-smiths and forge-masters. They assist with acid stomach-vats and ship weapon repair.
+
+11. THRAIN VRUNN (Vat Engineer)
+    - Age: 22 | Race: Duergar | Class: Fighter 3 / Master Specialist (Acid) 2
+    - Visual: Stout duergar, shaved head, soot-stained skin, iron boots, carrying an iron spanner.
+    - Hopes: To refine Vanguard Brine-Plate acid-resistance for Vrunn's forge contracts.
+    - Interests: Metallurgy, deep-well mining, drinking heavy stone-beer.
+    - Desires: Wants to rebuild the dreadnought's oar-ports using weightless duergar-steel.
+    - TTRPG Stats: Str 16, Dex 12, Con 16, Int 12, Wis 11, Cha 6. Key Skills: Craft (armorsmithing) +12. Signature Feat: Exotic Shield Proficiency.
+
+12. GARRICK VRUNN (Catapult Master)
+    - Age: 21 | Race: Duergar | Class: Ranger (Combat Engineer) 5
+    - Visual: Broad-shouldered, grease-straps, prosthetic iron claw on left hand.
+    - Hopes: To see catapults fire with enough force to shatter Covenant submersibles.
+    - Interests: Ballistics, rope-weaving, test-firing siege weapons.
+    - Desires: Wants to capture a Covenant ship intact and dismantle its hull for parts.
+    - TTRPG Stats: Str 17, Dex 14, Con 14, Int 11, Wis 12, Cha 6. Key Skills: Profession (siege engineer) +11. Signature Attack: Favored Enemy (Humanoids - Holy).
+
+13. HELGA VRUNN (Slag Purifier)
+    - Age: 19 | Race: Duergar | Class: Cleric (Earth) 5
+    - Visual: Stocky duergar, dirt-caked face, leather apron, stone mortar and pestle.
+    - Hopes: To refine vat slag into earth-runes that stabilize the Leviathan Spine.
+    - Interests: Mineralogy, runic etching, stone-carving.
+    - Desires: Secretly wants to graft a stone-skin matrix onto her own arms to become acid-proof.
+    - TTRPG Stats: Str 14, Dex 10, Con 16, Int 12, Wis 16, Cha 8. Key Skills: Craft (stonemasonry) +11. Signature Spell: Stone Shape.
+
+
+====================================================================
+                       HOUSE MAELEN DOSSIERS
+====================================================================
+Drow merchants. Spliced with minor ocular upgrades to assist in Abattoir-Loom operations.
+
+14. JOREN MAELEN (Loom Operator)
+    - Age: 18 | Race: Drow | Class: Rogue 3 / Fleshwarper 2
+    - Visual: Slender drow, void-glass lens grafted over left eye connected by silver wires to fingers.
+    - Hopes: To master the Abattoir-Loom to perform automated grafts that never fail.
+    - Interests: Biological tailoring, nerve-weaving, precision clockwork.
+    - Desires: Desires to replace his own spine with a flexible, calcified snake-graft.
+    - TTRPG Stats: Str 10, Dex 17, Con 11, Int 18, Wis 12, Cha 8. Key Skills: Heal +13. Signature Ability: Graft Reserve.
+
+15. KIRA MAELEN (Micro-Stitcher)
+    - Age: 17 | Race: Drow | Class: Wizard (Conjurer) 5
+    - Visual: Silver thread tattoos, silver surgical rings sheathing her fingers.
+    - Hopes: To stitch fey wings onto the Sea-Wolves to create a flying vanguard.
+    - Interests: Necro-synthesis, dissecting fey wings, drawing biological diagrams.
+    - Desires: Wants to steal Suture's personal scalpel and extract Divine Seeds.
+    - TTRPG Stats: Str 8, Dex 16, Con 12, Int 17, Wis 13, Cha 10. Key Skills: Heal +11. Signature Spell: Glitterdust.
+
+16. BORAN MAELEN (Ocular Warden)
+    - Age: 19 | Race: Drow | Class: Sorcerer (Divination-blooded) 5
+    - Visual: Wears black silk hood covering his eyes; sees via a floating Ocular Casket.
+    - Hopes: To map the entire Underdark trench system using divination sensors.
+    - Interests: Scrying, optic-array alignments, mapping ley-lines.
+    - Desires: Desires to peek into the mind of the Elder Node and survive the contact.
+    - TTRPG Stats: Str 9, Dex 14, Con 12, Int 13, Wis 14, Cha 17. Key Skills: Spellcraft +11. Signature Spell: Clairaudience/Clairvoyance.
+
+
+====================================================================
+                        HOUSE VESH DOSSIERS
+====================================================================
+Boutique outfitters. Apprenticed in sail-weaving and Sea-Wolf hide micro-stitching.
+
+17. ELYSE VESH (Sail Weaver)
+    - Age: 20 | Race: Fey-Drow | Class: Bard (Weaver) 5
+    - Visual: Elegant, blood-splattered silk dress, carrying a bone shuttle.
+    - Hopes: To weave sails for Kael's entire fleet, making them fire and wind-proof.
+    - Interests: Silk-spinning, runic embroidery, planar wind patterns.
+    - Desires: Desires to sail the Bleeding Needle out of the Underdark into Astrazalian.
+    - TTRPG Stats: Str 10, Dex 15, Con 12, Int 14, Wis 11, Cha 18. Key Skills: Perform (weaving) +13. Signature Spell: Gust of Wind.
+
+18. DORIAN VESH (Skin Stitcher)
+    - Age: 19 | Race: Fey-Drow | Class: Rogue 3 / Ranger 2
+    - Visual: Athletic, silver needle case on chest, bone shears on thigh.
+    - Hopes: To synthesize a graft that allows Sea-Wolves to turn completely invisible.
+    - Interests: Taxidermy, camouflage patterns, dissecting crabs.
+    - Desires: Wants to replace his own skin with displacer beast hide for permanent displacement.
+    - TTRPG Stats: Str 13, Dex 17, Con 12, Int 13, Wis 14, Cha 9. Key Skills: Stealth +13. Signature Attack: Sneak Attack +2d6.
+====================================================================

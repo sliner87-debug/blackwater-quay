@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Prompts: Banki & Sable Romance Refactor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 40px;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .prompt-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .ai-model {
+            background-color: #8b5cf6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .opus { background-color: #d946ef; }
+        .sonnet { background-color: #f97316; }
+        
+        textarea {
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            resize: vertical;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        button:active {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Banki & Sable Romance Prompts</h1>
+    <p>Below are the pre-written prompts containing the exact text from the master draft that needs to be rewritten. Copy and paste them into Claude.</p>
+
+    <!-- Claude Sonnet Prompt -->
+    <div class="prompt-card">
+        <div class="header">
+            <h2>Command Deck Scene (Tactical Romance)</h2>
+            <span class="ai-model sonnet">Claude 3.5 Sonnet</span>
+        </div>
+        <p><em>Sonnet is best for fast, punchy action and weaving the intense tactical setting with sudden passion.</em></p>
+        <textarea id="prompt-sonnet" readonly>
+I am rewriting a dark fantasy novel. I want to change the dynamic between the two main characters, Banki and Sable, from a cold, purely structural alliance into a deeply passionate, physically intimate romance, while keeping the grim, tactical setting intact.
+
+Here is the current passage on the command deck during a chaotic sea retreat:
+
+```
+Sable stood motionless on the command deck, the freezing rain slicking her black armor, indifferent to the violent pitch of the ship. She held out a tactical slate, the harsh runic underlighting throwing the sharp, cruel angles of her jaw into high relief. She offered no comfort, no soft reassurances. Her absolute utility was her devotion. She provided solutions, not solace. That pragmatic, bloodless competency formed a dark, grounding anchor in the chaos. The proximity of her physical presence, the synchronized hum of her lethal intent, was the only intimacy permitted on the bridge.
+```
+
+Please rewrite this passage (about 1-2 paragraphs) so that their interaction is fiercely passionate and physically intimate. They should still be ruthlessly competent and focused on the tactical situation, but their physical proximity should ignite a fiery, physical embrace or a moment of intense, romantic passion that anchors them amidst the storm. Keep the tone dark, visceral, and intense, maintaining their status as apex predators.
+</textarea>
+        <button onclick="copyToClipboard('prompt-sonnet', this)">Copy Sonnet Prompt</button>
+    </div>
+
+    <!-- Claude Opus Prompt -->
+    <div class="prompt-card">
+        <div class="header">
+            <h2>Post-Victory & Climax Scenes (Deep Resonance)</h2>
+            <span class="ai-model opus">Claude 3 Opus</span>
+        </div>
+        <p><em>Opus is best for deep emotional resonance, thematic prose, and culminating a grand romantic climax.</em></p>
+        <textarea id="prompt-opus" readonly>
+I am rewriting the climax of a dark fantasy novel. I want to change the dynamic between the two main characters, Banki and Sable, from a cold, purely structural alliance into a deeply passionate, physically intimate romance.
+
+Here are the two current passages from the aftermath of their absolute victory over the city:
+
+Passage 1 (Securing the Court):
+```
+Sable turned from the blackened table, her eyes reflecting the cold, calculated victory of the Sovereign Thread. She walked back, closing the distance to the Mantle. There was no embrace, no soft exchange of triumph. The intimacy they shared was purely structural, forged in the fires of mutual atrocity. She was the shadow that made the throne absolute, the anchor that permitted the monster to rule.
+```
+
+Passage 2 (The Final Scene):
+```
+Banki stood at the shattered window beside Sable, their shoulders mere inches apart. Neither leaned in. Neither offered a hand. The brutal, unspoken contract of their partnership required no such frailties. They looked out over their city, a terrifying, undisputed power-couple bound by shared darkness and unyielding pragmatism. The air still tasted of ozone and pulverized limestone, but the crushing weight of the foreclosure had lifted, replaced by the clean, undeniable clarity of absolute sovereignty.
+```
+
+Please rewrite both of these passages so they culminate in intense physical intimacy and passionate romance. Instead of refusing to touch, they should passionately embrace and share a deep, victorious kiss, sealing their bloody victory with undeniable physical devotion. Keep the dark, triumphant, apex-predator prose, but let their fiery romance take center stage as they revel in their conquered city.
+</textarea>
+        <button onclick="copyToClipboard('prompt-opus', this)">Copy Opus Prompt</button>
+    </div>
+
+</div>
+
+<script>
+    function copyToClipboard(elementId, btnElement) {
+        var copyText = document.getElementById(elementId);
+        
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value).then(() => {
+            const originalText = btnElement.innerText;
+            btnElement.innerText = "Copied!";
+            btnElement.style.backgroundColor = "#10b981"; // Green success color
+            
+            setTimeout(() => {
+                btnElement.innerText = originalText;
+                btnElement.style.backgroundColor = "#3b82f6"; // Back to blue
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+            alert("Failed to copy to clipboard.");
+        });
+    }
+</script>
+
+</body>
+</html>

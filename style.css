@@ -1,0 +1,65 @@
+/* Novel Formatting CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700&display=swap');
+
+body {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #111;
+    padding-bottom: 0.5em;
+    page-break-before: always;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    text-indent: 1.5em; /* Traditional novel indentation */
+}
+
+/* Remove indent from first paragraph after a heading */
+h1 + p, h2 + p, h3 + p {
+    text-indent: 0;
+}
+
+blockquote {
+    font-style: italic;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-left: 1em;
+    border-left: 3px solid #666;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 3em 0;
+}
+
+/* Specific EPUB tweaks */
+@media print {
+    body {
+        font-size: 12pt;
+    }
+}
