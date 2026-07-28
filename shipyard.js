@@ -120,3 +120,120 @@ document.getElementById('btn-build').addEventListener('click', () => {
 
 // Init
 updateTotalCost();
+
+// --- VTT VISUAL BUILDER LOGIC ---
+const modeStatBtn = document.getElementById('mode-stat');
+const modeVttBtn = document.getElementById('mode-vtt');
+const statModeDiv = document.getElementById('stat-builder-mode');
+const vttModeDiv = document.getElementById('vtt-builder-mode');
+
+modeStatBtn.addEventListener('click', () => {
+    modeStatBtn.classList.add('active');
+    modeVttBtn.classList.remove('active');
+    statModeDiv.style.display = 'grid';
+    vttModeDiv.style.display = 'none';
+});
+
+modeVttBtn.addEventListener('click', () => {
+    modeVttBtn.classList.add('active');
+    modeStatBtn.classList.remove('active');
+    vttModeDiv.style.display = 'grid';
+    statModeDiv.style.display = 'none';
+});
+
+// Canvas Setup
+const canvas = document.getElementById('vtt-canvas');
+const ctx = canvas.getContext('2d');
+let activeImageObj = null;
+let activeRotation = 0; // in radians
+const placedItems = [];
+
+// Handle Palette Selection
+document.querySelectorAll('.draggable-part').forEach(img => {
+    img.addEventListener('click', (e) => {
+        // Clear previous selection
+        document.querySelectorAll('.draggable-part').forEach(i => i.classList.remove('selected'));
+        // Select new
+        e.target.classList.add('selected');
+        
+        // Load image obj
+        activeImageObj = new Image();
+        activeImageObj.src = e.target.getAttribute('data-src');
+        activeRotation = 0; // reset rotation
+    });
+});
+
+// Handle Keyboard Rotation
+window.addEventListener('keydown', (e) => {
+    if ((e.key === 'r' || e.key === 'R') && vttModeDiv.style.display === 'grid') {
+        activeRotation += Math.PI / 2; // Rotate 90 degrees
+    }
+});
+
+// Handle Canvas Click (Place Object)
+canvas.addEventListener('click', (e) => {
+    if (!activeImageObj) return;
+    
+    // Get mouse pos relative to canvas
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    placedItems.push({
+        img: activeImageObj,
+        x: x,
+        y: y,
+        rotation: activeRotation
+    });
+    
+    redrawCanvas();
+});
+
+// Draw Grid function (optional but helpful for VTT)
+function drawGrid() {
+    ctx.strokeStyle = 'rgba(30, 41, 59, 0.5)';
+    ctx.lineWidth = 1;
+    for(let i=0; i<=800; i+=40) {
+        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, 800); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(800, i); ctx.stroke();
+    }
+}
+
+// Redraw everything
+function redrawCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Draw background color
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    drawGrid();
+
+    placedItems.forEach(item => {
+        ctx.save();
+        ctx.translate(item.x, item.y);
+        ctx.rotate(item.rotation);
+        // Draw centered
+        const w = item.img.width;
+        const h = item.img.height;
+        ctx.drawImage(item.img, -w/2, -h/2, w, h);
+        ctx.restore();
+    });
+}
+
+// Initial draw
+redrawCanvas();
+
+// Clear Button
+document.getElementById('clear-canvas-btn').addEventListener('click', () => {
+    placedItems.length = 0;
+    redrawCanvas();
+});
+
+// Download Button
+document.getElementById('download-vtt-btn').addEventListener('click', () => {
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.download = 'custom_vtt_ship.png';
+    link.href = dataURL;
+    link.click();
+});

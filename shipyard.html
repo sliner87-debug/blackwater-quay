@@ -45,8 +45,12 @@
             <h1 class="shipyard-title">Sovereign Shipbuilder</h1>
             <p class="shipyard-desc">Construct your underworld vessel. Select chassis, armor, armaments, and exotic lore upgrades to dynamically generate your TTRPG Stat Block.</p>
         </div>
+        <div class="mode-toggle-container">
+            <button id="mode-stat" class="mode-btn active">Stat Block Generator</button>
+            <button id="mode-vtt" class="mode-btn">VTT Visual Builder</button>
+        </div>
 
-        <div class="shipyard-layout">
+        <div id="stat-builder-mode" class="shipyard-layout">
             <!-- LEFT: CONFIGURATION FORM -->
             <div class="builder-panel">
                 
@@ -235,6 +239,50 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- VTT BUILDER MODE -->
+        <div id="vtt-builder-mode" class="shipyard-layout" style="display: none;">
+            <!-- LEFT: PARTS PALETTE -->
+            <div class="builder-panel">
+                <div class="shipyard-header">
+                    <h3>Parts Palette</h3>
+                    <p style="font-size: 0.9em; opacity: 0.8; margin-top: 5px;">Click to select an active part, then click on the grid to place it. Press 'R' to rotate.</p>
+                </div>
+                
+                <div class="config-group">
+                    <h4>Hulls</h4>
+                    <div class="parts-grid">
+                        <img src="images/vtt_hull_skiff.jpg" class="draggable-part" data-type="hull" data-src="images/vtt_hull_skiff.jpg" alt="Skiff Hull">
+                        <img src="images/vtt_hull_dreadnought.jpg" class="draggable-part" data-type="hull" data-src="images/vtt_hull_dreadnought.jpg" alt="Dreadnought Hull">
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <h4>Armor Plates</h4>
+                    <div class="parts-grid">
+                        <img src="images/vtt_armor_nullsteel.jpg" class="draggable-part" data-type="armor" data-src="images/vtt_armor_nullsteel.jpg" alt="Null-Steel Plate">
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <h4>Armaments</h4>
+                    <div class="parts-grid">
+                        <img src="images/vtt_weapon_ballista.jpg" class="draggable-part" data-type="weapon" data-src="images/vtt_weapon_ballista.jpg" alt="Ballista">
+                        <img src="images/vtt_weapon_disruptor.jpg" class="draggable-part" data-type="weapon" data-src="images/vtt_weapon_disruptor.jpg" alt="Disruptor">
+                    </div>
+                </div>
+
+                <button id="clear-canvas-btn" class="build-btn" style="background-color: #991b1b; margin-top: 10px;">Clear Grid</button>
+            </div>
+
+            <!-- RIGHT: CANVAS AREA -->
+            <div class="stat-panel">
+                <div class="canvas-container">
+                    <canvas id="vtt-canvas" width="800" height="800"></canvas>
+                </div>
+                <button id="download-vtt-btn" class="build-btn" style="margin-top: 15px;">Download VTT Map</button>
+            </div>
         </div>
     </main>
 
