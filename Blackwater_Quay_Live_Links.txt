@@ -1,0 +1,20 @@
+BLACKWATER QUAY - LIVE PORTAL LINKS
+
+GitHub Repository (Source Code):
+https://github.com/sliner87-debug/blackwater-quay
+
+Live Web Portal (GitHub Pages):
+https://sliner87-debug.github.io/blackwater-quay/
+
+--- Key Features on the Live Site ---
+1. Antihero Roster & Factions: https://sliner87-debug.github.io/blackwater-quay/#characters
+2. The Syndicate Interactive Map: https://sliner87-debug.github.io/blackwater-quay/#map
+3. Faction Reputation Sliders: https://sliner87-debug.github.io/blackwater-quay/#factions
+4. Sewer Intrusions & D20 Roller: https://sliner87-debug.github.io/blackwater-quay/#intrusions
+5. Campaign Arc Timelines: https://sliner87-debug.github.io/blackwater-quay/#timeline
+
+--- Discord Bot ---
+The Discord Bot is stored in the `/DiscordBot` folder on GitHub. To run it:
+1. Connect to your local AI server (127.0.0.1:5001)
+2. Run `python bot.py` locally
+3. It will automatically act as all 9 characters using your local Persona JSONs!

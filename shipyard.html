@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Shipyards - Blackwater Quay</title>
+    <link rel="stylesheet" href="webpage.css">
+    <link rel="stylesheet" href="shipyard.css">
+</head>
+<body class="shipyard-body">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">SABLEHOOK COVENANT</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Setting &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#antihero">Dark Hero</a>
+                        <a href="index.html#timeline">Chronal Timeline</a>
+                        <a href="index.html#map">Interactive Map</a>
+                        <a href="index.html#districts">Districts</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">TTRPG Tools &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#characters">Characters</a>
+                        <a href="index.html#factions">Faction Standing</a>
+                        <a href="index.html#intrusions">Sewer Intrusions</a>
+                        <a href="shipyard.html" style="color: #38bdf8; font-weight: bold;">Sovereign Shipbuilder</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="shipyard-container">
+        
+        <div class="shipyard-header">
+            <span class="section-tag">Captain Mikhailis' Drydock</span>
+            <h1 class="shipyard-title">Sovereign Shipbuilder</h1>
+            <p class="shipyard-desc">Construct your underworld vessel. Select chassis, armor, armaments, and exotic lore upgrades to dynamically generate your TTRPG Stat Block.</p>
+        </div>
+
+        <div class="shipyard-layout">
+            <!-- LEFT: CONFIGURATION FORM -->
+            <div class="builder-panel">
+                
+                <!-- Chassis -->
+                <div class="config-group">
+                    <h3>1. Base Chassis</h3>
+                    <div class="radio-grid">
+                        <label class="radio-card">
+                            <input type="radio" name="chassis" value="skiff" checked>
+                            <span class="card-content">
+                                <strong>Sluice-Skiff</strong>
+                                <span>Fast, fragile. Speed 60ft.</span>
+                                <span class="cost-tag">Cost: 2,000 gp</span>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="chassis" value="galleon">
+                            <span class="card-content">
+                                <strong>Ironclad Galleon</strong>
+                                <span>Standard warship. Speed 40ft.</span>
+                                <span class="cost-tag">Cost: 10,000 gp</span>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="chassis" value="dreadnought">
+                            <span class="card-content">
+                                <strong>Subterranean Dreadnought</strong>
+                                <span>Massive fortress. Speed 25ft.</span>
+                                <span class="cost-tag">Cost: 25,000 gp</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Armor -->
+                <div class="config-group">
+                    <h3>2. Armor Plating</h3>
+                    <div class="radio-grid">
+                        <label class="radio-card">
+                            <input type="radio" name="armor" value="iron" checked>
+                            <span class="card-content">
+                                <strong>Salvaged Iron</strong>
+                                <span>Standard plating.</span>
+                                <span class="cost-tag">Cost: 500 gp</span>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="armor" value="nullsteel">
+                            <span class="card-content">
+                                <strong>Null-Steel Plating</strong>
+                                <span>+2 AC. Advantage vs Spells.</span>
+                                <span class="cost-tag">Cost: 3,000 gp</span>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="armor" value="biomantic">
+                            <span class="card-content">
+                                <strong>Biomantic Carapace</strong>
+                                <span>Regen 10 HP/turn. Vuln: Fire.</span>
+                                <span class="cost-tag">Cost: 4,500 gp</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Armament -->
+                <div class="config-group">
+                    <h3>3. Primary Armament</h3>
+                    <div class="radio-grid">
+                        <label class="radio-card">
+                            <input type="radio" name="weapon" value="ballista" checked>
+                            <span class="card-content">
+                                <strong>Heavy Ballista</strong>
+                                <span>Range 120/480. 3d10 Piercing.</span>
+                                <span class="cost-tag">Cost: 1,000 gp</span>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="weapon" value="siphon">
+                            <span class="card-content">
+                                <strong>Alchemical Siphons</strong>
+                                <span>60ft Cone. 6d6 Acid/Fire.</span>
+                                <span class="cost-tag">Cost: 2,500 gp</span>
+                            </span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="weapon" value="disruptor">
+                            <span class="card-content">
+                                <strong>Githyanki Disruptor</strong>
+                                <span>Range 300. 4d10 Psychic.</span>
+                                <span class="cost-tag">Cost: 5,000 gp</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Upgrades -->
+                <div class="config-group">
+                    <h3>4. Exotic Lore Upgrades</h3>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="upgrade" value="chronal">
+                            <span class="card-content">
+                                <strong>Chronal Engine</strong>
+                                <span>Action Surge for the ship.</span>
+                                <span class="cost-tag">Cost: 4,000 gp</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="upgrade" value="vats">
+                            <span class="card-content">
+                                <strong>Thessalan Vats</strong>
+                                <span>Heals crew during combat.</span>
+                                <span class="cost-tag">Cost: 2,500 gp</span>
+                            </span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="upgrade" value="triweave">
+                            <span class="card-content">
+                                <strong>Tri-Weave Cloaking</strong>
+                                <span>Invisibility field (1 hour).</span>
+                                <span class="cost-tag">Cost: 6,000 gp</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-row">
+                    <button id="btn-build" class="btn-build">Build Ship Stat Block</button>
+                    <div class="total-cost">Total Cost: <span id="total-cost-display">3,500</span> gp</div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: TTRPG STAT BLOCK EXPORT -->
+            <div class="export-panel">
+                <div id="statblock-container" class="statblock hidden">
+                    <div class="stat-header">
+                        <h2 id="sb-name">Custom Sluice-Skiff</h2>
+                        <div id="sb-type">Gargantuan Vehicle (Water)</div>
+                    </div>
+                    
+                    <svg class="stat-divider" height="5" width="100%"><polyline points="0,0 400,2.5 0,5"></polyline></svg>
+                    
+                    <div class="stat-row">
+                        <strong>Armor Class</strong> <span id="sb-ac">15</span> <span id="sb-ac-desc">(Salvaged Iron)</span><br>
+                        <strong>Hit Points</strong> <span id="sb-hp">200</span> <span id="sb-hp-desc">(Damage Threshold 10)</span><br>
+                        <strong>Speed</strong> <span id="sb-speed">60 ft.</span>
+                    </div>
+
+                    <svg class="stat-divider" height="5" width="100%"><polyline points="0,0 400,2.5 0,5"></polyline></svg>
+                    
+                    <div class="stat-row attributes">
+                        <div><strong>STR</strong> <span id="sb-str">18 (+4)</span></div>
+                        <div><strong>DEX</strong> <span id="sb-dex">14 (+2)</span></div>
+                        <div><strong>CON</strong> <span id="sb-con">16 (+3)</span></div>
+                        <div><strong>INT</strong> <span>0 (-5)</span></div>
+                        <div><strong>WIS</strong> <span>0 (-5)</span></div>
+                        <div><strong>CHA</strong> <span>0 (-5)</span></div>
+                    </div>
+
+                    <svg class="stat-divider" height="5" width="100%"><polyline points="0,0 400,2.5 0,5"></polyline></svg>
+
+                    <div class="stat-row">
+                        <strong>Damage Immunities</strong> poison, psychic<br>
+                        <strong>Condition Immunities</strong> blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned, stunned
+                    </div>
+                    
+                    <!-- Dynamic Traits -->
+                    <div id="sb-traits-container" class="stat-section">
+                        <!-- Traits injected here -->
+                    </div>
+
+                    <h3 class="stat-subheader">Actions</h3>
+                    <svg class="stat-divider" height="3" width="100%"><polyline points="0,0 400,1.5 0,3"></polyline></svg>
+                    
+                    <!-- Dynamic Actions -->
+                    <div id="sb-actions-container" class="stat-section">
+                        <!-- Actions injected here -->
+                    </div>
+
+                </div>
+                
+                <div id="placeholder-panel" class="placeholder-box">
+                    Configure your vessel on the left and click "Build" to generate the TTRPG Stat Block here.
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="shipyard.js"></script>
+</body>
+</html>

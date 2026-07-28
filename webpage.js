@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFactionTrackers();
     initDiceRoller();
     initTimelineAccordion();
+    initCharacters();
 });
 
 /* --- Districts Tab Logic --- */
@@ -41,6 +42,17 @@ const districtData = {
             { name: "Suture's Biomantic Clinic", desc: "A pristine, tiled medical laboratory where Kael's apprentice, Suture, drafts tissue and applies grafts." },
             { name: "The Shroud Core", desc: "Where Banki sits in deep trance, anchoring the Tri-Weave Shroud over the harbor." },
             { name: "The Ironwood Exchange", desc: "A smuggling warehouse managed by Grish the bugbear, stocking warded lead pouches." }
+        ]
+    },
+    annex: {
+        name: "The Deepmind Annex",
+        vibe: "Non-Euclidean geometry, floating brine, whispering static",
+        desc: "Deep beneath the Quay lies the Annex, a gateway controlled by the Elder Node. Reality unravels here; gravity does not pull, it twists. Sluggish saltwater rises toward the high vaults, hanging in mid-air in massive floating bubbles.",
+        image: "images/plate05_district_registry_market.png", // Reusing an existing plate
+        spots: [
+            { name: "The Gravity Flues", desc: "Vertical shafts where gravity fluctuates randomly due to planar bleeding." },
+            { name: "Cathedral of Whispers", desc: "Ancient goblin ruins corrupted by the Void, saturated with telepathic static." },
+            { name: "The Rift Core", desc: "The locus of the tear to the Realm of Madness, defended by Elder Node avatars." }
         ]
     }
 };
@@ -139,6 +151,316 @@ function initBankiMorph() {
     });
 }
 
+
+const characterRoster = [
+    {
+        "id": "aldric",
+        "name": "Zaniph",
+        "role": "Githyanki Deserter",
+        "bio": "Aldric Thorne is a Paladin of the Sun-Spear, dedicated to the Dawnfather. Dressed in common wool and leather but carrying the rigid bearing of a ma...",
+        "img": "Character_PNGs_v2/Aldric.png",
+        "quote": "\"Vlaakith's knights think the silver sword makes them gods. A broken blade cuts just as deep.\""
+    },
+    {
+        "id": "banki",
+        "name": "Banki",
+        "role": "Sovereign / Syndicate Leader",
+        "bio": "Banki is the Sovereign of the Third Quiet, a criminal mastermind and neural savant in Blackwater Quay. He hides behind a remarkably unremarkable fa...",
+        "img": "Character_PNGs_v2/Banki.png",
+        "quote": "\"Survival belongs to the thing that can become unrecognizable.\""
+    },
+    {
+        "id": "beri",
+        "name": "Beri",
+        "role": "Scribe / Bureaucrat",
+        "bio": "Beri is a scribe serving under the Crown First Record Doctrine. Placed in terrifying situations involving temporal pressure, time-dilation bubbles,...",
+        "img": "Character_PNGs_v2/Beri.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "branna",
+        "name": "Branna",
+        "role": "Underworld Operative",
+        "bio": "Branna is a resolute and defiant cook in a stone fortress, standing as a bulwark against the starvation plaguing the city. Her forearms are permane...",
+        "img": "Character_PNGs_v2/Branna.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "caelen",
+        "name": "Caelen",
+        "role": "Ranger / Tracker",
+        "bio": "Caelen is an elven ranger who operates in the gritty underworld of the Dockside. Pragmatic and observant, he trusts mud, loose stone, and old habit...",
+        "img": "Character_PNGs_v2/Caelen.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "caspel",
+        "name": "Caspel",
+        "role": "Underworld Operative",
+        "bio": "Caspel Rooke is a forty-six-year-old clerk at the Municipal Transfer Registry. Narrow in the shoulders and careful with his cuffs, he has an exhaus...",
+        "img": "Character_PNGs_v2/Caspel.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "darric",
+        "name": "Darric",
+        "role": "Underworld Operative",
+        "bio": "Darric is a veteran soldier and tactical expert with a pragmatic, grim authority. He often walks with his hands clasped firmly behind his back, a d...",
+        "img": "Character_PNGs_v2/Darric.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "edric",
+        "name": "Edric",
+        "role": "Underworld Operative",
+        "bio": "Edric Mallon is the 43-year-old barkeep of the Gull & Gasket, though the deep trenches in his face make him look closer to sixty. Crushing debt onc...",
+        "img": "Character_PNGs_v2/Edric.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "fateshear",
+        "name": "Fateshear",
+        "role": "Sentient Artifact",
+        "bio": "Fateshear is an ancient, sentient greatsword forged from a shard of the astral plane. It communicates telepathic fragments of combat predictions, w...",
+        "img": "Character_PNGs_v2/Fateshear.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "glassjaw",
+        "name": "Glassjaw",
+        "role": "Underworld Operative",
+        "bio": "Glassjaw Rellis is a rogue and information broker on the docks. He attempts to project ease with a sly, evasive, practiced rogue's smile, but under...",
+        "img": "Character_PNGs_v2/Glassjaw.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "gull",
+        "name": "Gull",
+        "role": "Underworld Operative",
+        "bio": "Edric 'Gull' Mallon is the forty-three-year-old owner of the Gull & Gasket tavern, though crushing debt owns his soul. Deep trenches in his face ma...",
+        "img": "Character_PNGs_v2/Gull.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "hark",
+        "name": "Hark",
+        "role": "Underworld Operative",
+        "bio": "Hark is a pragmatic and seasoned tracker and mercenary. He favors heavy drop-snares and tension tripwires in the high peaks, using raw, steaming mo...",
+        "img": "Character_PNGs_v2/Hark.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "hesta",
+        "name": "Hesta",
+        "role": "Underworld Operative",
+        "bio": "Hesta Bramblewake is a tough, no-nonsense handler and supervisor of dangerous beasts. She is known to chew tobacco and paint safety marks on the fl...",
+        "img": "Character_PNGs_v2/Hesta.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "iven",
+        "name": "Iven",
+        "role": "Underworld Operative",
+        "bio": "Iven is a smooth-talking fence and smuggler who operates in the affluent shadows of the city. He dresses in fine silk that clashes with the grime o...",
+        "img": "Character_PNGs_v2/Iven.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "jeren",
+        "name": "Jeren",
+        "role": "Underworld Operative",
+        "bio": "Jeren is a towering, heavily-built man with grim, heavy features. He moves with eerie silence and incredible efficiency. Wielding his unique weapon...",
+        "img": "Character_PNGs_v2/Jeren.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "kael",
+        "name": "Dr. Mikhailis Vael-Kaelor",
+        "role": "Planar Compass / Corsair Captain",
+        "bio": "Dr. Mikhailis Vael-Kaelor, known as Kael, is a towering fey monstrosity disguised as a Shadar-kai. He is the Planar Compass and Sovereign Corsair o...",
+        "img": "Character_PNGs_v2/Kael.png",
+        "quote": "\"A lock is just a door that hasn't met the right timeline. Stand back, let's see how this stone tasted.\""
+    },
+    {
+        "id": "kessa",
+        "name": "Kessa",
+        "role": "Underworld Operative",
+        "bio": "Kessa is a dedicated beast-master recruit who runs the Transition Tank and Isolation Wagons. Her bare hands are heavily scarred from years of worki...",
+        "img": "Character_PNGs_v2/Kessa.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "kestrel",
+        "name": "Kessler",
+        "role": "Tarkanan Commander",
+        "bio": "Kestrel is a highly lethal avian predator and tactical scout within Banki's network. She approaches combat as a mathematical equation, viewing magi...",
+        "img": "Character_PNGs_v2/Kestrel.png",
+        "quote": "\"My mark doesn't ask for permission. It just burns.\""
+    },
+    {
+        "id": "lyris",
+        "name": "Lyris",
+        "role": "Pact-Mage / Ward Specialist",
+        "bio": "Lyris is a meticulous pact-mage and ward-specialist. She analyzes ley-lines, song-stone webs, and arcane frequencies with the precision of a schola...",
+        "img": "Character_PNGs_v2/Lyris.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "mara",
+        "name": "Mara",
+        "role": "Underworld Operative",
+        "bio": "Mara is a meticulous, unyielding administrative clerk and merchant-apprentice. She dresses in a simple tunic and always carries a massive, iron-bou...",
+        "img": "Character_PNGs_v2/Mara.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "maren",
+        "name": "Maren",
+        "role": "Bard / Empath",
+        "bio": "Maren Goldstring is a bard and musician who uses her lute and song to anchor fractured minds and push back the ugliness of the world. She is deeply...",
+        "img": "Character_PNGs_v2/Maren.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "mira",
+        "name": "Mira",
+        "role": "Void-Touched Scout",
+        "bio": "Mira is a void-touched scout and tracker for Sablehook. She operates in the absolute darkness of the Belowmarket Deep, her eyes replaced by glowing...",
+        "img": "Character_PNGs_v2/Mira.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "mirell",
+        "name": "Mirell",
+        "role": "Underworld Operative",
+        "bio": "Mirell is a kraken-kin scholar who resides primarily in a deep aquatic tank. She possesses massive, heavily scarred tentacles that shift restlessly...",
+        "img": "Character_PNGs_v2/Mirell.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "pimwick",
+        "name": "Pimwick",
+        "role": "Underworld Operative",
+        "bio": "Pimwick Nacklegear is a merchant of curios and sundries in the night market. He is a creature composed entirely of sharp, jutting wrists, a rat-lik...",
+        "img": "Character_PNGs_v2/Pimwick.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "rinna",
+        "name": "Rinna",
+        "role": "Underworld Operative",
+        "bio": "Rinna Claystep is a rugged caravan handler who braves the freezing, unnatural depths of the Brinewood and the ancient passages beneath it. Dressed ...",
+        "img": "Character_PNGs_v2/Rinna.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "sable",
+        "name": "Sable",
+        "role": "Assassin / Enforcer",
+        "bio": "Sable is Banki's enforcer and the master of the upper city in Blackwater Quay. Moving with the terrifying, economical violence of a shadow pretendi...",
+        "img": "Character_PNGs_v2/Sable.png",
+        "quote": "\"If you want to live in the Quay, count the seconds between the guard's sweeps.\""
+    },
+    {
+        "id": "seraphine",
+        "name": "Seraphine",
+        "role": "Cleric / Healer",
+        "bio": "Seraphine is a Cleric of the Dawnfather, radiating a gentle but powerful holy light meant to cleanse and restore. She is deeply repulsed by cruelty...",
+        "img": "Character_PNGs_v2/Seraphine.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "serris",
+        "name": "Serris",
+        "role": "Underworld Operative",
+        "bio": "Serris is a mid-level registry clerk and an anonymous informant. She is married, unremarkable in appearance, and possessed of absolute bureaucratic...",
+        "img": "Character_PNGs_v2/Serris.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "suture",
+        "name": "Suture",
+        "role": "Biomantic Surgeon",
+        "bio": "Suture is Captain Kael's biomantic apprentice and the chief medical officer of The Bleeding Needle. He is a stitched-together amalgam of different ...",
+        "img": "Character_PNGs_v2/Suture.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "torren",
+        "name": "Torren",
+        "role": "Underworld Operative",
+        "bio": "Torren Ashpell is a ceramic artisan who runs a dead-drop masking site for the smuggling network. Middle-aged, stooped from cellar ceilings, and per...",
+        "img": "Character_PNGs_v2/Torren.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "tovin",
+        "name": "Terik / Hruujj",
+        "role": "Rakshasa Broker",
+        "bio": "Tovin Vale is a seven-year-old boy rescued from the brutal fighting pits of the Belowmarket. He possesses the hyper-vigilance of the hunted, his na...",
+        "img": "Character_PNGs_v2/Tovin.png",
+        "quote": "\"Coins bear many faces. Fortunately, so do I. Shall we write a new transaction?\""
+    },
+    {
+        "id": "vesper",
+        "name": "Vesper",
+        "role": "Underworld Operative",
+        "bio": "Vesper is a former Crown intelligence operative and highly skilled ranger. He moves with an oily, frictionless grace and hides grafted bone-blades ...",
+        "img": "Character_PNGs_v2/Vesper.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "vosk",
+        "name": "Vosk",
+        "role": "Underworld Operative",
+        "bio": "Vosk is a brutal enforcer for the local smuggling rings. His face is heavily scarred from years of pit fighting in the undercity. He wears a heavy ...",
+        "img": "Character_PNGs_v2/Vosk.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "voss",
+        "name": "Voss",
+        "role": "Underworld Operative",
+        "bio": "Voss is a port-facing official and surgeon deeply embroiled in the criminal underworld. He is known for panicking downward when threatened, shiftin...",
+        "img": "Character_PNGs_v2/Voss.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    },
+    {
+        "id": "wren",
+        "name": "Wren",
+        "role": "Underworld Operative",
+        "bio": "Wren is a nimble, sharp-eyed street urchin and pickpocket who navigates the rooftops and alleyways of Blackwater Quay. Clad in patched, oversized c...",
+        "img": "Character_PNGs_v2/Wren.png",
+        "quote": "In the Quay, you are either the predator or the product."
+    }
+];
+
+function initCharacters() {
+    const grid = document.getElementById('dynamic-characters-grid');
+    if (!grid) return;
+    
+    let html = '';
+    characterRoster.forEach(char => {
+        html += `
+        <div class="char-card ${char.id}">
+            <div class="char-img-container">
+                <img src="${char.img}" alt="${char.name}" class="char-img" onerror="this.src='images/default_avatar.png'">
+            </div>
+            <div class="char-details">
+                <div class="char-header">
+                    <h3 class="char-name">${char.name}</h3>
+                    <span class="char-role">${char.role}</span>
+                </div>
+                <p class="char-quote"><em>${char.quote}</em></p>
+                <p class="char-bio">${char.bio}</p>
+            </div>
+        </div>
+        `;
+    });
+    
+    grid.innerHTML = html;
+}
+
 /* --- Faction Tracker System --- */
 const factionRewards = {
     sablehook: {
@@ -172,6 +494,34 @@ const factionRewards = {
             { threshold: 5, standing: "Contractor (+5)", title: "Rakshasa Disguise Tokens", desc: "Receive 3 Disguise Tokens. Cracking one casts Disguise Self (CL 10) and completely shields alignment from all detection magic for 8 hours.", effect: "Obtain 3 alignment-shielding tokens." },
             { threshold: 8, standing: "Prophecy Weaver (+8)", title: "Ancient Pact Rewrite", desc: "Once per campaign, reroll any failed save or attack roll with a +5 bonus. Bending reality raises the city's Suspicion Level by 2.", effect: "Reality reroll (+2 Suspicion cost)." },
             { threshold: 10, standing: "Ascendant Agent (+10)", title: "Fiendish Weapon Infusion", desc: "Terik infuses one weapon of your choice with unholy planar energy, adding the Unholy or Anarchic weapon property permanently.", effect: "+2d6 Unholy damage on weapon." }
+        ]
+    },
+    
+    thessalan: {
+        name: "Thessalan Consortium",
+        levels: [
+            { threshold: -5, standing: "Hunt Target (-5)", title: "Vat-Spawn Ambushes", desc: "Consortium mutants actively hunt you in the sewers.", effect: "Random mutant encounters." },
+            { threshold: 0, standing: "Neutral (0)", title: "Monitored Subject", desc: "The Consortium monitors your actions from afar.", effect: "No active modifications." },
+            { threshold: 5, standing: "Asset (+5)", title: "Alchemical Supply", desc: "Discounted access to advanced healing and mutagens.", effect: "15% store discount." },
+            { threshold: 10, standing: "Board Member (+10)", title: "Biomantic Upgrades", desc: "Access to powerful physical augmentations.", effect: "+2 to one physical stat." }
+        ]
+    },
+    choir: {
+        name: "Choir of the Below",
+        levels: [
+            { threshold: -5, standing: "Heretic (-5)", title: "Psychic Static", desc: "The Choir floods your mind with static in the Sluices.", effect: "-2 penalty to Will saves." },
+            { threshold: 0, standing: "Neutral (0)", title: "Ignored Soul", desc: "The Choir finds you unremarkable.", effect: "No active modifications." },
+            { threshold: 5, standing: "Acolyte (+5)", title: "Compliance Nullification", desc: "Access to elixirs that grant temporary immunity to psychic intrusions.", effect: "Immunity to minor Elder Node whispers." },
+            { threshold: 10, standing: "High Priest (+10)", title: "Telepathic Network", desc: "Ability to tap into the Choir's hive mind for information.", effect: "+10 to Gather Information." }
+        ]
+    },
+    githyanki: {
+        name: "Githyanki Fleet",
+        levels: [
+            { threshold: -5, standing: "Ghaik Sympathizer (-5)", title: "Astral Stalkers", desc: "Githyanki hunting parties actively track your location.", effect: "Hunted by Astral Stalkers." },
+            { threshold: 0, standing: "Neutral (0)", title: "Irrelevant", desc: "The Fleet has other priorities.", effect: "No active modifications." },
+            { threshold: 5, standing: "Respected Warrior (+5)", title: "Silver Forging", desc: "Access to silvered weapons and armor upgrades.", effect: "Silvered weapons bypass DR." },
+            { threshold: 10, standing: "Kith'rak (+10)", title: "Red Dragon Support", desc: "Once per campaign, call in a Red Dragon strike.", effect: "Summon Red Dragon Wyrmling." }
         ]
     },
     suspicion: {
@@ -216,9 +566,14 @@ function initFactionTrackers() {
         }
         
         // Apply neon accent colors depending on faction
-        rewardPanel.style.borderColor = factionKey === 'sablehook' ? 'var(--accent-cyan)' :
-                                       factionKey === 'tarkanan' ? 'var(--accent-red)' :
-                                       factionKey === 'dust' ? 'var(--accent-gold)' : 'var(--accent-red)';
+        let color = 'var(--accent-red)';
+        if (factionKey === 'sablehook') color = 'var(--accent-cyan)';
+        else if (factionKey === 'tarkanan') color = 'var(--accent-red)';
+        else if (factionKey === 'dust') color = 'var(--accent-gold)';
+        else if (factionKey === 'thessalan') color = 'var(--accent-green, #4CAF50)';
+        else if (factionKey === 'choir') color = 'var(--accent-purple, #9C27B0)';
+        else if (factionKey === 'githyanki') color = 'var(--accent-silver, #C0C0C0)';
+        rewardPanel.style.borderColor = color;
         
         // Text animation
         rewardPanel.style.opacity = 0.5;
@@ -230,9 +585,7 @@ function initFactionTrackers() {
             effectEl.innerHTML = `<strong>Rule Mod:</strong> ${activeLevel.effect}`;
             
             // Set indicator style in effect box
-            effectEl.style.borderLeftColor = factionKey === 'sablehook' ? 'var(--accent-cyan)' :
-                                            factionKey === 'tarkanan' ? 'var(--accent-red)' :
-                                            factionKey === 'dust' ? 'var(--accent-gold)' : 'var(--accent-red)';
+            effectEl.style.borderLeftColor = color;
                                             
             rewardPanel.style.opacity = 1;
         }, 100);
@@ -311,20 +664,51 @@ function initDiceRoller() {
             const roll = Math.floor(Math.random() * 20) + 1;
             resultNum.innerText = roll;
             
-            const effectData = intrusionRows[roll];
+
+            // Procedural generation of intrusion
+            let title = "Quiet Timeline";
+            let effect = "The Elder Node is quiet, focusing its energies on the rift core. No intrusion occurs.";
+            let targetRowId = 'row-quiet';
+            
+            // Check current standings for modifiers
+            const sableSlider = document.querySelector('.renown-slider[data-faction="sablehook"]');
+            const tarkSlider = document.querySelector('.renown-slider[data-faction="tarkanan"]');
+            let modifiedRoll = roll;
+            
+            if (sableSlider && parseInt(sableSlider.value) >= 5) modifiedRoll -= 2; // Sablehook cloaking helps
+            if (tarkSlider && parseInt(tarkSlider.value) <= -5) modifiedRoll += 2; // Hunted status worsens things
+            
+            if (modifiedRoll < 1) modifiedRoll = 1;
+            if (modifiedRoll > 20) modifiedRoll = 20;
+
+            if (modifiedRoll >= 6 && modifiedRoll <= 9) {
+                targetRowId = 'row-whisper';
+                title = "Psychic Whisper";
+                effect = "Telepathic static echoes. All characters must succeed on a DC 14 Will save or take a -1 penalty to Initiative and Charisma-based checks for the next 24 hours.";
+            } else if (modifiedRoll >= 10 && modifiedRoll <= 12) {
+                targetRowId = 'row-gravity';
+                title = "Gravity Distortion";
+                effect = "Local gravity fluctuates. For 1d4 hours, characters gain +10 ft. speed bonus, but take a -2 penalty on melee attack rolls as they float.";
+            } else if (modifiedRoll >= 13 && modifiedRoll <= 15) {
+                targetRowId = 'row-compliance';
+                title = "Compliance Sweep";
+                const numEnforcers = Math.floor(Math.random() * 4) + 1;
+                effect = `The Choir sends hunters. Next combat encounter is joined on Round 3 by ${numEnforcers} Compliant Sewer Enforcers seeking capture.`;
+            } else if (modifiedRoll >= 16 && modifiedRoll <= 18) {
+                targetRowId = 'row-flare';
+                title = "Fleshwarped Flare";
+                const dmg = Math.floor(Math.random() * 4) + 1;
+                effect = `A wave of planar energy erupts. Living creatures within 30 ft. of the surge must succeed on a DC 16 Fortitude save or take ${dmg} Dex damage as joints fuse.`;
+            } else if (modifiedRoll >= 19) {
+                targetRowId = 'row-beacon';
+                title = "Mind Blast Beacon";
+                effect = "The party triggers a psychic alarm. A strike team consisting of 2 Dolgaunts and 1 Thessalan Displacer Beast prototype ambushes them within 1d4 hours.";
+            }
             
             // Display description
-            resultTitle.innerText = `Result ${roll}: ${effectData.title}`;
-            resultText.innerText = effectData.effect;
-            
-            // Find row range and highlight in table
-            let targetRowId = '';
-            if (roll >= 1 && roll <= 5) targetRowId = 'row-quiet';
-            else if (roll >= 6 && roll <= 9) targetRowId = 'row-whisper';
-            else if (roll >= 10 && roll <= 12) targetRowId = 'row-gravity';
-            else if (roll >= 13 && roll <= 15) targetRowId = 'row-compliance';
-            else if (roll >= 16 && roll <= 18) targetRowId = 'row-flare';
-            else if (roll >= 19 && roll <= 20) targetRowId = 'row-beacon';
+            resultTitle.innerText = `Result ${roll} (Modified: ${modifiedRoll}): ${title}`;
+            resultText.innerText = effect;
+
             
             const targetRow = document.getElementById(targetRowId);
             if (targetRow) {

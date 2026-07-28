@@ -1,0 +1,247 @@
+/* SHIPYARD SPECIFIC STYLING */
+.shipyard-body {
+    background-color: #04070a;
+    background-image: radial-gradient(circle at top, #111e29 0%, #04070a 100%);
+    color: #e0e0e0;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.shipyard-container {
+    max-width: 1400px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+}
+
+.shipyard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.shipyard-title {
+    font-size: 3rem;
+    color: #38bdf8;
+    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.shipyard-desc {
+    font-family: 'Inter', sans-serif;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.shipyard-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* BUILDER PANEL */
+.builder-panel {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.config-group {
+    margin-bottom: 30px;
+}
+
+.config-group h3 {
+    color: #e2e8f0;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.radio-grid, .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.radio-card input, .checkbox-card input {
+    display: none;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(4, 7, 10, 0.5);
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.card-content strong {
+    color: #f8fafc;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.card-content span {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.cost-tag {
+    margin-top: 10px;
+    color: #fbbf24 !important;
+    font-weight: bold;
+}
+
+/* Selection states */
+.radio-card input:checked + .card-content {
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.checkbox-card input:checked + .card-content {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.card-content:hover {
+    border-color: #64748b;
+}
+
+.action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+.btn-build {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+}
+
+.btn-build:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+}
+
+.total-cost {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: #fbbf24;
+}
+
+/* EXPORT PANEL & STAT BLOCK */
+.export-panel {
+    background: #e6e3df; /* Parchment color */
+    border: 2px solid #c2b59b;
+    border-radius: 4px;
+    padding: 30px;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.5);
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    min-height: 600px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+}
+
+.placeholder-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: #8c8273;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+}
+
+.statblock.hidden {
+    display: none;
+}
+
+.stat-header h2 {
+    color: #58180d;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+}
+
+.stat-header #sb-type {
+    font-style: italic;
+    color: #000;
+}
+
+.stat-divider {
+    fill: #58180d;
+    stroke: #58180d;
+    margin: 10px 0;
+}
+
+.stat-row {
+    color: #58180d;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.stat-row strong {
+    color: #000;
+}
+
+.stat-row.attributes {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: #58180d;
+    margin: 15px 0;
+}
+
+.stat-section {
+    margin-top: 15px;
+}
+
+.stat-subheader {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 20px 0 5px 0;
+    font-variant: small-caps;
+}
+
+.trait {
+    margin-bottom: 10px;
+    font-size: 14.5px;
+}
+
+.trait strong {
+    font-style: italic;
+    color: #000;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .shipyard-layout {
+        grid-template-columns: 1fr;
+    }
+}

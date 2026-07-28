@@ -109,3 +109,23 @@ The characters that *do* have standard combat stat blocks in the module are the 
 *   **Abilities:** Str 14, Dex 14, Con 16, Int 15, Wis 12, Cha 18
 *   **Feats:** Alertness, Combat Casting, Dodge, Spell Focus (Evocation).
 *   **Tactics:** Terik casts *Mirror Image* and *Shield* before combat. He remains invisible while casting *Touch of Idiocy* on physical attackers, then releases *Lightning Bolt* from safe corners.
+
+### MOTHER SENREL (Choir of the Below Oracle) — CR 8
+*An ancient, blind human woman whose eyes have been replaced by glowing, violet crystals. She constantly mutters prophecies drawn from the static of the Elder Node.*
+*   **Class/Race:** Human Cleric (Madness Domain) 8
+*   **Hit Dice:** 8d8+8 (44 hp)
+*   **Initiative:** -1
+*   **Speed:** 30 ft.
+*   **Armor Class:** 15 (-1 Dex, +6 chainmail), touch 9, flat-footed 15
+*   **Base Attack/Grapple:** +6/+5
+*   **Attacks:** Quarterstaff +5 melee (1d6-1)
+*   **Special Attacks:** Spells, Insanity Aura (30 ft., DC 16 Will save or become *Confused* for 1 round).
+*   **Spells Prepared (Caster Level 8th):**
+    *   *4th:* *Confusion, Freedom of Movement*
+    *   *3rd:* *Bestow Curse, Dispel Magic, Magic Circle against Law, Speak with Dead*
+    *   *2nd:* *Augury, Hold Person, Shatter, Spiritual Weapon*
+    *   *1st:* *Bane, Cause Fear, Command, Doom, Sanctuary*
+    *   *0:* *Guidance, Resistance, Thaumaturgy*
+*   **Saves:** Fort +7, Ref +1, Will +10
+*   **Abilities:** Str 8, Dex 8, Con 12, Int 14, Wis 18, Cha 15
+*   **Roleplaying Notes:** Senrel doesn't care about politics or gold. She only cares about the "music" of the Node. She speaks in riddles and cryptic verses from the Draconic Prophecy. She is not naturally hostile, but her aura of insanity makes simply speaking to her dangerous.

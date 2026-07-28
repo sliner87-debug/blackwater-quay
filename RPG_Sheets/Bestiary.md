@@ -389,3 +389,45 @@ Aurelion is a towering shield-construct built of ironwood and brass. It radiates
 * **Stats:** Str 24, Dex 10, Con —, Int —, Wis 10, Cha 1; BAB +15; CMB +23; CMD 33
 * **Special Abilities:**
   * *Mobile Ward-Line (Su):* Aurelion projects a shimmering containment grid. Any hostile creature attempting to cross a 15-ft. radius around Aurelion must succeed on a DC 22 Will save or be repelled (as *repulsion*).
+
+---
+
+# 10. Manta
+*CR 10 | Huge Aberration (Aquatic)*
+*Alignment: Neutral Evil (NE)*
+
+### Description
+A massive, flesh-warped aquatic beast bred by the Thessalan Consortium. It resembles a gargantuan stingray with leathery, translucent skin revealing glowing green internal organs. It hunts in the toxic canals of the Belowmarket Deep, dragging victims into the sludge with barbed, paralytic stingers.
+
+---
+
+### D&D 3.5 Stat Block
+* **HD:** 12d8+60 (114 hp)
+* **Initiative:** +6 | **Speed:** 10 ft., Swim 60 ft.
+* **AC:** 22 (-2 size, +2 Dex, +12 natural), Touch 10, Flat-footed 20
+* **Base Attack/Grapple:** +9/+25
+* **Attack:** Tail Stinger +15 melee (2d6+12 plus paralysis)
+* **Full Attack:** Tail Stinger +15 melee (2d6+12 plus paralysis) and 2 Wing Slaps +10 melee (1d8+4)
+* **Space/Reach:** 15 ft./15 ft.
+* **Special Attacks:** Paralysis (Fortitude DC 21, 1d4 rounds), Acidic Wake.
+* **Special Qualities:** Darkvision 60 ft., Amphibious, Immunity to Acid and Poison.
+* **Saves:** Fort +9, Ref +6, Will +9
+* **Abilities:** Str 26, Dex 15, Con 20, Int 4, Wis 12, Cha 8
+* **Skills:** Hide +2 (+10 in water), Listen +8, Spot +8, Swim +16
+* **Feats:** Improved Initiative, Power Attack, Cleave, Improved Natural Attack (Tail Stinger), Weapon Focus (Tail Stinger)
+
+---
+
+### Pathfinder 1E Stat Block
+* **CR:** 10 | **XP:** 9,600
+* **HP:** 126 (12d8+72)
+* **Init:** +6 | **Speed:** 10 ft., Swim 60 ft.
+* **AC:** 23, touch 10, flat-footed 21 (-2 size, +2 Dex, +13 natural)
+* **Melee:** Tail Stinger +16 (2d6+12 plus paralysis), 2 Wing Slaps +11 (1d8+4)
+* **Space:** 15 ft. | **Reach:** 15 ft.
+* **Special Attacks:** Paralysis (Fortitude DC 22, 1d4 rounds), Acidic Wake (When Manta charges or double-moves underwater, it creates a toxic current. Creatures within 10 ft. of its path take 4d6 acid damage, Reflex DC 22 half).
+* **Statistics:** Str 26, Dex 15, Con 22, Int 4, Wis 12, Cha 8
+* **Base Atk:** +9; **CMB:** +19; **CMD:** 31 (can't be tripped)
+* **Feats:** Improved Initiative, Power Attack, Cleave, Improved Natural Attack (Tail Stinger), Weapon Focus (Tail Stinger), Toughness
+* **Skills:** Stealth +3 (+11 in water), Perception +10, Swim +20
+* **SQ:** Amphibious, Immunity to Acid and Poison
