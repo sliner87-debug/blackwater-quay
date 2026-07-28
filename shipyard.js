@@ -3,17 +3,17 @@
 // Component Database & Pricing
 const catalog = {
     chassis: {
-        skiff: { name: "Sluice-Skiff", cost: 2000, type: "Huge Vehicle (Water)", hp: 100, dt: 5, speedBase: 80, str: 16, dex: 18, con: 14, sizeBaseAc: 14, crewMin: 1, crewMax: 2, cargo: "1 ton" },
-        gunboat: { name: "Assault Gunboat", cost: 6000, type: "Huge Vehicle (Water)", hp: 150, dt: 10, speedBase: 70, str: 18, dex: 16, con: 16, sizeBaseAc: 14, crewMin: 4, crewMax: 8, cargo: "5 tons" },
-        pinnace: { name: "Smuggler\'s Pinnace", cost: 8000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 60, str: 16, dex: 16, con: 16, sizeBaseAc: 15, crewMin: 5, crewMax: 15, cargo: "50 tons" },
-        submersible: { name: "Deep-Sea Submersible", cost: 12000, type: "Huge Vehicle (Water)", hp: 200, dt: 15, speedBase: 30, str: 18, dex: 12, con: 18, sizeBaseAc: 16, crewMin: 4, crewMax: 6, cargo: "5 tons" },
-        clipper: { name: "Aether-Clipper", cost: 15000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 90, str: 16, dex: 18, con: 14, sizeBaseAc: 15, crewMin: 10, crewMax: 20, cargo: "30 tons" },
-        galleon: { name: "Ironclad Galleon", cost: 10000, type: "Gargantuan Vehicle (Water)", hp: 300, dt: 15, speedBase: 40, str: 20, dex: 10, con: 18, sizeBaseAc: 15, crewMin: 20, crewMax: 40, cargo: "100 tons" },
-        barge: { name: "Necromancer\'s Barge", cost: 5000, type: "Gargantuan Vehicle (Water)", hp: 350, dt: 10, speedBase: 25, str: 18, dex: 8, con: 20, sizeBaseAc: 14, crewMin: 2, crewMax: 5, cargo: "200 tons (Corpses)" },
-        leviathan: { name: "Leviathan Hunter", cost: 18000, type: "Gargantuan Vehicle (Water)", hp: 400, dt: 20, speedBase: 35, str: 22, dex: 10, con: 20, sizeBaseAc: 16, crewMin: 30, crewMax: 50, cargo: "80 tons" },
-        dreadnought: { name: "Subterranean Dreadnought", cost: 25000, type: "Gargantuan Vehicle (Water)", hp: 500, dt: 25, speedBase: 25, str: 24, dex: 6, con: 20, sizeBaseAc: 16, crewMin: 80, crewMax: 120, cargo: "500 tons" },
-        flagship: { name: "Sovereign Flagship", cost: 100000, type: "Colossal Vehicle (Water)", hp: 800, dt: 30, speedBase: 20, str: 26, dex: 4, con: 22, sizeBaseAc: 18, crewMin: 200, crewMax: 300, cargo: "2000 tons" },
-        custom: { name: "Custom Blueprint", cost: 0, type: "Custom Vehicle", hp: 100, dt: 0, speedBase: 30, str: 10, dex: 10, con: 10, sizeBaseAc: 10, crewMin: 1, crewMax: 1, cargo: "0 tons" }
+        skiff: { name: "Sluice-Skiff", cost: 2000, type: "Huge Vehicle (Water)", hp: 100, dt: 5, speedBase: 80, str: 16, dex: 18, con: 14, sizeBaseAc: 14, crewMin: 1, crewMax: 2, cargo: "1 ton", maxHPt: 2 },
+        gunboat: { name: "Assault Gunboat", cost: 6000, type: "Huge Vehicle (Water)", hp: 150, dt: 10, speedBase: 70, str: 18, dex: 16, con: 16, sizeBaseAc: 14, crewMin: 4, crewMax: 8, cargo: "5 tons", maxHPt: 4 },
+        pinnace: { name: "Smuggler\'s Pinnace", cost: 8000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 60, str: 16, dex: 16, con: 16, sizeBaseAc: 15, crewMin: 5, crewMax: 15, cargo: "50 tons", maxHPt: 5 },
+        submersible: { name: "Deep-Sea Submersible", cost: 12000, type: "Huge Vehicle (Water)", hp: 200, dt: 15, speedBase: 30, str: 18, dex: 12, con: 18, sizeBaseAc: 16, crewMin: 4, crewMax: 6, cargo: "5 tons", maxHPt: 3 },
+        clipper: { name: "Aether-Clipper", cost: 15000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 90, str: 16, dex: 18, con: 14, sizeBaseAc: 15, crewMin: 10, crewMax: 20, cargo: "30 tons", maxHPt: 5 },
+        galleon: { name: "Ironclad Galleon", cost: 10000, type: "Gargantuan Vehicle (Water)", hp: 300, dt: 15, speedBase: 40, str: 20, dex: 10, con: 18, sizeBaseAc: 15, crewMin: 20, crewMax: 40, cargo: "100 tons", maxHPt: 6 },
+        barge: { name: "Necromancer\'s Barge", cost: 5000, type: "Gargantuan Vehicle (Water)", hp: 350, dt: 10, speedBase: 25, str: 18, dex: 8, con: 20, sizeBaseAc: 14, crewMin: 2, crewMax: 5, cargo: "200 tons (Corpses)", maxHPt: 4 },
+        leviathan: { name: "Leviathan Hunter", cost: 18000, type: "Gargantuan Vehicle (Water)", hp: 400, dt: 20, speedBase: 35, str: 22, dex: 10, con: 20, sizeBaseAc: 16, crewMin: 30, crewMax: 50, cargo: "80 tons", maxHPt: 8 },
+        dreadnought: { name: "Subterranean Dreadnought", cost: 25000, type: "Gargantuan Vehicle (Water)", hp: 500, dt: 25, speedBase: 25, str: 24, dex: 6, con: 20, sizeBaseAc: 16, crewMin: 80, crewMax: 120, cargo: "500 tons", maxHPt: 10 },
+        flagship: { name: "Sovereign Flagship", cost: 100000, type: "Colossal Vehicle (Water)", hp: 800, dt: 30, speedBase: 20, str: 26, dex: 4, con: 22, sizeBaseAc: 18, crewMin: 200, crewMax: 300, cargo: "2000 tons", maxHPt: 15 },
+        custom: { name: "Custom Blueprint", cost: 0, type: "Custom Vehicle", hp: 100, dt: 0, speedBase: 30, str: 10, dex: 10, con: 10, sizeBaseAc: 10, crewMin: 1, crewMax: 1, cargo: "0 tons", maxHPt: 5 }
     },
     materials: {
         standard: { name: "Standard Oak", cost: 0, speedMod: 0, hpMod: 0, dtMod: 0, traits: [] },
@@ -30,13 +30,13 @@ const catalog = {
     },
     figureheads: {
         none: { name: "None", cost: 0, traits: [] },
-        gorgon: { name: "Gorgon\'s Visage", cost: 4000, traits: [{ name: "Petrifying Gaze (1/Day)", desc: "Casts a petrifying beam in a 60-foot line off the bow (DC 15 CON)." }] },
-        breacher: { name: "Breacher\'s Ram", cost: 2500, traits: [{ name: "Deep-Iron Spike", desc: "Deals double damage when ramming other ships or huge+ sea monsters." }] },
-        aether: { name: "Aether-Seer Array", cost: 6000, traits: [{ name: "Crystal Eye", desc: "Detects invisible creatures, underwater mines, or magical traps up to 1 mile away." }] }
+        gorgon: { name: "Gorgon\'s Visage", cost: 4000, hpt: 1, traits: [{ name: "Petrifying Gaze (1/Day)", desc: "Casts a petrifying beam in a 60-foot line off the bow (DC 15 CON)." }] },
+        breacher: { name: "Breacher\'s Ram", cost: 2500, hpt: 1, traits: [{ name: "Deep-Iron Spike", desc: "Deals double damage when ramming other ships or huge+ sea monsters." }] },
+        aether: { name: "Aether-Seer Array", cost: 6000, hpt: 2, traits: [{ name: "Crystal Eye", desc: "Detects invisible creatures, underwater mines, or magical traps up to 1 mile away." }] }
     },
     countermeasures: {
         none: { name: "None", cost: 0, traits: [] },
-        smoke: { name: "Alchemical Smoke-Stacks", cost: 2000, traits: [{ name: "Obscurement (3/Day)", desc: "Deploys a thick cloud of toxic gas (60 ft radius) blocking line of sight." }] },
+        smoke: { name: "Alchemical Smoke-Stacks", cost: 2000, hpt: 1, traits: [{ name: "Obscurement (3/Day)", desc: "Deploys a thick cloud of toxic gas (60 ft radius) blocking line of sight." }] },
         decoy: { name: "Illusory Decoys", cost: 4500, traits: [{ name: "Phantom Duplicate (1/Day)", desc: "Projects a perfect phantom duplicate of the ship 100 feet away to draw enemy fire." }] },
         reflect: { name: "Spell-Reflection Shielding", cost: 8000, traits: [{ name: "Arcane Mirror (1/Day)", desc: "Bounces a single targeted spell of 5th level or lower back at the caster." }] }
     },
@@ -44,12 +44,12 @@ const catalog = {
         standard: { name: "Standard Hired Crew", cost: 0, traits: [] },
         skeletal: { name: "Skeletal Laborers", cost: 1000, traits: [{ name: "Undead Crew", desc: "Cheap, tireless, and immune to poison/charm, but terrible at complex tasks (Disadvantage on skill checks)." }] },
         sablehook: { name: "Sablehook Smugglers", cost: 3000, traits: [{ name: "Underworld Contacts", desc: "Grants advantage on Deception and Persuasion checks when dealing with underworld authorities." }] },
-        thessalan: { name: "Thessalan Mutants", cost: 4000, traits: [{ name: "Brutish Boarders", desc: "Automatically grapple enemies they engage during ship-to-ship boarding combat." }] }
+        thessalan: { name: "Thessalan Mutants", cost: 4000, hpt: 1, traits: [{ name: "Brutish Boarders", desc: "Automatically grapple enemies they engage during ship-to-ship boarding combat." }] }
     },
     auxiliary: {
         none: { name: "None", cost: 0, traits: [] },
-        divebells: { name: "Dive-Bells", cost: 5000, traits: [{ name: "Deep-Sea Pods", desc: "Small, heavily armored pods for dropping a 4-man party to the extreme ocean floor safely." }] },
-        kites: { name: "Boarding-Kites", cost: 1500, traits: [{ name: "Assault Gliders", desc: "Allows the crew to launch themselves into the rigging of enemy ships up to 150 feet away." }] }
+        divebells: { name: "Dive-Bells", cost: 5000, hpt: 1, traits: [{ name: "Deep-Sea Pods", desc: "Small, heavily armored pods for dropping a 4-man party to the extreme ocean floor safely." }] },
+        kites: { name: "Boarding-Kites", cost: 1500, hpt: 1, traits: [{ name: "Assault Gliders", desc: "Allows the crew to launch themselves into the rigging of enemy ships up to 150 feet away." }] }
     },
     propulsion: {
         sails: { name: "Standard Rigging", cost: 0, traits: [] },
@@ -68,36 +68,36 @@ const catalog = {
         ]}
     },
     weapons: {
-        ballista: { name: "Heavy Ballista", cost: 1000, action: { name: "Heavy Ballista", desc: "Ranged Weapon Attack: +6 to hit, range 120/480 ft., one target. Hit: 16 (3d10) piercing damage." }},
-        mangonel: { name: "Siege Mangonel", cost: 1500, action: { name: "Mangonel", desc: "Ranged Weapon Attack: +5 to hit, range 200/800 ft. (can\'t hit targets within 60 ft.), one target. Hit: 27 (5d10) bludgeoning damage." }},
-        cannon: { name: "Broadside Cannon", cost: 3000, action: { name: "Broadside Cannon", desc: "Ranged Weapon Attack: +6 to hit, range 600/2,400 ft., one target. Hit: 44 (8d10) bludgeoning damage." }},
-        greekfire: { name: "Greek Fire Siphon", cost: 2500, action: { name: "Fire Siphon (Recharge 5-6)", desc: "Sprays fire in a 60-foot cone. Each creature and object must make a DC 15 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save." }},
-        harpoon: { name: "Whaler\'s Harpoon Gun", cost: 1500, action: { name: "Harpoon Shot", desc: "Ranged Weapon Attack: +6 to hit, range 100/300 ft., one target. Hit: 11 (2d10) piercing damage, and the target is grappled (escape DC 14)." }},
-        trebuchet: { name: "Fletched Trebuchet", cost: 4000, action: { name: "Trebuchet", desc: "Ranged Weapon Attack: +5 to hit, range 300/1,200 ft. (can\'t hit targets within 60 ft.). Hit: 44 (8d10) bludgeoning damage." }},
-        disruptor: { name: "Githyanki Disruptor", cost: 5000, action: { name: "Psychic Disruptor", desc: "Ranged Spell Attack: +8 to hit, range 300 ft., one target. Hit: 22 (4d10) psychic damage. Target vehicle\'s speed is halved." }},
-        spellcannon: { name: "Arcane Spell-Cannon", cost: 8000, action: { name: "Channel Arcana", desc: "Gunner expends a spell slot. Ranged Spell Attack: +8 to hit, 150 ft. Hit: 1d10 force damage per level of the spell slot expended." }},
-        lightning: { name: "Lightning Emitter", cost: 6000, action: { name: "Lightning Arc (Recharge 5-6)", desc: "Fires a 100ft line of lightning. DC 16 Dex save for 28 (8d6) lightning damage. Double damage to Deep-Iron ships." }},
-        gatling: { name: "Eldritch Gatling", cost: 7500, action: { name: "Eldritch Burst", desc: "Fires 1d4+1 homing magic missiles. Each deals 1d4+1 force damage. No attack roll required." }},
-        voidrift: { name: "Void-Rift Projector", cost: 12000, action: { name: "Singularity (1/Day)", desc: "Creates a 30ft radius singularity 120ft away. Ships inside must make a DC 18 STR save or be pulled 30ft to the center and take 55 (10d10) force damage." }},
-        necrotic: { name: "Necrotic Torpedo", cost: 9000, action: { name: "Soul-Seeker", desc: "Fires a slow moving torpedo that homes in on the nearest living crew. Deals 8d10 necrotic damage on impact." }}
+        ballista: { name: "Heavy Ballista", cost: 1000, hpt: 1, action: { name: "Heavy Ballista", desc: "Ranged Weapon Attack: +6 to hit, range 120/480 ft., one target. Hit: 16 (3d10) piercing damage." }},
+        mangonel: { name: "Siege Mangonel", cost: 1500, hpt: 2, action: { name: "Mangonel", desc: "Ranged Weapon Attack: +5 to hit, range 200/800 ft. (can\'t hit targets within 60 ft.), one target. Hit: 27 (5d10) bludgeoning damage." }},
+        cannon: { name: "Broadside Cannon", cost: 3000, hpt: 3, action: { name: "Broadside Cannon", desc: "Ranged Weapon Attack: +6 to hit, range 600/2,400 ft., one target. Hit: 44 (8d10) bludgeoning damage." }},
+        greekfire: { name: "Greek Fire Siphon", cost: 2500, hpt: 2, action: { name: "Fire Siphon (Recharge 5-6)", desc: "Sprays fire in a 60-foot cone. Each creature and object must make a DC 15 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save." }},
+        harpoon: { name: "Whaler\'s Harpoon Gun", cost: 1500, hpt: 1, action: { name: "Harpoon Shot", desc: "Ranged Weapon Attack: +6 to hit, range 100/300 ft., one target. Hit: 11 (2d10) piercing damage, and the target is grappled (escape DC 14)." }},
+        trebuchet: { name: "Fletched Trebuchet", cost: 4000, hpt: 4, action: { name: "Trebuchet", desc: "Ranged Weapon Attack: +5 to hit, range 300/1,200 ft. (can\'t hit targets within 60 ft.). Hit: 44 (8d10) bludgeoning damage." }},
+        disruptor: { name: "Githyanki Disruptor", cost: 5000, hpt: 2, action: { name: "Psychic Disruptor", desc: "Ranged Spell Attack: +8 to hit, range 300 ft., one target. Hit: 22 (4d10) psychic damage. Target vehicle\'s speed is halved." }},
+        spellcannon: { name: "Arcane Spell-Cannon", cost: 8000, hpt: 3, action: { name: "Channel Arcana", desc: "Gunner expends a spell slot. Ranged Spell Attack: +8 to hit, 150 ft. Hit: 1d10 force damage per level of the spell slot expended." }},
+        lightning: { name: "Lightning Emitter", cost: 6000, hpt: 3, action: { name: "Lightning Arc (Recharge 5-6)", desc: "Fires a 100ft line of lightning. DC 16 Dex save for 28 (8d6) lightning damage. Double damage to Deep-Iron ships." }},
+        gatling: { name: "Eldritch Gatling", cost: 7500, hpt: 2, action: { name: "Eldritch Burst", desc: "Fires 1d4+1 homing magic missiles. Each deals 1d4+1 force damage. No attack roll required." }},
+        voidrift: { name: "Void-Rift Projector", cost: 12000, hpt: 5, action: { name: "Singularity (1/Day)", desc: "Creates a 30ft radius singularity 120ft away. Ships inside must make a DC 18 STR save or be pulled 30ft to the center and take 55 (10d10) force damage." }},
+        necrotic: { name: "Necrotic Torpedo", cost: 9000, hpt: 4, action: { name: "Soul-Seeker", desc: "Fires a slow moving torpedo that homes in on the nearest living crew. Deals 8d10 necrotic damage on impact." }}
     },
     upgrades: {
-        smuggler: { name: "Smuggler\'s Hold", cost: 2000, traits: [
+        smuggler: { name: "Smuggler\'s Hold", cost: 2000, hpt: 1, traits: [
             { name: "Lead-Lined Compartment", desc: "Items inside the hold cannot be detected by divination magic such as Detect Magic or Locate Object." }
         ]},
-        biolab: { name: "Biomancer\'s Lab", cost: 5000, traits: [
+        biolab: { name: "Biomancer\'s Lab", cost: 5000, hpt: 1, traits: [
             { name: "Mobile Laboratory", desc: "Provides advantage on checks made to craft alchemical items or flesh-grafts while underway." }
         ]},
-        brig: { name: "Null-Brig", cost: 4000, traits: [
+        brig: { name: "Null-Brig", cost: 4000, hpt: 1, traits: [
             { name: "Dampening Cells", desc: "Creatures locked inside the brig cannot cast spells with verbal or somatic components, and magic items they carry become mundane." }
         ]},
-        chronal: { name: "Chronal Engine", cost: 4000, traits: [
+        chronal: { name: "Chronal Engine", cost: 4000, hpt: 1, traits: [
             { name: "Chronal Override (1/Day)", desc: "The captain can push the engine into overdrive. The ship can immediately take one additional action on its turn." }
         ]},
-        vats: { name: "Thessalan Vats", cost: 2500, traits: [
+        vats: { name: "Thessalan Vats", cost: 2500, hpt: 1, traits: [
             { name: "Biomantic Support System", desc: "Living crew members aboard the ship regain 1d6 hit points at the start of each of their turns." }
         ]},
-        triweave: { name: "Tri-Weave Cloaking", cost: 6000, traits: [
+        triweave: { name: "Tri-Weave Cloaking", cost: 6000, hpt: 2, traits: [
             { name: "Sovereign Shroud (1/Day)", desc: "The ship and everything aboard it becomes invisible to normal sight and magical scrying (like the Nondetection spell) for 1 hour, or until the ship makes an attack." }
         ]}
     }
@@ -112,35 +112,60 @@ function getModString(score) {
 // Update total cost continuously
 function updateTotalCost() {
     let total = 0;
+    let usedHpt = 0;
+
+    const chassisId = document.querySelector('input[name="chassis"]:checked').value;
+    const materialId = document.querySelector('input[name="armor"]:checked').value; // We mapped Hull Material to 'armor' originally in part 1
+    const coreId = document.querySelector('input[name="core"]')?.checked ? document.querySelector('input[name="core"]:checked').value : "standard";
+    const propId = document.querySelector('input[name="propulsion"]')?.checked ? document.querySelector('input[name="propulsion"]:checked').value : "sails";
+    const weaponId = document.querySelector('input[name="weapon"]:checked').value;
     
-    // Using try-catch because UI might not be fully loaded or sections might be collapsed
-    try {
-        const chassis = document.querySelector("input[name=\'chassis\']:checked").value;
-        const material = document.querySelector("input[name=\'material\']:checked").value;
-        const core = document.querySelector("input[name=\'core\']:checked").value;
-        const propulsion = document.querySelector("input[name=\'propulsion\']:checked").value;
-        const armor = document.querySelector("input[name=\'armor\']:checked").value;
-        const weapon = document.querySelector("input[name=\'weapon\']:checked").value;
-        const figurehead = document.querySelector("input[name=\'figurehead\']:checked").value;
-        const countermeasure = document.querySelector("input[name=\'countermeasure\']:checked").value;
-        const crew = document.querySelector("input[name=\'crew\']:checked").value;
-        const auxiliary = document.querySelector("input[name=\'auxiliary\']:checked").value;
-        const upgrades = document.querySelectorAll("input[name=\'upgrade\']:checked");
+    // Check if these exist in the DOM, default if not
+    let armorId = document.querySelector('input[name="armorplate"]:checked')?.value || "none";
+    let figId = document.querySelector('input[name="figurehead"]:checked')?.value || "none";
+    let cmId = document.querySelector('input[name="countermeasure"]:checked')?.value || "none";
+    let auxId = document.querySelector('input[name="auxiliary"]:checked')?.value || "none";
+    let crewId = document.querySelector('input[name="crew"]:checked')?.value || "standard";
 
-        total += catalog.chassis[chassis].cost;
-        total += catalog.materials[material].cost;
-        total += catalog.cores[core].cost;
-        total += catalog.propulsion[propulsion].cost;
-        total += catalog.armor[armor].cost;
-        total += catalog.weapons[weapon].cost;
-        total += catalog.figureheads[figurehead].cost;
-        total += catalog.countermeasures[countermeasure].cost;
-        total += catalog.crew[crew].cost;
-        total += catalog.auxiliary[auxiliary].cost;
-        upgrades.forEach(u => total += catalog.upgrades[u.value].cost);
+    let c = catalog.chassis[chassisId];
+    if(chassisId === "custom") {
+        c = { cost: 0, maxHPt: parseInt(document.getElementById("custom-hpt")?.value) || 5 };
+    }
+    
+    total += c.cost;
+    total += catalog.materials[materialId].cost;
+    
+    if(catalog.cores[coreId]) total += catalog.cores[coreId].cost;
+    if(catalog.propulsion[propId]) total += catalog.propulsion[propId].cost;
+    if(catalog.armor[armorId]) total += catalog.armor[armorId].cost;
+    if(catalog.figureheads[figId]) total += catalog.figureheads[figId].cost;
+    if(catalog.countermeasures[cmId]) total += catalog.countermeasures[cmId].cost;
+    if(catalog.auxiliary[auxId]) total += catalog.auxiliary[auxId].cost;
+    if(catalog.crew[crewId]) total += catalog.crew[crewId].cost;
+    
+    let w = catalog.weapons[weaponId];
+    total += w.cost;
+    usedHpt += (w.hpt || 0);
 
-        document.getElementById("total-cost-display").textContent = total.toLocaleString();
-    } catch(e) {}
+    const upgrades = document.querySelectorAll('input[name="upgrade"]:checked');
+    upgrades.forEach(u => {
+        let up = catalog.upgrades[u.value];
+        total += up.cost;
+        usedHpt += (up.hpt || 1);
+    });
+
+    document.getElementById("total-cost-display").textContent = total.toLocaleString();
+    
+    // Update HPT display
+    const hptDisplay = document.getElementById("hpt-display");
+    if (hptDisplay) {
+        hptDisplay.textContent = usedHpt + " / " + c.maxHPt;
+        if (usedHpt > c.maxHPt) {
+            hptDisplay.style.color = "#ef4444";
+        } else {
+            hptDisplay.style.color = "#10b981";
+        }
+    }
 }
 
 // Build Stat Block
@@ -176,7 +201,8 @@ document.getElementById("btn-build").addEventListener("click", () => {
             con: parseInt(document.getElementById("custom-con").value) || 10,
             crewMin: document.getElementById("custom-crew-min").value || "1",
             crewMax: document.getElementById("custom-crew-max").value || "5",
-            cargo: document.getElementById("custom-cargo").value || "10 tons"
+            cargo: document.getElementById("custom-cargo").value || "10 tons",
+            maxHPt: parseInt(document.getElementById("custom-hpt").value) || 5
         };
     }
     const core = catalog.cores[coreId];
@@ -201,6 +227,24 @@ document.getElementById("btn-build").addEventListener("click", () => {
     document.getElementById("sb-speed").textContent = (chassis.speedBase + material.speedMod) + " ft.";
     document.getElementById("sb-crew").textContent = chassis.crewMin + "-" + chassis.crewMax;
     document.getElementById("sb-cargo").textContent = chassis.cargo;
+    
+    // Interactive HP
+    let maxHp = chassis.hp + material.hpMod;
+    document.getElementById("sb-hp").innerHTML = <input type="number" id="live-hp-input" value="" style="width:60px; background:transparent; color:#e2e8f0; border:1px solid #475569; font-weight:bold;"> / ;
+    
+    // Check HPT Overload
+    let usedHpt = 0;
+    let weapon = catalog.weapons[document.querySelector('input[name="weapon"]:checked').value];
+    usedHpt += (weapon.hpt || 0);
+    document.querySelectorAll('input[name="upgrade"]:checked').forEach(u => { usedHpt += (catalog.upgrades[u.value].hpt || 1); });
+    
+    const overloadDiv = document.getElementById("sb-overload-warning");
+    if(usedHpt > chassis.maxHPt) {
+        overloadDiv.style.display = "block";
+    } else {
+        overloadDiv.style.display = "none";
+    }
+
 
     document.getElementById("sb-str").textContent = getModString(chassis.str);
     document.getElementById("sb-dex").textContent = getModString(chassis.dex);
@@ -228,6 +272,25 @@ document.getElementById("btn-build").addEventListener("click", () => {
         allTraits.forEach(trait => {
             traitsContainer.innerHTML += "<div class=\'trait\'><strong>" + trait.name + ".</strong> " + trait.desc + "</div>";
         });
+    }
+
+        // Inject Crew Stations
+    let weaponObj = catalog.weapons[document.querySelector('input[name="weapon"]:checked').value];
+    const stationsContainer = document.getElementById("sb-stations-container");
+    if(stationsContainer) {
+        stationsContainer.innerHTML = "";
+        
+        let helmDiv = document.createElement("div");
+        helmDiv.innerHTML = "<strong>Helm (Requires 1 Crew).</strong> The pilot can use an action to move the ship up to its speed.";
+        stationsContainer.appendChild(helmDiv);
+        
+        let engDiv = document.createElement("div");
+        engDiv.innerHTML = "<strong>Engineering (Requires 1 Crew).</strong> The engineer can use an action to repair 2d10 hit points or grant +10 ft speed until end of next turn.";
+        stationsContainer.appendChild(engDiv);
+        
+        let gunDiv = document.createElement("div");
+        gunDiv.innerHTML = <strong>Gunnery:  (Requires 1 Crew).</strong> The gunner can use an action to fire the primary weapon.;
+        stationsContainer.appendChild(gunDiv);
     }
 
     const actionsContainer = document.getElementById("sb-actions-container");
@@ -380,4 +443,114 @@ document.getElementById('chassis-grid').addEventListener('change', (e) => {
     } else if(e.target.name === 'chassis') {
         customFields.style.display = 'none';
     }
+});
+
+// Export JSON
+function exportToJSON() {
+    let formData = {};
+    const radios = document.querySelectorAll('.builder-panel input[type="radio"]:checked');
+    radios.forEach(r => formData[r.name] = r.value);
+    
+    const checks = document.querySelectorAll('.builder-panel input[type="checkbox"]:checked');
+    formData.upgrades = Array.from(checks).map(c => c.value);
+    
+    if(formData.chassis === "custom") {
+        formData.custom = {
+            name: document.getElementById("custom-name").value,
+            type: document.getElementById("custom-type").value,
+            hp: document.getElementById("custom-hp").value,
+            dt: document.getElementById("custom-dt").value,
+            speed: document.getElementById("custom-speed").value,
+            ac: document.getElementById("custom-ac").value,
+            str: document.getElementById("custom-str").value,
+            dex: document.getElementById("custom-dex").value,
+            con: document.getElementById("custom-con").value,
+            crewMin: document.getElementById("custom-crew-min").value,
+            crewMax: document.getElementById("custom-crew-max").value,
+            cargo: document.getElementById("custom-cargo").value,
+            hpt: document.getElementById("custom-hpt").value
+        };
+    }
+    
+    const blob = new Blob([JSON.stringify(formData, null, 2)], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = "sovereign-shipyard-blueprint.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Import JSON
+function importFromJSON(event) {
+    const file = event.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            // reset all first
+            document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
+            
+            for(const [key, value] of Object.entries(data)) {
+                if(key === "upgrades") {
+                    value.forEach(v => {
+                        let el = document.querySelector(input[name="upgrade"][value=""]);
+                        if(el) el.checked = true;
+                    });
+                } else if(key === "custom") {
+                    document.getElementById("custom-name").value = value.name;
+                    document.getElementById("custom-type").value = value.type;
+                    document.getElementById("custom-hp").value = value.hp;
+                    document.getElementById("custom-dt").value = value.dt;
+                    document.getElementById("custom-speed").value = value.speed;
+                    document.getElementById("custom-ac").value = value.ac;
+                    document.getElementById("custom-str").value = value.str;
+                    document.getElementById("custom-dex").value = value.dex;
+                    document.getElementById("custom-con").value = value.con;
+                    document.getElementById("custom-crew-min").value = value.crewMin;
+                    document.getElementById("custom-crew-max").value = value.crewMax;
+                    document.getElementById("custom-cargo").value = value.cargo;
+                    document.getElementById("custom-hpt").value = value.hpt || 5;
+                } else {
+                    let el = document.querySelector(input[name=""][value=""]);
+                    if(el) el.checked = true;
+                }
+            }
+            
+            // toggle custom fields display
+            if(data.chassis === "custom") {
+                document.getElementById('custom-blueprint-fields').style.display = 'block';
+            } else {
+                document.getElementById('custom-blueprint-fields').style.display = 'none';
+            }
+            
+            updateTotalCost();
+            buildStatBlock();
+        } catch(err) {
+            alert("Invalid JSON file.");
+        }
+    };
+    reader.readAsText(file);
+}
+
+// Global HP live tracking
+document.addEventListener('click', (e) => {
+    if(e.target.id === 'btn-hp-plus') {
+        let input = document.getElementById("live-hp-input");
+        if(input) input.value = parseInt(input.value) + 1;
+    }
+    if(e.target.id === 'btn-hp-minus') {
+        let input = document.getElementById("live-hp-input");
+        if(input) input.value = parseInt(input.value) - 1;
+    }
+});
+
+// Attach export/import listeners on window load
+window.addEventListener('DOMContentLoaded', () => {
+    let btnExport = document.getElementById('btn-export');
+    if(btnExport) btnExport.addEventListener('click', exportToJSON);
+    
+    let inputImport = document.getElementById('input-import');
+    if(inputImport) inputImport.addEventListener('change', importFromJSON);
 });
