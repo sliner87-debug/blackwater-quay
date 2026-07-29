@@ -841,6 +841,8 @@ document.querySelectorAll('.theme-select').forEach(select => {
 
 document.getElementById('btn-export').addEventListener('click', () => {
     const state = {
+        version: "1.2",
+        timestamp: new Date().toISOString(),
         name: document.getElementById('ship-name').value,
         chassis: document.getElementById('select-chassis').value,
         material: document.getElementById('select-material').value,

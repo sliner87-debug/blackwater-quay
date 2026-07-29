@@ -60,6 +60,34 @@
             border-radius: 4px;
             font-size: 1.1em;
         }
+        
+        .rarity-tag {
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+        }
+        .rarity-common .rarity-tag { background: #334155; color: #cbd5e1; }
+        .rarity-uncommon .rarity-tag { background: #065f46; color: #a7f3d0; }
+        .rarity-rare .rarity-tag { background: #1e3a8a; color: #bfdbfe; }
+        .rarity-void-touched .rarity-tag { background: #581c87; color: #e9d5ff; box-shadow: 0 0 10px #a855f7; }
+
+        .loot-display.rarity-common { color: #cbd5e1; box-shadow: inset 0 0 15px rgba(203, 213, 225, 0.2); border-color: #475569; }
+        .loot-display.rarity-uncommon { color: #34d399; box-shadow: inset 0 0 15px rgba(52, 211, 153, 0.2); border-color: #059669; }
+        .loot-display.rarity-rare { color: #60a5fa; box-shadow: inset 0 0 15px rgba(96, 165, 250, 0.3); border-color: #2563eb; }
+        .loot-display.rarity-void-touched { color: #c084fc; box-shadow: inset 0 0 25px rgba(168, 85, 247, 0.5); border-color: #9333ea; }
+        
+        .scrambling {
+            color: #d4af37 !important;
+            font-family: monospace;
+            opacity: 0.7;
+            text-shadow: 0 0 5px #d4af37;
+        }
     </style>
 </head>
 <body class="shipyard-body">

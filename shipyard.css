@@ -495,4 +495,29 @@ canvas {
         border: none !important;
         box-shadow: none !important;
     }
+    }
+
+    #statblock-container {
+        border: 4px double black !important;
+        padding: 20px !important;
+        box-sizing: border-box;
+        margin: 10mm;
+    }
+    
+    #statblock-container::before {
+        content: """";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        background-image: url('images/sablehook_logo.png'); /* Placeholder */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.05;
+        z-index: -1;
+        pointer-events: none;
+    }
 }
