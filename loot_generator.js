@@ -18,7 +18,7 @@
     ],
     magetech: [
         { text: "A cracked crystal core that faintly hums and shocks anyone who touches it.", rarity: "common" },
-        { text: "A mechanical crab the size of a coin that endlessly tries to pinch invisible mites.", rarity: "uncommon" },
+        { text: "A clockwork crab the size of a coin that endlessly tries to pinch invisible mites.", rarity: "uncommon" },
         { text: "A rusted aether-valve from a submersible engine, leaking a glowing blue grease.", rarity: "common" },
         { text: "A monocle with multiple rotating lenses, one of which sees heat signatures.", rarity: "rare" },
         { text: "A heavy iron key with an intricate, impossible fractal pattern on its teeth.", rarity: "uncommon" },
@@ -29,7 +29,7 @@
         { text: "A small, brass music box that plays a haunting, mathematically perfect fugue.", rarity: "uncommon" },
         { text: "A metallic scarab beetle that attempts to burrow into any exposed skin.", rarity: "rare" },
         { text: "A pair of goggles that highlights recently used spell paths in the air.", rarity: "void-touched" },
-        { text: "A syringe filled with a glowing, viscous green fluid that hums.", rarity: "rare" },
+        { text: "A glass ampoule filled with a glowing, viscous green fluid that hums.", rarity: "rare" },
         { text: "A heavy, ticking brass pocket-watch that occasionally skips exactly three seconds.", rarity: "uncommon" },
         { text: "An intricately carved obsidian gear that feels cold and damp.", rarity: "common" }
     ],
