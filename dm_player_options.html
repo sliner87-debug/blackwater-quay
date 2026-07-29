@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Options - Blackwater Quay</title>
+    <link rel="stylesheet" href="webpage.css">
+    <link rel="stylesheet" href="shipyard.css">
+    <style>
+        .dm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            background-color: rgba(10, 10, 15, 0.9);
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+        .content-section h1, .content-section h2, .content-section h3 {
+            color: #d4af37; /* Gold accent */
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .content-section th, .content-section td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: left;
+        }
+        .content-section th {
+            background-color: #222;
+            color: #d4af37;
+        }
+        .content-section blockquote {
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            color: #aaa;
+            font-style: italic;
+            background: #1a1a24;
+            padding: 10px 15px;
+        }
+        .content-section code {
+            background: #222;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #ff9d00;
+        }
+    </style>
+</head>
+<body class="shipyard-body">
+
+    <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
+        <nav class="nav-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">SABLEHOOK COVENANT</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Setting &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#antihero">Dark Hero</a>
+                        <a href="index.html#timeline">Chronal Timeline</a>
+                        <a href="index.html#map">Interactive Map</a>
+                        <a href="index.html#districts">Districts</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Novel &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="master_novel_complete.html">The Blackwater Trilogy</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">Campaign Modules &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="Campaign_Module/Act_IV_Descent_into_the_Deepmind_Annex.html">Act IV: The Deepmind Annex</a>
+                        <a href="Campaign_Module/The_Deepmind_Tear_Master_Module.html">The Deepmind Tear (Master)</a>
+                        <a href="Campaign_Module/The_Bleeding_Needle_Vessel_Manual.html">The Bleeding Needle</a>
+                        <a href="Campaign_Module/The_Onyx_Wake_Vessel_Manual.html">The Onyx Wake</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">TTRPG Tools &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#characters">Characters</a>
+                        <a href="index.html#factions">Faction Standing</a>
+                        <a href="blackwater_quay_codex.html">Blackwater Quay Codex</a>
+                        <a href="shipyard.html" style="color: #38bdf8; font-weight: bold;">Sovereign Shipbuilder</a>
+                        <a href="fleet_generator.html" style="color: #a855f7; font-weight: bold;">Fleet Generator</a>
+                        <a href="crew_generator.html" style="color: #22d3ee; font-weight: bold;">Crew Generator</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn" style="color: #d4af37; font-weight: bold;">Dungeon Master Codex &#9662;</a>
+                    <div class="dropdown-content">
+        <a href="dm_screen.html">The Complete Codex</a>
+        <a href="dm_magic_items.html">Magic Items</a>
+        <a href="dm_bestiary.html">Bestiary & NPCs</a>
+        <a href="dm_player_options.html">Player Mechanics</a>
+        <a href="dm_faction_renown.html">Faction Renown</a>
+        <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
+    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dm-container">
+        <h1 style="text-align: center; color: #fff; font-size: 2.5em; margin-bottom: 50px;">The Dungeon Master's Codex</h1>
+        <div id='player-options' class='content-section' style='margin-bottom: 50px;'><h1 id="player-options-feats-and-underworld-equipment">Player Options, Feats, and Underworld Equipment</h1>
+<h2 id="campaign-players-guide-dd-35-pathfinder-1e">Campaign Player's Guide (D&amp;D 3.5 / Pathfinder 1E)</h2>
+<p>This chapter provides players with thematic character options, custom feats, and specialized equipment to help integrate their characters into the campaign's setting and mechanics.</p>
+<hr />
+<h1 id="part-i-thematic-campaign-traits">PART I: THEMATIC CAMPAIGN TRAITS</h1>
+<p>Traits are minor background benefits that help anchor a character's history in the setting of Blackwater Quay. Each character may select two traits at character creation.</p>
+<h3 id="consortium-escapee">Consortium Escapee</h3>
+<ul>
+<li><strong>Background:</strong> You spent months or years in the Thessalan Consortium's containment pens before escaping with Banki's survivors. Your body has built up a high resistance to their experiments.</li>
+<li><strong>Benefit:</strong> You gain a +2 trait bonus on saving throws against poison, acid, and transmutation effects.</li>
+</ul>
+<h3 id="sovereign-corsair">Sovereign Corsair</h3>
+<ul>
+<li><strong>Background:</strong> You serve in Captain Mikhailis's flotilla, navigating the dangerous waterways of the Underdark on the <em>Onyx Wake</em> or its sister ships.</li>
+<li><strong>Benefit:</strong> You gain a +1 trait bonus on Acrobatics and Swim checks, and Swim is always a class skill for you.</li>
+</ul>
+<h3 id="aberrant-scion">Aberrant Scion</h3>
+<ul>
+<li><strong>Background:</strong> You bear an aberrant dragonmark that marks you as an outcast, drawing you to The Tarkanan's Marked Syndicate's protection.</li>
+<li><strong>Benefit:</strong> You gain a +2 trait bonus on saves against dragonmark effects, and your caster level for your aberrant dragonmark's spell-like ability increases by 1.</li>
+</ul>
+<h3 id="sewer-rat">Sewer Rat</h3>
+<ul>
+<li><strong>Background:</strong> You have spent years hiding in the Northern Sluices, learning to navigate the damp, dark tunnels beneath the city.</li>
+<li><strong>Benefit:</strong> You gain a +2 trait bonus on Hide and Move Silently checks when inside sewers, caverns, or subterranean areas.</li>
+</ul>
+<h3 id="tarkanan-shadow">Tarkanan Shadow</h3>
+<ul>
+<li><strong>Background:</strong> You were trained by Thora's elite assassins to handle poisons and blend into the architectural shadows of the Quay.</li>
+<li><strong>Benefit:</strong> You gain a +2 trait bonus on Sleight of Hand checks made to conceal small weapons or apply poisons, and you are immune to accidental self-poisoning.</li>
+</ul>
+<h3 id="planar-exile">Planar Exile</h3>
+<ul>
+<li><strong>Background:</strong> You have spent time stranded near pocket rifts or planar boundaries, adjusting your body to the harsh physics of other realms.</li>
+<li><strong>Benefit:</strong> You gain a +1 trait bonus on Survival checks, and you gain a +2 trait bonus on Fortitude saves made to resist environmental hazards caused by planar alignment or gravity shifts.</li>
+</ul>
+<hr />
+<h1 id="part-ii-custom-campaign-feats">PART II: CUSTOM CAMPAIGN FEATS</h1>
+<p>These feats are designed to reflect the unique magic, psionics, and biological modifications found in the Blackwater Quay conflict.</p>
+<h3 id="sovereign-resonance-general">Sovereign Resonance [General]</h3>
+<p>You can channel a minuscule fraction of the Sovereign Thread's absolute authority to enforce your spells or psionics.
+*   <strong>Prerequisites:</strong> Able to cast spells or manifest psionics, Wisdom 15.
+*   <strong>Benefit:</strong> Once per day, when casting a spell or manifesting a psionic power, you can choose to bypass the target's Spell Resistance or Power Resistance automatically.
+*   <strong>Special:</strong> Utilizing this foundational rule of law is thoroughly mentally taxing. You take 1d3 points of temporary Intelligence damage immediately after the spell or power is resolved.</p>
+<h3 id="sovereign-anchor-general">Sovereign Anchor [General]</h3>
+<p>Your connection to the Sovereign Thread allows you to shield others from planar or magical disruption.
+*   <strong>Prerequisites:</strong> Sovereign Resonance, Charisma 15.
+*   <strong>Benefit:</strong> You can use your Sovereign Resonance twice per day. When you activate it, you can choose to extend a 5-ft. radius field around yourself. All allies within this area gain a +4 deflection bonus to AC and a +4 resistance bonus on saving throws against spells, psionics, and extraplanar abilities for 1 round.</p>
+<h3 id="aberrant-surge-general">Aberrant Surge [General]</h3>
+<p>You can force your aberrant dragonmark to discharge magic in rapid succession, at a heavy physical cost.
+*   <strong>Prerequisites:</strong> Possess an aberrant dragonmark, Great Fortitude.
+*   <strong>Benefit:</strong> As a swift action, you can expend one of your Hit Dice to instantly recharge the daily use of your aberrant dragonmark's spell-like ability.
+*   <strong>Special:</strong> The physical strain is immense. You are <em>sickened</em> for 1d4 rounds after activating this ability, and your aberrant mark weeps blood, causing a -2 penalty to Charisma-based checks for 24 hours.</p>
+<h3 id="fleshwarped-resilience-general">Fleshwarped Resilience [General]</h3>
+<p>Your body has been altered by Suture's clinics or Consortium experiments, hardening your flesh.
+*   <strong>Prerequisites:</strong> Constitution 15, Great Fortitude.
+*   <strong>Benefit:</strong> You gain Damage Reduction 2/Byeshk. You also gain a +4 racial bonus on saving throws against transmutation and fleshwarping effects.</p>
+<h3 id="tentacle-graft-mastery-fleshwarped">Tentacle Graft Mastery [Fleshwarped]</h3>
+<p>You have successfully adapted a displacer tentacle graft, turning it into a lethal limb.
+*   <strong>Prerequisites:</strong> Fleshwarped Resilience, Base Attack Bonus +4.
+*   <strong>Benefit:</strong> You grow a secondary natural weapon (a displacer tentacle). Once per round, you can make a tentacle attack as a secondary natural weapon (1d6 bludgeoning damage for Medium characters) with a 10-foot reach. This attack does not provoke attacks of opportunity.</p>
+<h3 id="eldritch-claw-attunement-fleshwarped">Eldritch Claw Attunement [Fleshwarped]</h3>
+<p>Your natural weapons or unarmed strikes phase through energy shields and physical defenses.
+*   <strong>Prerequisites:</strong> Base Attack Bonus +6, Strength 13.
+*   <strong>Benefit:</strong> Your natural attacks (including claw grafts or unarmed strikes) ignore deflection bonuses to AC and force-based spells (such as <em>Mage Armor</em>, <em>Shield</em>, or <em>Wall of Force</em>).</p>
+<h3 id="closed-loop-resiliency-general">Closed-Loop Resiliency [General]</h3>
+<p>Your mind is partially shielded by the Vael-Kaelor collective loop, protecting you from mental decay.
+*   <strong>Prerequisites:</strong> Wisdom 13, must be aligned with Sablehook.
+*   <strong>Benefit:</strong> You are completely immune to confusion, insanity, and feeblemind effects.
+*   <strong>Special:</strong> Because your mind is locked into a private network, you cannot receive beneficial telepathic commands or spells (such as <em>Telepathic Bond</em> or <em>Message</em>) from entities outside the collective loop.</p>
+<h3 id="tri-weave-attunement-metamagic-metapsionic">Tri-Weave Attunement [Metamagic / Metapsionic]</h3>
+<p>You have studied Banki's Tri-Weave channels, allowing you to blend arcane, psionic, and divine energies.
+*   <strong>Prerequisites:</strong> Spellcraft 5 ranks, Psicraft 5 ranks.
+*   <strong>Benefit:</strong> As a full-round action, you can cast a spell and manifest a psionic power in the same round, provided both the spell and the power are of 2nd level or lower. You must pay all standard spell slot and power point costs.</p>
+<h3 id="fractured-chronal-sense-general">Fractured Chronal Sense [General]</h3>
+<p>Your mind has been exposed to the shifting corridors of The Void of Madness, leaving you with a broken perception of time and space that allows you to read gravity and time distortions.
+*   <strong>Prerequisites:</strong> Wisdom 13, must have survived a planar bleeding event or The Void of Madness exposure.
+*   <strong>Benefit:</strong> You are completely immune to the <em>disorientation</em> and <em>nausea</em> effects caused by shifting gravity or dimensional pocket rifts. You automatically detect spatial rifts, portals, or displaced/phased creatures within 30 feet as faint, shimmering outlines.
+*   <strong>Chronal Foresight (Su):</strong> As a swift action, you can read the chronal drift to predict local gravity shifts or planar distortions 1 round before they occur. By calling out early warnings, you grant all allies within 30 feet a +4 insight bonus on saving throws to resist falling damage, spatial disorientation, or kinetic impacts from planar shifts for 1 round.
+*   <strong>Time-Slip (Su):</strong> Once per day, as an immediate action, when you are targeted by an attack, spell, or psionic effect, you can slip your personal timeline fractionally. This grants you a +4 dodge bonus to AC and a +4 resistance bonus on saving throws against that specific effect, or forces the attacker to reroll their attack roll (your choice).
+*   <strong>Drawback (The Void of Madness Vulnerability):</strong> Because your mind is permanently open to the chaotic, whispering timeline of the Realm of Madness, you suffer a -2 penalty on saving throws against mind-affecting effects cast by aberrations. If you fail such a save, you are <em>confused</em> for 1d4 rounds in addition to the spell's normal effects.</p>
+<hr />
+<h1 id="part-iii-underworld-equipment-drugs-grafts">PART III: UNDERWORLD EQUIPMENT, DRUGS, &amp; GRAFTS</h1>
+<p>This equipment is traded on the black market of the Belowmarket Deep and utilized by the factions of Sablehook.</p>
+<h3 id="1-alchemical-drugs-mutagens">1. ALCHEMICAL DRUGS &amp; MUTAGENS</h3>
+<p>Mutagens in Blackwater Quay are powerful but inherently toxic. They push the mortal frame beyond its limits, often at the cost of sanity or physical stability.</p>
+<h4 id="mutagen-toxicity-rules">Mutagen Toxicity Rules</h4>
+<p>A character can safely consume a number of Mutagens or Drugs per day equal to their Constitution modifier (minimum 1). Consuming a mutagen beyond this limit forces the character to make a <strong>Toxicity Save</strong> (Fortitude DC 15 + 2 per mutagen over the limit).
+*   <strong>Success:</strong> The character gains the mutagen's benefit but is <em>sickened</em> for 1 hour.
+*   <strong>Failure:</strong> The character suffers <em>Mutagenic Overdose</em>. They do not gain the mutagen's benefit, take 2d6 points of Constitution damage, and are <em>nauseated</em> for 1d4 hours.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Cost</th>
+<th style="text-align: left;">Weight</th>
+<th style="text-align: left;">Craft (Alchemy) DC</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Blue-Drop</strong> (Vial)</td>
+<td style="text-align: left;">150 gp</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">DC 25</td>
+<td style="text-align: left;">+4 Int, +5 PP for 1 hour. Followed by -4 Wis, -2 Will saves for 24 hours. (Addictive)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trench-Bite</strong></td>
+<td style="text-align: left;">75 gp</td>
+<td style="text-align: left;">1 lb.</td>
+<td style="text-align: left;">DC 20</td>
+<td style="text-align: left;">+4 Alchemical bonus to Strength, -2 AC. User enters a frenzy for 3 rounds. (Addictive)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Siphon Syringe</strong></td>
+<td style="text-align: left;">50 gp</td>
+<td style="text-align: left;">1 lb.</td>
+<td style="text-align: left;">DC 20</td>
+<td style="text-align: left;">Extracts fluids from fallen aberrations to create a healing mutagen (heals 3d8+5 hp, but causes hallucinations).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acidic Mutagen</strong></td>
+<td style="text-align: left;">30 gp</td>
+<td style="text-align: left;">1 lb.</td>
+<td style="text-align: left;">DC 18</td>
+<td style="text-align: left;">Splash weapon. Deals 2d6 acid damage, and target must make a Fort DC 15 save or be <em>sickened</em> for 1d3 rounds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Planar Lock-Wax</strong></td>
+<td style="text-align: left;">25 gp</td>
+<td style="text-align: left;">1 lb.</td>
+<td style="text-align: left;">DC 15</td>
+<td style="text-align: left;">Applies to door frames. Increases DC of teleportation/planar transit through the portal by +5 for 24 hours.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fey-Metal Caltrops</strong></td>
+<td style="text-align: left;">10 gp</td>
+<td style="text-align: left;">2 lbs.</td>
+<td style="text-align: left;">DC 12</td>
+<td style="text-align: left;">Caltrops that deal damage that bypasses DR/cold iron.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="addiction-mechanics">Addiction Mechanics</h4>
+<p>Certain mutagens (like Blue-Drop or Trench-Bite) are marked as <em>Addictive</em>. When a character consumes an addictive substance, they must make a Fortitude save (DC 15). If they fail, they become addicted. 
+*   <strong>Addiction Rating:</strong> Extreme.
+*   <strong>Withdrawal Symptoms:</strong> If an addicted character goes 24 hours without a dose, they must succeed on a Will DC 20 check or suffer 1d4 points of temporary Wisdom damage (for Blue-Drop) or Constitution damage (for Trench-Bite). This check must be made every 24 hours until the character receives a <em>Remove Disease</em> or <em>Neutralize Poison</em> spell.</p>
+<hr />
+<h3 id="2-biomantic-fleshwarped-grafts">2. BIOMANTIC FLESHWARPED GRAFTS</h3>
+<p>Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate agents. Applying a graft is a brutal, invasive process that involves sawing through bone and magically fusing foreign nervous systems to the host.</p>
+<h4 id="surgical-rules-complications">Surgical Rules &amp; Complications</h4>
+<ul>
+<li><strong>Graft Limit:</strong> A character can safely bear a maximum number of grafts equal to their Constitution modifier (minimum 1). </li>
+<li><strong>The Surgery:</strong> Applying a graft requires a Heal check (DC equals 15 + graft level), 1,000 gp in alchemical supplies, and 24 hours of uninterrupted recovery time in a sterile (or heavily disinfected) environment.</li>
+<li><strong>Surgical Rejection:</strong> If the Heal check fails, the graft fails to take hold. The patient takes 2d6 Constitution damage and the graft is destroyed. If the Heal check fails by 5 or more, the patient suffers a <em>Surgical Rejection</em>—they take 4d6 Constitution damage and suffer a permanent -2 penalty to Dexterity due to nerve damage (can only be cured by <em>Restoration</em> or <em>Heal</em>).</li>
+<li><strong>Removal:</strong> Grafts are semi-permanent; removing one requires a reverse surgical operation (Heal DC 25) that deals 2d6 Constitution damage and requires 1 week of bed rest.</li>
+</ul>
+<p><code>+---------------------------------------------------------+
+       |                  GRAFT SLOTS &amp; OPTIONS                  |
+       +---------------------------------------------------------+
+       |  [HEAD]  --&gt; Illithid Feeding Tentacles / Vocal Mesh   |
+       |  [EYES]  --&gt; Shatterglass Corneas / Aqueous Gaze        |
+       |  [ARMS]  --&gt; Eldritch Claws / Spliced Manipulators      |
+       |  [LEGS]  --&gt; Webbed Digits / Spring-Steel Sinews         |
+       |  [TORSO] --&gt; Troll-Blood Infusion / Displacer Fur       |
+       |  [SPINE] --&gt; Choker Spine / Planar Anchor Node          |
+       |  [SKIN]  --&gt; Lead-Silver Runes                          |
+       +---------------------------------------------------------+</code></p>
+<h4 id="a-head-slot-grafts">A. HEAD SLOT GRAFTS</h4>
+<h5 id="illithid-feeding-tentacles">Illithid Feeding Tentacles</h5>
+<ul>
+<li><strong>Cost:</strong> 5,000 gp.</li>
+<li><strong>Description:</strong> Two thick, purple tentacles are grafted beneath the jawline, hidden inside a high-collared coat until uncoiled.</li>
+<li><strong>Effect:</strong> You gain a secondary natural attack with your tentacles, dealing 1d4 bludgeoning damage. If you hit a Medium or smaller creature with a tentacle attack, you can attempt to start a grapple as a free action without provoking attacks of opportunity.</li>
+</ul>
+<h5 id="high-cantors-vocal-mesh">High Cantor's Vocal Mesh</h5>
+<ul>
+<li><strong>Cost:</strong> 6,500 gp.</li>
+<li><strong>Description:</strong> Your larynx is hollowed out and replaced with a resonant fey-metal mesh infused with necrotic cantor marrow.</li>
+<li><strong>Effect:</strong> Once per day, as a standard action, you can release a concussive scream in a 15-ft. cone. All creatures in the area take 4d6 sonic damage and are <em>deafened</em> for 1d4 rounds (Fort DC 16 half, negates deafened).</li>
+</ul>
+<hr />
+<h4 id="b-eyes-slot-grafts">B. EYES SLOT GRAFTS</h4>
+<h5 id="shatterglass-corneas">Shatterglass Corneas</h5>
+<ul>
+<li><strong>Cost:</strong> 3,500 gp.</li>
+<li><strong>Description:</strong> Your eyes are replaced with crystalline lenses that refract light in shifting, prismatic colors.</li>
+<li><strong>Effect:</strong> You gain low-light vision and are completely immune to gaze attacks and blinding effects (such as <em>Blindness/Deafness</em> or <em>Color Spray</em>).</li>
+</ul>
+<h5 id="aqueous-gaze">Aqueous Gaze</h5>
+<ul>
+<li><strong>Cost:</strong> 4,000 gp.</li>
+<li><strong>Description:</strong> Spliced eyes harvested from aquatic sea-wolves, reflecting light with a silver mirror-sheen.</li>
+<li><strong>Effect:</strong> You gain darkvision 60 ft. You can see clearly through water, mist, or silt up to 60 ft., completely ignoring concealment penalties caused by murky liquids or fog.</li>
+</ul>
+<hr />
+<h4 id="c-arms-slot-grafts">C. ARMS SLOT GRAFTS</h4>
+<h5 id="eldritch-claws">Eldritch Claws</h5>
+<ul>
+<li><strong>Cost:</strong> 5,500 gp.</li>
+<li><strong>Description:</strong> Rusted darkwood claws are grafted directly onto your fingertips, wired to your nervous system.</li>
+<li><strong>Effect:</strong> You gain two natural claw attacks, dealing 1d6 slashing damage (Medium). These claws bypass Damage Reduction as if they were magic weapons.</li>
+</ul>
+<h5 id="spliced-manipulators">Spliced Manipulators</h5>
+<ul>
+<li><strong>Cost:</strong> 4,500 gp.</li>
+<li><strong>Description:</strong> A pair of small, jointed chitinous limbs are grafted beneath your primary shoulders.</li>
+<li><strong>Effect:</strong> These limbs are too weak to hold weapons, but they grant a +4 racial bonus on Sleight of Hand, Climb, and Disable Device checks. You can hold minor items (such as potions or lockpicks) in these limbs, allowing you to draw them as a free action.</li>
+</ul>
+<hr />
+<h4 id="d-legs-slot-grafts">D. LEGS SLOT GRAFTS</h4>
+<h5 id="webbed-digits">Webbed Digits</h5>
+<ul>
+<li><strong>Cost:</strong> 3,000 gp.</li>
+<li><strong>Description:</strong> Suture stretches fey skin and webs the joints between your toes.</li>
+<li><strong>Effect:</strong> You gain a Swim speed of 30 ft. If you already have a swim speed, it increases by +10 ft. You also gain a +4 racial bonus on Swim checks.</li>
+</ul>
+<h5 id="spring-steel-sinews">Spring-Steel Sinews</h5>
+<ul>
+<li><strong>Cost:</strong> 6,500 gp.</li>
+<li><strong>Description:</strong> Spliced troll sinew and coiled fey-metal wiring replace your calf muscles.</li>
+<li><strong>Effect:</strong> Your land speed increases by +10 ft. (enhancement bonus). You also gain a +8 enhancement bonus on Jump checks, and you always count as having a running start for jump checks.</li>
+</ul>
+<hr />
+<h4 id="e-torso-slot-grafts">E. TORSO SLOT GRAFTS</h4>
+<h5 id="troll-blood-infusion">Troll-Blood Infusion</h5>
+<ul>
+<li><strong>Cost:</strong> 12,000 gp.</li>
+<li><strong>Description:</strong> Your lymphatic system is rewired to a gland that continuously secretes hyper-regenerative scrag blood.</li>
+<li><strong>Effect:</strong> You gain Fast Healing 2.</li>
+<li><strong>Drawback:</strong> The metabolic demand is high. You must consume double the normal amount of food and water daily. You also suffer a -2 penalty on saving throws against fire and acid effects.</li>
+</ul>
+<h5 id="displacer-hide-sheathing">Displacer Hide Sheathing</h5>
+<ul>
+<li><strong>Cost:</strong> 10,000 gp.</li>
+<li><strong>Description:</strong> Shorn strips of displacer beast fur and hide are grafted onto your chest, back, and shoulders.</li>
+<li><strong>Effect:</strong> The shifting properties of the hide grant you a permanent +2 deflection bonus to AC, and all ranged attacks against you suffer a 20% miss chance.</li>
+</ul>
+<h5 id="dire-displacer-tentacles-apex-graft">Dire Displacer Tentacles (Apex Graft)</h5>
+<ul>
+<li><strong>Graft Slot:</strong> Torso and Spine (consumes both slots due to size and muscular strain).</li>
+<li><strong>Requirements:</strong> Sablehook Renown +8 (Sovereign Ally), 18,000 gp, 2 fresh cores of a <em>Thessalan Displacer Beast</em> (harvested within 24 hours of surgery), and 10 lbs of <em>blackwater ironwood</em> to stabilize the bone-anchor mounts.</li>
+<li><strong>Surgical Risk:</strong> Heal DC 30. If the roll fails by 5 or more, the recipient's body rejects the tissue, dealing 4d6 points of permanent Constitution damage (can only be restored by <em>Wish</em> or <em>Miracle</em>).</li>
+<li><strong>Description:</strong> Suture bolts two massive, blue-furred displacer beast tentacles directly into your shoulder blades, reinforcing the bone-connections with blackwater ironwood anchors and copper injection conduits.</li>
+<li><strong>Effect:</strong> You gain two secondary natural tentacle attacks dealing 1d8 bludgeoning + Strength modifier damage, with a <strong>15-foot reach</strong> (10-ft reach for Small characters). You can make attacks of opportunity against any creature entering or moving within your 15-ft threat range.</li>
+<li><strong>Refractive Shielding:</strong> The tentacles warp light around your torso, granting you a permanent 20% miss chance against all physical attacks.</li>
+<li><strong>Drawback:</strong> The massive weight and kinetic spasms of the tentacles place an ongoing strain on your nervous system, inflicting a permanent -2 penalty to Dexterity and a -4 penalty on Hide checks made on land.</li>
+</ul>
+<hr />
+<h4 id="f-spine-slot-grafts">F. SPINE SLOT GRAFTS</h4>
+<h5 id="choker-spine">Choker Spine</h5>
+<ul>
+<li><strong>Cost:</strong> 8,000 gp.</li>
+<li><strong>Description:</strong> A modified choker spine is spliced alongside your vertebrae, expanding your reflexes.</li>
+<li><strong>Effect:</strong> Once per day, as a swift action, you can activate the graft to gain the benefits of a <em>Haste</em> spell for 3 rounds.</li>
+</ul>
+<h5 id="planar-anchor-node">Planar Anchor Node</h5>
+<ul>
+<li><strong>Cost:</strong> 7,500 gp.</li>
+<li><strong>Description:</strong> A heavy lead-silver bracket is bolted directly into your thoracic vertebrae.</li>
+<li><strong>Effect:</strong> You are immune to teleportation attempts made by hostile entities. You also gain a +8 bonus on checks to resist telekinetic shoves, wind gusts, and planar gravity pulls.</li>
+</ul>
+<hr />
+<h4 id="g-skin-slot-grafts">G. SKIN SLOT GRAFTS</h4>
+<h5 id="lead-silver-runes">Lead-Silver Runes</h5>
+<ul>
+<li><strong>Cost:</strong> 3,000 gp.</li>
+<li><strong>Description:</strong> Runes of silver wire and lead foil are etched directly into your flesh, humming with abjuration magic.</li>
+<li><strong>Effect:</strong> You gain Spell Resistance 15 against Divination spells and telepathic scans. Attempting to locate you via scrying fails automatically.</li>
+</ul>
+<hr />
+<h3 id="3-specialized-smuggling-gear">3. SPECIALIZED SMUGGLING GEAR</h3>
+<h4 id="lead-silver-armor-wards">Lead-Silver Armor Wards</h4>
+<ul>
+<li><strong>Cost:</strong> +500 gp (applied to any suit of armor).</li>
+<li><strong>Weight:</strong> +5 lbs.</li>
+<li><strong>Description:</strong> Thin plates of lead and silver wire are sewn into the lining of the armor.</li>
+<li><strong>Benefit:</strong> The wearer is completely immune to telepathic tracking, scrying, and mind-reading spells. Additionally, the wearer gains a +2 deflection bonus to AC against attacks made by aberrations.</li>
+</ul>
+<h4 id="alchemical-burn-masks">Alchemical Burn Masks</h4>
+<ul>
+<li><strong>Cost:</strong> 15 gp.</li>
+<li><strong>Weight:</strong> 2 lbs.</li>
+<li><strong>Description:</strong> Heavy leather masks with thick glass goggles and filters soaked in vinegar.</li>
+<li><strong>Benefit:</strong> The wearer gains a +4 circumstance bonus on saves against sewer gas, chemical vapors, and inhaled poisons.</li>
+</ul>
+<hr />
+<h1 id="part-iv-playable-races">PART IV: PLAYABLE RACES</h1>
+<p>The unique, harsh environment of Blackwater Quay has given rise to highly unusual denizens. The following racial options are available for players.</p>
+<h3 id="1-pixillithid">1. PIXILLITHID</h3>
+<p><em>A horrific, accidental hybridization of a captured Feywild Pixie and the parasitic tadpole of an Illithid. They look like tiny, pale, bloated sprites with purple skin, gossamer wings, and four tiny face-tentacles.</em></p>
+<ul>
+<li><strong>Ability Score Adjustments:</strong> +4 Dexterity, +2 Intelligence, -2 Strength, -2 Constitution. Pixillithids are nimble and possessing alien intellect, but physically fragile.</li>
+<li><strong>Size:</strong> Tiny. As a Tiny creature, a Pixillithid gains a +2 size bonus to Armor Class, a +2 size bonus on attack rolls, and a +8 size bonus on Hide checks, but it uses smaller weapons and its lifting and carrying limits are one-half of those of a Medium character. Space is 2.5 ft; Reach is 0 ft (must enter an opponent's square to attack in melee).</li>
+<li><strong>Speed:</strong> Base land speed is 10 feet. Fly speed is 40 feet (Good).</li>
+<li><strong>Alien Mind:</strong> Pixillithids have a fragmented, dual psyche. They gain a +2 racial bonus on saving throws against mind-affecting effects. </li>
+<li><strong>Miniature Mind Blast (Su):</strong> Once per day, a Pixillithid can unleash a concentrated burst of psionic static in a 10-foot cone. Anyone caught in the cone must succeed on a Will save (DC 10 + 1/2 character level + Int modifier) or be <em>dazed</em> for 1 round.</li>
+<li><strong>Fey Heritage:</strong> Immune to magical sleep effects.</li>
+<li><strong>Languages:</strong> Common, Undercommon, Sylvan. Bonus Languages: Aklo, Draconic, Elven.</li>
+</ul>
+<h3 id="2-half-minotaur-fey-the-gnarled">2. HALF-MINOTAUR FEY (The Gnarled)</h3>
+<p><em>Descendants of Feywild satyrs and deep-cavern minotaurs. They possess the massive upper body of a bull and the cloven hooves of a goat, covered in thick moss and bark-like fungal growths.</em></p>
+<ul>
+<li><strong>Ability Score Adjustments:</strong> +4 Strength, +2 Constitution, -2 Intelligence, -2 Charisma. They are massive and hearty, but brutish and often shunned.</li>
+<li><strong>Size:</strong> Large (Tall). As a Large creature, they take a -1 size penalty to AC, a -1 size penalty on attack rolls, and a -4 size penalty on Hide checks. Their lifting and carrying limits are double those of a Medium character. Space: 10 ft. Reach: 10 ft.</li>
+<li><strong>Speed:</strong> Base land speed is 40 feet.</li>
+<li><strong>Natural Armor:</strong> The fungal bark on their skin provides a +2 natural armor bonus.</li>
+<li><strong>Gore Attack:</strong> A Half-Minotaur Fey can attack with its horns as a primary natural weapon dealing 1d8 bludgeoning/piercing damage.</li>
+<li><strong>Powerful Charge:</strong> When a Half-Minotaur Fey makes a charge attack, its gore attack deals 2d8 points of damage + 1.5 times its Strength modifier.</li>
+<li><strong>Fey-Touched:</strong> They gain a +2 racial bonus on saving throws against illusion spells.</li>
+<li><strong>Languages:</strong> Common, Sylvan, Giant. Bonus Languages: Terran, Undercommon, Orc.</li>
+</ul>
+<h3 id="3-void-touched-the-hollow-ones">3. VOID-TOUCHED (The Hollow Ones)</h3>
+<p><em>Humans, elves, or dwarves who survived exposure to the raw essence of the Void of Madness. Their skin is ash-gray, their eyes are solid black without pupils, and their blood is thick and cold like tar.</em></p>
+<ul>
+<li><strong>Ability Score Adjustments:</strong> +2 Charisma, +2 Wisdom, -2 Constitution. The Void grants them terrifying presence and perception, but the ambient radiation constantly degrades their physical health.</li>
+<li><strong>Size &amp; Speed:</strong> Same as the base race (Human, Elf, or Dwarf) before exposure.</li>
+<li><strong>Void-Sight (Su):</strong> A Void-Touched can see perfectly in magical and mundane darkness up to 60 feet. Furthermore, they can see invisible creatures within 30 feet as faint, static outlines.</li>
+<li><strong>Gravity Step (Sp):</strong> The Void-Touched are not fully tethered to the Prime Material Plane. Once per day, they can cast <em>Levitate</em> on themselves as a spell-like ability (Caster Level equals character level).</li>
+<li><strong>Negative Energy Affinity:</strong> Though they are alive, the Void-Touched are healed by negative energy and harmed by positive energy, as if they were undead. </li>
+<li><strong>Aura of Unease:</strong> Animals are inherently terrified of the Void-Touched. They suffer a -4 racial penalty on Handle Animal and Ride checks.</li>
+<li><strong>Languages:</strong> Common, Aklo. Bonus Languages: Abyssal, Infernal, Undercommon.</li>
+</ul></div>
+    </div>
+</body>
+</html>

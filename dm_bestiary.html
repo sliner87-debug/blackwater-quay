@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestiary - Blackwater Quay</title>
+    <link rel="stylesheet" href="webpage.css">
+    <link rel="stylesheet" href="shipyard.css">
+    <style>
+        .dm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            background-color: rgba(10, 10, 15, 0.9);
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+        .content-section h1, .content-section h2, .content-section h3 {
+            color: #d4af37; /* Gold accent */
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .content-section th, .content-section td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: left;
+        }
+        .content-section th {
+            background-color: #222;
+            color: #d4af37;
+        }
+        .content-section blockquote {
+            border-left: 4px solid #d4af37;
+            padding-left: 15px;
+            color: #aaa;
+            font-style: italic;
+            background: #1a1a24;
+            padding: 10px 15px;
+        }
+        .content-section code {
+            background: #222;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #ff9d00;
+        }
+    </style>
+</head>
+<body class="shipyard-body">
+
+    <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
+        <nav class="nav-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">SABLEHOOK COVENANT</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Setting &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#antihero">Dark Hero</a>
+                        <a href="index.html#timeline">Chronal Timeline</a>
+                        <a href="index.html#map">Interactive Map</a>
+                        <a href="index.html#districts">Districts</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Novel &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="master_novel_complete.html">The Blackwater Trilogy</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">Campaign Modules &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="Campaign_Module/Act_IV_Descent_into_the_Deepmind_Annex.html">Act IV: The Deepmind Annex</a>
+                        <a href="Campaign_Module/The_Deepmind_Tear_Master_Module.html">The Deepmind Tear (Master)</a>
+                        <a href="Campaign_Module/The_Bleeding_Needle_Vessel_Manual.html">The Bleeding Needle</a>
+                        <a href="Campaign_Module/The_Onyx_Wake_Vessel_Manual.html">The Onyx Wake</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">TTRPG Tools &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#characters">Characters</a>
+                        <a href="index.html#factions">Faction Standing</a>
+                        <a href="blackwater_quay_codex.html">Blackwater Quay Codex</a>
+                        <a href="shipyard.html" style="color: #38bdf8; font-weight: bold;">Sovereign Shipbuilder</a>
+                        <a href="fleet_generator.html" style="color: #a855f7; font-weight: bold;">Fleet Generator</a>
+                        <a href="crew_generator.html" style="color: #22d3ee; font-weight: bold;">Crew Generator</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn" style="color: #d4af37; font-weight: bold;">Dungeon Master Codex &#9662;</a>
+                    <div class="dropdown-content">
+        <a href="dm_screen.html">The Complete Codex</a>
+        <a href="dm_magic_items.html">Magic Items</a>
+        <a href="dm_bestiary.html">Bestiary & NPCs</a>
+        <a href="dm_player_options.html">Player Mechanics</a>
+        <a href="dm_faction_renown.html">Faction Renown</a>
+        <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
+    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dm-container">
+        <h1 style="text-align: center; color: #fff; font-size: 2.5em; margin-bottom: 50px;">The Dungeon Master's Codex</h1>
+        <div id='bestiary' class='content-section' style='margin-bottom: 50px;'><h1 id="campaign-bestiary-aberrations-horrors-and-draconic-bosses">Campaign Bestiary: Aberrations, Horrors, and Draconic Bosses</h1>
+<h2 id="ttrpg-stat-blocks-dd-35-pathfinder-1e">TTRPG Stat Blocks (D&amp;D 3.5 / Pathfinder 1E)</h2>
+<hr />
+<h2 id="1-the-chirg-illithid-elder-node-avatar-cr-11">1. THE CHIRG-ILLITHID (Elder Node Avatar) — CR 11</h2>
+<p><em>A bloated, slime-covered humanoid whose face is a mass of weeping purple tentacles. Its skin is translucent, revealing pulsing brain matter beneath. It is a biological extension of the subterranean Elder Node, acting as its voice and hands on the surface.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Large Aberration (Psi-Active)</li>
+<li><strong>Hit Dice:</strong> 10d8+50 (95 hp)</li>
+<li><strong>Initiative:</strong> +4</li>
+<li><strong>Speed:</strong> 30 ft.</li>
+<li><strong>Armor Class:</strong> 22 (-1 size, +4 Dex, +9 natural), touch 13, flat-footed 18</li>
+<li><strong>Base Attack/Grapple:</strong> +7/+16</li>
+<li><strong>Attacks:</strong> 4 Tentacles +11 melee (1d6+5 plus attach)</li>
+<li><strong>Space/Reach:</strong> 10 ft. / 10 ft.</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Mind Blast (Sp):</em> 60-ft. cone, stun 1d4 rounds, Will DC 20 negates (usable once every 1d4 rounds).</li>
+<li><em>Extract Brain (Ex):</em> If the Chirg-Illithid begins its turn with at least one tentacle attached to a grappled foe, it can make a grapple check to maintain. If successful, it attaches all remaining tentacles and extracts the brain, instantly killing the target.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Spell Resistance 22, Telepathy 100 ft., Secretion Aura.</li>
+<li><strong>Saves:</strong> Fort +8, Ref +7, Will +9</li>
+<li><strong>Abilities:</strong> Str 20, Dex 18, Con 20, Int 19, Wis 15, Cha 16</li>
+<li><strong>Feats:</strong> Combat Casting, Improved Initiative, Multiattack, Weapon Focus (Tentacle).</li>
+</ul>
+<h3 id="lore-checks-knowledge-dungeon">Lore Checks (Knowledge: Dungeon)</h3>
+<ul>
+<li><em>DC 15:</em> A bloated mind-flayer variant spliced by the Elder Node. Its tentacles attach to feed.</li>
+<li><em>DC 20:</em> It projects a chemical mist (Secretion Aura) that fatigues characters and reduces their willpower, making them vulnerable to psychic control.</li>
+<li><em>DC 25:</em> Its translucent skin is weak to sonic attacks; sonic damage ignores its natural armor for 1 round.</li>
+</ul>
+<h3 id="combat-tactics">Combat Tactics</h3>
+<ol>
+<li><strong>Round 1:</strong> Casts <em>Mind Blast</em> to stun as many targets as possible.</li>
+<li><strong>Round 2:</strong> Charges the nearest stunned target, using tentacles to grapple.</li>
+<li><strong>Round 3:</strong> Attempts to maintain the grapple and extract the brain, while its Secretion Aura fatigues nearby defenders.</li>
+</ol>
+<hr />
+<h2 id="2-the-thessalan-displacer-beast-consortium-prototype-cr-9">2. THE THESSALAN DISPLACER BEAST (Consortium Prototype) — CR 9</h2>
+<p><em>A sleek, feline predator with dark blue fur, but mutated with six eyes, a skeletal jaw, and two long tentacles lined with copper needles and chemical conduits that bleed acidic mutagens.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Large Magical Beast</li>
+<li><strong>Hit Dice:</strong> 9d10+36 (85 hp)</li>
+<li><strong>Initiative:</strong> +3</li>
+<li><strong>Speed:</strong> 40 ft.</li>
+<li><strong>Armor Class:</strong> 20 (-1 size, +3 Dex, +8 natural), touch 12, flat-footed 17</li>
+<li><strong>Base Attack/Grapple:</strong> +9/+18</li>
+<li><strong>Attacks:</strong> 2 Tentacles +13 melee (1d8+5 plus mutagenic acid) and Bite +8 melee (1d8+2)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Mutagenic Acid (Ex):</em> Tentacles deal an extra 1d6 acid damage. The target must succeed on a Fort DC 18 save or be <em>sickened</em> for 1d4 rounds.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> <ul>
+<li><em>Displacement (Su):</em> The creature warps light, granting a permanent 50% miss chance against all physical and spell attacks. True seeing bypasses this effect.</li>
+<li><em>Spell Resistance 18.</em></li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +10, Ref +9, Will +5</li>
+<li><strong>Abilities:</strong> Str 21, Dex 17, Con 18, Int 6, Wis 12, Cha 8</li>
+<li><strong>Feats:</strong> Alertness, Combat Reflexes, Dodge, Mobility.</li>
+</ul>
+<h3 id="lore-checks-knowledge-arcana">Lore Checks (Knowledge: Arcana)</h3>
+<ul>
+<li><em>DC 15:</em> A displacer beast prototype bred by the Thessalan Consortium.</li>
+<li><em>DC 20:</em> Its tentacles secrete a sickening mutagenic acid.</li>
+<li><em>DC 25:</em> If hit with cold iron weapons, its displacement effect is suppressed for 1 round.</li>
+</ul>
+<h3 id="combat-tactics_1">Combat Tactics</h3>
+<ul>
+<li>The beast uses its speed and Combat Reflexes to strike from 10 feet away. It circles the party, attacking spellcasters to disrupt casting with its sickening acid.</li>
+</ul>
+<hr />
+<h2 id="3-dolgaunt-cell-guard-the-void-of-madness-aberration-cr-6">3. DOLGAUNT CELL-GUARD (The Void of Madness Aberration) — CR 6</h2>
+<p><em>A gaunt, hairless humanoid with leather-like skin, no eyes, and a mouth filled with needle-sharp teeth. Two long, fleshy tentacles grow from its shoulders, writhing in search of prey.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Aberration</li>
+<li><strong>Hit Dice:</strong> 6d8+12 (39 hp)</li>
+<li><strong>Initiative:</strong> +3</li>
+<li><strong>Speed:</strong> 30 ft.</li>
+<li><strong>Armor Class:</strong> 18 (+3 Dex, +5 natural), touch 13, flat-footed 15</li>
+<li><strong>Base Attack/Grapple:</strong> +4/+7</li>
+<li><strong>Attacks:</strong> 2 Tentacles +7 melee (1d4+3 plus strength drain) and 2 Slams +2 melee (1d3+1)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Strength Drain (Su):</em> When a tentacle hits, the target must succeed on a Fort DC 15 save or lose 1 point of Strength.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Blind-sight 60 ft., Damage Reduction 5/Byeshk or Magic.</li>
+<li><strong>Saves:</strong> Fort +4, Ref +5, Will +6</li>
+<li><strong>Abilities:</strong> Str 16, Dex 16, Con 14, Int 10, Wis 12, Cha 8</li>
+<li><strong>Feats:</strong> Combat Reflexes, Dodge, Weapon Focus (Tentacle).</li>
+</ul>
+<h3 id="combat-tactics_2">Combat Tactics</h3>
+<ul>
+<li>Dolgaunts crawl along walls and ceilings in dark caverns. They use their blind-sight to attack in total darkness, targeting martial characters to drain their Strength.</li>
+</ul>
+<hr />
+<h2 id="4-oraxis-dragon-of-the-chamber-cr-16">4. ORAXIS (Dragon of the Chamber) — CR 16</h2>
+<p><em>An ancient bronze dragon operating in Khorvaire. In his mortal form, he appears as a tall, blind monk wearing saffron robes and carrying a simple wooden staff. In his true form, he is a massive bronze dragon whose breath weapon is a crackling storm of lightning or repulsion gas.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Huge Dragon</li>
+<li><strong>Hit Dice:</strong> 18d12+108 (225 hp)</li>
+<li><strong>Initiative:</strong> +0</li>
+<li><strong>Speed:</strong> 40 ft., fly 150 ft. (Poor)</li>
+<li><strong>Armor Class:</strong> 32 (-2 size, +24 natural), touch 8, flat-footed 32</li>
+<li><strong>Base Attack/Grapple:</strong> +18/+36</li>
+<li><strong>Attacks:</strong> Bite +26 melee (2d8+10), 2 Claws +21 melee (2d6+5), 2 Wings +21 melee (1d8+5)</li>
+<li><strong>Space/Reach:</strong> 15 ft. / 10 ft. (15 ft. with bite)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Breath Weapon (Su):</em> 100-ft. line of lightning (12d6 electricity, Reflex DC 25 half) or 50-ft. cone of repulsion gas (Will DC 25 or be repelled 40 ft. away from the dragon).</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Damage Reduction 10/Magic, Spell Resistance 25, Alternate Form, Blindsight 60 ft., Prophecy Shield.</li>
+<li><strong>Saves:</strong> Fort +17, Ref +11, Will +16</li>
+<li><strong>Abilities:</strong> Str 31, Dex 10, Con 23, Int 20, Wis 21, Cha 20</li>
+<li><strong>Feats:</strong> Alertness, Combat Casting, Hover, Wing Attack, Spell Focus (Evocation), Iron Will.</li>
+</ul>
+<h3 id="lore-checks-knowledge-history">Lore Checks (Knowledge: History)</h3>
+<ul>
+<li><em>DC 20:</em> Oraxis is an agent of the Chamber, monitoring the Prophecy.</li>
+<li><em>DC 25:</em> His blind monk form is immune to mind reading, and attempts to read his mind deal damage to the scanner.</li>
+</ul>
+<h3 id="combat-tactics_3">Combat Tactics</h3>
+<ul>
+<li>Oraxis uses his repulsion breath first to clear the sealing team. He hovers over the cavern, using his line of lightning to strike characters trying to cap the The Void of Madness tears.</li>
+</ul>
+<hr />
+<h2 id="5-dreadjaw-rellis-orc-first-mate-cr-14">5. DREADJAW RELLIS (Orc First Mate) — CR 14</h2>
+<p><em>Originally "Glassjaw Rellis"—a weak, fragile-jawed fence and dockworker of Blackwater Quay—Dreadjaw was captured, physically shattered, and rebuilt through Suture's surgery and Mikhailis's Tri-Weave grafting. Now a terrifying PC-classed enforcer, his lower jaw is a massive fey-metal and cold-iron mandible quenched in dark soul-ichor, and his brain has been integrated into Kael's command staff via a Phrenic-Node graft.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Humanoid (Orc, Tri-Weave Grafted)</li>
+<li><strong>Class/Level:</strong> Barbarian 12 / Fighter 2 (PC Classes)</li>
+<li><strong>Hit Dice:</strong> 12d12+72 plus 2d10+12 (173 hp; 201 hp in rage)</li>
+<li><strong>Initiative:</strong> +8 (+2 Dex, +2 inherent Precognitive Reflexes, +4 Improved Initiative)</li>
+<li><strong>Speed:</strong> 40 ft. (Fast Movement)</li>
+<li><strong>Armor Class:</strong> 24 (+2 Dex, +7 breastplate +2, +5 natural fey-metal jaw/grafts), touch 12, flat-footed 22 (retains Dex bonus to AC when flat-footed due to Precognitive Reflexes; 22 AC in rage)</li>
+<li><strong>Base Attack/Grapple:</strong> +14/+22</li>
+<li><strong>Attacks:</strong> <em>+2 Vicious Cold-Iron Greataxe</em> +25/+20/+15 melee (1d12+14/x3 plus 2d6 vicious damage) or Bite (Tri-Weave Jaw) +22 melee (1d8+8)</li>
+<li><strong>Special Attacks:</strong><ul>
+<li><em>Dread-Shout (Su):</em> Usable 3/day. Woven with the High Cantor's Spellweaving Lattice, Dreadjaw releases a 40-ft. cone of concussive sonic energy. Deals 10d6 sonic damage and knocks all targets in the area <em>prone</em> (DC 23 Fortitude save for half damage and negate knockdown). Targets failing their save are also <em>deafened</em> for 1d4 rounds.</li>
+<li><em>The Obsidian Fey-Iron Bite:</em> His bite attack naturally bypasses Damage Reduction as if it were Cold Iron, Magic, and Evil.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Greater Rage 4/day, Damage Reduction 3/—, Trap Sense +4, Darkvision 60 ft., Orc Ferocity, Sylvan-Pirate Morale (+2 morale bonus on saves against fear/charm to crew within 30 ft.).</li>
+<li><strong>Phrenic-Node Enforcer Grafts:</strong><ul>
+<li><em>The Sovereign Network:</em> Telepathic communication with Kael, other command officers, and Phrenic Dread-Drakes up to 100 feet away (or miles if routed through Kael's central lattice).</li>
+<li><em>Alien Mental Fortress:</em> Spell Resistance (SR 29) specifically against Mind-Affecting spells and effects (Enchantments, Charms, Compulsions, Illusions).</li>
+<li><em>Precognitive Reflexes:</em> Retains Dexterity bonus to AC when caught flat-footed, and gains a permanent +2 inherent bonus to Initiative (factored in above).</li>
+<li><em>Scrag-Nerve Sheathing:</em> Cloned using Trench's marrow, his nervous system constantly regenerates minor synaptic damage, granting complete immunity to Stunning and Paralysis.</li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +17, Ref +6, Will +7 (+10 in rage)</li>
+<li><strong>Abilities:</strong> Str 26, Dex 14, Con 22, Int 10, Wis 8, Cha 10 (Rage: Str 32, Con 28)</li>
+<li><strong>Feats:</strong> Power Attack, Cleave, Great Cleave, Improved Initiative, Improved Bull Rush, Shock Trooper, Weapon Focus (Greataxe), Weapon Specialization (Greataxe).</li>
+</ul>
+<h3 id="combat-tactics_4">Combat Tactics</h3>
+<ul>
+<li><strong>Rage &amp; Charge:</strong> Dreadjaw enters Greater Rage immediately. He uses a Charge action paired with the Shock Trooper feat to deliver a devastating melee strike, converting Power Attack penalties to AC rather than attack rolls.</li>
+<li><strong>Concussive Shouts:</strong> He releases a <em>Dread-Shout</em> cone to knock down groups of defenders, then executes full attacks against prone targets (+4 to hit prone targets in melee).</li>
+<li><strong>Hive Coordination:</strong> Coordinates telepathically with Kael and the Vanguard in absolute silence, targeting opposing spellcasters and prioritizing them for focused assault.</li>
+</ul>
+<hr />
+<h2 id="6-sea-wolf-hybrid-sablehook-fleet-sentinel-cr-6">6. SEA-WOLF HYBRID (Sablehook Fleet Sentinel) — CR 6</h2>
+<p><em>A sleek, wolf-like humanoid with webbed digits, silver-filmed mirror eyes, and a fur coat that shifts color in water. Upgraded by Suture and Mikhailis with alchemical and mechanical grafts, including adamantine bone bolts and bio-electric shunts.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Humanoid (Shapechanger, Tri-Weave Grafted)</li>
+<li><strong>Class/Level:</strong> Ranger (Combat Engineer) 5 (PC Classes; Level Adjustment bought off)</li>
+<li><strong>Hit Dice:</strong> 5d10+15 (47 hp)</li>
+<li><strong>Initiative:</strong> +3 (+3 Dex)</li>
+<li><strong>Speed:</strong> 30 ft., swim 40 ft.</li>
+<li><strong>Armor Class:</strong> 21 (+3 Dex, +4 natural, +4 <em>adamantine chest bolts/grafts</em>), touch 13, flat-footed 18</li>
+<li><strong>Base Attack/Grapple:</strong> +5/+7</li>
+<li><strong>Attacks:</strong> Bite +7 melee (1d6+2 plus 1d6 electricity plus trip) or 2 Claws +5 melee (1d4+1 plus 1d6 electricity)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Trip (Ex):</em> If a Sea-Wolf hits with a bite attack, it can attempt to trip the opponent as a free action without making a touch attack or provoking an attack of opportunity.</li>
+<li><em>Electrified Strike (Su):</em> Wired with bio-electric glands, natural attacks deal an extra 1d6 electricity damage (factored in above).</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Low-light vision, scent.<ul>
+<li><em>Aqueous Camouflage:</em> Grants a permanent +8 racial bonus to Hide checks underwater.</li>
+<li><em>Thermal Nullification:</em> Invisible to infravision, blindsight (heat/scent), and thermal-tracking arrays.</li>
+<li><em>Lycanthropic Shunt:</em> Swim speed 40 ft. Breathes underwater, and can hold breath for up to 1 hour per Constitution modifier (3 hours).</li>
+<li><em>Adamantine Chest Bolts:</em> Interlocking metal plates bolted to the collarbones and ribcage grant Damage Reduction 2/adamantine.</li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +7, Ref +7, Will +2</li>
+<li><strong>Abilities:</strong> Str 14, Dex 16, Con 16, Int 10, Wis 12, Cha 8</li>
+<li><strong>Feats:</strong> Combat Reflexes, Multiattack, Stealthy, Track.</li>
+</ul>
+<h3 id="combat-tactics_5">Combat Tactics</h3>
+<ul>
+<li><strong>Aqueous Ambush:</strong> Sea-Wolves hide in underwater locks and bypass channels using <em>Aqueous Camouflage</em> and <em>Thermal Nullification</em>. They wait for target vessels to pass, swimming silently at 40 ft., climbing the hull, and dragging guards into the water.</li>
+<li><strong>Trip &amp; Devour:</strong> In melee, they focus on tripping opponents to render them prone, then tear through armor with electrified claw and bite attacks.</li>
+</ul>
+<hr />
+<h2 id="10-shadar-kai-corsair-sablehook-shock-trooper-cr-6">10. SHADAR-KAI CORSAIR (Sablehook Shock-Trooper) — CR 6</h2>
+<p><em>A cold, pragmatic shadow-fey corsair dressed in leather brigandine, wielding spiked chains and hand crossbows. Rebuilt by Suture and Kael with displacer glands and Illithid-kin brain nodes, they operate as a highly synchronized, out-of-phase boarding force.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Humanoid (Elf, Shadar-Kai, Tri-Weave Grafted)</li>
+<li><strong>Class/Level:</strong> Rogue 3 / Fighter 3 (PC Classes; Level Adjustment bought off)</li>
+<li><strong>Hit Dice:</strong> 3d6+6 plus 3d10+6 (41 hp)</li>
+<li><strong>Initiative:</strong> +8 (+4 Dex, +2 inherent Spinal Surge, +2 <em>improved initiative</em>)</li>
+<li><strong>Speed:</strong> 30 ft.</li>
+<li><strong>Armor Class:</strong> 19 (+4 Dex, +4 <em>mithral shirt</em>, +1 natural), touch 14, flat-footed 15 (retains Dex bonus to AC when flat-footed due to Precognitive Reflexes)</li>
+<li><strong>Base Attack/Grapple:</strong> +5/+6</li>
+<li><strong>Attacks:</strong> <em>+1 Cold-Iron Spiked Chain</em> +10 melee (2d4+2, reach 10 ft.) or <em>Hand Crossbow</em> +9 ranged (1d4/19-20 plus poison)</li>
+<li><strong>Special Attacks:</strong> Sneak Attack +2d6, Poison Use (standard drow/shadar-kai knockout poison).</li>
+<li><strong>Special Qualities:</strong> Darkvision 60 ft., Shadow Blend, Hide in Plain Sight.<ul>
+<li><em>Phase-Stutter Skin (Displacer Graft):</em> Grants a permanent 20% miss chance (concealment) from the Displacement weave. As an immediate action 3/day, they can "stutter" in response to an attack, teleporting up to 10 feet instantly to avoid a hit or area effect.</li>
+<li><em>Spinal Surge (Illithid Graft):</em> Grants lesser mindsight (30 ft.) and telepathic communication with the ship's Command Triad up to 100 feet.</li>
+<li><em>Precognitive Reflexes:</em> Retains Dexterity bonus to AC when caught flat-footed, and gains a permanent +2 inherent bonus to Initiative (factored in above).</li>
+<li><em>Shadow Blend (Su):</em> In any illumination other than daylight, they gain total concealment (50% miss chance) in shadows.</li>
+<li><em>Hide in Plain Sight (Ex):</em> Can hide even when being observed as long as they are within 10 feet of shadows.</li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +5, Ref +8, Will +3</li>
+<li><strong>Abilities:</strong> Str 12, Dex 18, Con 14, Int 12, Wis 10, Cha 8 (Base stats adjusted by level upgrades)</li>
+<li><strong>Feats:</strong> Exotic Weapon Proficiency (Spiked Chain), Combat Reflexes, Weapon Finesse, Improved Initiative, Dodge.</li>
+</ul>
+<h3 id="combat-tactics_6">Combat Tactics</h3>
+<ul>
+<li><strong>Silent Boarding:</strong> Shadar-Kai corsairs use <em>Shadow Blend</em> and <em>Hide in Plain Sight</em> to climb ropes and slip aboard target vessels completely unseen.</li>
+<li><strong>Chain &amp; Trip:</strong> They use spiked chains to trip and disarm defenders from a 10-foot reach, setting up sneak attacks for their allies.</li>
+<li><strong>Phase-Stutter Defense:</strong> When targeted by high-damage spells or critical attacks, they use <em>Phase-Stutter</em> to teleport 10 feet away, leaving behind a fading mirror image.</li>
+</ul>
+<hr />
+<h2 id="7-chief-navigator-serris-vae-fey-drow-chrono-seer-cr-11">7. CHIEF NAVIGATOR SERRIS VAE (Fey-Drow Chrono-Seer) — CR 11</h2>
+<p><em>A pale fey-drow Chronomancer who operates the Hellfire Navigation Array on the bridge, plotting paths through non-Euclidean coordinates. Her brain has been integrated into Kael's command staff via a Phrenic-Node graft. Level Adjustment buyoff (+2 LA completely bought off) allows her to hold Wizard 11.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Humanoid (Elf, Drow, Tri-Weave Grafted)</li>
+<li><strong>Class/Level:</strong> Wizard (Chronomancer / Diviner) 11 (PC Classes)</li>
+<li><strong>Hit Dice:</strong> 11d4+22 (51 hp)</li>
+<li><strong>Initiative:</strong> +9 (+3 Dex, +2 inherent Precognitive Reflexes, +4 Improved Initiative)</li>
+<li><strong>Speed:</strong> 30 ft.</li>
+<li><strong>Armor Class:</strong> 16 (+3 Dex, +2 <em>ring of protection +2</em>, +1 <em>bracers of armor +1</em>), touch 15, flat-footed 13 (retains Dex bonus to AC when flat-footed due to Precognitive Reflexes)</li>
+<li><strong>Base Attack/Grapple:</strong> +5/+4</li>
+<li><strong>Attacks:</strong> Melee dagger +4 melee (1d4-1/19-20) or Light Crossbow +8 ranged (1d8/19-20)</li>
+<li><strong>Special Attacks:</strong><ul>
+<li><em>Chrono-Seer Spells:</em> Caster Level 11th. Standard Divination specialist Wizard spell progression. Chronomancy focuses on time manipulation (haste, slow, time stand still, temporal acceleration, time hop, etc.).</li>
+<li><em>Time Dilation (Su):</em> 3/day, as a swift action, she can target a creature within 60 ft. The target must make a DC 21 Will save or be slowed (as the <em>Slow</em> spell) for 1d4 rounds.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Spell Resistance 22 (racial Drow spell resistance), Darkvision 120 ft., Light Blindness.</li>
+<li><strong>Phrenic-Node Enforcer Grafts:</strong><ul>
+<li><em>The Sovereign Network:</em> Telepathic communication with Kael, other command officers, and Phrenic Dread-Drakes up to 100 feet away (or miles if routed through Kael's central lattice).</li>
+<li><em>Alien Mental Fortress:</em> Spell Resistance (SR 26) specifically against Mind-Affecting spells and effects (Enchantments, Charms, Compulsions, Illusions).</li>
+<li><em>Precognitive Reflexes:</em> Retains Dexterity bonus to AC when caught flat-footed, and gains a permanent +2 inherent bonus to Initiative (factored in above).</li>
+<li><em>Scrag-Nerve Sheathing:</em> Complete immunity to Stunning and Paralysis.</li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +5, Ref +6, Will +9</li>
+<li><strong>Abilities:</strong> Str 8, Dex 16, Con 14, Int 22, Wis 14, Cha 12 (Base stats adjusted by Drow racial modifiers and level upgrades)</li>
+<li><strong>Feats:</strong> Scribe Scroll, Alertness, Improved Initiative, Spell Focus (Divination), Greater Spell Focus (Divination), Extend Spell, Craft Wondrous Item, Quicken Spell.</li>
+<li><strong>Combat Tactics:</strong><ul>
+<li><strong>Defense first:</strong> Serris stays in the back, casting defensive spells like <em>greater invisibility</em> and <em>mirror image</em>.</li>
+<li><strong>Chronal support:</strong> She uses <em>haste</em> to boost Kael and Dreadjaw, and <em>Time Dilation</em> to slow high-value targets.</li>
+<li><strong>Coordinates actions:</strong> Coordinates movement of the fleet telepathically during combat.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="8-chief-engineer-thrain-vrunn-duergar-steam-smith-cr-11">8. CHIEF ENGINEER THRAIN VRUNN (Duergar Steam-Smith) — CR 11</h2>
+<p><em>A soot-covered duergar who manages the soul-combustion furnace in Deck III, constantly complaining about the quality of the souls fed into his boilers. Rebuilt with a Phrenic-Node graft. Level Adjustment buyoff (+1 LA completely bought off) allows him to hold Fighter 6 / Combat Engineer 5.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Humanoid (Dwarf, Duergar, Tri-Weave Grafted)</li>
+<li><strong>Class/Level:</strong> Fighter 6 / Combat Engineer 5 (PC Classes)</li>
+<li><strong>Hit Dice:</strong> 6d10+36 plus 5d6+30 (104 hp)</li>
+<li><strong>Initiative:</strong> +7 (+1 Dex, +2 inherent Precognitive Reflexes, +4 Improved Initiative)</li>
+<li><strong>Speed:</strong> 20 ft. (not reduced by armor)</li>
+<li><strong>Armor Class:</strong> 22 (+1 Dex, +8 full plate, +3 <em>shield +1</em>), touch 11, flat-footed 21 (retains Dex bonus to AC flat-footed due to Precognitive Reflexes)</li>
+<li><strong>Base Attack/Grapple:</strong> +9/+13</li>
+<li><strong>Attacks:</strong> <em>Heavy Iron Spanner (Light Hammer +2)</em> +16/+11 melee (1d4+6) or Steam-Cannon (Custom Heavy Crossbow) +11 ranged (2d8 piercing plus 1d6 fire, range 80 ft.)</li>
+<li><strong>Special Attacks:</strong><ul>
+<li><em>Overload Boilers (Ex):</em> 1/encounter, Thrain can overload the boilers. The ship's swim speed increases to <strong>80 ft. for 3 rounds</strong>. However, the furnace deck takes 5d6 fire damage, and all crew members on Deck III must make a DC 15 Fortitude save or be <em>sickened</em> for 1d4 rounds by the toxic soul-fumes.</li>
+<li><em>Acid/Steam Spray (Ex):</em> 3/day. Releases a 15-ft. cone of boiling water and acid from his spanner's alchemical valve. Deals 6d6 acid and fire damage (DC 17 Reflex half).</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Duergar immunities (immune to paralysis, phantasms, poison), darkvision 120 ft., Stability (+4 bonus to resist bull rush/trip), Spell-like abilities: <em>enlarge person</em> and <em>invisibility</em> 1/day (Caster Level 11th).</li>
+<li><strong>Phrenic-Node Enforcer Grafts:</strong><ul>
+<li><em>The Sovereign Network:</em> Telepathic communication with Kael, other command officers, and Phrenic Dread-Drakes up to 100 feet away (or miles if routed through Kael's central lattice).</li>
+<li><em>Alien Mental Fortress:</em> Spell Resistance (SR 26) specifically against Mind-Affecting spells and effects (Enchantments, Charms, Compulsions, Illusions).</li>
+<li><em>Precognitive Reflexes:</em> Retains Dexterity bonus to AC when caught flat-footed, and gains a permanent +2 inherent bonus to Initiative (factored in above).</li>
+<li><em>Scrag-Nerve Sheathing:</em> Complete immunity to Stunning and Paralysis.</li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +12, Ref +4, Will +6</li>
+<li><strong>Abilities:</strong> Str 18, Dex 12, Con 22, Int 14, Wis 11, Cha 4 (Base stats adjusted by Duergar racial modifiers and level upgrades)</li>
+<li><strong>Feats:</strong> Exotic Shield Proficiency, Power Attack, Weapon Focus (Heavy Spanner), Weapon Specialization (Heavy Spanner), Skill Focus (Craft [armorsmithing]), Exotic Weapon Proficiency (Steam-Cannon), Improved Initiative.</li>
+<li><strong>Combat Tactics:</strong><ul>
+<li><strong>Protect the furnace:</strong> Thrain fights near the boilers. He uses his high AC and <em>enlarge person</em> to block access pathways.</li>
+<li><strong>Steam control:</strong> He opens alchemical valves to spray acid and boiling steam at boarders, then hammers them down with his Heavy Spanner.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="9-slake-trench-the-deep-trench-scrag-heavy-vanguard-frenzied-berserker-cr-15">9. SLAKE (TRENCH) THE DEEP-TRENCH SCRAG (Heavy Vanguard / Frenzied Berserker) — CR 15</h2>
+<p><em>A massive, armor-plated aquatic scrag upgraded by Suture and Kael. It rests in a flooded hold on Deck IV and is deployed directly into the water during boarding actions to tear apart target hulls or rudders. Level Adjustment buyoff (+5 LA completely bought off) allows him to hold racial Giant 6 HD plus Barbarian 5 / Frenzied Berserker 4.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Large Giant (Aquatic, Trench-Adapted, Alchemically Shifted)</li>
+<li><strong>Class/Level:</strong> Giant 6 / Barbarian 5 / Frenzied Berserker 4 (PC Classes)</li>
+<li><strong>Hit Dice:</strong> 6d8+48 plus 5d12+40 plus 4d12+32 (222 hp; 270 hp in rage/frenzy)</li>
+<li><strong>Initiative:</strong> +2 (+2 Dex)</li>
+<li><strong>Speed:</strong> 30 ft. (20 ft. in heavy barding), Swim 40 ft.</li>
+<li><strong>Armor Class:</strong> 22 (-1 Size, +2 Dex, +7 natural, +4 <em>vanguard breastplate barding</em>), touch 11, flat-footed 20; (20 AC in rage/frenzy)</li>
+<li><strong>Base Attack/Grapple:</strong> +13 / +25</li>
+<li><strong>Attacks:</strong> <em>The Sovereign's Harpoon-Cannon (+2 Endless Black-Steel Harpoon)</em> +23/+18/+13 melee (2d6+15 piercing/slashing, 19-20/x2, reach 10 ft.) or <em>Harpoon-Cannon</em> +17 ranged (4d6+2 bludgeoning/piercing, x3, range increment 100 ft.) or Claw +21 melee (1d6+10) and Bite +16 melee (1d8+5)</li>
+<li><strong>Special Attacks:</strong><ul>
+<li><em>Sovereign Flesh-Tear (Ex):</em> When Trench successfully hits a single target with two or more claw attacks in a single round, he deals an additional 4d6 + (1.5 × Strength modifier) points of physical wounding damage (4d6+13, or 4d6+21 in rage/frenzy). The target must make a Fortitude save (DC 26, or DC 31 in rage/frenzy) or suffer a permanent -4 penalty to Natural Armor or Shields.</li>
+<li><em>Twin-Channel Suppression (Su):</em> Whenever Trench strikes a creature that has been targeted or affected by Kael's magical or psionic abilities within the same round, the target's SR and PR drop by a flat value equal to Trench's Strength modifier (-9, or -14 in rage/frenzy) for 1 round. The target also takes a -4 penalty on saving throws against Kael's effects for the next 24 hours.</li>
+<li><em>Frenzy 2/day (Ex):</em> As a free action, Slake can enter a frenzy. This lasts for 8 rounds and grants him a +6 bonus to Strength and an additional attack at his highest base attack bonus when making a full attack (which stacks with <em>Alchemical Surge / Haste</em>). He takes 2 points of nonlethal damage per round and a -2 penalty to AC. Stacks with Rage.</li>
+<li><em>Supreme Cleave (Ex):</em> Slake can take a 5-foot step between each cleave attack.</li>
+<li><em>Hull Breaker (Ex):</em> Slake's melee attacks deal double damage to objects, vehicles, and structures. He ignores up to 10 points of hardness on hulls and rudders.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Darkvision 90 ft., Low-Light Vision, Scent.<ul>
+<li><em>Deathless Frenzy (Ex):</em> While frenzied, Slake is immune to death from hit point damage. He continues to fight normally even if reduced to 0 or fewer hit points (all the way to negative infinity), only dying when the frenzy ends if his hit points are still at -10 or lower and he is not healed.</li>
+<li><em>Morphic Reactive Maelstrom (Ex):</em> Trench permanently gains the Combat Reflexes feat, but uses his massive Constitution modifier (+8) instead of Dex to determine additional AoOs each round (9 total). His threat sphere is a hard-denial zone: any creature that takes a 5-ft. step, uses a defensive cast, or attempts a slide within reach provokes an attack of opportunity, completely overriding standard 3.5e exceptions.</li>
+<li><em>Planar Slipstream Pounce (Su):</em> Trench gains the Pounce special quality. When initiating a charge, he may choose to travel through a localized planar fold. This functions as <em>Dimension Door</em> with a range up to his current land speed (30 ft.) as part of the charge movement, allowing him to bypass physical obstacles, walls of force, or enemy screeners without provoking AoOs.</li>
+<li><em>Aura of Non-Concordance (Su):</em> Trench projects a continuous 30-foot aura. Any spell/power with [Shatter], [Disruption], or [Telekinesis] descriptors has its DC increased by +4. Conversely, any active abjuration spells, defensive wards, or magic circles against alignment suffer a caster level penalty equal to Trench's Con modifier (-8 caster level penalty, or -10 in rage/frenzy).</li>
+<li><em>The Inquisitor's Absolute Mortality (Ex):</em> Trench’s natural attacks permanently ignore any form of Damage Reduction (including DR/Epic, DR/Evil, or DR/-) and completely suppress the regeneration factors of any creature he damages for 24 hours. If he hits a target protected by Death Ward, Mind Blank, or Freedom of Movement, his touch acts as an automatic <em>Greater Dispel Magic</em> (Caster Level 15th), targeted explicitly at those defensive spell layers.</li>
+<li><em>Trench-Adaptation (Ex):</em> Immune to pressure damage from deep-ocean depths. +4 racial bonus on Stealth checks when submerged in murky or black waters.</li>
+<li><em>Regeneration 5 (Acid/Fire) - Synergized:</em> Because of the <em>Amulet of Adaptation</em> keeping him in a micro-layer of native deep-trench water, Slake regenerates 5 HP per round <em>even on dry land</em>, unless dealt Acid or Fire damage.</li>
+<li><em>Alchemical Surge (Ex):</em> 1/day, as a swift action, Slake can trigger <em>Haste</em> upon himself for 8 rounds (+1 dodge bonus to AC, +1 Reflex, extra attack on a full attack, +30 ft. speed).</li>
+<li><em>Rage 2/day:</em> (+4 Str, +4 Con, +2 Will saves, -2 AC. Stacks with Frenzy for a total of +10 Strength and +4 Constitution).</li>
+</ul>
+</li>
+<li><strong>Saves:</strong> Fort +20, Ref +6, Will +9 (+11 in rage/frenzy)</li>
+<li><strong>Abilities:</strong> Str 28, Dex 14, Con 26, Int 12, Wis 12, Cha 7 (Base stats adjusted by Kael's Sovereign Psionic/Arcane Reformation and level upgrades; Rage/Frenzy: Str 38, Con 30)</li>
+<li><strong>Feats:</strong> Power Attack, Cleave, Great Cleave, Improved Bull Rush, Iron Will, Awesome Blow, Weapon Focus (Harpoon-Cannon), Improved Natural Attack (Claw), Diehard (bonus).</li>
+<li><strong>Gear:</strong><ul>
+<li><em>Amulet of Adaptation:</em> Envelops Slake in a micro-layer of native environment.</li>
+<li><em>The Endless Biological Sump (Barrel of Holding):</em> Infinite alchemically stable meat-slurry.</li>
+<li><em>The Harpoon-Cannon (Large, +2 Endless Black-Steel Harpoon):</em> Loads phantom-iron harpoons.</li>
+</ul>
+</li>
+</ul>
+<h3 id="combat-tactics_7">Combat Tactics</h3>
+<ul>
+<li><strong>Shipbreaking Charge:</strong> Under Suture's command, Slake is released into the water. He swims at full speed toward the enemy ship's rudder, using <em>Hull Breaker</em> and <em>Power Attack</em> with his Harpoon-Cannon to shatter the steering mechanics.</li>
+<li><strong>Frenzied Boarding Terror:</strong> Once the rudder is gone, Slake climbs the hull. He enters both Rage and Frenzy simultaneously, gaining a massive +10 to Strength (Str 38 total). He triggers <em>Alchemical Surge (Haste)</em> and uses his Harpoon-Cannon in melee to pierce through the defenders, rendering them and taking 5-ft steps to cleave through the entire deck under the protection of <em>Deathless Frenzy</em>. Only acid and fire can suppress his regeneration, while his attacks ignore all damage reduction and abjurations.</li>
+</ul>
+<hr />
+<h2 id="10-reedsinger-hollow-stag-cr-5">10. REEDSINGER (Hollow Stag) — CR 5</h2>
+<p><em>A massive skeletal stag whose ribcage is filled with hollow, flute-like bone growths. When the wind blows through it, or when it exhales, it plays a haunting, psychic melody that lures prey into the deep swamps.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Large Undead (Fey-Touched)</li>
+<li><strong>Hit Dice:</strong> 7d12 (45 hp)</li>
+<li><strong>Initiative:</strong> +2</li>
+<li><strong>Speed:</strong> 50 ft.</li>
+<li><strong>Armor Class:</strong> 17 (-1 size, +2 Dex, +6 natural), touch 11, flat-footed 15</li>
+<li><strong>Base Attack/Grapple:</strong> +3/+11</li>
+<li><strong>Attacks:</strong> Gore +7 melee (2d6+6) and 2 Hooves +2 melee (1d4+2)</li>
+<li><strong>Space/Reach:</strong> 10 ft. / 5 ft.</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Captivating Song (Su):</em> The Reedsinger constantly exhales through its hollow ribs, creating a mournful, multi-tonal dirge. This operates as a 60-ft spread. All living creatures must make a Will DC 15 save or become <em>captivated</em>. Captivated creatures walk toward the Reedsinger, taking the most direct route available. If this path leads into a dangerous area (like a deep bog or off a cliff), they receive a second saving throw. The effect ends if the creature takes damage.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Undead traits, Damage Reduction 5/Bludgeoning, <em>Bog-Stride</em> (ignores difficult terrain in swamps/mud).</li>
+<li><strong>Saves:</strong> Fort +2, Ref +4, Will +6</li>
+<li><strong>Abilities:</strong> Str 18, Dex 14, Con -, Int 2, Wis 12, Cha 16</li>
+</ul>
+<h3 id="ecology-lore-knowledge-religion-or-nature">Ecology &amp; Lore (Knowledge: Religion or Nature)</h3>
+<ul>
+<li><em>DC 15:</em> The Reedsinger is an undead monstrosity born when a majestic stag of the Feywild is drowned in the necrotic runoff of the Sluices. </li>
+<li><em>DC 20:</em> Its ribcage has been warped into a biological pipe-organ. The song it plays targets the primal fear centers of the brain, causing a trance-like state. It feeds on the psychic terror of its drowning victims.</li>
+</ul>
+<h3 id="combat-tactics_8">Combat Tactics</h3>
+<p>The Reedsinger wades into deep, treacherous mud and begins its dirge. It waits for captivated prey to walk into the hazardous terrain where they will likely drown or become stuck, then gores them while they are defenseless.</p>
+<hr />
+<h2 id="11-dire-displacer-rhino-consortium-siege-beast-cr-12">11. DIRE DISPLACER RHINO (Consortium Siege-Beast) — CR 12</h2>
+<p><em>A terrifying fusion of rhinoceros bulk and displacer-beast bio-mechanics. Grown in the Fleshwarped Foundry, it sports four razor-sharp tentacles and a massive adamantine horn.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Huge Aberration (Augmented Animal)</li>
+<li><strong>Hit Dice:</strong> 15d8+105 (172 hp)</li>
+<li><strong>Initiative:</strong> +0</li>
+<li><strong>Speed:</strong> 40 ft.</li>
+<li><strong>Armor Class:</strong> 25 (-2 size, +17 natural), touch 8, flat-footed 25</li>
+<li><strong>Base Attack/Grapple:</strong> +11/+29</li>
+<li><strong>Attacks:</strong> Gore +19 melee (2d8+15) and 4 Tentacles +14 melee (1d8+5)</li>
+<li><strong>Space/Reach:</strong> 15 ft. / 10 ft. (15 ft. with tentacles)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Trample (Ex):</em> As a full-round action, it can move up to twice its speed and literally run over any creatures of Large size or smaller. Deals 2d8+15 bludgeoning damage (Reflex DC 27 half).</li>
+<li><em>Adamantine Horn (Ex):</em> Biologically coated in a deposited adamantine alloy, its gore attack ignores hardness less than 20 and bypasses DR as an adamantine weapon.</li>
+<li><em>Rend (Ex):</em> If the beast hits a single target with at least two tentacle attacks, it latches on and tears the flesh, dealing an extra 2d8+10 damage.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Displacement (50% miss chance, suppressed for 1 round if hit by a cold iron weapon), Scent, DR 10/Magic.</li>
+<li><strong>Saves:</strong> Fort +12, Ref +5, Will +10</li>
+<li><strong>Abilities:</strong> Str 30, Dex 10, Con 24, Int 2, Wis 12, Cha 6</li>
+<li><strong>Feats:</strong> Improved Bull Rush, Power Attack, Awesome Blow, Cleave, Great Cleave.</li>
+</ul>
+<h3 id="ecology-lore-knowledge-arcana">Ecology &amp; Lore (Knowledge: Arcana)</h3>
+<ul>
+<li><em>DC 20:</em> A horrific bioweapon engineered by the Thessalan Consortium. They combined the unstoppable momentum of a dire rhinoceros with the light-bending hide of a displacer beast to create the ultimate siege engine.</li>
+<li><em>DC 25:</em> Its horn is literally laced with adamantine extracted from the blood of rust monsters fed a pure metal diet. It is designed to breach fortified vault doors in a single charge.</li>
+</ul>
+<h3 id="combat-tactics_9">Combat Tactics</h3>
+<p>The beast always opens combat with a Charge, using <em>Awesome Blow</em> or <em>Trample</em> to scatter infantry lines. Once surrounded, it uses its massive reach to rend multiple targets while relying on its displacement field to shrug off retaliation. </p>
+<hr />
+<h2 id="12-cerebrilith-psionic-demon-cr-10">12. CEREBRILITH (Psionic Demon) — CR 10</h2>
+<p><em>A massive demonic brute whose exposed, pulsating brain crackles with psionic energy. A mercenary of the Void.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Large Outsider (Chaotic, Demon, Evil, Extraplanar, Psionic)</li>
+<li><strong>Hit Dice:</strong> 9d8+63 (103 hp)</li>
+<li><strong>Initiative:</strong> +1</li>
+<li><strong>Speed:</strong> 30 ft.</li>
+<li><strong>Armor Class:</strong> 25 (-1 size, +1 Dex, +15 natural), touch 10, flat-footed 24</li>
+<li><strong>Base Attack/Grapple:</strong> +9/+19</li>
+<li><strong>Attacks:</strong> Bite +14 melee (1d8+6) and 2 Claws +12 melee (1d6+3)</li>
+<li><strong>Space/Reach:</strong> 10 ft. / 10 ft.</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Psi-Like Abilities:</em> Manifester Level 9th. <ul>
+<li>At will—<em>brain lock, detect psionics, ego whip, id insinuation, mind trap</em>. </li>
+<li>3/day—<em>psionic dominate</em>. </li>
+<li>1/day—<em>mind thrust</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Damage reduction 10/good, darkvision 60 ft., immunity to electricity and poison, resistance to acid 10, cold 10, and fire 10, spell resistance 20, telepathy 100 ft.</li>
+<li><strong>Saves:</strong> Fort +13, Ref +7, Will +8</li>
+<li><strong>Abilities:</strong> Str 22, Dex 13, Con 25, Int 15, Wis 14, Cha 14</li>
+<li><strong>Feats:</strong> Combat Manifestation, Power Attack, Cleave, Psionic Fist.</li>
+</ul>
+<h3 id="ecology-lore-knowledge-the-planes">Ecology &amp; Lore (Knowledge: The Planes)</h3>
+<ul>
+<li><em>DC 18:</em> Cerebriliths are demons uniquely evolved to wage war on the Astral Plane and other psionically active realms.</li>
+<li><em>DC 23:</em> In Blackwater Quay, they are often summoned by the Choir of the Below to serve as heavy enforcers and interrogators, using their <em>psionic dominate</em> to turn watchmen against each other.</li>
+</ul>
+<h3 id="combat-tactics_10">Combat Tactics</h3>
+<p>A Cerebrilith rarely wades immediately into melee. It prefers to stand back and manifest <em>id insinuation</em> to confuse groups, or <em>psionic dominate</em> on the strongest looking fighter. If forced into melee, it uses <em>ego whip</em> to daze an opponent before tearing them apart with claws and bite.</p>
+<hr />
+<h2 id="13-scour-harrow-cr-8">13. SCOUR-HARROW — CR 8</h2>
+<p><em>A horrifying amalgam of rusty blades, iron chains, and necrotic sludge, animated by tortured souls.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Large Construct</li>
+<li><strong>Hit Dice:</strong> 10d10+30 (85 hp)</li>
+<li><strong>Initiative:</strong> -1</li>
+<li><strong>Speed:</strong> 20 ft.</li>
+<li><strong>Armor Class:</strong> 20 (-1 size, -1 Dex, +12 natural), touch 8, flat-footed 20</li>
+<li><strong>Base Attack/Grapple:</strong> +7/+17</li>
+<li><strong>Attacks:</strong> 2 Blade-Slams +12 melee (2d6+6/19-20 plus bleed)</li>
+<li><strong>Space/Reach:</strong> 10 ft. / 10 ft.</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Whirlwind of Ruin (Ex):</em> Once per day, the Scour-Harrow can spin violently as a full-round action. Every creature within 10 feet takes 4d6+6 slashing damage (Reflex DC 15 half).</li>
+<li><em>Serrated Bleed (Ex):</em> The rusted blades that make up its body cause horrific, jagged wounds. Any creature struck by its slam attack takes 1d4 points of bleed damage each round at the start of their turn. This stacks with itself. The bleeding can be stopped by a DC 15 Heal check or the application of any magical healing.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Construct traits, Damage Reduction 5/Adamantine, Immunity to Magic (functions like a golem; immune to all spells that allow Spell Resistance).</li>
+<li><strong>Saves:</strong> Fort +3, Ref +2, Will +3</li>
+<li><strong>Abilities:</strong> Str 23, Dex 8, Con -, Int -, Wis 11, Cha 1</li>
+</ul>
+<h3 id="ecology-lore-knowledge-arcana_1">Ecology &amp; Lore (Knowledge: Arcana)</h3>
+<ul>
+<li><em>DC 20:</em> Scour-Harrows are cheap, brutal constructs built by the lower gangs of the Quay. Lacking the finesse for true golems, they dump tortured souls into piles of scrap metal and let the agonizing telekinetic force animate the junk.</li>
+</ul>
+<h3 id="combat-tactics_11">Combat Tactics</h3>
+<p>Mindless and brutal, the Scour-Harrow simply advances on the nearest target and batters them until they bleed to death. If surrounded by three or more enemies, it triggers its <em>Whirlwind of Ruin</em>.</p>
+<hr />
+<h2 id="14-larklet-cinder-artificer-companions-cr-4-each">14. LARKLET &amp; CINDER (Artificer Companions) — CR 4 (each)</h2>
+<p><em>Larklet is a delicate clockwork songbird made of polished brass that scouts and relays audio. Cinder is a heavily-armored, steam-powered mechanical badger that digs through fortifications.</em></p>
+<h3 id="larklet-clockwork-scout">Larklet (Clockwork Scout)</h3>
+<ul>
+<li><strong>Size/Type:</strong> Tiny Construct (Mechanical)</li>
+<li><strong>Hit Dice:</strong> 4d10 (22 hp)</li>
+<li><strong>Initiative:</strong> +4</li>
+<li><strong>Speed:</strong> 10 ft., fly 60 ft. (perfect)</li>
+<li><strong>Armor Class:</strong> 18 (+2 size, +4 Dex, +2 natural), touch 16, flat-footed 14</li>
+<li><strong>Base Attack/Grapple:</strong> +3/-7</li>
+<li><strong>Attacks:</strong> Razor Wings +9 melee (1d4-2)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Sonic Screech (Su):</em> 3/day. Releases a 15-foot cone of ear-splitting feedback. 2d6 sonic damage and deafened for 1d4 rounds (Fort DC 12 half and negates deafness).</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Construct traits, <em>Record Audio</em> (can flawlessly playback the last 10 minutes of audio it heard), <em>Share Senses</em> (master can see/hear through it up to 1 mile).</li>
+<li><strong>Abilities:</strong> Str 6, Dex 18, Con -, Int 6, Wis 14, Cha 10</li>
+<li><strong>Feats:</strong> Weapon Finesse, Alertness.</li>
+</ul>
+<h3 id="cinder-siege-badger">Cinder (Siege Badger)</h3>
+<ul>
+<li><strong>Size/Type:</strong> Small Construct (Mechanical)</li>
+<li><strong>Hit Dice:</strong> 6d10+10 (43 hp)</li>
+<li><strong>Initiative:</strong> -1</li>
+<li><strong>Speed:</strong> 30 ft., burrow 20 ft.</li>
+<li><strong>Armor Class:</strong> 17 (+1 size, -1 Dex, +7 natural), touch 10, flat-footed 17</li>
+<li><strong>Base Attack/Grapple:</strong> +4/+3</li>
+<li><strong>Attacks:</strong> Drill-Bite +8 melee (1d8+4)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Adamantine Drill (Ex):</em> Cinder's snout is a rotating adamantine drill-bit. Its attacks ignore hardness less than 15, allowing it to chew through stone walls, iron doors, and heavily armored foes with ease.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Construct traits, Tremorsense 60 ft.</li>
+<li><strong>Abilities:</strong> Str 16, Dex 8, Con -, Int 4, Wis 12, Cha 6</li>
+<li><strong>Feats:</strong> Power Attack, Cleave.</li>
+</ul>
+<h3 id="combat-tactics_12">Combat Tactics</h3>
+<p>Larklet never engages in melee; it stays high, using its perfect fly speed to scout and occasionally dropping a <em>Sonic Screech</em> on spellcasters to disrupt their concentration. Cinder is a blunt instrument, burrowing beneath enemy lines to pop up and drill through the shins of heavily armored knights.</p>
+<hr />
+<h2 id="15-aurelion-warding-construct-cr-9">15. AURELION (Warding Construct) — CR 9</h2>
+<p><em>A floating, spherical astrolabe constructed of overlapping golden rings, pulsating with abjuration magic. The rings constantly rotate around a glowing core of pure force.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Medium Construct</li>
+<li><strong>Hit Dice:</strong> 11d10+20 (80 hp)</li>
+<li><strong>Initiative:</strong> +4</li>
+<li><strong>Speed:</strong> Fly 40 ft. (perfect)</li>
+<li><strong>Armor Class:</strong> 24 (+4 Dex, +10 natural), touch 14, flat-footed 20</li>
+<li><strong>Base Attack/Grapple:</strong> +8/+9</li>
+<li><strong>Attacks:</strong> None (Relies entirely on force pulses)</li>
+<li><strong>Space/Reach:</strong> 5 ft. / 5 ft.</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Force Pulse (Su):</em> Every 1d4 rounds, Aurelion can release a massive wave of kinetic force. This operates as a 30-foot radius burst. All creatures take 6d6 force damage and are pushed 10 feet directly away from Aurelion and knocked prone. A Reflex DC 17 save halves the damage, negates the push, and prevents being knocked prone.</li>
+<li><em>Disruptive Ray (Sp):</em> At will, +12 ranged touch. Deals 4d6 force damage.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Construct traits, Fast Healing 5 (as long as its core is active), Spell Resistance 20, <em>Globe of Invulnerability, Lesser</em> (permanent, always active around itself).</li>
+<li><strong>Saves:</strong> Fort +3, Ref +7, Will +3</li>
+<li><strong>Abilities:</strong> Str 12, Dex 18, Con -, Int -, Wis 11, Cha 1</li>
+</ul>
+<h3 id="ecology-lore-knowledge-arcana_2">Ecology &amp; Lore (Knowledge: Arcana)</h3>
+<ul>
+<li><em>DC 22:</em> Aurelions are ancient vault-guards. They are non-lethal by design, meant to repel intruders rather than outright slaughter them, though repeated force pulses will certainly crush bones. </li>
+<li><em>DC 27:</em> Their fast healing is tied to the magical weave; hitting them with a <em>Dispel Magic</em> suppresses their fast healing and their <em>Globe of Invulnerability</em> for 1d4 rounds.</li>
+</ul>
+<h3 id="combat-tactics_13">Combat Tactics</h3>
+<p>Aurelion floats in the center of the room it is guarding. It uses its <em>Disruptive Ray</em> on single targets, and waits for melee attackers to swarm it before releasing a devastating <em>Force Pulse</em> to clear the room.</p>
+<hr />
+<h2 id="16-manta-planar-membrane-beast-cr-11">16. MANTA (Planar Membrane Beast) — CR 11</h2>
+<p><em>A translucent, ray-like creature that swims through the air and between dimensional layers, feeding on psychic echoes.</em></p>
+<ul>
+<li><strong>Size/Type:</strong> Huge Magical Beast (Extraplanar)</li>
+<li><strong>Hit Dice:</strong> 13d10+52 (123 hp)</li>
+<li><strong>Initiative:</strong> +6</li>
+<li><strong>Speed:</strong> Fly 60 ft. (good)</li>
+<li><strong>Armor Class:</strong> 22 (-2 size, +6 Dex, +8 natural), touch 14, flat-footed 16</li>
+<li><strong>Base Attack/Grapple:</strong> +13/+27</li>
+<li><strong>Attacks:</strong> Tail Sting +18 melee (2d6+7 plus poison) and 2 Wings +13 melee (1d8+3)</li>
+<li><strong>Space/Reach:</strong> 15 ft. / 10 ft. (15 ft. with tail sting)</li>
+<li><strong>Special Attacks:</strong> <ul>
+<li><em>Psychic Poison (Ex):</em> Delivered via tail sting. Fortitude DC 20; Initial damage 1d4 Intelligence, Secondary damage 1d4 Intelligence. The save DC is Constitution-based.</li>
+<li><em>Smothering Envelope (Ex):</em> If the Manta hits a Large or smaller creature with both wing attacks, it can attempt to start a grapple as a free action without provoking an attack of opportunity. If it establishes a hold, it wraps the target in its translucent body, suffocating them and dealing 2d8+3 bludgeoning damage each round.</li>
+</ul>
+</li>
+<li><strong>Special Qualities:</strong> Blindsight 60 ft., <em>Ethereal Jaunt (Su)</em> (At will as a free action; it can shift to the Ethereal Plane, move, and shift back to the Material Plane in the same turn).</li>
+<li><strong>Saves:</strong> Fort +12, Ref +14, Will +7</li>
+<li><strong>Abilities:</strong> Str 24, Dex 22, Con 19, Int 4, Wis 16, Cha 11</li>
+<li><strong>Feats:</strong> Improved Initiative, Weapon Finesse, Dodge, Mobility, Flyby Attack.</li>
+</ul>
+<h3 id="ecology-lore-knowledge-the-planes_1">Ecology &amp; Lore (Knowledge: The Planes)</h3>
+<ul>
+<li><em>DC 20:</em> Mantas are apex predators of the Ethereal Plane that slip into the Material Plane to hunt where the dimensional barriers are thin—like the Sluices of Blackwater Quay.</li>
+<li><em>DC 25:</em> They feed on raw intellect. Their sting injects a neurotoxin that literally digests the target's cognitive functions, leaving them in a catatonic, drooling state.</li>
+</ul>
+<h3 id="combat-tactics_14">Combat Tactics</h3>
+<p>The Manta uses <em>Ethereal Jaunt</em> to approach completely undetected. It materializes right on top of the party's wizard or cleric, using <em>Flyby Attack</em> to sting them and inject its psychic poison, then immediately shifts back to the Ethereal Plane before anyone can retaliate. It repeats this hit-and-run tactic until the prey's Intelligence is drained to 0, at which point it wraps them in a <em>Smothering Envelope</em> to consume them at its leisure.</p></div>
+    </div>
+</body>
+</html>
