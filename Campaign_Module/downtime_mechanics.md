@@ -1,6 +1,8 @@
 # Downtime Mechanics: Life in the Quay
 
-In Blackwater Quay, a long rest is not just for healing; the days between Acts are crucial for building the party's power base and embedding themselves in the local syndicates. During downtime (defined as a period of 3-7 days between major missions), each player character can choose **one** of the following Downtime Activities.
+In Blackwater Quay, a long rest is not just for healing; the days between Acts are crucial for building the party's power base and embedding themselves in the local syndicates. During downtime (defined as a period of 3-7 days between major missions), each player character can choose **one** of the following Downtime Activities. 
+
+*(For unique downtime activities that occur specifically between major story Acts, see [Timeline Dynamics & Interludes](timeline_and_interludes.md).)*
 
 ## 1. Carousing the Belowmarket & The Shadow Network
 The character spends their days drinking, gambling, and trading secrets in the seediest taverns of the Quay, actively engaging with Sablehook's vast informant web known as the "Shadow Network."

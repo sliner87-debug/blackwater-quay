@@ -41,7 +41,7 @@ To simulate the ever-present threat of the Elder Node's telepathic net, the DM r
 
 ## 2. CAMPAIGN STRUCTURE & ACTS
 
-The campaign is structured into four distinct acts, taking the characters from street-level investigations to a high-stakes planar siege.
+The campaign is structured into four distinct acts, taking the characters from street-level investigations to a high-stakes planar siege. Between these Acts, the party must navigate a dynamic timeline and engage in specific interludes (see [Timeline Dynamics & Interludes](timeline_and_interludes.md)).
 
 ```mermaid
 graph TD
