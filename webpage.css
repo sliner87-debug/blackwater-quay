@@ -111,6 +111,7 @@ body {
 
 .nav-menu {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     gap: 1.5rem;
 }
@@ -1386,4 +1387,5 @@ body {
     border-top: none !important;
     border-left: none !important;
 }
+
 

@@ -298,3 +298,206 @@
 ### Combat Tactics
 *   **Shipbreaking Charge:** Under Suture's command, Slake is released into the water. He swims at full speed toward the enemy ship's rudder, using *Hull Breaker* and *Power Attack* with his Harpoon-Cannon to shatter the steering mechanics.
 *   **Frenzied Boarding Terror:** Once the rudder is gone, Slake climbs the hull. He enters both Rage and Frenzy simultaneously, gaining a massive +10 to Strength (Str 38 total). He triggers *Alchemical Surge (Haste)* and uses his Harpoon-Cannon in melee to pierce through the defenders, rendering them and taking 5-ft steps to cleave through the entire deck under the protection of *Deathless Frenzy*. Only acid and fire can suppress his regeneration, while his attacks ignore all damage reduction and abjurations.
+
+---
+
+## 10. REEDSINGER (Hollow Stag) — CR 5
+*A massive skeletal stag whose ribcage is filled with hollow, flute-like bone growths. When the wind blows through it, or when it exhales, it plays a haunting, psychic melody that lures prey into the deep swamps.*
+
+*   **Size/Type:** Large Undead (Fey-Touched)
+*   **Hit Dice:** 7d12 (45 hp)
+*   **Initiative:** +2
+*   **Speed:** 50 ft.
+*   **Armor Class:** 17 (-1 size, +2 Dex, +6 natural), touch 11, flat-footed 15
+*   **Base Attack/Grapple:** +3/+11
+*   **Attacks:** Gore +7 melee (2d6+6) and 2 Hooves +2 melee (1d4+2)
+*   **Space/Reach:** 10 ft. / 5 ft.
+*   **Special Attacks:** 
+    *   *Captivating Song (Su):* The Reedsinger constantly exhales through its hollow ribs, creating a mournful, multi-tonal dirge. This operates as a 60-ft spread. All living creatures must make a Will DC 15 save or become *captivated*. Captivated creatures walk toward the Reedsinger, taking the most direct route available. If this path leads into a dangerous area (like a deep bog or off a cliff), they receive a second saving throw. The effect ends if the creature takes damage.
+*   **Special Qualities:** Undead traits, Damage Reduction 5/Bludgeoning, *Bog-Stride* (ignores difficult terrain in swamps/mud).
+*   **Saves:** Fort +2, Ref +4, Will +6
+*   **Abilities:** Str 18, Dex 14, Con -, Int 2, Wis 12, Cha 16
+
+### Ecology & Lore (Knowledge: Religion or Nature)
+*   *DC 15:* The Reedsinger is an undead monstrosity born when a majestic stag of the Feywild is drowned in the necrotic runoff of the Sluices. 
+*   *DC 20:* Its ribcage has been warped into a biological pipe-organ. The song it plays targets the primal fear centers of the brain, causing a trance-like state. It feeds on the psychic terror of its drowning victims.
+
+### Combat Tactics
+The Reedsinger wades into deep, treacherous mud and begins its dirge. It waits for captivated prey to walk into the hazardous terrain where they will likely drown or become stuck, then gores them while they are defenseless.
+
+---
+
+## 11. DIRE DISPLACER RHINO (Consortium Siege-Beast) — CR 12
+*A terrifying fusion of rhinoceros bulk and displacer-beast bio-mechanics. Grown in the Fleshwarped Foundry, it sports four razor-sharp tentacles and a massive adamantine horn.*
+
+*   **Size/Type:** Huge Aberration (Augmented Animal)
+*   **Hit Dice:** 15d8+105 (172 hp)
+*   **Initiative:** +0
+*   **Speed:** 40 ft.
+*   **Armor Class:** 25 (-2 size, +17 natural), touch 8, flat-footed 25
+*   **Base Attack/Grapple:** +11/+29
+*   **Attacks:** Gore +19 melee (2d8+15) and 4 Tentacles +14 melee (1d8+5)
+*   **Space/Reach:** 15 ft. / 10 ft. (15 ft. with tentacles)
+*   **Special Attacks:** 
+    *   *Trample (Ex):* As a full-round action, it can move up to twice its speed and literally run over any creatures of Large size or smaller. Deals 2d8+15 bludgeoning damage (Reflex DC 27 half).
+    *   *Adamantine Horn (Ex):* Biologically coated in a deposited adamantine alloy, its gore attack ignores hardness less than 20 and bypasses DR as an adamantine weapon.
+    *   *Rend (Ex):* If the beast hits a single target with at least two tentacle attacks, it latches on and tears the flesh, dealing an extra 2d8+10 damage.
+*   **Special Qualities:** Displacement (50% miss chance, suppressed for 1 round if hit by a cold iron weapon), Scent, DR 10/Magic.
+*   **Saves:** Fort +12, Ref +5, Will +10
+*   **Abilities:** Str 30, Dex 10, Con 24, Int 2, Wis 12, Cha 6
+*   **Feats:** Improved Bull Rush, Power Attack, Awesome Blow, Cleave, Great Cleave.
+
+### Ecology & Lore (Knowledge: Arcana)
+*   *DC 20:* A horrific bioweapon engineered by the Thessalan Consortium. They combined the unstoppable momentum of a dire rhinoceros with the light-bending hide of a displacer beast to create the ultimate siege engine.
+*   *DC 25:* Its horn is literally laced with adamantine extracted from the blood of rust monsters fed a pure metal diet. It is designed to breach fortified vault doors in a single charge.
+
+### Combat Tactics
+The beast always opens combat with a Charge, using *Awesome Blow* or *Trample* to scatter infantry lines. Once surrounded, it uses its massive reach to rend multiple targets while relying on its displacement field to shrug off retaliation. 
+
+---
+
+## 12. CEREBRILITH (Psionic Demon) — CR 10
+*A massive demonic brute whose exposed, pulsating brain crackles with psionic energy. A mercenary of the Void.*
+
+*   **Size/Type:** Large Outsider (Chaotic, Demon, Evil, Extraplanar, Psionic)
+*   **Hit Dice:** 9d8+63 (103 hp)
+*   **Initiative:** +1
+*   **Speed:** 30 ft.
+*   **Armor Class:** 25 (-1 size, +1 Dex, +15 natural), touch 10, flat-footed 24
+*   **Base Attack/Grapple:** +9/+19
+*   **Attacks:** Bite +14 melee (1d8+6) and 2 Claws +12 melee (1d6+3)
+*   **Space/Reach:** 10 ft. / 10 ft.
+*   **Special Attacks:** 
+    *   *Psi-Like Abilities:* Manifester Level 9th. 
+        *   At will—*brain lock, detect psionics, ego whip, id insinuation, mind trap*. 
+        *   3/day—*psionic dominate*. 
+        *   1/day—*mind thrust*.
+*   **Special Qualities:** Damage reduction 10/good, darkvision 60 ft., immunity to electricity and poison, resistance to acid 10, cold 10, and fire 10, spell resistance 20, telepathy 100 ft.
+*   **Saves:** Fort +13, Ref +7, Will +8
+*   **Abilities:** Str 22, Dex 13, Con 25, Int 15, Wis 14, Cha 14
+*   **Feats:** Combat Manifestation, Power Attack, Cleave, Psionic Fist.
+
+### Ecology & Lore (Knowledge: The Planes)
+*   *DC 18:* Cerebriliths are demons uniquely evolved to wage war on the Astral Plane and other psionically active realms.
+*   *DC 23:* In Blackwater Quay, they are often summoned by the Choir of the Below to serve as heavy enforcers and interrogators, using their *psionic dominate* to turn watchmen against each other.
+
+### Combat Tactics
+A Cerebrilith rarely wades immediately into melee. It prefers to stand back and manifest *id insinuation* to confuse groups, or *psionic dominate* on the strongest looking fighter. If forced into melee, it uses *ego whip* to daze an opponent before tearing them apart with claws and bite.
+
+---
+
+## 13. SCOUR-HARROW — CR 8
+*A horrifying amalgam of rusty blades, iron chains, and necrotic sludge, animated by tortured souls.*
+
+*   **Size/Type:** Large Construct
+*   **Hit Dice:** 10d10+30 (85 hp)
+*   **Initiative:** -1
+*   **Speed:** 20 ft.
+*   **Armor Class:** 20 (-1 size, -1 Dex, +12 natural), touch 8, flat-footed 20
+*   **Base Attack/Grapple:** +7/+17
+*   **Attacks:** 2 Blade-Slams +12 melee (2d6+6/19-20 plus bleed)
+*   **Space/Reach:** 10 ft. / 10 ft.
+*   **Special Attacks:** 
+    *   *Whirlwind of Ruin (Ex):* Once per day, the Scour-Harrow can spin violently as a full-round action. Every creature within 10 feet takes 4d6+6 slashing damage (Reflex DC 15 half).
+    *   *Serrated Bleed (Ex):* The rusted blades that make up its body cause horrific, jagged wounds. Any creature struck by its slam attack takes 1d4 points of bleed damage each round at the start of their turn. This stacks with itself. The bleeding can be stopped by a DC 15 Heal check or the application of any magical healing.
+*   **Special Qualities:** Construct traits, Damage Reduction 5/Adamantine, Immunity to Magic (functions like a golem; immune to all spells that allow Spell Resistance).
+*   **Saves:** Fort +3, Ref +2, Will +3
+*   **Abilities:** Str 23, Dex 8, Con -, Int -, Wis 11, Cha 1
+
+### Ecology & Lore (Knowledge: Arcana)
+*   *DC 20:* Scour-Harrows are cheap, brutal constructs built by the lower gangs of the Quay. Lacking the finesse for true golems, they dump tortured souls into piles of scrap metal and let the agonizing telekinetic force animate the junk.
+
+### Combat Tactics
+Mindless and brutal, the Scour-Harrow simply advances on the nearest target and batters them until they bleed to death. If surrounded by three or more enemies, it triggers its *Whirlwind of Ruin*.
+
+---
+
+## 14. LARKLET & CINDER (Artificer Companions) — CR 4 (each)
+*Larklet is a delicate clockwork songbird made of polished brass that scouts and relays audio. Cinder is a heavily-armored, steam-powered mechanical badger that digs through fortifications.*
+
+### Larklet (Clockwork Scout)
+*   **Size/Type:** Tiny Construct (Mechanical)
+*   **Hit Dice:** 4d10 (22 hp)
+*   **Initiative:** +4
+*   **Speed:** 10 ft., fly 60 ft. (perfect)
+*   **Armor Class:** 18 (+2 size, +4 Dex, +2 natural), touch 16, flat-footed 14
+*   **Base Attack/Grapple:** +3/-7
+*   **Attacks:** Razor Wings +9 melee (1d4-2)
+*   **Special Attacks:** 
+    *   *Sonic Screech (Su):* 3/day. Releases a 15-foot cone of ear-splitting feedback. 2d6 sonic damage and deafened for 1d4 rounds (Fort DC 12 half and negates deafness).
+*   **Special Qualities:** Construct traits, *Record Audio* (can flawlessly playback the last 10 minutes of audio it heard), *Share Senses* (master can see/hear through it up to 1 mile).
+*   **Abilities:** Str 6, Dex 18, Con -, Int 6, Wis 14, Cha 10
+*   **Feats:** Weapon Finesse, Alertness.
+
+### Cinder (Siege Badger)
+*   **Size/Type:** Small Construct (Mechanical)
+*   **Hit Dice:** 6d10+10 (43 hp)
+*   **Initiative:** -1
+*   **Speed:** 30 ft., burrow 20 ft.
+*   **Armor Class:** 17 (+1 size, -1 Dex, +7 natural), touch 10, flat-footed 17
+*   **Base Attack/Grapple:** +4/+3
+*   **Attacks:** Drill-Bite +8 melee (1d8+4)
+*   **Special Attacks:** 
+    *   *Adamantine Drill (Ex):* Cinder's snout is a rotating adamantine drill-bit. Its attacks ignore hardness less than 15, allowing it to chew through stone walls, iron doors, and heavily armored foes with ease.
+*   **Special Qualities:** Construct traits, Tremorsense 60 ft.
+*   **Abilities:** Str 16, Dex 8, Con -, Int 4, Wis 12, Cha 6
+*   **Feats:** Power Attack, Cleave.
+
+### Combat Tactics
+Larklet never engages in melee; it stays high, using its perfect fly speed to scout and occasionally dropping a *Sonic Screech* on spellcasters to disrupt their concentration. Cinder is a blunt instrument, burrowing beneath enemy lines to pop up and drill through the shins of heavily armored knights.
+
+---
+
+## 15. AURELION (Warding Construct) — CR 9
+*A floating, spherical astrolabe constructed of overlapping golden rings, pulsating with abjuration magic. The rings constantly rotate around a glowing core of pure force.*
+
+*   **Size/Type:** Medium Construct
+*   **Hit Dice:** 11d10+20 (80 hp)
+*   **Initiative:** +4
+*   **Speed:** Fly 40 ft. (perfect)
+*   **Armor Class:** 24 (+4 Dex, +10 natural), touch 14, flat-footed 20
+*   **Base Attack/Grapple:** +8/+9
+*   **Attacks:** None (Relies entirely on force pulses)
+*   **Space/Reach:** 5 ft. / 5 ft.
+*   **Special Attacks:** 
+    *   *Force Pulse (Su):* Every 1d4 rounds, Aurelion can release a massive wave of kinetic force. This operates as a 30-foot radius burst. All creatures take 6d6 force damage and are pushed 10 feet directly away from Aurelion and knocked prone. A Reflex DC 17 save halves the damage, negates the push, and prevents being knocked prone.
+    *   *Disruptive Ray (Sp):* At will, +12 ranged touch. Deals 4d6 force damage.
+*   **Special Qualities:** Construct traits, Fast Healing 5 (as long as its core is active), Spell Resistance 20, *Globe of Invulnerability, Lesser* (permanent, always active around itself).
+*   **Saves:** Fort +3, Ref +7, Will +3
+*   **Abilities:** Str 12, Dex 18, Con -, Int -, Wis 11, Cha 1
+
+### Ecology & Lore (Knowledge: Arcana)
+*   *DC 22:* Aurelions are ancient vault-guards. They are non-lethal by design, meant to repel intruders rather than outright slaughter them, though repeated force pulses will certainly crush bones. 
+*   *DC 27:* Their fast healing is tied to the magical weave; hitting them with a *Dispel Magic* suppresses their fast healing and their *Globe of Invulnerability* for 1d4 rounds.
+
+### Combat Tactics
+Aurelion floats in the center of the room it is guarding. It uses its *Disruptive Ray* on single targets, and waits for melee attackers to swarm it before releasing a devastating *Force Pulse* to clear the room.
+
+---
+
+## 16. MANTA (Planar Membrane Beast) — CR 11
+*A translucent, ray-like creature that swims through the air and between dimensional layers, feeding on psychic echoes.*
+
+*   **Size/Type:** Huge Magical Beast (Extraplanar)
+*   **Hit Dice:** 13d10+52 (123 hp)
+*   **Initiative:** +6
+*   **Speed:** Fly 60 ft. (good)
+*   **Armor Class:** 22 (-2 size, +6 Dex, +8 natural), touch 14, flat-footed 16
+*   **Base Attack/Grapple:** +13/+27
+*   **Attacks:** Tail Sting +18 melee (2d6+7 plus poison) and 2 Wings +13 melee (1d8+3)
+*   **Space/Reach:** 15 ft. / 10 ft. (15 ft. with tail sting)
+*   **Special Attacks:** 
+    *   *Psychic Poison (Ex):* Delivered via tail sting. Fortitude DC 20; Initial damage 1d4 Intelligence, Secondary damage 1d4 Intelligence. The save DC is Constitution-based.
+    *   *Smothering Envelope (Ex):* If the Manta hits a Large or smaller creature with both wing attacks, it can attempt to start a grapple as a free action without provoking an attack of opportunity. If it establishes a hold, it wraps the target in its translucent body, suffocating them and dealing 2d8+3 bludgeoning damage each round.
+*   **Special Qualities:** Blindsight 60 ft., *Ethereal Jaunt (Su)* (At will as a free action; it can shift to the Ethereal Plane, move, and shift back to the Material Plane in the same turn).
+*   **Saves:** Fort +12, Ref +14, Will +7
+*   **Abilities:** Str 24, Dex 22, Con 19, Int 4, Wis 16, Cha 11
+*   **Feats:** Improved Initiative, Weapon Finesse, Dodge, Mobility, Flyby Attack.
+
+### Ecology & Lore (Knowledge: The Planes)
+*   *DC 20:* Mantas are apex predators of the Ethereal Plane that slip into the Material Plane to hunt where the dimensional barriers are thin—like the Sluices of Blackwater Quay.
+*   *DC 25:* They feed on raw intellect. Their sting injects a neurotoxin that literally digests the target's cognitive functions, leaving them in a catatonic, drooling state.
+
+### Combat Tactics
+The Manta uses *Ethereal Jaunt* to approach completely undetected. It materializes right on top of the party's wizard or cleric, using *Flyby Attack* to sting them and inject its psychic poison, then immediately shifts back to the Ethereal Plane before anyone can retaliate. It repeats this hit-and-run tactic until the prey's Intelligence is drained to 0, at which point it wraps them in a *Smothering Envelope* to consume them at its leisure.
+

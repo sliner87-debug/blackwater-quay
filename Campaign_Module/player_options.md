@@ -98,25 +98,37 @@ This equipment is traded on the black market of the Belowmarket Deep and utilize
 
 ### 1. ALCHEMICAL DRUGS & MUTAGENS
 
+Mutagens in Blackwater Quay are powerful but inherently toxic. They push the mortal frame beyond its limits, often at the cost of sanity or physical stability.
+
+#### Mutagen Toxicity Rules
+A character can safely consume a number of Mutagens or Drugs per day equal to their Constitution modifier (minimum 1). Consuming a mutagen beyond this limit forces the character to make a **Toxicity Save** (Fortitude DC 15 + 2 per mutagen over the limit).
+*   **Success:** The character gains the mutagen's benefit but is *sickened* for 1 hour.
+*   **Failure:** The character suffers *Mutagenic Overdose*. They do not gain the mutagen's benefit, take 2d6 points of Constitution damage, and are *nauseated* for 1d4 hours.
+
 | Item | Cost | Weight | Craft (Alchemy) DC | Effect |
 | :--- | :--- | :--- | :--- | :--- |
 | **Blue-Drop** (Vial) | 150 gp | — | DC 25 | +4 Int, +5 PP for 1 hour. Followed by -4 Wis, -2 Will saves for 24 hours. (Addictive) |
+| **Trench-Bite** | 75 gp | 1 lb. | DC 20 | +4 Alchemical bonus to Strength, -2 AC. User enters a frenzy for 3 rounds. (Addictive) |
 | **Siphon Syringe** | 50 gp | 1 lb. | DC 20 | Extracts fluids from fallen aberrations to create a healing mutagen (heals 3d8+5 hp, but causes hallucinations). |
 | **Acidic Mutagen** | 30 gp | 1 lb. | DC 18 | Splash weapon. Deals 2d6 acid damage, and target must make a Fort DC 15 save or be *sickened* for 1d3 rounds. |
 | **Planar Lock-Wax** | 25 gp | 1 lb. | DC 15 | Applies to door frames. Increases DC of teleportation/planar transit through the portal by +5 for 24 hours. |
 | **Fey-Metal Caltrops** | 10 gp | 2 lbs. | DC 12 | Caltrops that deal damage that bypasses DR/cold iron. |
 
-#### Blue-Drop Addiction Rules
-Blue-Drop is a derivative compound created by the Elder Node to chemically comply the populace. 
+#### Addiction Mechanics
+Certain mutagens (like Blue-Drop or Trench-Bite) are marked as *Addictive*. When a character consumes an addictive substance, they must make a Fortitude save (DC 15). If they fail, they become addicted. 
 *   **Addiction Rating:** Extreme.
-*   **Withdrawal Symptoms:** If a character goes 24 hours without a dose, they must succeed on a Will DC 20 check or suffer 1d4 points of temporary Wisdom damage. This check must be made every 24 hours until the character is cured via *Remove Disease* or *Neutralize Poison*.
+*   **Withdrawal Symptoms:** If an addicted character goes 24 hours without a dose, they must succeed on a Will DC 20 check or suffer 1d4 points of temporary Wisdom damage (for Blue-Drop) or Constitution damage (for Trench-Bite). This check must be made every 24 hours until the character receives a *Remove Disease* or *Neutralize Poison* spell.
 
 ---
 
 ### 2. BIOMANTIC FLESHWARPED GRAFTS
-Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate agents. Applying a graft requires a Heal check (DC equals 15 + graft level) and 24 hours of recovery. 
+Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate agents. Applying a graft is a brutal, invasive process that involves sawing through bone and magically fusing foreign nervous systems to the host.
 
-A character can bear a maximum number of grafts equal to their Constitution modifier (minimum 1). Grafts are semi-permanent; removing one requires a surgical operation (Heal DC 25) that deals 2d6 Constitution damage.
+#### Surgical Rules & Complications
+*   **Graft Limit:** A character can safely bear a maximum number of grafts equal to their Constitution modifier (minimum 1). 
+*   **The Surgery:** Applying a graft requires a Heal check (DC equals 15 + graft level), 1,000 gp in alchemical supplies, and 24 hours of uninterrupted recovery time in a sterile (or heavily disinfected) environment.
+*   **Surgical Rejection:** If the Heal check fails, the graft fails to take hold. The patient takes 2d6 Constitution damage and the graft is destroyed. If the Heal check fails by 5 or more, the patient suffers a *Surgical Rejection*—they take 4d6 Constitution damage and suffer a permanent -2 penalty to Dexterity due to nerve damage (can only be cured by *Restoration* or *Heal*).
+*   **Removal:** Grafts are semi-permanent; removing one requires a reverse surgical operation (Heal DC 25) that deals 2d6 Constitution damage and requires 1 week of bed rest.
 
 ```
        +---------------------------------------------------------+
@@ -248,3 +260,43 @@ A character can bear a maximum number of grafts equal to their Constitution modi
 *   **Weight:** 2 lbs.
 *   **Description:** Heavy leather masks with thick glass goggles and filters soaked in vinegar.
 *   **Benefit:** The wearer gains a +4 circumstance bonus on saves against sewer gas, chemical vapors, and inhaled poisons.
+
+---
+
+# PART IV: PLAYABLE RACES
+
+The unique, harsh environment of Blackwater Quay has given rise to highly unusual denizens. The following racial options are available for players.
+
+### 1. PIXILLITHID
+*A horrific, accidental hybridization of a captured Feywild Pixie and the parasitic tadpole of an Illithid. They look like tiny, pale, bloated sprites with purple skin, gossamer wings, and four tiny face-tentacles.*
+
+*   **Ability Score Adjustments:** +4 Dexterity, +2 Intelligence, -2 Strength, -2 Constitution. Pixillithids are nimble and possessing alien intellect, but physically fragile.
+*   **Size:** Tiny. As a Tiny creature, a Pixillithid gains a +2 size bonus to Armor Class, a +2 size bonus on attack rolls, and a +8 size bonus on Hide checks, but it uses smaller weapons and its lifting and carrying limits are one-half of those of a Medium character. Space is 2.5 ft; Reach is 0 ft (must enter an opponent's square to attack in melee).
+*   **Speed:** Base land speed is 10 feet. Fly speed is 40 feet (Good).
+*   **Alien Mind:** Pixillithids have a fragmented, dual psyche. They gain a +2 racial bonus on saving throws against mind-affecting effects. 
+*   **Miniature Mind Blast (Su):** Once per day, a Pixillithid can unleash a concentrated burst of psionic static in a 10-foot cone. Anyone caught in the cone must succeed on a Will save (DC 10 + 1/2 character level + Int modifier) or be *dazed* for 1 round.
+*   **Fey Heritage:** Immune to magical sleep effects.
+*   **Languages:** Common, Undercommon, Sylvan. Bonus Languages: Aklo, Draconic, Elven.
+
+### 2. HALF-MINOTAUR FEY (The Gnarled)
+*Descendants of Feywild satyrs and deep-cavern minotaurs. They possess the massive upper body of a bull and the cloven hooves of a goat, covered in thick moss and bark-like fungal growths.*
+
+*   **Ability Score Adjustments:** +4 Strength, +2 Constitution, -2 Intelligence, -2 Charisma. They are massive and hearty, but brutish and often shunned.
+*   **Size:** Large (Tall). As a Large creature, they take a -1 size penalty to AC, a -1 size penalty on attack rolls, and a -4 size penalty on Hide checks. Their lifting and carrying limits are double those of a Medium character. Space: 10 ft. Reach: 10 ft.
+*   **Speed:** Base land speed is 40 feet.
+*   **Natural Armor:** The fungal bark on their skin provides a +2 natural armor bonus.
+*   **Gore Attack:** A Half-Minotaur Fey can attack with its horns as a primary natural weapon dealing 1d8 bludgeoning/piercing damage.
+*   **Powerful Charge:** When a Half-Minotaur Fey makes a charge attack, its gore attack deals 2d8 points of damage + 1.5 times its Strength modifier.
+*   **Fey-Touched:** They gain a +2 racial bonus on saving throws against illusion spells.
+*   **Languages:** Common, Sylvan, Giant. Bonus Languages: Terran, Undercommon, Orc.
+
+### 3. VOID-TOUCHED (The Hollow Ones)
+*Humans, elves, or dwarves who survived exposure to the raw essence of the Void of Madness. Their skin is ash-gray, their eyes are solid black without pupils, and their blood is thick and cold like tar.*
+
+*   **Ability Score Adjustments:** +2 Charisma, +2 Wisdom, -2 Constitution. The Void grants them terrifying presence and perception, but the ambient radiation constantly degrades their physical health.
+*   **Size & Speed:** Same as the base race (Human, Elf, or Dwarf) before exposure.
+*   **Void-Sight (Su):** A Void-Touched can see perfectly in magical and mundane darkness up to 60 feet. Furthermore, they can see invisible creatures within 30 feet as faint, static outlines.
+*   **Gravity Step (Sp):** The Void-Touched are not fully tethered to the Prime Material Plane. Once per day, they can cast *Levitate* on themselves as a spell-like ability (Caster Level equals character level).
+*   **Negative Energy Affinity:** Though they are alive, the Void-Touched are healed by negative energy and harmed by positive energy, as if they were undead. 
+*   **Aura of Unease:** Animals are inherently terrified of the Void-Touched. They suffer a -4 racial penalty on Handle Animal and Ride checks.
+*   **Languages:** Common, Aklo. Bonus Languages: Abyssal, Infernal, Undercommon.
