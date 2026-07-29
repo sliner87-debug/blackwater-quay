@@ -187,6 +187,8 @@ function updateTotalCost() {
     const auxId = document.getElementById('select-auxiliary').value;
     const crewId = document.getElementById('select-crew').value;
     const weaponId = document.getElementById('select-weapon').value;
+    const weaponId2 = document.getElementById('select-weapon2').value;
+    const weaponId3 = document.getElementById('select-weapon3').value;
 
     let c = catalog.chassis[chassisId];
     if(chassisId === "custom") {
@@ -239,6 +241,8 @@ document.getElementById("btn-build").addEventListener("click", () => {
     const propulsionId = document.getElementById("select-propulsion").value;
     const armorId = document.getElementById("select-armor").value;
     const weaponId = document.getElementById("select-weapon").value;
+    const weaponId2 = document.getElementById("select-weapon2").value;
+    const weaponId3 = document.getElementById("select-weapon3").value;
     const figureheadId = document.getElementById("select-figurehead").value;
     const countermeasureId = document.getElementById("select-countermeasure").value;
     const crewId = document.getElementById("select-crew").value;
@@ -269,6 +273,8 @@ document.getElementById("btn-build").addEventListener("click", () => {
     const prop = catalog.propulsion[propulsionId];
     const armor = catalog.armor[armorId];
     const weapon = catalog.weapons[weaponId];
+    const weapon2 = catalog.weapons[weaponId2];
+    const weapon3 = catalog.weapons[weaponId3];
     const figurehead = catalog.figureheads[figureheadId];
     const countermeasure = catalog.countermeasures[countermeasureId];
     const crew = catalog.crew[crewId];
@@ -295,6 +301,8 @@ document.getElementById("btn-build").addEventListener("click", () => {
     // Check HPT Overload
     let usedHpt = 0;
     usedHpt += (weapon ? (weapon.hpt || 0) : 0);
+    usedHpt += (weapon2 ? (weapon2.hpt || 0) : 0);
+    usedHpt += (weapon3 ? (weapon3.hpt || 0) : 0);
     document.querySelectorAll('input[name="upgrade"]:checked').forEach(u => { usedHpt += (catalog.upgrades[u.value].hpt || 1); });
     
     const overloadDiv = document.getElementById("sb-overload-warning");
@@ -356,7 +364,13 @@ document.getElementById("btn-build").addEventListener("click", () => {
     }
 
     const actionsContainer = document.getElementById("sb-actions-container");
-    actionsContainer.innerHTML = "<div class=\'trait\'><strong>" + weapon.action.name + ".</strong> " + weapon.action.desc + "</div>";
+    actionsContainer.innerHTML = "";
+    const weaponList = [weapon, weapon2, weapon3];
+    weaponList.forEach(w => {
+        if (w && w.action) {
+            actionsContainer.innerHTML += "<div class=\'trait\'><strong>" + w.action.name + ".</strong> " + w.action.desc + "</div>";
+        }
+    });
 });
 
 // Accordion UI Logic
@@ -554,6 +568,8 @@ const selectCategoryMap = {
     'select-armor': 'armor',
     'select-figurehead': 'figureheads',
     'select-weapon': 'weapons',
+    'select-weapon2': 'weapons',
+    'select-weapon3': 'weapons',
     'select-countermeasure': 'countermeasures',
     'select-auxiliary': 'auxiliary',
     'select-crew': 'crew'
