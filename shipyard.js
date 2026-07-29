@@ -114,18 +114,16 @@ function updateTotalCost() {
     let total = 0;
     let usedHpt = 0;
 
-    const chassisId = document.querySelector('input[name="chassis"]:checked').value;
-    const materialId = document.querySelector('input[name="armor"]:checked').value; // We mapped Hull Material to 'armor' originally in part 1
-    const coreId = document.querySelector('input[name="core"]')?.checked ? document.querySelector('input[name="core"]:checked').value : "standard";
-    const propId = document.querySelector('input[name="propulsion"]')?.checked ? document.querySelector('input[name="propulsion"]:checked').value : "sails";
-    const weaponId = document.querySelector('input[name="weapon"]:checked').value;
-    
-    // Check if these exist in the DOM, default if not
-    let armorId = document.querySelector('input[name="armorplate"]:checked')?.value || "none";
-    let figId = document.querySelector('input[name="figurehead"]:checked')?.value || "none";
-    let cmId = document.querySelector('input[name="countermeasure"]:checked')?.value || "none";
-    let auxId = document.querySelector('input[name="auxiliary"]:checked')?.value || "none";
-    let crewId = document.querySelector('input[name="crew"]:checked')?.value || "standard";
+    const chassisId = document.getElementById('select-chassis').value;
+    const materialId = document.getElementById('select-material').value;
+    const coreId = document.getElementById('select-core').value;
+    const propId = document.getElementById('select-propulsion').value;
+    const armorId = document.getElementById('select-armor').value;
+    const figId = document.getElementById('select-figurehead').value;
+    const cmId = document.getElementById('select-countermeasure').value;
+    const auxId = document.getElementById('select-auxiliary').value;
+    const crewId = document.getElementById('select-crew').value;
+    const weaponId = document.getElementById('select-weapon').value;
 
     let c = catalog.chassis[chassisId];
     if(chassisId === "custom") {
@@ -134,7 +132,6 @@ function updateTotalCost() {
     
     total += c.cost;
     total += catalog.materials[materialId].cost;
-    
     if(catalog.cores[coreId]) total += catalog.cores[coreId].cost;
     if(catalog.propulsion[propId]) total += catalog.propulsion[propId].cost;
     if(catalog.armor[armorId]) total += catalog.armor[armorId].cost;
@@ -147,16 +144,16 @@ function updateTotalCost() {
     total += w.cost;
     usedHpt += (w.hpt || 0);
 
-    const upgrades = document.querySelectorAll('input[name="upgrade"]:checked');
+    const upgrades = document.querySelectorAll('.cb-upgrade:checked');
     upgrades.forEach(u => {
         let up = catalog.upgrades[u.value];
         total += up.cost;
         usedHpt += (up.hpt || 1);
     });
 
-    document.getElementById("total-cost-display").textContent = total.toLocaleString();
+    const tDisplay = document.getElementById("total-cost-display");
+    if(tDisplay) tDisplay.textContent = total.toLocaleString();
     
-    // Update HPT display
     const hptDisplay = document.getElementById("hpt-display");
     if (hptDisplay) {
         hptDisplay.textContent = usedHpt + " / " + c.maxHPt;
@@ -446,12 +443,22 @@ document.getElementById('chassis-grid').addEventListener('change', (e) => {
 });
 
 // Export JSON
+
 function exportToJSON() {
-    let formData = {};
-    const radios = document.querySelectorAll('.builder-panel input[type="radio"]:checked');
-    radios.forEach(r => formData[r.name] = r.value);
+    let formData = {
+        chassis: document.getElementById('select-chassis').value,
+        material: document.getElementById('select-material').value,
+        core: document.getElementById('select-core').value,
+        propulsion: document.getElementById('select-propulsion').value,
+        armor: document.getElementById('select-armor').value,
+        figurehead: document.getElementById('select-figurehead').value,
+        weapon: document.getElementById('select-weapon').value,
+        countermeasure: document.getElementById('select-countermeasure').value,
+        auxiliary: document.getElementById('select-auxiliary').value,
+        crew: document.getElementById('select-crew').value
+    };
     
-    const checks = document.querySelectorAll('.builder-panel input[type="checkbox"]:checked');
+    const checks = document.querySelectorAll('.cb-upgrade:checked');
     formData.upgrades = Array.from(checks).map(c => c.value);
     
     if(formData.chassis === "custom") {
@@ -481,58 +488,10 @@ function exportToJSON() {
     URL.revokeObjectURL(url);
 }
 
+
+
 // Import JSON
-function importFromJSON(event) {
-    const file = event.target.files[0];
-    if(!file) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        try {
-            const data = JSON.parse(e.target.result);
-            // reset all first
-            document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
-            
-            for(const [key, value] of Object.entries(data)) {
-                if(key === "upgrades") {
-                    value.forEach(v => {
-                        let el = document.querySelector(input[name="upgrade"][value=""]);
-                        if(el) el.checked = true;
-                    });
-                } else if(key === "custom") {
-                    document.getElementById("custom-name").value = value.name;
-                    document.getElementById("custom-type").value = value.type;
-                    document.getElementById("custom-hp").value = value.hp;
-                    document.getElementById("custom-dt").value = value.dt;
-                    document.getElementById("custom-speed").value = value.speed;
-                    document.getElementById("custom-ac").value = value.ac;
-                    document.getElementById("custom-str").value = value.str;
-                    document.getElementById("custom-dex").value = value.dex;
-                    document.getElementById("custom-con").value = value.con;
-                    document.getElementById("custom-crew-min").value = value.crewMin;
-                    document.getElementById("custom-crew-max").value = value.crewMax;
-                    document.getElementById("custom-cargo").value = value.cargo;
-                    document.getElementById("custom-hpt").value = value.hpt || 5;
-                } else {
-                    let el = document.querySelector(input[name=""][value=""]);
-                    if(el) el.checked = true;
-                }
-            }
-            
-            // toggle custom fields display
-            if(data.chassis === "custom") {
-                document.getElementById('custom-blueprint-fields').style.display = 'block';
-            } else {
-                document.getElementById('custom-blueprint-fields').style.display = 'none';
-            }
-            
-            updateTotalCost();
-            buildStatBlock();
-        } catch(err) {
-            alert("Invalid JSON file.");
-        }
-    };
-    reader.readAsText(file);
-}
+
 
 // Global HP live tracking
 document.addEventListener('click', (e) => {
@@ -553,4 +512,22 @@ window.addEventListener('DOMContentLoaded', () => {
     
     let inputImport = document.getElementById('input-import');
     if(inputImport) inputImport.addEventListener('change', importFromJSON);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Dropdown toggle logic
+    document.getElementById('select-chassis').addEventListener('change', (e) => {
+        if(e.target.value === "custom") {
+            document.getElementById('custom-blueprint-fields').style.display = 'block';
+        } else {
+            document.getElementById('custom-blueprint-fields').style.display = 'none';
+        }
+        updateTotalCost();
+    });
+    
+    document.getElementById('btn-build').addEventListener('click', buildStatBlock);
+    
+    // Wire up all selects and checkboxes to update cost on change
+    document.querySelectorAll('.builder-panel select').forEach(s => s.addEventListener('change', updateTotalCost));
+    document.querySelectorAll('.cb-upgrade').forEach(c => c.addEventListener('change', updateTotalCost));
 });
