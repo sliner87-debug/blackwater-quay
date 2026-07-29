@@ -3,7 +3,7 @@
 // Component Database & Pricing
 const catalog = {
     chassis: {
-        skiff: { name: "Sluice-Skiff", cost: 2000, type: "Huge Vehicle (Water)", hp: 100, dt: 5, speedBase: 80, str: 16, dex: 18, con: 14, sizeBaseAc: 14, crewMin: 1, crewMax: 2, cargo: "1 ton", maxHPt: 2 },
+        skiff: { name: "Sluice-Skiff", desc: "A fast, lightweight surface vessel designed to navigate narrow sewer canals.", cost: 2000, type: "Huge Vehicle (Water)", hp: 100, dt: 5, speedBase: 80, str: 16, dex: 18, con: 14, sizeBaseAc: 14, crewMin: 1, crewMax: 2, cargo: "1 ton", maxHPt: 2 },
         gunboat: { name: "Assault Gunboat", cost: 6000, type: "Huge Vehicle (Water)", hp: 150, dt: 10, speedBase: 70, str: 18, dex: 16, con: 16, sizeBaseAc: 14, crewMin: 4, crewMax: 8, cargo: "5 tons", maxHPt: 4 },
         pinnace: { name: "Smuggler\'s Pinnace", cost: 8000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 60, str: 16, dex: 16, con: 16, sizeBaseAc: 15, crewMin: 5, crewMax: 15, cargo: "50 tons", maxHPt: 5 },
         submersible: { name: "Deep-Sea Submersible", cost: 12000, type: "Huge Vehicle (Water)", hp: 200, dt: 15, speedBase: 30, str: 18, dex: 12, con: 18, sizeBaseAc: 16, crewMin: 4, crewMax: 6, cargo: "5 tons", maxHPt: 3 },
@@ -514,9 +514,9 @@ function updateDescriptions() {
             
             if (item) {
                 if (catalogKey === 'chassis' && itemKey !== 'custom') {
-                    descHtml = `<strong>Stats:</strong> Crew ${item.crewMin}-${item.crewMax}, Cargo ${item.cargo}`;
+                    descHtml = `${item.desc}<br><strong>Stats:</strong> Crew ${item.crewMin}-${item.crewMax}, Cargo ${item.cargo}`;
                 } else if (itemKey === 'custom') {
-                    descHtml = `<em>Configure custom blueprint below.</em>`;
+                    descHtml = `${item.desc}<br><em>Configure custom blueprint below.</em>`;
                 } else {
                     let hasTraits = false;
                     if (item.traits && item.traits.length > 0) {
