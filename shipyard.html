@@ -73,7 +73,41 @@
                 <style>
                     .config-group select { width: 100%; padding: 8px; margin-top: 5px; background: #1e293b; color: #e2e8f0; border: 1px solid #475569; border-radius: 4px; font-size: 14px; }
                     .config-group label.dropdown-label { font-weight: bold; color: #38bdf8; display: block; margin-top: 15px; }
-                </style>
+                
+        .palette-filters {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: #1e293b;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: #38bdf8;
+            color: #fff;
+            border-color: #38bdf8;
+        }
+        .scrollable-palette {
+            max-height: 700px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        .scrollable-palette::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scrollable-palette::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+
+    </style>
                 <h3 style="margin-bottom: 15px; border-bottom: 1px solid #475569; padding-bottom: 5px;">Vessel Configuration</h3>
                 
                 <div class="config-group">
@@ -408,34 +442,25 @@
             <div class="builder-panel">
                 <div class="shipyard-header">
                     <h3>Parts Palette</h3>
-                    <p style="font-size: 0.9em; opacity: 0.8; margin-top: 5px;">Click to select an active part, then click on the grid to place it. Press 'R' to rotate.</p>
+                    <p style="font-size: 0.85em; opacity: 0.8; margin-top: 5px;">Select an item and click grid to place. Click placed items to Drag, scale (Up/Down), or Delete.</p>
                 </div>
                 
-                <div class="config-group">
-                    <h4>Hulls</h4>
-                    <div class="parts-grid">
-                        <img src="images/vtt_hull_skiff.jpg" class="draggable-part" data-type="hull" data-src="images/vtt_hull_skiff.jpg" alt="Skiff Hull">
-                        <img src="images/vtt_hull_dreadnought.jpg" class="draggable-part" data-type="hull" data-src="images/vtt_hull_dreadnought.jpg" alt="Dreadnought Hull">
-                    </div>
+                <div class="palette-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="arcane">Aether/Arcane</button>
+                    <button class="filter-btn" data-filter="gothic">Gothic/Necromantic</button>
+                    <button class="filter-btn" data-filter="clockwork">Clockwork/Industrial</button>
+                    <button class="filter-btn" data-filter="organic">Organic/Biotech</button>
                 </div>
 
-                <div class="config-group">
-                    <h4>Armor Plates</h4>
-                    <div class="parts-grid">
-                        <img src="images/vtt_armor_nullsteel.jpg" class="draggable-part" data-type="armor" data-src="images/vtt_armor_nullsteel.jpg" alt="Null-Steel Plate">
-                    </div>
+                <div class="scrollable-palette">
+                    <!-- Dynamic Grid Will Be Generated Here via JS -->
+                    <div id="vtt-dynamic-palette"></div>
                 </div>
 
-                <div class="config-group">
-                    <h4>Armaments</h4>
-                    <div class="parts-grid">
-                        <img src="images/vtt_weapon_ballista.jpg" class="draggable-part" data-type="weapon" data-src="images/vtt_weapon_ballista.jpg" alt="Ballista">
-                        <img src="images/vtt_weapon_disruptor.jpg" class="draggable-part" data-type="weapon" data-src="images/vtt_weapon_disruptor.jpg" alt="Disruptor">
-                    </div>
-                </div>
-
-                <button id="clear-canvas-btn" class="build-btn" style="background-color: #991b1b; margin-top: 10px;">Clear Grid</button>
+                <button id="clear-canvas-btn" class="build-btn" style="background-color: #991b1b; margin-top: 15px;">Clear Grid</button>
             </div>
+
 
             <!-- RIGHT: CANVAS AREA -->
             <div class="stat-panel">

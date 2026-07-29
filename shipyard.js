@@ -413,56 +413,212 @@ modeVttBtn.addEventListener('click', () => {
     statModeDiv.style.display = 'none';
 });
 
+// VTT Catalog Data
+const vttCatalog = [
+    // Arcane Theme
+    { id: "arcane-hull", name: "Arcane Frigate", type: "hull", theme: "arcane", src: "images/vtt_hull_arcane.jpg" },
+    { id: "arcane-weap", name: "Spell-Cannon", type: "weapon", theme: "arcane", src: "images/vtt_weap_arcane.jpg" },
+    { id: "arcane-util", name: "Aether Engine", type: "utility", theme: "arcane", src: "images/vtt_util_arcane.jpg" },
+    
+    // Gothic Theme
+    { id: "gothic-hull", name: "Necropolis Ark", type: "hull", theme: "gothic", src: "images/vtt_hull_gothic.jpg" },
+    { id: "gothic-weap", name: "Bone Harpoon", type: "weapon", theme: "gothic", src: "images/vtt_weap_gothic.jpg" },
+    { id: "gothic-util", name: "Necrotic Reactor", type: "utility", theme: "gothic", src: "images/vtt_util_gothic.jpg" },
+    
+    // Clockwork Theme
+    { id: "clock-hull", name: "Ironclad Juggernaut", type: "hull", theme: "clockwork", src: "images/vtt_hull_clockwork.jpg" },
+    { id: "clock-weap", name: "Gatling Mortar", type: "weapon", theme: "clockwork", src: "images/vtt_weap_clockwork.jpg" },
+    { id: "clock-util", name: "Brass Gear", type: "utility", theme: "clockwork", src: "images/vtt_util_clockwork.jpg" },
+    
+    // Organic Theme
+    { id: "org-hull", name: "Biotech Crawler", type: "hull", theme: "organic", src: "images/vtt_hull_organic.jpg" },
+    { id: "org-weap", name: "Acid Spitter", type: "weapon", theme: "organic", src: "images/vtt_weap_organic.jpg" },
+    { id: "org-util", name: "Chitin Plate", type: "utility", theme: "organic", src: "images/vtt_util_organic.jpg" },
+
+    // Legacy General Items
+    { id: "skiff", name: "Skiff Hull", type: "hull", theme: "all", src: "images/vtt_hull_skiff.jpg" },
+    { id: "dreadnought", name: "Dreadnought Hull", type: "hull", theme: "all", src: "images/vtt_hull_dreadnought.jpg" },
+    { id: "nullsteel", name: "Null-Steel Plate", type: "armor", theme: "all", src: "images/vtt_armor_nullsteel.jpg" },
+    { id: "ballista", name: "Ballista", type: "weapon", theme: "all", src: "images/vtt_weapon_ballista.jpg" },
+    { id: "disruptor", name: "Disruptor", type: "weapon", theme: "all", src: "images/vtt_weapon_disruptor.jpg" },
+];
+
+function renderVTTPalette(filterTheme = 'all') {
+    const container = document.getElementById('vtt-dynamic-palette');
+    if (!container) return;
+    
+    // Group by type
+    const grouped = {
+        'hull': [],
+        'weapon': [],
+        'armor': [],
+        'utility': []
+    };
+    
+    vttCatalog.forEach(item => {
+        if (filterTheme === 'all' || item.theme === 'all' || item.theme === filterTheme) {
+            if(grouped[item.type]) grouped[item.type].push(item);
+        }
+    });
+    
+    let html = '';
+    const typeNames = { hull: 'Hulls', weapon: 'Armaments', armor: 'Armor Plates', utility: 'Utilities' };
+    
+    for (let type in grouped) {
+        if (grouped[type].length > 0) {
+            html += `<div class="config-group"><h4>${typeNames[type]}</h4><div class="parts-grid">`;
+            grouped[type].forEach(item => {
+                html += `<img src="${item.src}" class="draggable-part" data-type="${item.type}" data-src="${item.src}" alt="${item.name}" title="${item.name}">`;
+            });
+            html += `</div></div>`;
+        }
+    }
+    
+    container.innerHTML = html;
+    
+    // Re-bind click events for new palette
+    document.querySelectorAll('.draggable-part').forEach(img => {
+        img.addEventListener('click', (e) => {
+            if (e.target.classList.contains('selected')) {
+                e.target.classList.remove('selected');
+                activeImageObj = null;
+                activeDataType = null;
+                return;
+            }
+            document.querySelectorAll('.draggable-part').forEach(i => i.classList.remove('selected'));
+            e.target.classList.add('selected');
+            activeImageObj = new Image();
+            activeImageObj.src = e.target.getAttribute('data-src');
+            activeDataType = e.target.getAttribute('data-type');
+            activeRotation = 0; 
+            selectedItem = null;
+            redrawCanvas();
+        });
+    });
+}
+
+// Bind Filter Buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        renderVTTPalette(e.target.getAttribute('data-filter'));
+    });
+});
+
+
 // Canvas Setup
 const canvas = document.getElementById('vtt-canvas');
 const ctx = canvas.getContext('2d');
 let activeImageObj = null;
+let activeDataType = null; // 'hull', 'weapon', 'armor'
 let activeRotation = 0; // in radians
 const placedItems = [];
+renderVTTPalette();
 
-// Handle Palette Selection
-document.querySelectorAll('.draggable-part').forEach(img => {
-    img.addEventListener('click', (e) => {
-        // Clear previous selection
-        document.querySelectorAll('.draggable-part').forEach(i => i.classList.remove('selected'));
-        // Select new
-        e.target.classList.add('selected');
-        
-        // Load image obj
-        activeImageObj = new Image();
-        activeImageObj.src = e.target.getAttribute('data-src');
-        activeRotation = 0; // reset rotation
-    });
-});
+// Interaction State
+let selectedItem = null;
+let isDragging = false;
+let dragOffsetX = 0;
+let dragOffsetY = 0;
 
-// Handle Keyboard Rotation
-window.addEventListener('keydown', (e) => {
-    if ((e.key === 'r' || e.key === 'R') && vttModeDiv.style.display === 'grid') {
-        activeRotation += Math.PI / 2; // Rotate 90 degrees
-    }
-});
-
-// Handle Canvas Click (Place Object)
-canvas.addEventListener('click', (e) => {
-    if (!activeImageObj) return;
-    
-    // Get mouse pos relative to canvas
+// Handle Canvas Interactions (Click, Drag, Select)
+canvas.addEventListener('mousedown', (e) => {
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    placedItems.push({
-        img: activeImageObj,
-        x: x,
-        y: y,
-        rotation: activeRotation
-    });
+    // If we have an active item from palette, PLACE IT
+    if (activeImageObj) {
+        placedItems.push({
+            img: activeImageObj,
+            type: activeDataType,
+            x: x,
+            y: y,
+            rotation: activeRotation,
+            scale: 1.0,
+            layer: activeDataType === 'hull' ? 0 : 1 // Hulls at bottom
+        });
+        
+        // Deselect palette so we don't accidentally stamp multiple (optional, but good for UX)
+        // Or keep it selected for multiple weapons. Let's keep it selected.
+        redrawCanvas();
+        return;
+    }
     
+    // Otherwise, try to SELECT an existing item
+    // Search backwards to select top-most item first
+    selectedItem = null;
+    for (let i = placedItems.length - 1; i >= 0; i--) {
+        const item = placedItems[i];
+        const w = item.img.width * item.scale;
+        const h = item.img.height * item.scale;
+        // Basic bounding box check (doesn't account perfectly for rotation, but close enough for VTT tokens)
+        if (x >= item.x - w/2 && x <= item.x + w/2 && y >= item.y - h/2 && y <= item.y + h/2) {
+            selectedItem = item;
+            isDragging = true;
+            dragOffsetX = x - item.x;
+            dragOffsetY = y - item.y;
+            break;
+        }
+    }
     redrawCanvas();
 });
 
-// Draw Grid function (optional but helpful for VTT)
+canvas.addEventListener('mousemove', (e) => {
+    if (isDragging && selectedItem) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        selectedItem.x = x - dragOffsetX;
+        selectedItem.y = y - dragOffsetY;
+        redrawCanvas();
+    }
+});
+
+canvas.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+// Handle Keyboard Controls
+window.addEventListener('keydown', (e) => {
+    if (vttModeDiv.style.display !== 'grid') return;
+    
+    // Rotation for palette active item OR selected canvas item
+    if (e.key === 'r' || e.key === 'R') {
+        if (selectedItem) {
+            selectedItem.rotation += Math.PI / 2;
+            redrawCanvas();
+        } else if (activeImageObj) {
+            activeRotation += Math.PI / 2;
+        }
+    }
+    
+    // Scaling and Deletion for selected item
+    if (selectedItem) {
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            selectedItem.scale += 0.1;
+            redrawCanvas();
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            selectedItem.scale = Math.max(0.2, selectedItem.scale - 0.1);
+            redrawCanvas();
+        } else if (e.key === 'Delete' || e.key === 'Backspace') {
+            e.preventDefault();
+            const index = placedItems.indexOf(selectedItem);
+            if (index > -1) {
+                placedItems.splice(index, 1);
+                selectedItem = null;
+                redrawCanvas();
+            }
+        }
+    }
+});
+
+// Draw Grid function
 function drawGrid() {
+    if(!ctx) return;
     ctx.strokeStyle = 'rgba(30, 41, 59, 0.5)';
     ctx.lineWidth = 1;
     for(let i=0; i<=800; i+=40) {
@@ -473,6 +629,7 @@ function drawGrid() {
 
 // Redraw everything
 function redrawCanvas() {
+    if(!ctx) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Draw background color
     ctx.fillStyle = '#0f172a';
@@ -480,13 +637,26 @@ function redrawCanvas() {
     
     drawGrid();
 
-    placedItems.forEach(item => {
+    // Sort by layer so hulls are drawn first
+    const sortedItems = [...placedItems].sort((a, b) => a.layer - b.layer);
+
+    sortedItems.forEach(item => {
         ctx.save();
         ctx.translate(item.x, item.y);
         ctx.rotate(item.rotation);
-        // Draw centered
-        const w = item.img.width;
-        const h = item.img.height;
+        
+        const w = item.img.width * item.scale;
+        const h = item.img.height * item.scale;
+        
+        // Highlight if selected
+        if (item === selectedItem) {
+            ctx.shadowColor = '#38bdf8';
+            ctx.shadowBlur = 15;
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(-w/2, -h/2, w, h);
+        }
+        
         ctx.drawImage(item.img, -w/2, -h/2, w, h);
         ctx.restore();
     });
@@ -498,6 +668,7 @@ redrawCanvas();
 // Clear Button
 document.getElementById('clear-canvas-btn').addEventListener('click', () => {
     placedItems.length = 0;
+    selectedItem = null;
     redrawCanvas();
 });
 
@@ -508,201 +679,4 @@ document.getElementById('download-vtt-btn').addEventListener('click', () => {
     link.download = 'custom_vtt_ship.png';
     link.href = dataURL;
     link.click();
-});
-
-
-
-
-// Export JSON
-
-function exportToJSON() {
-    let formData = {
-        chassis: document.getElementById('select-chassis').value,
-        material: document.getElementById('select-material').value,
-        core: document.getElementById('select-core').value,
-        propulsion: document.getElementById('select-propulsion').value,
-        armor: document.getElementById('select-armor').value,
-        figurehead: document.getElementById('select-figurehead').value,
-        weapon: document.getElementById('select-weapon').value,
-        countermeasure: document.getElementById('select-countermeasure').value,
-        auxiliary: document.getElementById('select-auxiliary').value,
-        crew: document.getElementById('select-crew').value
-    };
-    
-    const checks = document.querySelectorAll('.cb-upgrade:checked');
-    formData.upgrades = Array.from(checks).map(c => c.value);
-    
-    if(formData.chassis === "custom") {
-        formData.custom = {
-            name: document.getElementById("custom-name").value,
-            type: document.getElementById("custom-type").value,
-            hp: document.getElementById("custom-hp").value,
-            dt: document.getElementById("custom-dt").value,
-            speed: document.getElementById("custom-speed").value,
-            ac: document.getElementById("custom-ac").value,
-            str: document.getElementById("custom-str").value,
-            dex: document.getElementById("custom-dex").value,
-            con: document.getElementById("custom-con").value,
-            crewMin: document.getElementById("custom-crew-min").value,
-            crewMax: document.getElementById("custom-crew-max").value,
-            cargo: document.getElementById("custom-cargo").value,
-            hpt: document.getElementById("custom-hpt").value
-        };
-    }
-    
-    let jsonStr = JSON.stringify(formData, null, 2);
-    let blob = new Blob([jsonStr], { type: "application/json" });
-    let url = URL.createObjectURL(blob);
-    let a = document.createElement('a');
-    a.href = url;
-    a.download = `${formData.chassis}_blueprint.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-}
-
-const selectCategoryMap = {
-    'select-chassis': 'chassis',
-    'select-material': 'materials',
-    'select-core': 'cores',
-    'select-propulsion': 'propulsion',
-    'select-armor': 'armor',
-    'select-figurehead': 'figureheads',
-    'select-weapon': 'weapons',
-    'select-weapon2': 'weapons',
-    'select-weapon3': 'weapons',
-    'select-countermeasure': 'countermeasures',
-    'select-auxiliary': 'auxiliary',
-    'select-crew': 'crew'
-};
-
-function updateDescriptions() {
-    for (let [selectId, catalogKey] of Object.entries(selectCategoryMap)) {
-        let select = document.getElementById(selectId);
-        let descDiv = document.getElementById(selectId.replace('select-', 'desc-'));
-        if (select && descDiv && catalog[catalogKey]) {
-            let itemKey = select.value;
-            let item = catalog[catalogKey][itemKey];
-            
-            let descHtml = "";
-            
-            if (item) {
-                if (catalogKey === 'chassis' && itemKey !== 'custom') {
-                    descHtml = `${item.desc}<br><strong>Stats:</strong> Crew ${item.crewMin}-${item.crewMax}, Cargo ${item.cargo}`;
-                } else if (itemKey === 'custom') {
-                    descHtml = `${item.desc}<br><em>Configure custom blueprint below.</em>`;
-                } else {
-                    let hasTraits = false;
-                    if (item.traits && item.traits.length > 0) {
-                        descHtml = `<strong>${item.traits[0].name}:</strong> ${item.traits[0].desc}`;
-                        hasTraits = true;
-                    }
-                    if (item.action) {
-                        descHtml = `<strong>${item.action.name}:</strong> ${item.action.desc}`;
-                        hasTraits = true;
-                    }
-                    if (!hasTraits && item.name !== "None" && item.name !== "No Armor" && item.name !== "Standard Rigging" && item.name !== "Standard Oak" && item.name !== "Standard Furnace" && item.name !== "Standard Hired Crew") {
-                         let statDesc = [];
-                         if(item.acBonus) statDesc.push(`+${item.acBonus} AC`);
-                         if(item.hpMod) statDesc.push(`+${item.hpMod} HP`);
-                         if(item.speedMod) statDesc.push(`${item.speedMod > 0 ? '+':''}${item.speedMod} ft. Speed`);
-                         if(item.dtMod) statDesc.push(`+${item.dtMod} Damage Threshold`);
-                         if(statDesc.length > 0) {
-                             descHtml = `<strong>Modifiers:</strong> ${statDesc.join(', ')}`;
-                         }
-                    }
-                    
-                    if (descHtml === "") {
-                        if (catalogKey === 'materials') descHtml = "<em>A basic, unaugmented material providing no distinct mechanical benefits.</em>";
-                        else if (catalogKey === 'cores') descHtml = "<em>A reliable but mundane power source.</em>";
-                        else if (catalogKey === 'propulsion') descHtml = "<em>Standard locomotive power for the vessel.</em>";
-                        else if (catalogKey === 'armor') descHtml = "<em>Provides no additional structural defenses.</em>";
-                        else if (catalogKey === 'figureheads') descHtml = "<em>A purely cosmetic piece, offering no arcane benefits.</em>";
-                        else if (catalogKey === 'countermeasures') descHtml = "<em>The vessel is equipped with no specialized defenses.</em>";
-                        else if (catalogKey === 'auxiliary') descHtml = "<em>No auxiliary craft or utility gear equipped.</em>";
-                        else if (catalogKey === 'crew') descHtml = "<em>A typical hired crew, capable of standard operations.</em>";
-                        else descHtml = "<em>A standard configuration option.</em>";
-                    }
-                }
-            }
-            descDiv.innerHTML = descHtml;
-        }
-    }
-    
-    let upgradesDescDiv = document.getElementById('desc-upgrades');
-    if (upgradesDescDiv) {
-        let checkedUpgrades = document.querySelectorAll('.cb-upgrade:checked');
-        if (checkedUpgrades.length === 0) {
-            upgradesDescDiv.style.display = 'none';
-            upgradesDescDiv.innerHTML = '';
-        } else {
-            let htmlParts = [];
-            checkedUpgrades.forEach(cb => {
-                let up = catalog.upgrades[cb.value];
-                if (up && up.traits && up.traits.length > 0) {
-                    htmlParts.push(`<li><strong>${up.name}</strong> - <em>${up.traits[0].name}:</em> ${up.traits[0].desc}</li>`);
-                }
-            });
-            if (htmlParts.length > 0) {
-                upgradesDescDiv.innerHTML = `<ul style="margin:0; padding-left:20px;">${htmlParts.join('')}</ul>`;
-                upgradesDescDiv.style.display = 'block';
-            } else {
-                upgradesDescDiv.style.display = 'none';
-            }
-        }
-    }
-}
-
-// -----------------------------------------
-// DOM Binding
-// -----------------------------------------
-
-// Import JSON
-
-
-// Global HP live tracking
-document.addEventListener('click', (e) => {
-    if(e.target.id === 'btn-hp-plus') {
-        let input = document.getElementById("live-hp-input");
-        if(input) input.value = parseInt(input.value) + 1;
-    }
-    if(e.target.id === 'btn-hp-minus') {
-        let input = document.getElementById("live-hp-input");
-        if(input) input.value = parseInt(input.value) - 1;
-    }
-});
-
-// Attach export/import listeners on window load
-window.addEventListener('DOMContentLoaded', () => {
-    let btnExport = document.getElementById('btn-export');
-    if(btnExport) btnExport.addEventListener('click', exportToJSON);
-    
-    let inputImport = document.getElementById('input-import');
-    if(inputImport) inputImport.addEventListener('change', (e) => { alert("Import not yet implemented."); });
-});
-
-    document.addEventListener('DOMContentLoaded', () => {
-    // Dropdown toggle logic
-    document.getElementById('select-chassis').addEventListener('change', (e) => {
-        if(e.target.value === "custom") {
-            document.getElementById('custom-blueprint-fields').style.display = 'block';
-        } else {
-            document.getElementById('custom-blueprint-fields').style.display = 'none';
-        }
-        updateTotalCost();
-        updateDescriptions();
-    });
-    
-    // Wire up all selects and checkboxes to update cost on change
-    document.querySelectorAll('.builder-panel select').forEach(s => s.addEventListener('change', (e) => {
-        updateTotalCost();
-        updateDescriptions();
-    }));
-    document.querySelectorAll('.cb-upgrade').forEach(c => c.addEventListener('change', (e) => {
-        updateTotalCost();
-        updateDescriptions();
-    }));
-    
-    // Initial calls
-    updateTotalCost();
-    updateDescriptions();
 });
