@@ -837,3 +837,92 @@ document.querySelectorAll('.theme-select').forEach(select => {
         applyThemeFilter(layerId, theme);
     });
 });
+// --- EXPORT, IMPORT, AND PRINT LOGIC ---
+
+document.getElementById('btn-export').addEventListener('click', () => {
+    const state = {
+        name: document.getElementById('ship-name').value,
+        chassis: document.getElementById('select-chassis').value,
+        material: document.getElementById('select-material').value,
+        core: document.getElementById('select-core').value,
+        propulsion: document.getElementById('select-propulsion').value,
+        armor: document.getElementById('select-armor').value,
+        weapon: document.getElementById('select-weapon').value,
+        weapon2: document.getElementById('select-weapon2').value,
+        weapon3: document.getElementById('select-weapon3').value,
+        figurehead: document.getElementById('select-figurehead').value,
+        countermeasure: document.getElementById('select-countermeasure').value,
+        crew: document.getElementById('select-crew').value,
+        auxiliary: document.getElementById('select-auxiliary').value,
+        customHpt: document.getElementById('custom-hpt')?.value || ''
+    };
+    
+    // Also grab themes
+    const themes = {};
+    document.querySelectorAll('.theme-select').forEach(el => {
+        themes[el.getAttribute('data-layer')] = el.value;
+    });
+    state.themes = themes;
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", (state.name || "ship") + "_statblock.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+});
+
+document.getElementById('input-import').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const state = JSON.parse(e.target.result);
+            if(state.name) document.getElementById('ship-name').value = state.name;
+            if(state.chassis) document.getElementById('select-chassis').value = state.chassis;
+            if(state.material) document.getElementById('select-material').value = state.material;
+            if(state.core) document.getElementById('select-core').value = state.core;
+            if(state.propulsion) document.getElementById('select-propulsion').value = state.propulsion;
+            if(state.armor) document.getElementById('select-armor').value = state.armor;
+            if(state.weapon) document.getElementById('select-weapon').value = state.weapon;
+            if(state.weapon2) document.getElementById('select-weapon2').value = state.weapon2;
+            if(state.weapon3) document.getElementById('select-weapon3').value = state.weapon3;
+            if(state.figurehead) document.getElementById('select-figurehead').value = state.figurehead;
+            if(state.countermeasure) document.getElementById('select-countermeasure').value = state.countermeasure;
+            if(state.crew) document.getElementById('select-crew').value = state.crew;
+            if(state.auxiliary) document.getElementById('select-auxiliary').value = state.auxiliary;
+            if(state.customHpt && document.getElementById('custom-hpt')) document.getElementById('custom-hpt').value = state.customHpt;
+
+            if (state.themes) {
+                document.querySelectorAll('.theme-select').forEach(el => {
+                    const layer = el.getAttribute('data-layer');
+                    if (state.themes[layer]) {
+                        el.value = state.themes[layer];
+                    }
+                });
+            }
+
+            // Trigger updates
+            updateCostAndHpt();
+            updateVisualizer();
+            document.getElementById('btn-build').click();
+            alert('Ship loaded successfully!');
+        } catch (error) {
+            console.error(error);
+            alert('Error loading ship file.');
+        }
+    };
+    reader.readAsText(file);
+});
+
+document.getElementById('btn-print').addEventListener('click', () => {
+    // Only print if the stat block is visible
+    if(document.getElementById("statblock-container").classList.contains("hidden")) {
+        alert("Please 'Build Ship Stat Block' first before printing.");
+        return;
+    }
+    window.print();
+});

@@ -460,3 +460,39 @@ canvas {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
+
+/* --- PRINT MEDIA QUERIES FOR STATBLOCK --- */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    #statblock-container, #statblock-container * {
+        visibility: visible;
+    }
+    
+    #statblock-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    #statblock-container h2, #statblock-container h3, #statblock-container .trait-name {
+        color: black !important;
+        border-bottom-color: black !important;
+    }
+
+    /* Hide background images if any, ensure pure text layout */
+    .dm-container {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
