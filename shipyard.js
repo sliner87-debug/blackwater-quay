@@ -430,15 +430,7 @@ document.getElementById('download-vtt-btn').addEventListener('click', () => {
 });
 
 
-// Toggle Custom Builder UI
-document.getElementById('chassis-grid').addEventListener('change', (e) => {
-    const customFields = document.getElementById('custom-blueprint-fields');
-    if(e.target.value === 'custom') {
-        customFields.style.display = 'block';
-    } else if(e.target.name === 'chassis') {
-        customFields.style.display = 'none';
-    }
-});
+
 
 // Export JSON
 
@@ -579,7 +571,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if(btnExport) btnExport.addEventListener('click', exportToJSON);
     
     let inputImport = document.getElementById('input-import');
-    if(inputImport) inputImport.addEventListener('change', importFromJSON);
+    if(inputImport) inputImport.addEventListener('change', (e) => { alert("Import not yet implemented."); });
 });
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -593,8 +585,6 @@ window.addEventListener('DOMContentLoaded', () => {
         updateTotalCost();
         updateDescriptions();
     });
-    
-    document.getElementById('btn-build').addEventListener('click', buildStatBlock);
     
     // Wire up all selects and checkboxes to update cost on change
     document.querySelectorAll('.builder-panel select').forEach(s => s.addEventListener('change', (e) => {
