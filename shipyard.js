@@ -479,16 +479,74 @@ function exportToJSON() {
         };
     }
     
-    const blob = new Blob([JSON.stringify(formData, null, 2)], {type: "application/json"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    let jsonStr = JSON.stringify(formData, null, 2);
+    let blob = new Blob([jsonStr], { type: "application/json" });
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement('a');
     a.href = url;
-    a.download = "sovereign-shipyard-blueprint.json";
+    a.download = `${formData.chassis}_blueprint.json`;
     a.click();
     URL.revokeObjectURL(url);
 }
 
+const selectCategoryMap = {
+    'select-chassis': 'chassis',
+    'select-material': 'materials',
+    'select-core': 'cores',
+    'select-propulsion': 'propulsion',
+    'select-armor': 'armor',
+    'select-figurehead': 'figureheads',
+    'select-weapon': 'weapons',
+    'select-countermeasure': 'countermeasures',
+    'select-auxiliary': 'auxiliary',
+    'select-crew': 'crew'
+};
 
+function updateDescriptions() {
+    for (let [selectId, catalogKey] of Object.entries(selectCategoryMap)) {
+        let select = document.getElementById(selectId);
+        let descDiv = document.getElementById(selectId.replace('select-', 'desc-'));
+        if (select && descDiv && catalog[catalogKey]) {
+            let itemKey = select.value;
+            let item = catalog[catalogKey][itemKey];
+            
+            let descHtml = "";
+            
+            if (item) {
+                if (catalogKey === 'chassis' && itemKey !== 'custom') {
+                    descHtml = `<strong>Stats:</strong> Crew ${item.crewMin}-${item.crewMax}, Cargo ${item.cargo}`;
+                } else if (itemKey === 'custom') {
+                    descHtml = `<em>Configure custom blueprint below.</em>`;
+                } else {
+                    let hasTraits = false;
+                    if (item.traits && item.traits.length > 0) {
+                        descHtml = `<strong>${item.traits[0].name}:</strong> ${item.traits[0].desc}`;
+                        hasTraits = true;
+                    }
+                    if (item.action) {
+                        descHtml = `<strong>${item.action.name}:</strong> ${item.action.desc}`;
+                        hasTraits = true;
+                    }
+                    if (!hasTraits && item.name !== "None" && item.name !== "No Armor" && item.name !== "Standard Rigging" && item.name !== "Standard Oak" && item.name !== "Standard Furnace" && item.name !== "Standard Hired Crew") {
+                         let statDesc = [];
+                         if(item.acBonus) statDesc.push(`+${item.acBonus} AC`);
+                         if(item.hpMod) statDesc.push(`+${item.hpMod} HP`);
+                         if(item.speedMod) statDesc.push(`${item.speedMod > 0 ? '+':''}${item.speedMod} ft. Speed`);
+                         if(item.dtMod) statDesc.push(`+${item.dtMod} Damage Threshold`);
+                         if(statDesc.length > 0) {
+                             descHtml = `<strong>Modifiers:</strong> ${statDesc.join(', ')}`;
+                         }
+                    }
+                }
+            }
+            descDiv.innerHTML = descHtml;
+        }
+    }
+}
+
+// -----------------------------------------
+// DOM Binding
+// -----------------------------------------
 
 // Import JSON
 
@@ -514,7 +572,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if(inputImport) inputImport.addEventListener('change', importFromJSON);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     // Dropdown toggle logic
     document.getElementById('select-chassis').addEventListener('change', (e) => {
         if(e.target.value === "custom") {
@@ -523,11 +581,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('custom-blueprint-fields').style.display = 'none';
         }
         updateTotalCost();
+        updateDescriptions();
     });
     
     document.getElementById('btn-build').addEventListener('click', buildStatBlock);
     
     // Wire up all selects and checkboxes to update cost on change
-    document.querySelectorAll('.builder-panel select').forEach(s => s.addEventListener('change', updateTotalCost));
+    document.querySelectorAll('.builder-panel select').forEach(s => s.addEventListener('change', (e) => {
+        updateTotalCost();
+        updateDescriptions();
+    }));
     document.querySelectorAll('.cb-upgrade').forEach(c => c.addEventListener('change', updateTotalCost));
+    
+    // Initial calls
+    updateTotalCost();
+    updateDescriptions();
 });

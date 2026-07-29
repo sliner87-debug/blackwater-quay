@@ -389,3 +389,18 @@ canvas {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
+
+/* Dynamic Item Descriptions */
+.item-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+    border-left: 2px solid var(--accent-cyan);
+    min-height: 1.2rem;
+}
+.item-desc strong {
+    color: var(--text-secondary);
+}
