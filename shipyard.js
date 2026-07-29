@@ -537,6 +537,18 @@ function updateDescriptions() {
                              descHtml = `<strong>Modifiers:</strong> ${statDesc.join(', ')}`;
                          }
                     }
+                    
+                    if (descHtml === "") {
+                        if (catalogKey === 'materials') descHtml = "<em>A basic, unaugmented material providing no distinct mechanical benefits.</em>";
+                        else if (catalogKey === 'cores') descHtml = "<em>A reliable but mundane power source.</em>";
+                        else if (catalogKey === 'propulsion') descHtml = "<em>Standard locomotive power for the vessel.</em>";
+                        else if (catalogKey === 'armor') descHtml = "<em>Provides no additional structural defenses.</em>";
+                        else if (catalogKey === 'figureheads') descHtml = "<em>A purely cosmetic piece, offering no arcane benefits.</em>";
+                        else if (catalogKey === 'countermeasures') descHtml = "<em>The vessel is equipped with no specialized defenses.</em>";
+                        else if (catalogKey === 'auxiliary') descHtml = "<em>No auxiliary craft or utility gear equipped.</em>";
+                        else if (catalogKey === 'crew') descHtml = "<em>A typical hired crew, capable of standard operations.</em>";
+                        else descHtml = "<em>A standard configuration option.</em>";
+                    }
                 }
             }
             descDiv.innerHTML = descHtml;
