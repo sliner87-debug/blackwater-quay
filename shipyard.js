@@ -4,16 +4,16 @@
 const catalog = {
     chassis: {
         skiff: { name: "Sluice-Skiff", desc: "A fast, lightweight surface vessel designed to navigate narrow sewer canals.", cost: 2000, type: "Huge Vehicle (Water)", hp: 100, dt: 5, speedBase: 80, str: 16, dex: 18, con: 14, sizeBaseAc: 14, crewMin: 1, crewMax: 2, cargo: "1 ton", maxHPt: 2 },
-        gunboat: { name: "Assault Gunboat", cost: 6000, type: "Huge Vehicle (Water)", hp: 150, dt: 10, speedBase: 70, str: 18, dex: 16, con: 16, sizeBaseAc: 14, crewMin: 4, crewMax: 8, cargo: "5 tons", maxHPt: 4 },
-        pinnace: { name: "Smuggler\'s Pinnace", cost: 8000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 60, str: 16, dex: 16, con: 16, sizeBaseAc: 15, crewMin: 5, crewMax: 15, cargo: "50 tons", maxHPt: 5 },
-        submersible: { name: "Deep-Sea Submersible", cost: 12000, type: "Huge Vehicle (Water)", hp: 200, dt: 15, speedBase: 30, str: 18, dex: 12, con: 18, sizeBaseAc: 16, crewMin: 4, crewMax: 6, cargo: "5 tons", maxHPt: 3 },
-        clipper: { name: "Aether-Clipper", cost: 15000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 90, str: 16, dex: 18, con: 14, sizeBaseAc: 15, crewMin: 10, crewMax: 20, cargo: "30 tons", maxHPt: 5 },
-        galleon: { name: "Ironclad Galleon", cost: 10000, type: "Gargantuan Vehicle (Water)", hp: 300, dt: 15, speedBase: 40, str: 20, dex: 10, con: 18, sizeBaseAc: 15, crewMin: 20, crewMax: 40, cargo: "100 tons", maxHPt: 6 },
-        barge: { name: "Necromancer\'s Barge", cost: 5000, type: "Gargantuan Vehicle (Water)", hp: 350, dt: 10, speedBase: 25, str: 18, dex: 8, con: 20, sizeBaseAc: 14, crewMin: 2, crewMax: 5, cargo: "200 tons (Corpses)", maxHPt: 4 },
-        leviathan: { name: "Leviathan Hunter", cost: 18000, type: "Gargantuan Vehicle (Water)", hp: 400, dt: 20, speedBase: 35, str: 22, dex: 10, con: 20, sizeBaseAc: 16, crewMin: 30, crewMax: 50, cargo: "80 tons", maxHPt: 8 },
-        dreadnought: { name: "Subterranean Dreadnought", cost: 25000, type: "Gargantuan Vehicle (Water)", hp: 500, dt: 25, speedBase: 25, str: 24, dex: 6, con: 20, sizeBaseAc: 16, crewMin: 80, crewMax: 120, cargo: "500 tons", maxHPt: 10 },
-        flagship: { name: "Sovereign Flagship", cost: 100000, type: "Colossal Vehicle (Water)", hp: 800, dt: 30, speedBase: 20, str: 26, dex: 4, con: 22, sizeBaseAc: 18, crewMin: 200, crewMax: 300, cargo: "2000 tons", maxHPt: 15 },
-        custom: { name: "Custom Blueprint", cost: 0, type: "Custom Vehicle", hp: 100, dt: 0, speedBase: 30, str: 10, dex: 10, con: 10, sizeBaseAc: 10, crewMin: 1, crewMax: 1, cargo: "0 tons", maxHPt: 5 }
+        gunboat: { name: "Assault Gunboat", desc: "A heavily armed patrol craft built for hit-and-run tactics.", cost: 6000, type: "Huge Vehicle (Water)", hp: 150, dt: 10, speedBase: 70, str: 18, dex: 16, con: 16, sizeBaseAc: 14, crewMin: 4, crewMax: 8, cargo: "5 tons", maxHPt: 4 },
+        pinnace: { name: "Smuggler\'s Pinnace", desc: "A mid-sized merchant vessel featuring hidden compartments for smuggling.", cost: 8000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 60, str: 16, dex: 16, con: 16, sizeBaseAc: 15, crewMin: 5, crewMax: 15, cargo: "50 tons", maxHPt: 5 },
+        submersible: { name: "Deep-Sea Submersible", desc: "A pressurized iron hull capable of traversing the pitch-black ocean floor.", cost: 12000, type: "Huge Vehicle (Water)", hp: 200, dt: 15, speedBase: 30, str: 18, dex: 12, con: 18, sizeBaseAc: 16, crewMin: 4, crewMax: 6, cargo: "5 tons", maxHPt: 3 },
+        clipper: { name: "Aether-Clipper", desc: "A massive, sleek galleon powered by aether-currents for unmatched speed.", cost: 15000, type: "Gargantuan Vehicle (Water)", hp: 250, dt: 10, speedBase: 90, str: 16, dex: 18, con: 14, sizeBaseAc: 15, crewMin: 10, crewMax: 20, cargo: "30 tons", maxHPt: 5 },
+        galleon: { name: "Ironclad Galleon", desc: "A traditional, heavily armored warship suited for broadside combat.", cost: 10000, type: "Gargantuan Vehicle (Water)", hp: 300, dt: 15, speedBase: 40, str: 20, dex: 10, con: 18, sizeBaseAc: 15, crewMin: 20, crewMax: 40, cargo: "100 tons", maxHPt: 6 },
+        barge: { name: "Necromancer\'s Barge", desc: "A slow, massive transport vessel often used by necromancers to haul corpses.", cost: 5000, type: "Gargantuan Vehicle (Water)", hp: 350, dt: 10, speedBase: 25, str: 18, dex: 8, con: 20, sizeBaseAc: 14, crewMin: 2, crewMax: 5, cargo: "200 tons (Corpses)", maxHPt: 4 },
+        leviathan: { name: "Leviathan Hunter", desc: "A fortified dreadnought explicitly designed to hunt massive sea monsters.", cost: 18000, type: "Gargantuan Vehicle (Water)", hp: 400, dt: 20, speedBase: 35, str: 22, dex: 10, con: 20, sizeBaseAc: 16, crewMin: 30, crewMax: 50, cargo: "80 tons", maxHPt: 8 },
+        dreadnought: { name: "Subterranean Dreadnought", desc: "A colossal subterranean warship capable of dominating entire cavern seas.", cost: 25000, type: "Gargantuan Vehicle (Water)", hp: 500, dt: 25, speedBase: 25, str: 24, dex: 6, con: 20, sizeBaseAc: 16, crewMin: 80, crewMax: 120, cargo: "500 tons", maxHPt: 10 },
+        flagship: { name: "Sovereign Flagship", desc: "The pinnacle of naval engineering, serving as a mobile fortress and command center.", cost: 100000, type: "Colossal Vehicle (Water)", hp: 800, dt: 30, speedBase: 20, str: 26, dex: 4, con: 22, sizeBaseAc: 18, crewMin: 200, crewMax: 300, cargo: "2000 tons", maxHPt: 15 },
+        custom: { name: "Custom Blueprint", desc: "Design your own custom hull from scratch.", cost: 0, type: "Custom Vehicle", hp: 100, dt: 0, speedBase: 30, str: 10, dex: 10, con: 10, sizeBaseAc: 10, crewMin: 1, crewMax: 1, cargo: "0 tons", maxHPt: 5 }
     },
     materials: {
         standard: { name: "Standard Oak", cost: 0, speedMod: 0, hpMod: 0, dtMod: 0, traits: [] },
@@ -170,16 +170,16 @@ document.getElementById("btn-build").addEventListener("click", () => {
     document.getElementById("placeholder-panel").classList.add("hidden");
     document.getElementById("statblock-container").classList.remove("hidden");
 
-    const chassisId = document.querySelector("input[name=\'chassis\']:checked").value;
-    const materialId = document.querySelector("input[name=\'material\']:checked").value;
-    const coreId = document.querySelector("input[name=\'core\']:checked").value;
-    const propulsionId = document.querySelector("input[name=\'propulsion\']:checked").value;
-    const armorId = document.querySelector("input[name=\'armor\']:checked").value;
-    const weaponId = document.querySelector("input[name=\'weapon\']:checked").value;
-    const figureheadId = document.querySelector("input[name=\'figurehead\']:checked").value;
-    const countermeasureId = document.querySelector("input[name=\'countermeasure\']:checked").value;
-    const crewId = document.querySelector("input[name=\'crew\']:checked").value;
-    const auxiliaryId = document.querySelector("input[name=\'auxiliary\']:checked").value;
+    const chassisId = document.getElementById("select-chassis").value;
+    const materialId = document.getElementById("select-material").value;
+    const coreId = document.getElementById("select-core").value;
+    const propulsionId = document.getElementById("select-propulsion").value;
+    const armorId = document.getElementById("select-armor").value;
+    const weaponId = document.getElementById("select-weapon").value;
+    const figureheadId = document.getElementById("select-figurehead").value;
+    const countermeasureId = document.getElementById("select-countermeasure").value;
+    const crewId = document.getElementById("select-crew").value;
+    const auxiliaryId = document.getElementById("select-auxiliary").value;
     const upgradeIds = Array.from(document.querySelectorAll("input[name=\'upgrade\']:checked")).map(cb => cb.value);
 
     let chassis = catalog.chassis[chassisId];
@@ -227,12 +227,11 @@ document.getElementById("btn-build").addEventListener("click", () => {
     
     // Interactive HP
     let maxHp = chassis.hp + material.hpMod;
-    document.getElementById("sb-hp").innerHTML = <input type="number" id="live-hp-input" value="" style="width:60px; background:transparent; color:#e2e8f0; border:1px solid #475569; font-weight:bold;"> / ;
+    document.getElementById("sb-hp").innerHTML = `<input type="number" id="live-hp-input" value="${maxHp}" style="width:60px; background:transparent; color:#e2e8f0; border:1px solid #475569; font-weight:bold;"> / ${maxHp}`;
     
     // Check HPT Overload
     let usedHpt = 0;
-    let weapon = catalog.weapons[document.querySelector('input[name="weapon"]:checked').value];
-    usedHpt += (weapon.hpt || 0);
+    usedHpt += (weapon ? (weapon.hpt || 0) : 0);
     document.querySelectorAll('input[name="upgrade"]:checked').forEach(u => { usedHpt += (catalog.upgrades[u.value].hpt || 1); });
     
     const overloadDiv = document.getElementById("sb-overload-warning");
@@ -272,7 +271,6 @@ document.getElementById("btn-build").addEventListener("click", () => {
     }
 
         // Inject Crew Stations
-    let weaponObj = catalog.weapons[document.querySelector('input[name="weapon"]:checked').value];
     const stationsContainer = document.getElementById("sb-stations-container");
     if(stationsContainer) {
         stationsContainer.innerHTML = "";
@@ -286,7 +284,7 @@ document.getElementById("btn-build").addEventListener("click", () => {
         stationsContainer.appendChild(engDiv);
         
         let gunDiv = document.createElement("div");
-        gunDiv.innerHTML = <strong>Gunnery:  (Requires 1 Crew).</strong> The gunner can use an action to fire the primary weapon.;
+        gunDiv.innerHTML = "<strong>Gunnery:  (Requires 1 Crew).</strong> The gunner can use an action to fire the primary weapon.";
         stationsContainer.appendChild(gunDiv);
     }
 
