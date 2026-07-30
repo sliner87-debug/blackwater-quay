@@ -1,42 +1,148 @@
-// Simplified Monster Database based on the Bestiary
+// encounter_builder.js
+// Interactive D&D 5e Statblock Generator for Blackwater Quay
+
 const monsterDb = {
     docks: [
-        { name: "Scour-Harrow (Crimson Corsair)", cr: 4, ac: 16, hpDice: "5d8+10" },
-        { name: "Clockwork Crab Swarm", cr: 3, ac: 14, hpDice: "6d8" },
-        { name: "Mutated Dockhand (Void-Touched)", cr: 1, ac: 12, hpDice: "3d8+3" },
-        { name: "Siren (Lured Singer)", cr: 5, ac: 15, hpDice: "8d8+8" }
+        {
+            name: "Scour-Harrow (Crimson Corsair)",
+            type: "Medium humanoid, any alignment",
+            ac: "16 (Studded Leather, Shield)",
+            hp: "32", hpDice: "5d8+10",
+            speed: "30 ft.",
+            stats: "STR 14 (+2) | DEX 16 (+3) | CON 14 (+2) | INT 10 (+0) | WIS 11 (+0) | CHA 12 (+1)",
+            skills: "Athletics +4, Intimidation +3",
+            senses: "passive Perception 10",
+            languages: "Common, Thieves' Cant",
+            cr: "2 (450 XP)",
+            traits: [
+                { name: "Pack Tactics", desc: "The corsair has advantage on an attack roll against a creature if at least one of the corsair's allies is within 5 feet of the creature and the ally isn't incapacitated." },
+                { name: "Void-Touched", desc: "Resistant to psychic damage." }
+            ],
+            actions: [
+                { name: "Multiattack", desc: "The corsair makes two melee attacks." },
+                { name: "Scimitar", desc: "<i>Melee Weapon Attack:</i> <button class='dice-btn' onclick='rollDice(20, 5, 6, 3)'>+5 to hit</button>, reach 5 ft., one target. <i>Hit:</i> 1d6 + 3 slashing damage." },
+                { name: "Flintlock Pistol", desc: "<i>Ranged Weapon Attack:</i> <button class='dice-btn' onclick='rollDice(20, 5, 10, 3)'>+5 to hit</button>, range 30/90 ft., one target. <i>Hit:</i> 1d10 + 3 piercing damage." }
+            ]
+        },
+        {
+            name: "Clockwork Crab Swarm",
+            type: "Medium swarm of Tiny constructs, unaligned",
+            ac: "14 (Natural Armor)",
+            hp: "27", hpDice: "6d8",
+            speed: "20 ft., swim 20 ft.",
+            stats: "STR 10 (+0) | DEX 14 (+2) | CON 10 (+0) | INT 1 (-5) | WIS 7 (-2) | CHA 1 (-5)",
+            skills: "Stealth +4",
+            senses: "blindsight 30 ft. (blind beyond this radius), passive Perception 8",
+            languages: "-",
+            cr: "1 (200 XP)",
+            traits: [
+                { name: "Swarm", desc: "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny crab. The swarm can't regain hit points or gain temporary hit points." },
+                { name: "Aether Leak", desc: "When the swarm is reduced to 0 hit points, it explodes in a burst of aether. Each creature within 5 feet must make a DC 12 Dexterity saving throw, taking 2d6 force damage on a failed save." }
+            ],
+            actions: [
+                { name: "Pinchers", desc: "<i>Melee Weapon Attack:</i> <button class='dice-btn' onclick='rollDice(20, 4, 4, 0)'>+4 to hit</button>, reach 0 ft., one target in the swarm's space. <i>Hit:</i> 2d4 piercing damage, or 1d4 piercing damage if the swarm has half of its hit points or fewer." }
+            ]
+        }
     ],
     ocean: [
-        { name: "Sahuagin Reaver", cr: 2, ac: 14, hpDice: "4d8+4" },
-        { name: "Aboleth Outcast", cr: 8, ac: 17, hpDice: "12d8+30" },
-        { name: "Giant Kraken Tentacle", cr: 6, ac: 15, hpDice: "10d8+10" },
-        { name: "Brass Leviathan Drone", cr: 5, ac: 18, hpDice: "6d10+12" }
-    ],
-    deep: [
-        { name: "The Chirg-Illithid", cr: 11, ac: 22, hpDice: "10d8+50" },
-        { name: "Elder Node Spore Pod", cr: 7, ac: 12, hpDice: "8d8+24" },
-        { name: "Behemoth Shark", cr: 9, ac: 16, hpDice: "15d12+45" }
+        {
+            name: "Aboleth Outcast (Deepmind Spawn)",
+            type: "Large aberration, lawful evil",
+            ac: "17 (Natural Armor)",
+            hp: "135", hpDice: "18d10+36",
+            speed: "10 ft., swim 40 ft.",
+            stats: "STR 21 (+5) | DEX 9 (-1) | CON 15 (+2) | INT 18 (+4) | WIS 15 (+2) | CHA 18 (+4)",
+            skills: "History +12, Perception +10",
+            senses: "darkvision 120 ft., passive Perception 20",
+            languages: "Deep Speech, telepathy 120 ft.",
+            cr: "10 (5,900 XP)",
+            traits: [
+                { name: "Amphibious", desc: "The aboleth can breathe air and water." },
+                { name: "Mucous Cloud", desc: "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or hits it with a melee attack while within 5 feet of it must succeed on a DC 14 Constitution save or become diseased for 1d4 hours. The diseased creature can breathe only underwater." }
+            ],
+            actions: [
+                { name: "Multiattack", desc: "The aboleth makes three tentacle attacks." },
+                { name: "Tentacle", desc: "<i>Melee Weapon Attack:</i> <button class='dice-btn' onclick='rollDice(20, 9, 6, 5)'>+9 to hit</button>, reach 10 ft., one target. <i>Hit:</i> 2d6 + 5 bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Con save or become diseased." },
+                { name: "Tail", desc: "<i>Melee Weapon Attack:</i> <button class='dice-btn' onclick='rollDice(20, 9, 6, 5)'>+9 to hit</button>, reach 10 ft., one target. <i>Hit:</i> 3d6 + 5 bludgeoning damage." }
+            ]
+        }
     ]
 };
 
-// Simple dice roller for HP (e.g. "10d8+50")
-function rollHp(diceString) {
-    if (!diceString.includes('d')) return parseInt(diceString) || 10;
+// Handle Dice Rolls
+window.rollDice = function(d20, hitMod, dDamage, dmgMod) {
+    const attackRoll = Math.floor(Math.random() * d20) + 1;
+    const damageRoll = Math.floor(Math.random() * dDamage) + 1;
+    const attackTotal = attackRoll + hitMod;
+    const dmgTotal = damageRoll + dmgMod;
     
-    let total = 0;
-    let parts = diceString.split('+');
-    let dicePart = parts[0].toLowerCase();
-    let modifier = parts[1] ? parseInt(parts[1]) : 0;
+    let result = `Attack: ${attackRoll} + ${hitMod} = <strong>${attackTotal}</strong><br>Damage: ${damageRoll} + ${dmgMod} = <strong>${dmgTotal}</strong>`;
     
-    let diceSplit = dicePart.split('d');
-    let numDice = parseInt(diceSplit[0]);
-    let sides = parseInt(diceSplit[1]);
-    
-    for(let i=0; i<numDice; i++) {
-        total += Math.floor(Math.random() * sides) + 1;
+    if (attackRoll === 20) {
+        const critDamage = damageRoll + Math.floor(Math.random() * dDamage) + 1;
+        result = `<strong style="color:#ef4444;">CRITICAL HIT!</strong><br>Attack: 20<br>Damage: <strong>${critDamage + dmgMod}</strong>`;
+    }
+    if (attackRoll === 1) {
+        result = `<strong style="color:#ef4444;">CRITICAL MISS!</strong>`;
     }
     
-    return total + modifier;
+    // Create a temporary toast notification for the roll
+    const toast = document.createElement('div');
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.background = '#0f172a';
+    toast.style.border = '2px solid #d4af37';
+    toast.style.color = '#fff';
+    toast.style.padding = '15px';
+    toast.style.borderRadius = '8px';
+    toast.style.zIndex = '10000';
+    toast.style.boxShadow = '0 4px 6px rgba(0,0,0,0.5)';
+    toast.innerHTML = result;
+    document.body.appendChild(toast);
+    
+    // Play sound
+    const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=dice-roll.mp3');
+    audio.volume = 0.5;
+    audio.play().catch(e => console.log('Audio play prevented:', e));
+    
+    setTimeout(() => {
+        toast.remove();
+    }, 4000);
+}
+
+function buildStatblockHTML(m) {
+    let html = `<div class="statblock" style="background: #fdf6e3; color: #000; padding: 20px; border: 4px solid #d4af37; border-radius: 8px; font-family: 'Georgia', serif; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">`;
+    html += `<h2 style="color: #8b0000; margin: 0; font-family: 'Cinzel', serif;">${m.name}</h2>`;
+    html += `<p style="font-style: italic; margin: 0 0 10px 0; color: #555;">${m.type}</p>`;
+    html += `<hr style="border-top: 2px solid #8b0000; margin: 5px 0;">`;
+    html += `<p style="margin: 5px 0;"><strong>Armor Class</strong> ${m.ac}</p>`;
+    html += `<p style="margin: 5px 0;"><strong>Hit Points</strong> ${m.hp} (${m.hpDice})</p>`;
+    html += `<p style="margin: 5px 0;"><strong>Speed</strong> ${m.speed}</p>`;
+    html += `<hr style="border-top: 2px solid #8b0000; margin: 5px 0;">`;
+    html += `<p style="margin: 10px 0; font-weight: bold; text-align: center; color: #8b0000;">${m.stats}</p>`;
+    html += `<hr style="border-top: 2px solid #8b0000; margin: 5px 0;">`;
+    if(m.skills) html += `<p style="margin: 5px 0;"><strong>Skills</strong> ${m.skills}</p>`;
+    html += `<p style="margin: 5px 0;"><strong>Senses</strong> ${m.senses}</p>`;
+    html += `<p style="margin: 5px 0;"><strong>Languages</strong> ${m.languages}</p>`;
+    html += `<p style="margin: 5px 0;"><strong>Challenge</strong> ${m.cr}</p>`;
+    html += `<hr style="border-top: 2px solid #8b0000; margin: 5px 0;">`;
+    
+    if (m.traits) {
+        m.traits.forEach(t => {
+            html += `<p style="margin: 5px 0;"><strong><em>${t.name}.</em></strong> ${t.desc}</p>`;
+        });
+    }
+    
+    if (m.actions && m.actions.length > 0) {
+        html += `<h3 style="color: #8b0000; border-bottom: 1px solid #8b0000; margin-top: 15px; margin-bottom: 10px;">Actions</h3>`;
+        m.actions.forEach(a => {
+            html += `<p style="margin: 5px 0;"><strong><em>${a.name}.</em></strong> ${a.desc}</p>`;
+        });
+    }
+    
+    html += `</div>`;
+    return html;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -44,42 +150,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     
     btn.addEventListener('click', () => {
-        // Play dice roll sound
-        const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=dice-roll.mp3');
-        audio.volume = 0.5;
-        audio.play().catch(e => console.log('Audio play prevented:', e));
-        
         const location = document.getElementById('encounter-location').value;
         const difficulty = document.getElementById('encounter-difficulty').value;
         const output = document.getElementById('encounter-output');
         
-        let pool = monsterDb[location];
-        let numMonsters = 0;
+        // Use docks as fallback if location not fully populated yet
+        let pool = monsterDb[location] || monsterDb['docks'];
         
-        if(difficulty === 'easy') numMonsters = Math.floor(Math.random() * 2) + 2; // 2-3
-        if(difficulty === 'medium') numMonsters = Math.floor(Math.random() * 3) + 3; // 3-5
-        if(difficulty === 'hard') numMonsters = Math.floor(Math.random() * 4) + 5; // 5-8
+        let numMonsters = 1;
+        if(difficulty === 'easy') numMonsters = 1;
+        if(difficulty === 'medium') numMonsters = 2;
+        if(difficulty === 'hard') numMonsters = 3;
         
-        let html = '<div style="display: flex; flex-direction: column; gap: 10px;">';
-        
+        let html = '';
         for(let i=0; i<numMonsters; i++) {
             let m = pool[Math.floor(Math.random() * pool.length)];
-            let hp = rollHp(m.hpDice);
-            
-            html += `
-            <div style="background: rgba(30, 41, 59, 0.9); border: 1px solid #475569; padding: 10px 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <strong style="color: #e2e8f0; font-size: 1.1em;">${m.name}</strong>
-                    <div style="font-size: 0.85em; color: #94a3b8;">CR ${m.cr} | AC ${m.ac}</div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <span style="color: #d4af37; font-weight: bold; font-family: monospace; font-size: 1.2em;">${hp} HP</span>
-                    <input type="number" placeholder="DMG" style="width: 60px; padding: 5px; background: #0f172a; color: #fff; border: 1px solid #ef4444; border-radius: 3px;">
-                </div>
-            </div>`;
+            html += buildStatblockHTML(m);
         }
         
-        html += '</div>';
         output.innerHTML = html;
         
         // Save to LocalStorage
@@ -89,11 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Restore on load
     const savedEncounter = localStorage.getItem('bq_saved_encounter');
     if (savedEncounter) {
-        document.getElementById('encounter-output').innerHTML = savedEncounter;
+        const output = document.getElementById('encounter-output');
+        if (output) output.innerHTML = savedEncounter;
     }
 });
 
-// Copy to Markdown
+// Copy to Markdown logic remains similar, but parses the new HTML structure
 document.addEventListener('DOMContentLoaded', () => {
     const btnCopy = document.getElementById('btn-copy-encounter');
     if (btnCopy) {
@@ -101,14 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const output = document.getElementById('encounter-output');
             if (!output) return;
             
-            let markdown = "### Generated Encounter\n\n";
-            // We can just strip the HTML and make it simple markdown
-            const lines = output.innerText.split('\n').filter(l => l.trim() !== '');
-            for(let i=0; i<lines.length; i+=2) {
-                if(lines[i] && lines[i+1]) {
-                    markdown += `- **${lines[i].trim()}** (${lines[i+1].trim()})\n`;
-                }
-            }
+            let markdown = "### Generated Encounter Statblocks\n\n";
+            // A simple strip-tags approach with basic formatting
+            let text = output.innerText;
+            // Clean up empty lines
+            text = text.replace(/\n\s*\n/g, '\n\n');
+            markdown += text;
             
             navigator.clipboard.writeText(markdown).then(() => {
                 btnCopy.textContent = "Copied!";

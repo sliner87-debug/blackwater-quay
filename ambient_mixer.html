@@ -212,6 +212,16 @@
             <button id="btn-master-play" class="btn-mixer">Master Play</button>
             <button id="btn-master-stop" class="btn-mixer">Stop All</button>
         </div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <h3 style="color: #d4af37; font-family: 'Cinzel', serif; margin-bottom: 15px;">Soundscape Presets</h3>
+            <div style="display: flex; justify-content: center; gap: 15px;">
+                <button class="btn-mixer preset-btn" data-preset="docks">The Sluices</button>
+                <button class="btn-mixer preset-btn" data-preset="storm">Aether Storm</button>
+                <button class="btn-mixer preset-btn" data-preset="void">Deepmind Vault</button>
+                <button class="btn-mixer preset-btn" data-preset="ship">Below Decks</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -250,6 +260,29 @@
                     audio.pause();
                 });
                 btnPlay.classList.remove('active');
+            });
+            
+            // Presets
+            const presets = {
+                'docks': { wood: 0.2, waves: 0.8, thunder: 0.1, clockwork: 0.5, whispers: 0.0 },
+                'storm': { wood: 0.6, waves: 0.9, thunder: 0.9, clockwork: 0.0, whispers: 0.0 },
+                'void': { wood: 0.0, waves: 0.2, thunder: 0.2, clockwork: 0.0, whispers: 0.9 },
+                'ship': { wood: 0.9, waves: 0.4, thunder: 0.0, clockwork: 0.8, whispers: 0.0 }
+            };
+            
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const p = presets[e.target.dataset.preset];
+                    Object.keys(p).forEach(ch => {
+                        const slider = document.getElementById('vol-' + ch);
+                        const audio = document.getElementById('audio-' + ch);
+                        slider.value = p[ch];
+                        audio.volume = p[ch];
+                    });
+                    
+                    // Auto-play if not already playing
+                    btnPlay.click();
+                });
             });
         });
     </script>
