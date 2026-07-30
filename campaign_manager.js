@@ -21,10 +21,10 @@ class CampaignManager {
             try {
                 this.state = JSON.parse(data);
                 // Ensure all arrays exist in case of version mismatch
-                if (!this.state.ships) this.state.ships = [];
-                if (!this.state.fleets) this.state.fleets = [];
-                if (!this.state.encounters) this.state.encounters = [];
-                if (!this.state.contracts) this.state.contracts = [];
+                if (!Array.isArray(this.state.ships)) this.state.ships = [];
+                if (!Array.isArray(this.state.fleets)) this.state.fleets = [];
+                if (!Array.isArray(this.state.encounters)) this.state.encounters = [];
+                if (!Array.isArray(this.state.contracts)) this.state.contracts = [];
             } catch (e) {
                 console.error("Failed to parse campaign data, resetting.", e);
                 this.state = { ships: [], fleets: [], encounters: [], contracts: [] };

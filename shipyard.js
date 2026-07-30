@@ -777,8 +777,8 @@ document.getElementById('input-import').addEventListener('change', (event) => {
             }
 
             // Trigger updates
-            updateCostAndHpt();
-            updateVisualizer();
+            if(typeof updateTotalCost === "function") updateTotalCost();
+            if(typeof updateVisualizerLayer === "function") updateVisualizerLayer();
             document.getElementById('btn-build').click();
             alert('Ship loaded successfully!');
         } catch (error) {
@@ -833,8 +833,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Build it
             setTimeout(() => {
-                if (typeof updateCostAndHpt === 'function') updateCostAndHpt();
-                if (typeof updateVisualizer === 'function') updateVisualizer();
+                if (typeof updateCostAndHpt === 'function') if(typeof updateTotalCost === "function") updateTotalCost();
+                if (typeof updateVisualizer === 'function') if(typeof updateVisualizerLayer === "function") updateVisualizerLayer();
                 const btnBuild = document.getElementById('btn-build');
                 if(btnBuild) btnBuild.click();
             }, 500);

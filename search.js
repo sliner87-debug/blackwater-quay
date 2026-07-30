@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Close if clicking outside modal
-    window.onclick = function(event) {
+    window.addEventListener("click", function(event) {
         if (event.target == searchModal) {
             searchModal.style.display = "none";
         }

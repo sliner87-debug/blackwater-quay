@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("Campaign Manager not loaded.");
                 return;
             }
-            if (activeFleet.length === 0) {
+            if (currentFleet.length === 0) {
                 alert("No ships in fleet to save.");
                 return;
             }
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             window.BQCampaign.saveAsset('fleets', {
                 name: fleetName,
-                ships: activeFleet,
+                ships: currentFleet,
                 faction: document.getElementById('fleet-faction').value
             });
             

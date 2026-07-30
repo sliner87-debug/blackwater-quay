@@ -281,7 +281,7 @@ const monsterDb = [
       ],
       actions: [
         { name: "Broken Silver Dagger", desc: "Melee <button class='dice-btn' onclick='rollDice(20, 15, 6, 5)'>+15 to hit</button> (1d6+5/19-20 plus psionic disruption)" },
-        { name: "Psionic Disruption", desc": "On hit, target must succeed on a Will DC 18 save or be unable to manifest psionics or cast spells for 1 round." }
+        { name: "Psionic Disruption", desc: "On hit, target must succeed on a Will DC 18 save or be unable to manifest psionics or cast spells for 1 round." }
       ]
     },
     {
