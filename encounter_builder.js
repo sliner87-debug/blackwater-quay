@@ -560,9 +560,46 @@ document.addEventListener('DOMContentLoaded', () => {
             html += buildStatblockHTML(m);
         });
         
+        // Add Loot Button
+        html += `<div style="margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px;">
+                    <button id="btn-loot-bodies" style="background: #eab308; color: #0f172a; border: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-size: 1.1em; transition: background 0.3s;">Loot the Bodies</button>
+                    <div id="loot-bodies-output" style="margin-top: 15px;"></div>
+                 </div>`;
+        
         output.innerHTML = html;
         
         localStorage.setItem('bq_saved_encounter', html);
+        
+        // Hook up Loot Button
+        const btnLoot = document.getElementById('btn-loot-bodies');
+        if (btnLoot) {
+            btnLoot.addEventListener('click', () => {
+                const lootOut = document.getElementById('loot-bodies-output');
+                if (typeof generateProceduralLoot !== 'undefined') {
+                    // Generate 3-5 items
+                    const numItems = Math.floor(Math.random() * 3) + 3;
+                    let lootHtml = "";
+                    for (let i = 0; i < numItems; i++) {
+                        const item = generateProceduralLoot('any', 'any');
+                        
+                        // Map rarity to color
+                        let rarityColor = "#cbd5e1";
+                        if (item.rarity === 'uncommon') rarityColor = "#34d399";
+                        if (item.rarity === 'rare') rarityColor = "#60a5fa";
+                        if (item.rarity === 'void-touched') rarityColor = "#c084fc";
+                        
+                        lootHtml += `<div style="background: rgba(15, 23, 42, 0.6); border-left: 3px solid ${rarityColor}; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+                                        <div style="color: ${rarityColor}; margin-bottom: 5px;">${item.text}</div>
+                                        <div style="font-size: 0.85em; color: #94a3b8; font-style: italic;">${item.mechanic}</div>
+                                     </div>`;
+                    }
+                    lootOut.innerHTML = lootHtml;
+                    btnLoot.style.display = 'none'; // Hide after looting
+                } else {
+                    lootOut.innerHTML = "<span style='color: #ef4444'>Loot Generator script not found.</span>";
+                }
+            });
+        }
     });
     
     // Restore on load
