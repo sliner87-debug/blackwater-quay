@@ -99,8 +99,8 @@ document.getElementById('btn-generate').addEventListener('click', () => {
         
         if(iterations >= maxIterations) {
             clearInterval(scrambleInterval);
-            display.innerHTML = \`<div class="rarity-tag ${item.rarity}">${item.rarity.toUpperCase()}</div><br>${item.text}<hr class="loot-divider"><div class="loot-mechanic"><strong>Mechanic:</strong> ${item.mechanic}</div>\`;
-            display.className = \`loot-display rarity-${item.rarity}\`;
+            display.innerHTML = `<div class="rarity-tag ${item.rarity}">${item.rarity.toUpperCase()}</div><br>${item.text}<hr class="loot-divider"><div class="loot-mechanic"><strong>Mechanic:</strong> ${item.mechanic}</div>`;
+            display.className = `loot-display rarity-${item.rarity}`;
             btn.disabled = false;
         }
     }, 50);
