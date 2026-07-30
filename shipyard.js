@@ -218,14 +218,14 @@ document.getElementById("btn-build").addEventListener("click", () => {
     };
     
     // Save to LocalStorage
-    localStorage.setItem('bq_saved_ship', document.getElementById('statblock').innerHTML);
+    localStorage.setItem('bq_saved_ship', document.getElementById('statblock-container').innerHTML);
     localStorage.setItem('bq_saved_ship_json', JSON.stringify(shipJSON, null, 2));
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     const savedShip = localStorage.getItem('bq_saved_ship');
     if (savedShip) {
-        document.getElementById('statblock').innerHTML = savedShip;
+        document.getElementById('statblock-container').innerHTML = savedShip;
     }
     
     const btnCopy = document.getElementById('btn-copy-ship');
@@ -712,7 +712,7 @@ document.getElementById('btn-export').addEventListener('click', () => {
     const state = {
         version: "1.2",
         timestamp: new Date().toISOString(),
-        name: document.getElementById('ship-name').value,
+        name: document.getElementById('custom-name').value,
         chassis: document.getElementById('select-chassis').value,
         material: document.getElementById('select-material').value,
         core: document.getElementById('select-core').value,
@@ -752,7 +752,7 @@ document.getElementById('input-import').addEventListener('change', (event) => {
     reader.onload = (e) => {
         try {
             const state = JSON.parse(e.target.result);
-            if(state.name) document.getElementById('ship-name').value = state.name;
+            if(state.name) document.getElementById('custom-name').value = state.name;
             if(state.chassis) document.getElementById('select-chassis').value = state.chassis;
             if(state.material) document.getElementById('select-material').value = state.material;
             if(state.core) document.getElementById('select-core').value = state.core;

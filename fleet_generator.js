@@ -68,9 +68,9 @@ function renderFleet(fleet) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const display = document.getElementById('fleet-display');
+    const display = document.getElementById('fleet-output');
     const factionSelect = document.getElementById('fleet-faction');
-    const sizeSelect = document.getElementById('fleet-size');
+    const sizeSelect = document.getElementById('fleet-threat');
     const btnGenerate = document.getElementById('btn-generate-fleet');
     const btnClear = document.getElementById('btn-clear-fleet');
     
