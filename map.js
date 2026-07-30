@@ -92,6 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p style="margin: 0; font-size: 0.8rem; color: #475569;"><strong>Faction:</strong> ${poi.faction}</p>
                     <p style="margin: 0; font-size: 0.8rem; color: #ef4444;"><strong>Danger:</strong> ${poi.danger}</p>
                 </div>
+                <div style="margin-top: 10px; display: flex; gap: 5px; font-size: 0.8rem;">
+                    <a href="dm_bestiary.html" style="background: #ef4444; color: white; padding: 3px 8px; border-radius: 3px; text-decoration: none;">⚔️ Encounter</a>
+                    <a href="loot_generator.html" style="background: #d4af37; color: white; padding: 3px 8px; border-radius: 3px; text-decoration: none;">💰 Loot</a>
+                </div>
             </div>
         `;
         

@@ -39,11 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         tierDisplay.textContent = tier;
         tierDisplay.style.color = color;
         perkDisplay.textContent = perk;
+        
+        // Save to LocalStorage
+        localStorage.setItem(`bq_faction_${faction}`, score);
     }
     
     factions.forEach(f => {
         const slider = document.getElementById(`slider-${f}`);
         if(slider) {
+            // Restore from LocalStorage
+            const savedScore = localStorage.getItem(`bq_faction_${f}`);
+            if (savedScore !== null) {
+                slider.value = savedScore;
+            }
+            
             slider.addEventListener('input', () => updateFaction(f));
             updateFaction(f); // Initialize
         }

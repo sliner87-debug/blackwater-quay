@@ -204,6 +204,42 @@ document.getElementById("btn-build").addEventListener("click", () => {
             actionsContainer.innerHTML += "<div class=\'trait\'><strong>" + w.action.name + ".</strong> " + w.action.desc + "</div>";
         }
     });
+    
+    // Create a JSON object representing the ship
+    const shipJSON = {
+        name: "Custom " + material.name + " " + chassis.name,
+        type: chassis.type,
+        ac: baseAc + (armor.acBonus || 0),
+        hp: maxHp,
+        speed: ((chassis.speedBase || 30) + (material.speedMod || 0)) + " ft.",
+        core: core.name,
+        propulsion: prop.name,
+        weapons: weaponList.filter(w => w !== undefined).map(w => w.name)
+    };
+    
+    // Save to LocalStorage
+    localStorage.setItem('bq_saved_ship', document.getElementById('statblock').innerHTML);
+    localStorage.setItem('bq_saved_ship_json', JSON.stringify(shipJSON, null, 2));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedShip = localStorage.getItem('bq_saved_ship');
+    if (savedShip) {
+        document.getElementById('statblock').innerHTML = savedShip;
+    }
+    
+    const btnCopy = document.getElementById('btn-copy-ship');
+    if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+            const json = localStorage.getItem('bq_saved_ship_json');
+            if (json) {
+                navigator.clipboard.writeText(json).then(() => {
+                    btnCopy.textContent = "Copied!";
+                    setTimeout(() => btnCopy.textContent = "Copy as JSON", 2000);
+                });
+            }
+        });
+    }
 });
 
 // Accordion UI Logic

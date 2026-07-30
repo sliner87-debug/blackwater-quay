@@ -44,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     
     btn.addEventListener('click', () => {
+        // Play dice roll sound
+        const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=dice-roll.mp3');
+        audio.volume = 0.5;
+        audio.play().catch(e => console.log('Audio play prevented:', e));
+        
         const location = document.getElementById('encounter-location').value;
         const difficulty = document.getElementById('encounter-difficulty').value;
         const output = document.getElementById('encounter-output');
@@ -76,5 +81,41 @@ document.addEventListener('DOMContentLoaded', () => {
         
         html += '</div>';
         output.innerHTML = html;
+        
+        // Save to LocalStorage
+        localStorage.setItem('bq_saved_encounter', html);
     });
+    
+    // Restore on load
+    const savedEncounter = localStorage.getItem('bq_saved_encounter');
+    if (savedEncounter) {
+        document.getElementById('encounter-output').innerHTML = savedEncounter;
+    }
+});
+
+// Copy to Markdown
+document.addEventListener('DOMContentLoaded', () => {
+    const btnCopy = document.getElementById('btn-copy-encounter');
+    if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+            const output = document.getElementById('encounter-output');
+            if (!output) return;
+            
+            let markdown = "### Generated Encounter\n\n";
+            // We can just strip the HTML and make it simple markdown
+            const lines = output.innerText.split('\n').filter(l => l.trim() !== '');
+            for(let i=0; i<lines.length; i+=2) {
+                if(lines[i] && lines[i+1]) {
+                    markdown += `- **${lines[i].trim()}** (${lines[i+1].trim()})\n`;
+                }
+            }
+            
+            navigator.clipboard.writeText(markdown).then(() => {
+                btnCopy.textContent = "Copied!";
+                setTimeout(() => btnCopy.textContent = "Copy Markdown", 2000);
+            }).catch(err => {
+                console.error("Failed to copy", err);
+            });
+        });
+    }
 });

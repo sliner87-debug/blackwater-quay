@@ -130,6 +130,11 @@ function renderShipCard(ship) {
 }
 
 document.getElementById('btn-generate-fleet').addEventListener('click', () => {
+    // Play dice roll sound
+    const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=dice-roll.mp3');
+    audio.volume = 0.5;
+    audio.play().catch(e => console.log('Audio play prevented:', e));
+
     const threat = document.getElementById('fleet-threat').value;
     const faction = document.getElementById('fleet-faction').value;
     const output = document.getElementById('fleet-output');
@@ -144,10 +149,37 @@ document.getElementById('btn-generate-fleet').addEventListener('click', () => {
     }
     
     let html = '';
+    let fleetData = [];
     fleetComposition.forEach(role => {
         const ship = generateShip(role, faction);
+        fleetData.push(ship);
         html += renderShipCard(ship);
     });
     
     output.innerHTML = html;
+    
+    // Save to LocalStorage
+    localStorage.setItem('bq_saved_fleet', html);
+    localStorage.setItem('bq_saved_fleet_json', JSON.stringify(fleetData, null, 2));
+});
+
+// Restore on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedFleet = localStorage.getItem('bq_saved_fleet');
+    if (savedFleet) {
+        document.getElementById('fleet-output').innerHTML = savedFleet;
+    }
+    
+    const btnCopy = document.getElementById('btn-copy-fleet');
+    if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+            const json = localStorage.getItem('bq_saved_fleet_json');
+            if (json) {
+                navigator.clipboard.writeText(json).then(() => {
+                    btnCopy.textContent = "Copied!";
+                    setTimeout(() => btnCopy.textContent = "Copy as JSON", 2000);
+                });
+            }
+        });
+    }
 });

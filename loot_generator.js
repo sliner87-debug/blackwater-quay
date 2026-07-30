@@ -99,9 +99,47 @@ document.getElementById('btn-generate').addEventListener('click', () => {
         
         if(iterations >= maxIterations) {
             clearInterval(scrambleInterval);
-            display.innerHTML = `<div class="rarity-tag ${item.rarity}">${item.rarity.toUpperCase()}</div><br>${item.text}<hr class="loot-divider"><div class="loot-mechanic"><strong>Mechanic:</strong> ${item.mechanic}</div>`;
+            const finalHtml = `<div class="rarity-tag ${item.rarity}">${item.rarity.toUpperCase()}</div><br>${item.text}<hr class="loot-divider"><div class="loot-mechanic"><strong>Mechanic:</strong> ${item.mechanic}</div>`;
+            display.innerHTML = finalHtml;
             display.className = `loot-display rarity-${item.rarity}`;
             btn.disabled = false;
+            
+            // Save to LocalStorage
+            localStorage.setItem('bq_saved_loot_html', finalHtml);
+            localStorage.setItem('bq_saved_loot_class', display.className);
         }
     }, 50);
+});
+
+// Restore on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedHtml = localStorage.getItem('bq_saved_loot_html');
+    const savedClass = localStorage.getItem('bq_saved_loot_class');
+    if (savedHtml && savedClass) {
+        const display = document.getElementById('loot-display');
+        if (display) {
+            display.innerHTML = savedHtml;
+            display.className = savedClass;
+        }
+    }
+});
+
+// Copy to Clipboard Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const btnCopy = document.getElementById('btn-copy');
+    if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+            const display = document.getElementById('loot-display');
+            if (display) {
+                // We want to copy the raw text, but formatting it slightly
+                const text = display.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    btnCopy.textContent = "Copied!";
+                    setTimeout(() => btnCopy.textContent = "Copy to Clipboard", 2000);
+                }).catch(err => {
+                    console.error("Failed to copy", err);
+                });
+            }
+        });
+    }
 });
