@@ -797,3 +797,92 @@ document.getElementById('btn-print').addEventListener('click', () => {
     }
     window.print();
 });
+
+// --- CAMPAIGN MANAGER INTEGRATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    // URL Parameter Loading
+    const urlParams = new URLSearchParams(window.location.search);
+    const loadId = urlParams.get('load');
+    
+    if (loadId && window.BQCampaign) {
+        const asset = window.BQCampaign.getAsset('ships', loadId);
+        if (asset && asset.data) {
+            const state = asset.data;
+            if(state.name) document.getElementById('custom-name').value = state.name;
+            if(state.chassis) document.getElementById('select-chassis').value = state.chassis;
+            if(state.material) document.getElementById('select-material').value = state.material;
+            if(state.core) document.getElementById('select-core').value = state.core;
+            if(state.propulsion) document.getElementById('select-propulsion').value = state.propulsion;
+            if(state.armor) document.getElementById('select-armor').value = state.armor;
+            if(state.weapon) document.getElementById('select-weapon').value = state.weapon;
+            if(state.weapon2) document.getElementById('select-weapon2').value = state.weapon2;
+            if(state.weapon3) document.getElementById('select-weapon3').value = state.weapon3;
+            if(state.figurehead) document.getElementById('select-figurehead').value = state.figurehead;
+            if(state.countermeasure) document.getElementById('select-countermeasure').value = state.countermeasure;
+            if(state.crew) document.getElementById('select-crew').value = state.crew;
+            if(state.auxiliary) document.getElementById('select-auxiliary').value = state.auxiliary;
+            
+            if (state.themes) {
+                document.querySelectorAll('.theme-select').forEach(el => {
+                    const layer = el.getAttribute('data-layer');
+                    if (state.themes[layer]) {
+                        el.value = state.themes[layer];
+                    }
+                });
+            }
+            
+            // Build it
+            setTimeout(() => {
+                if (typeof updateCostAndHpt === 'function') updateCostAndHpt();
+                if (typeof updateVisualizer === 'function') updateVisualizer();
+                const btnBuild = document.getElementById('btn-build');
+                if(btnBuild) btnBuild.click();
+            }, 500);
+        }
+    }
+    
+    // Save to Binder Button
+    const saveBtn = document.getElementById('btn-save-binder');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            if (!window.BQCampaign) {
+                alert("Campaign Manager not loaded.");
+                return;
+            }
+            
+            // Get current ship data
+            const themes = {};
+            document.querySelectorAll('.theme-select').forEach(el => {
+                themes[el.getAttribute('data-layer')] = el.value;
+            });
+            
+            const state = {
+                name: document.getElementById('custom-name').value || "Unnamed Vessel",
+                chassis: document.getElementById('select-chassis').value,
+                material: document.getElementById('select-material').value,
+                core: document.getElementById('select-core').value,
+                propulsion: document.getElementById('select-propulsion').value,
+                armor: document.getElementById('select-armor').value,
+                weapon: document.getElementById('select-weapon').value,
+                weapon2: document.getElementById('select-weapon2').value,
+                weapon3: document.getElementById('select-weapon3').value,
+                figurehead: document.getElementById('select-figurehead').value,
+                countermeasure: document.getElementById('select-countermeasure').value,
+                crew: document.getElementById('select-crew').value,
+                auxiliary: document.getElementById('select-auxiliary').value,
+                themes: themes
+            };
+            
+            const cr = document.getElementById('sb-cr') ? document.getElementById('sb-cr').innerText : '?';
+            
+            window.BQCampaign.saveAsset('ships', {
+                name: state.name,
+                type: state.chassis,
+                cr: cr,
+                data: state
+            });
+            
+            alert("Ship saved to Campaign Binder!");
+        });
+    }
+});

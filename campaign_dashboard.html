@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Dashboard | Blackwater Quay</title>
+    <link rel="stylesheet" href="webpage.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 20px;
+        }
+        
+        .btn-export, .btn-import {
+            background: #1e293b;
+            color: #e2e8f0;
+            border: 1px solid #475569;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .btn-export:hover { background: #334155; color: #38bdf8; border-color: #38bdf8; }
+        .btn-import:hover { background: #334155; color: #d4af37; border-color: #d4af37; }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            background: #0f172a;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            border-bottom: none;
+            transition: all 0.2s;
+            font-family: 'Cinzel', serif;
+        }
+        .tab-btn.active {
+            background: #1e293b;
+            color: #f8fafc;
+            border-top: 2px solid #d4af37;
+        }
+        
+        .tab-content {
+            display: none;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0 4px 4px 4px;
+            padding: 30px;
+            min-height: 400px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .asset-card {
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .asset-title {
+            color: #d4af37;
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            margin: 0 0 10px 0;
+        }
+        .asset-meta {
+            color: #94a3b8;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .btn-delete {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .btn-delete:hover {
+            color: #b91c1c;
+        }
+        .btn-view {
+            display: inline-block;
+            background: #334155;
+            color: #f8fafc;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .btn-view:hover { background: #475569; }
+        
+        #hidden-file-input { display: none; }
+    </style>
+</head>
+<body class="shipyard-body">
+
+    <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
+        <!-- Injected via build script / python nav updater -->
+        <nav class="nav-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">SABLEHOOK COVENANT</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">TTRPG Tools &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="campaign_dashboard.html" style="color: #f8fafc; font-weight: bold; background: #0f172a;">Campaign Dashboard</a>
+                        <a href="shipyard.html" style="color: #38bdf8; font-weight: bold;">Sovereign Shipbuilder</a>
+                        <a href="fleet_generator.html" style="color: #a855f7; font-weight: bold;">Fleet Generator</a>
+                        <a href="crew_generator.html" style="color: #22d3ee; font-weight: bold;">Crew Generator</a>
+                        <a href="loot_generator.html" style="color: #eab308; font-weight: bold;">Loot Generator</a>
+                        <a href="job_generator.html" style="color: #10b981; font-weight: bold;">Bounty Board</a>
+                        <a href="dm_bestiary.html" style="color: #ef4444; font-weight: bold;">Encounter Generator</a>
+                        <a href="naval_tracker.html" style="color: #f97316; font-weight: bold;">Naval Tracker</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn" style="color: #d4af37; font-weight: bold;">Dungeon Master Codex &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="dm_screen.html">The Complete Codex</a>
+                        <a href="dm_magic_items.html">Magic Items</a>
+                        <a href="dm_bestiary.html">Bestiary & NPCs</a>
+                        <a href="dm_player_options.html">Player Mechanics</a>
+                        <a href="dm_faction_renown.html">Faction Renown</a>
+                        <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="document.dispatchEvent(new KeyboardEvent('keydown', {key: 'k', ctrlKey: true}))" style="color: #94a3b8; font-weight: bold;">Search (Ctrl+K)</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container" style="padding-top: 100px;">
+        <div class="dashboard-header">
+            <div>
+                <h1 style="color: #d4af37; margin-bottom: 5px; font-size: 2.5em;">Campaign Dashboard</h1>
+                <p style="color: #94a3b8; margin: 0;">Manage your saved ships, fleets, encounters, and contracts.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-import" id="btn-import-campaign">Import JSON</button>
+                <button class="btn-export" id="btn-export-campaign">Export JSON</button>
+                <input type="file" id="hidden-file-input" accept=".json">
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-target="tab-ships">Ships</button>
+            <button class="tab-btn" data-target="tab-fleets">Fleets</button>
+            <button class="tab-btn" data-target="tab-encounters">Encounters</button>
+            <button class="tab-btn" data-target="tab-contracts">Contracts</button>
+        </div>
+        
+        <div id="tab-ships" class="tab-content active">
+            <div class="asset-grid" id="grid-ships"></div>
+        </div>
+        
+        <div id="tab-fleets" class="tab-content">
+            <div class="asset-grid" id="grid-fleets"></div>
+        </div>
+        
+        <div id="tab-encounters" class="tab-content">
+            <div class="asset-grid" id="grid-encounters"></div>
+        </div>
+        
+        <div id="tab-contracts" class="tab-content">
+            <div class="asset-grid" id="grid-contracts"></div>
+        </div>
+    </div>
+
+    <script src="campaign_manager.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab Logic
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.target).classList.add('active');
+                });
+            });
+            
+            // Render Grids
+            const renderGrid = (type, containerId, formatter) => {
+                const container = document.getElementById(containerId);
+                const items = window.BQCampaign.getAll(type);
+                
+                if (items.length === 0) {
+                    container.innerHTML = "<p style='color:#94a3b8; font-style:italic;'>No saved items found.</p>";
+                    return;
+                }
+                
+                let html = "";
+                items.forEach(item => {
+                    const formatted = formatter(item);
+                    html += `
+                    <div class="asset-card">
+                        <button class="btn-delete" data-type="${type}" data-id="${item.id}" title="Delete">✕</button>
+                        <h3 class="asset-title">${formatted.title}</h3>
+                        <div class="asset-meta">${formatted.meta}</div>
+                        ${formatted.actionHTML}
+                    </div>`;
+                });
+                container.innerHTML = html;
+                
+                // Attach delete handlers
+                container.querySelectorAll('.btn-delete').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const t = e.target.dataset.type;
+                        const id = e.target.dataset.id;
+                        if(confirm("Are you sure you want to delete this asset?")) {
+                            window.BQCampaign.deleteAsset(t, id);
+                            refreshAll();
+                        }
+                    });
+                });
+            };
+            
+            const refreshAll = () => {
+                renderGrid('ships', 'grid-ships', (item) => {
+                    return {
+                        title: item.name || "Unknown Ship",
+                        meta: `Hull: ${item.type || 'Unknown'} | CR: ${item.cr || '?'}`,
+                        actionHTML: `<a href="shipyard.html?load=${item.id}" class="btn-view">Load in Shipyard</a>`
+                    }
+                });
+                
+                renderGrid('fleets', 'grid-fleets', (item) => {
+                    return {
+                        title: item.name || "Saved Fleet",
+                        meta: `${item.ships ? item.ships.length : 0} Ships`,
+                        actionHTML: `<button class="btn-view" onclick="alert('Viewing fleets in-dashboard coming soon!')">View Fleet</button>`
+                    }
+                });
+                
+                renderGrid('encounters', 'grid-encounters', (item) => {
+                    return {
+                        title: item.name || "Saved Encounter",
+                        meta: `Total CR: ${item.totalCr || '?'} | Enemies: ${item.enemyCount || '?'}`,
+                        actionHTML: `<a href="dm_bestiary.html?load=${item.id}" class="btn-view">Load in Bestiary</a>`
+                    }
+                });
+                
+                renderGrid('contracts', 'grid-contracts', (item) => {
+                    return {
+                        title: item.title || "Unknown Contract",
+                        meta: `Client: ${item.client} | Type: ${item.type}`,
+                        actionHTML: `<button class="btn-view" onclick="alert('Viewing contracts in-dashboard coming soon!')">View Contract</button>`
+                    }
+                });
+            };
+            
+            refreshAll();
+            
+            // Export / Import
+            document.getElementById('btn-export-campaign').addEventListener('click', () => {
+                window.BQCampaign.exportJSON();
+            });
+            
+            const fileInput = document.getElementById('hidden-file-input');
+            document.getElementById('btn-import-campaign').addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const success = window.BQCampaign.importJSON(event.target.result);
+                    if (success) {
+                        alert("Campaign data imported successfully!");
+                        refreshAll();
+                    } else {
+                        alert("Failed to import data. Invalid JSON format.");
+                    }
+                };
+                reader.readAsText(file);
+            });
+        });
+    </script>
+    <script src="search.js"></script>
+</body>
+</html>

@@ -631,3 +631,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- CAMPAIGN MANAGER INTEGRATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    // URL Parameter Loading
+    const urlParams = new URLSearchParams(window.location.search);
+    const loadId = urlParams.get('load');
+    
+    if (loadId && window.BQCampaign) {
+        const asset = window.BQCampaign.getAsset('encounters', loadId);
+        if (asset && asset.data && asset.data.html) {
+            document.getElementById('encounter-output').innerHTML = asset.data.html;
+            alert('Encounter loaded successfully!');
+        }
+    }
+    
+    // Save to Binder Button
+    const saveBtn = document.getElementById('btn-save-binder');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            if (!window.BQCampaign) {
+                alert("Campaign Manager not loaded.");
+                return;
+            }
+            const htmlContent = document.getElementById('encounter-output').innerHTML;
+            if (!htmlContent || htmlContent.trim() === '') {
+                alert("No encounter generated to save.");
+                return;
+            }
+            
+            const encounterName = prompt("Enter a name for this Encounter:", "Encounter " + Math.floor(Math.random() * 1000));
+            if (!encounterName) return;
+            
+            window.BQCampaign.saveAsset('encounters', {
+                name: encounterName,
+                totalCr: document.getElementById('encounter-cr').value,
+                data: {
+                    html: htmlContent
+                }
+            });
+            
+            alert("Encounter saved to Campaign Binder!");
+        });
+    }
+});

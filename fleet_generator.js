@@ -131,3 +131,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- CAMPAIGN MANAGER INTEGRATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    const saveBtn = document.getElementById('btn-save-binder');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            if (!window.BQCampaign) {
+                alert("Campaign Manager not loaded.");
+                return;
+            }
+            if (activeFleet.length === 0) {
+                alert("No ships in fleet to save.");
+                return;
+            }
+            
+            const fleetName = prompt("Enter a name for this Fleet:", "Strike Group " + Math.floor(Math.random() * 1000));
+            if (!fleetName) return;
+            
+            window.BQCampaign.saveAsset('fleets', {
+                name: fleetName,
+                ships: activeFleet,
+                faction: document.getElementById('fleet-faction').value
+            });
+            
+            alert("Fleet saved to Campaign Binder!");
+        });
+    }
+});

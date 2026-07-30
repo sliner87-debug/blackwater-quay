@@ -129,3 +129,40 @@ document.addEventListener('DOMContentLoaded', () => {
         output.innerHTML = renderJobs(initialJobs);
     }
 });
+
+// --- CAMPAIGN MANAGER INTEGRATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    const saveBtn = document.getElementById('btn-save-binder');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            if (!window.BQCampaign) {
+                alert("Campaign Manager not loaded.");
+                return;
+            }
+            
+            const client = document.getElementById('job-faction').value;
+            const type = document.getElementById('job-type').value;
+            
+            // Check if any jobs have been generated
+            if (document.querySelectorAll('.job-card').length === 0) {
+                alert("No contracts generated to save.");
+                return;
+            }
+            
+            const contractTitle = prompt("Enter a title for this Contract Bundle:", client + " " + type + " Contracts");
+            if (!contractTitle) return;
+            
+            // For contracts, we'll just save the HTML block of the output
+            const htmlContent = document.getElementById('job-output').innerHTML;
+            
+            window.BQCampaign.saveAsset('contracts', {
+                title: contractTitle,
+                client: client,
+                type: type,
+                data: { html: htmlContent }
+            });
+            
+            alert("Contracts saved to Campaign Binder!");
+        });
+    }
+});
