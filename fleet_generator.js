@@ -57,12 +57,12 @@ function generateShip(role, faction) {
     const propulsion = catalog.propulsion[propId];
     
     // Calculate Base Stats
-    let ac = 10 + material.acMod + roleStats.acBonus;
+    let ac = 10 + (material.acBonus || 0) + roleStats.acBonus;
     if(chassisId === "dreadnought") ac += 2;
     if(chassisId === "skiff") ac -= 2;
     
-    let hp = chassis.baseHp + material.hpMod + roleStats.hpBonus;
-    let speed = propulsion.speed;
+    let hp = chassis.hp + (material.hpMod || 0) + roleStats.hpBonus;
+    let speed = chassis.speedBase + (material.speedMod || 0);
     
     // Select Weapons
     let weapons = [];
