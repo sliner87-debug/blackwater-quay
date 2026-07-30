@@ -34,6 +34,9 @@ const correctHeader = `    <header class="site-header" style="position: relative
                         <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a href="#" onclick="document.dispatchEvent(new KeyboardEvent('keydown', {key: 'k', ctrlKey: true}))" style="color: #94a3b8; font-weight: bold;">Search (Ctrl+K)</a>
+                </li>
             </ul>
         </nav>
     </header>`;

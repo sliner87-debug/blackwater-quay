@@ -57,7 +57,7 @@
 </head>
 <body class="shipyard-body">
 
-        <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
+            <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
         <nav class="nav-container">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">SABLEHOOK COVENANT</span>
@@ -86,6 +86,9 @@
                         <a href="dm_faction_renown.html">Faction Renown</a>
                         <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" onclick="document.dispatchEvent(new KeyboardEvent('keydown', {key: 'k', ctrlKey: true}))" style="color: #94a3b8; font-weight: bold;">Search (Ctrl+K)</a>
                 </li>
             </ul>
         </nav>
@@ -222,5 +225,6 @@
 <img src="images/vtt_env_annex_1785353181913.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote></div>
     </div>
+    <script src="search.js"></script>
 </body>
 </html>
