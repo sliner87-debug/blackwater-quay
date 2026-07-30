@@ -43,10 +43,50 @@
             </ul>
         </nav>
     </header>
-    <div class="container" style="padding: 150px 20px; text-align: center; color: white;">
-        <h1>Crew Generator</h1>
-        <p>Under Construction.</p>
+    <div class="container" style="padding: 100px 20px; text-align: center; color: white;">
+        <h1>Sablehook Crew Generator</h1>
+        <p>Recruit void-touched scoundrels and magetech specialists for your fleet.</p>
+        
+        <div style="margin: 20px 0;">
+            <label for="crew-count">Number of Recruits: </label>
+            <input type="number" id="crew-count" value="1" min="1" max="10" style="padding: 5px; width: 60px; font-size: 1.1em; background: #0f172a; color: white; border: 1px solid #475569; border-radius: 4px;">
+            <button id="btn-generate-crew" class="generate-btn" style="margin-left: 10px; padding: 8px 16px; background-color: #38bdf8; color: #0f172a; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Generate Crew</button>
+            <button id="btn-clear-crew" class="generate-btn" style="margin-left: 10px; padding: 8px 16px; background-color: #ef4444; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Clear Manifest</button>
+        </div>
+
+        <div id="crew-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px;">
+            <!-- Generated crew cards will appear here -->
+        </div>
     </div>
+    
+    <style>
+        .crew-card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid #475569;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
+        }
+        .crew-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+        .crew-card h3 {
+            margin-top: 0;
+            color: #38bdf8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+        }
+        .crew-card p {
+            margin: 8px 0;
+            font-size: 0.9em;
+            color: #cbd5e1;
+        }
+    </style>
+    <script src="crew_generator.js"></script>
     <script src="search.js"></script>
 </body>
 </html>
