@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crew Generator</title>
-    <link rel="stylesheet" href="webpage.css">
-</head>
-<body>
-        <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
+const fs = require('fs');
+const path = require('path');
+
+const dir = 'h:/Antigravity/Novel/';
+const files = fs.readdirSync(dir).filter(f => f.endsWith('.html') && !f.includes('master_novel'));
+
+const correctHeader = `    <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
         <nav class="nav-container">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">SABLEHOOK COVENANT</span>
@@ -39,10 +36,19 @@
                 </li>
             </ul>
         </nav>
-    </header>
-    <div class="container" style="padding: 150px 20px; text-align: center; color: white;">
-        <h1>Crew Generator</h1>
-        <p>Under Construction.</p>
-    </div>
-</body>
-</html>
+    </header>`;
+
+for (let file of files) {
+    const fullPath = path.join(dir, file);
+    let html = fs.readFileSync(fullPath, 'utf8');
+    
+    const regex = /<header class="site-header"[^>]*>[\s\S]*?<\/header>/;
+    
+    if (regex.test(html)) {
+        html = html.replace(regex, correctHeader);
+        fs.writeFileSync(fullPath, html, 'utf8');
+        console.log("Updated header in " + file);
+    } else {
+        console.log("No site-header found in " + file);
+    }
+}
