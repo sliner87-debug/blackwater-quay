@@ -886,3 +886,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// Print PDF
+const btnPrint = document.getElementById('btn-print-pdf');
+if(btnPrint) {
+    btnPrint.addEventListener('click', () => {
+        const element = document.getElementById('statblock-container');
+        const opt = {
+            margin:       0.5,
+            filename:     'Sovereign_Ship.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        // temporarily adjust colors for printing
+        element.style.background = '#fff';
+        element.style.color = '#000';
+        html2pdf().set(opt).from(element).save().then(() => {
+            element.style.background = '#1e293b';
+            element.style.color = '#e2e8f0';
+        });
+    });
+}
+
+// Export VTT
+const btnVTT = document.getElementById('btn-export-vtt');
+if(btnVTT) {
+    btnVTT.addEventListener('click', () => {
+        const name = document.getElementById('sb-name').innerText;
+        const vttData = {
+            name: name,
+            type: "vehicle",
+            system: {
+                attributes: {
+                    hp: { value: parseInt(document.getElementById('sb-hp').innerText) || 100, max: parseInt(document.getElementById('sb-hp').innerText) || 100 },
+                    ac: { value: parseInt(document.getElementById('sb-ac').innerText) || 15 }
+                },
+                details: {
+                    biography: { value: "Generated via Blackwater Quay Shipbuilder" }
+                }
+            }
+        };
+        const blob = new Blob([JSON.stringify(vttData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '_vtt.json';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+}

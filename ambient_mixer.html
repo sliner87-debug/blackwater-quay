@@ -313,5 +313,42 @@
     </script>
     <script src="search.js"></script>
     <script src="campaign_manager.js"></script>
+
+<script>
+window.addEventListener('storage', (e) => {
+    if(e.key === 'sablehook_combat_trigger' && e.newValue) {
+        try {
+            const data = JSON.parse(e.newValue);
+            console.log("Combat triggered for", data);
+            
+            // Stop all
+            document.querySelectorAll('audio').forEach(a => {
+                a.pause();
+                a.currentTime = 0;
+            });
+            
+            // Map theme to track ID
+            let targetId = 'track-docks'; // default
+            if(data.theme === 'void') targetId = 'track-void';
+            if(data.theme === 'undead') targetId = 'track-undead';
+            
+            const targetAudio = document.getElementById(targetId);
+            if(targetAudio) {
+                targetAudio.play();
+                // Find parent slider and set to 75
+                const card = targetAudio.closest('.mixer-track');
+                if(card) {
+                    const slider = card.querySelector('input[type="range"]');
+                    if(slider) {
+                        slider.value = 75;
+                        targetAudio.volume = 0.75;
+                    }
+                }
+            }
+        } catch(e) {}
+    }
+});
+</script>
+
 </body>
 </html>

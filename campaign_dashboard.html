@@ -121,6 +121,7 @@
         
         #hidden-file-input { display: none; }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
 </head>
 <body class="shipyard-body">
 
@@ -271,7 +272,8 @@ function printContractModal() {
         </style>
     `);
     
-    printWindow.document.write('</head><body >');
+    printWindow.document.write('    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+</head><body >');
     printWindow.document.write('<h1>' + title + '</h1>');
     printWindow.document.write(printContent);
     printWindow.document.write('</body></html>');
@@ -283,6 +285,52 @@ function printContractModal() {
         printWindow.close();
     }, 250);
 }
+
+
+function shareAsset(id) {
+    if(!window.BQCampaign) return;
+    // Search across all types for the asset
+    let found = null;
+    let type = null;
+    ['ships', 'fleets', 'encounters', 'contracts'].forEach(t => {
+        const asset = window.BQCampaign.getAsset(t, id);
+        if(asset) { found = asset; type = t; }
+    });
+    if(!found) return;
+    
+    const dataStr = JSON.stringify({ type: type, data: found });
+    const compressed = LZString.compressToEncodedURIComponent(dataStr);
+    const url = window.location.origin + window.location.pathname + '?share=' + compressed;
+    
+    navigator.clipboard.writeText(url).then(() => {
+        alert("Share link copied to clipboard!");
+    }).catch(err => {
+        prompt("Copy this link:", url);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const shareData = params.get('share');
+    if(shareData) {
+        try {
+            const decompressed = LZString.decompressFromEncodedURIComponent(shareData);
+            const parsed = JSON.parse(decompressed);
+            if(parsed && parsed.data) {
+                if(confirm(`You received a shared ${parsed.type} asset: "${parsed.data.name || parsed.data.title}". Do you want to save it to your campaign?`)) {
+                    if(!window.BQCampaign.state[parsed.type]) window.BQCampaign.state[parsed.type] = [];
+                    window.BQCampaign.state[parsed.type].push(parsed.data);
+                    window.BQCampaign.saveState();
+                    alert("Asset saved!");
+                    window.location.href = window.location.pathname; // remove query param
+                }
+            }
+        } catch(e) {
+            console.error("Failed to parse share link", e);
+            alert("Invalid or corrupted share link.");
+        }
+    }
+});
 
 function escapeHtml(unsafe) {
     if (typeof unsafe !== 'string') return unsafe;
@@ -350,7 +398,7 @@ function escapeHtml(unsafe) {
                     return {
                         title: item.name || "Unknown Ship",
                         meta: `Hull: ${item.type || 'Unknown'} | CR: ${item.cr || '?'}`,
-                        actionHTML: `<a href="shipyard.html?load=${item.id}" class="btn-view">Load in Shipyard</a>`
+                        actionHTML: `<a href="shipyard.html?load=${item.id}" class="btn-view">Load in Shipyard</a> <button class="btn-share" onclick="shareAsset(\'${item.id}\')" style="background: #3b82f6; color: #fff; padding: 5px; border: none; cursor: pointer; border-radius: 4px; margin-left: 5px;" title="Copy Share Link">&#128279;</button>`
                     }
                 });
                 
@@ -358,7 +406,7 @@ function escapeHtml(unsafe) {
                     return {
                         title: item.name || "Saved Fleet",
                         meta: `${item.ships ? item.ships.length : 0} Ships`,
-                        actionHTML: `<button class="btn-view" onclick="alert('Viewing fleets in-dashboard coming soon!')">View Fleet</button>`
+                        actionHTML: `<button class="btn-view" onclick="alert('Viewing fleets in-dashboard coming soon!')">View Fleet</button> <button class="btn-share" onclick="shareAsset(\'${item.id}\')" style="background: #3b82f6; color: #fff; padding: 5px; border: none; cursor: pointer; border-radius: 4px; margin-left: 5px;" title="Copy Share Link">&#128279;</button>`
                     }
                 });
                 
@@ -366,7 +414,7 @@ function escapeHtml(unsafe) {
                     return {
                         title: item.name || "Saved Encounter",
                         meta: `Total CR: ${item.totalCr || '?'} | Enemies: ${item.enemyCount || '?'}`,
-                        actionHTML: `<a href="dm_bestiary.html?load=${item.id}" class="btn-view">Load in Bestiary</a>`
+                        actionHTML: `<a href="dm_bestiary.html?load=${item.id}" class="btn-view">Load in Bestiary</a> <button class="btn-share" onclick="shareAsset(\'${item.id}\')" style="background: #3b82f6; color: #fff; padding: 5px; border: none; cursor: pointer; border-radius: 4px; margin-left: 5px;" title="Copy Share Link">&#128279;</button>`
                     }
                 });
                 
@@ -374,7 +422,7 @@ function escapeHtml(unsafe) {
                     return {
                         title: item.title || "Unknown Contract",
                         meta: `Client: ${escapeHtml(item.client || "")} | Type: ${escapeHtml(item.type || "")}`,
-                        actionHTML: `<button class="btn-view" onclick="viewContract('${item.id}')">View Contract</button>`
+                        actionHTML: `<button class="btn-view" onclick="viewContract('${item.id}')">View Contract</button> <button class="btn-share" onclick="shareAsset(\'${item.id}\')" style="background: #3b82f6; color: #fff; padding: 5px; border: none; cursor: pointer; border-radius: 4px; margin-left: 5px;" title="Copy Share Link">&#128279;</button>`
                     }
                 });
             };

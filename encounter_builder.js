@@ -675,3 +675,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// Soundscape Automation trigger
+const btnRoll = document.getElementById('btn-roll-initiative');
+if(btnRoll) {
+    btnRoll.addEventListener('click', () => {
+        const loc = document.getElementById('encounter-location').value;
+        const theme = document.getElementById('encounter-theme').value;
+        localStorage.setItem('sablehook_combat_trigger', JSON.stringify({ location: loc, theme: theme, time: Date.now() }));
+    });
+}
+
+// Print PDF
+const btnPrint = document.getElementById('btn-print-pdf');
+if(btnPrint) {
+    btnPrint.addEventListener('click', () => {
+        const element = document.getElementById('encounter-output');
+        const opt = {
+            margin:       0.5,
+            filename:     'Sovereign_Encounter.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        element.style.background = '#fff';
+        element.style.color = '#000';
+        html2pdf().set(opt).from(element).save().then(() => {
+            element.style.background = 'transparent';
+            element.style.color = '#e2e8f0';
+        });
+    });
+}
+
+// Export VTT
+const btnVTT = document.getElementById('btn-export-vtt');
+if(btnVTT) {
+    btnVTT.addEventListener('click', () => {
+        // Collect all monsters
+        const monsters = [];
+        document.querySelectorAll('.monster-stat-block').forEach(m => {
+            const name = m.querySelector('h3').innerText.trim();
+            const hpMatch = m.innerText.match(/Hit Points:\s*(\d+)/);
+            const acMatch = m.innerText.match(/Armor Class:\s*(\d+)/);
+            monsters.push({
+                name: name,
+                type: "npc",
+                system: {
+                    attributes: {
+                        hp: { value: hpMatch ? parseInt(hpMatch[1]) : 50, max: hpMatch ? parseInt(hpMatch[1]) : 50 },
+                        ac: { value: acMatch ? parseInt(acMatch[1]) : 13 }
+                    }
+                }
+            });
+        });
+        
+        const blob = new Blob([JSON.stringify(monsters, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'encounter_vtt.json';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+}
