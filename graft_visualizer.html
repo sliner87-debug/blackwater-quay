@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomancer's Operating Table - Blackwater Quay</title>
+    
+    <!-- Link to external styling -->
+    <link rel="stylesheet" href="webpage.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Export Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        .operating-table-container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 80px);
+        }
+
+        .visualizer-section {
+            flex: 1;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .visualizer-canvas {
+            flex: 1;
+            background-color: #000;
+            background-image: 
+                linear-gradient(rgba(217, 119, 6, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(217, 119, 6, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        /* Abstract Layers using mix-blend-mode */
+        .graft-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mix-blend-mode: screen;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .graft-layer.hidden {
+            opacity: 0;
+        }
+
+        /* Specific alignment overrides */
+        #layer-base { mix-blend-mode: normal; z-index: 1; }
+        #layer-core { z-index: 2; transform: scale(0.3) translateY(-10%); }
+        #layer-eye { z-index: 3; transform: scale(0.2) translateY(-120%); }
+        #layer-l-arm { z-index: 4; transform: scale(0.5) translateX(-40%); }
+        #layer-r-arm { z-index: 5; transform: scale(0.5) translateX(40%); transform-origin: center; }
+
+        .controls-section {
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .control-panel, .stat-block-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .panel-title {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #090c0f;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        /* Stat Block Styling */
+        .stat-block {
+            background-color: #fdf6e3;
+            color: #1a1a1a;
+            padding: 1.5rem;
+            border: 2px solid #d4af37;
+            font-family: 'Georgia', serif;
+            border-radius: 4px;
+        }
+        
+        .stat-block h1 {
+            color: #8b0000;
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .stat-meta {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .stat-divider {
+            height: 2px;
+            background-color: #8b0000;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .btn-export {
+            flex: 1;
+            padding: 0.75rem;
+            background-color: var(--accent-gold);
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-export:hover { background-color: #f59e0b; }
+        
+        .btn-vtt {
+            flex: 1;
+            padding: 0.75rem;
+            background-color: #ef4444;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-vtt:hover { background-color: #dc2626; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo-link">
+                <span class="logo-text">SABLEHOOK COVENANT</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="campaign_dashboard.html">Campaign Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="operating-table-container">
+        <!-- Visualizer -->
+        <div class="visualizer-section">
+            <div class="visualizer-canvas" id="export-canvas">
+                <!-- Base Silhouette -->
+                <img id="layer-base" class="graft-layer" src="images/graft_base_body.jpg" alt="Base Silhouette" onerror="this.style.display='none'">
+                
+                <!-- Grafts -->
+                <img id="layer-core" class="graft-layer hidden" src="" alt="Core">
+                <img id="layer-eye" class="graft-layer hidden" src="" alt="Eye">
+                <img id="layer-l-arm" class="graft-layer hidden" src="" alt="Left Arm">
+                <!-- Flips the right arm image on the X axis to fit the other side -->
+                <img id="layer-r-arm" class="graft-layer hidden" src="" alt="Right Arm" style="transform: scale(0.5) translateX(40%) scaleX(-1);">
+            </div>
+            <div style="padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+                *Da Vinci abstract overlay mode active. All grafts rendered via Magitech aether-screen.*
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-section">
+            <div class="control-panel">
+                <h2 class="panel-title">Operating Table</h2>
+                
+                <div class="form-group">
+                    <label>Character Name</label>
+                    <input type="text" id="char-name" value="Subject Alpha" style="width:100%; padding: 0.75rem; background:#090c0f; border:1px solid #222a36; color:#f1f5f9; border-radius:6px; font-family:'Inter';">
+                </div>
+
+                <div class="form-group">
+                    <label>Core System (Heart)</label>
+                    <select id="sel-core">
+                        <option value="none">Organic Heart (None)</option>
+                        <option value="steam">Steam-Powered Boiler</option>
+                        <option value="bio">Mutated Alchemical Gland</option>
+                        <option value="void">Void-Crystal Engine</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ocular Prosthesis</label>
+                    <select id="sel-eye">
+                        <option value="none">Organic Eyes (None)</option>
+                        <option value="runic">Golden Runic Eye</option>
+                        <option value="chronal">Chronal Monocle</option>
+                        <option value="void">Abyssal Shadow Orb</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Left Arm Graft</label>
+                    <select id="sel-l-arm">
+                        <option value="none">Organic Arm (None)</option>
+                        <option value="clockwork">Brass Clockwork Limb</option>
+                        <option value="necrotic">Necrotic Fleshwarped Claw</option>
+                        <option value="aether">Aether-Infused Gauntlet</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Right Arm Graft</label>
+                    <select id="sel-r-arm">
+                        <option value="none">Organic Arm (None)</option>
+                        <option value="clockwork">Brass Clockwork Limb</option>
+                        <option value="necrotic">Necrotic Fleshwarped Claw</option>
+                        <option value="aether">Aether-Infused Gauntlet</option>
+                    </select>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-export" id="btn-print">Print to PDF</button>
+                    <button class="btn-vtt" id="btn-vtt">Export to VTT</button>
+                </div>
+            </div>
+
+            <!-- Auto-Generated Stat Block -->
+            <div class="stat-block-panel">
+                <h2 class="panel-title">Mechanical Output</h2>
+                <div class="stat-block" id="generated-stats">
+                    <h1 id="stat-name">Subject Alpha</h1>
+                    <div class="stat-meta">Medium humanoid (Augmented), unaligned</div>
+                    <div class="stat-divider"></div>
+                    <strong>Armor Class</strong> <span id="stat-ac">12 (Unarmored)</span><br>
+                    <strong>Hit Points</strong> <span id="stat-hp">30</span><br>
+                    <strong>Speed</strong> 30 ft.<br>
+                    <div class="stat-divider"></div>
+                    <p style="margin-bottom: 5px;"><strong>Active Grafts & Abilities:</strong></p>
+                    <div id="stat-abilities" style="font-size: 0.9rem; line-height: 1.5;">
+                        <em>No active grafts installed. Subject is fully organic.</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="graft_visualizer.js"></script>
+</body>
+</html>
