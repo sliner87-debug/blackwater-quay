@@ -386,3 +386,36 @@ With a soft *crack* of imploding air and the smell of scorched ozone, he vanishe
 
 The war for the Quay was over. The war for Time had just begun.
 
+
+
+
+***
+
+## Epilogue: The Smoke of Unwritten Time
+
+Deep beneath the harbor, where the Tri-Weave’s crystallization wards locked the sea floor into ironclad logic, the ether shivered.
+
+It was not the heavy, sulfurous pressure of Asmodeus’s planar gaze, nor was it the dying thrash of Covenant loyalists. It was a tear—thin as a razor's edge, bleeding violet drift-fire into the dark water.
+
+Banki’s grey-green eyes snapped toward the eastern window of the Citadel. Beneath his human skin, the hazelnut-sized skull pulsed with a sharp, sickening spike of vertigo.
+
+"Banki?" Sable's voice was crisp, her fingers resting on the pommel of her sidearm. "The wards?"
+
+"The wards are holding," Banki whispered, his mind-sense stretching out past the breakwater. "They aren't being breached from the outside. Something is stepping *between* them."
+
+Out in the bay, shrouded in the freezing night mist, the silhouette of a vessel glided across the tide. It carried no lanterns. Its sails were ragged black webbing, its hull forged from warped Consortium brass and living leviathan rib-bone. It left no wake upon the water, for the sea beneath it was half a second behind the ship itself.
+
+On the high bow stood a giant of a man—broad-shouldered, carrying the heavy, curved horns of a half-minotaur, wrapped in a salt-crusted captain's coat that smelled of old gunpowder and unstitched reality.
+
+Mikhailis Vael-Kaelor opened his eyes. Where iris and pupil should have been, twin pools of swirling violet chronal dust tracked seven different versions of the city at once. He saw Blackwater Quay as it was, as it had been under the Covenant, and as it would burn three months from tonight.
+
+"Well now," Kael drawled, his voice a low, gravelly rumble that vibrated in the marrow of every sleeping soul in the harbor. He wiped a streak of dark, ozone-scented blood from beneath his nose and smiled a predator's crooked grin. "Looks like someone went and bought the Quay out from under the dead."
+
+He did not wait for a rowboat. He did not ask the Tri-Weave for safe passage.
+
+Kael focused his fractured sight, picked out a ribbon of smoke where the harbor wall had collapsed forty years ago, and stepped *sideways*.
+
+With a soft *crack* of imploding air and the smell of scorched ozone, he vanished from the deck and landed on the stone piers of Blackwater Quay.
+
+The war for the Quay was over. The war for Time had just begun.
+
