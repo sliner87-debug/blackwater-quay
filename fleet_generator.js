@@ -99,7 +99,7 @@ function renderShipCard(ship) {
         weaponHTML += `<div class="weapon-item"><strong>${w.name}:</strong> ${w.damage} (${w.range})</div>`;
     });
     
-    return \`
+    return `
         <div class="ship-card ${ship.role}">
             <div class="ship-role">${ship.role.toUpperCase()}</div>
             <div class="ship-name">${ship.name}</div>
@@ -126,7 +126,7 @@ function renderShipCard(ship) {
                 ${weaponHTML}
             </div>
         </div>
-    \`;
+    `;
 }
 
 document.getElementById('btn-generate-fleet').addEventListener('click', () => {

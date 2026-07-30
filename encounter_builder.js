@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
             let m = pool[Math.floor(Math.random() * pool.length)];
             let hp = rollHp(m.hpDice);
             
-            html += \`
+            html += `
             <div style="background: rgba(30, 41, 59, 0.9); border: 1px solid #475569; padding: 10px 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
-                    <strong style="color: #e2e8f0; font-size: 1.1em;">\${m.name}</strong>
-                    <div style="font-size: 0.85em; color: #94a3b8;">CR \${m.cr} | AC \${m.ac}</div>
+                    <strong style="color: #e2e8f0; font-size: 1.1em;">${m.name}</strong>
+                    <div style="font-size: 0.85em; color: #94a3b8;">CR ${m.cr} | AC ${m.ac}</div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <span style="color: #d4af37; font-weight: bold; font-family: monospace; font-size: 1.2em;">\${hp} HP</span>
+                    <span style="color: #d4af37; font-weight: bold; font-family: monospace; font-size: 1.2em;">${hp} HP</span>
                     <input type="number" placeholder="DMG" style="width: 60px; padding: 5px; background: #0f172a; color: #fff; border: 1px solid #ef4444; border-radius: 3px;">
                 </div>
-            </div>\`;
+            </div>`;
         }
         
         html += '</div>';
