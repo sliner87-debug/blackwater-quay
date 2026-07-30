@@ -1,184 +1,132 @@
-// Utility to pick a random key from an object
-function getRandomKey(obj) {
-    const keys = Object.keys(obj);
-    return keys[Math.floor(Math.random() * keys.length)];
-}
-
-// Faction-specific themes
-const factionThemes = {
-    abyssal: {
-        materials: ["abyssalwood", "bone", "obsidian"],
-        cores: ["necrotic", "shadow", "fiend"],
-        propulsion: ["tentacles", "void", "sails"],
-        weapons: ["necrotic", "acid", "harpoon", "disruptor"],
-        names: ["Siren's Call", "Depth Stalker", "Void Leviathan", "Abyssal Maw", "Drowned King", "Shadow's Reach"]
-    },
-    exchange: {
-        materials: ["brass", "iron", "steel"],
-        cores: ["clockwork", "radiant", "elemental"],
-        propulsion: ["thrusters", "jets", "sails"],
-        weapons: ["gatling", "lightning", "magma", "cryo"],
-        names: ["Golden Ledger", "Profit's Margin", "Brass Sovereign", "Clockwork Promise", "Gilded Talon", "Iron Deficit"]
-    },
-    sablehook: {
-        materials: ["wood", "iron", "abyssalwood"],
-        cores: ["fey", "elemental", "shadow"],
-        propulsion: ["sails", "oars", "thrusters"],
-        weapons: ["ballista", "harpoon", "gatling", "mine"],
-        names: ["Bloody Wake", "Scoundrel's Luck", "Riptide", "Crimson Corsair", "Black Flag", "Mutiny's Ghost"]
-    },
-    random: null // Handled dynamically
+// fleet_generator.js
+// Procedural Fleet Engine for Blackwater Quay
+const fleetData = {
+    factions: [
+        { id: "thessalan", name: "Thessalan Consortium", hulls: ["Ironclad Dreadnought", "Brass-Plated Frigate", "Clockwork Skiff"], colors: ["Brass", "Black", "Crimson"] },
+        { id: "covenant", name: "The Covenant of the Cleansing Flame", hulls: ["Sun-Barque", "Purifier Galleon", "Radiant Pinnace"], colors: ["White", "Gold", "Silver"] },
+        { id: "crimson", name: "The Crimson Corsairs", hulls: ["Bone-Plated Cutter", "Slaver's Carrack", "Blood-Wake Gunboat"], colors: ["Red", "Bone", "Rust"] },
+        { id: "void", name: "Void-Touched Horrors", hulls: ["Flesh-Tethered Hulk", "Abyssal Leviathan", "Screaming Nautilus"], colors: ["Void-Black", "Deep Purple", "Sickly Green"] }
+    ],
+    adjectives: ["Relentless", "Damned", "Silent", "Iron", "Vengeful", "Howling", "Shattered", "Burning", "Sunken"],
+    nouns: ["Wake", "Tide", "Revenant", "Harpoon", "Kraken", "Scourge", "Vanguard", "Prophet", "Wraith"],
+    captainTraits: ["Ruthless tactician", "Void-mad zealot", "Brilliant artillerist", "Mutated abomination", "Cunning trickster", "Fanatical inquisitor"],
+    quirks: [
+        "The ship's hull bleeds a thick black ichor.",
+        "The crew fights in complete, unnatural silence.",
+        "The cannons fire shrieking aether-shells.",
+        "The ship leaves a trail of frozen water in its wake.",
+        "The rigging is made of woven tendons."
+    ]
 };
 
-const shipRoles = {
-    flagship: { chassisPool: ["flagship", "galleon", "dreadnought", "behemoth"], weaponCount: 3, hpBonus: 200, acBonus: 2 },
-    escort: { chassisPool: ["frigate", "clipper", "catamaran", "xoriat"], weaponCount: 2, hpBonus: 50, acBonus: 1 },
-    gunboat: { chassisPool: ["gunboat", "pinnace", "skiff", "corpse"], weaponCount: 1, hpBonus: 0, acBonus: 0 }
-};
+const getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-function generateShip(role, faction) {
-    const theme = faction === "random" ? null : factionThemes[faction];
-    const roleStats = shipRoles[role];
-    
-    // Select Chassis
-    const chassisId = roleStats.chassisPool[Math.floor(Math.random() * roleStats.chassisPool.length)];
-    const chassis = catalog.chassis[chassisId];
-    
-    // Select Material
-    let matId = theme ? theme.materials[Math.floor(Math.random() * theme.materials.length)] : getRandomKey(catalog.materials);
-    const material = catalog.materials[matId];
-    
-    // Select Core
-    let coreId = theme ? theme.cores[Math.floor(Math.random() * theme.cores.length)] : getRandomKey(catalog.cores);
-    const core = catalog.cores[coreId];
-    
-    // Select Propulsion
-    let propId = theme ? theme.propulsion[Math.floor(Math.random() * theme.propulsion.length)] : getRandomKey(catalog.propulsion);
-    const propulsion = catalog.propulsion[propId];
-    
-    // Calculate Base Stats
-    let ac = 10 + (material.acBonus || 0) + roleStats.acBonus;
-    if(chassisId === "dreadnought") ac += 2;
-    if(chassisId === "skiff") ac -= 2;
-    
-    let hp = chassis.hp + (material.hpMod || 0) + roleStats.hpBonus;
-    let speed = chassis.speedBase + (material.speedMod || 0);
-    
-    // Select Weapons
-    let weapons = [];
-    for(let i=0; i<roleStats.weaponCount; i++) {
-        let weapId = theme ? theme.weapons[Math.floor(Math.random() * theme.weapons.length)] : getRandomKey(catalog.weapons);
-        weapons.push(catalog.weapons[weapId]);
+function generateFleet(factionId, size) {
+    let faction = fleetData.factions.find(f => f.id === factionId);
+    if (!faction) faction = getRandom(fleetData.factions);
+
+    let fleet = [];
+    const count = size === "small" ? 3 : size === "medium" ? 5 : 8;
+
+    for (let i = 0; i < count; i++) {
+        let isFlagship = i === 0;
+        let shipName = `The ${getRandom(fleetData.adjectives)} ${getRandom(fleetData.nouns)}`;
+        let hull = getRandom(faction.hulls);
+        if (isFlagship && faction.id === "void") hull = "Behemoth Flesh-Ship (Flagship)";
+        else if (isFlagship) hull = `Heavy ${hull} (Flagship)`;
+        
+        fleet.push({
+            name: shipName,
+            faction: faction.name,
+            hull: hull,
+            hp: isFlagship ? 250 : Math.floor(Math.random() * 50) + 80,
+            ac: isFlagship ? 18 : 15,
+            captain: isFlagship ? getRandom(fleetData.captainTraits) : "Standard Officer",
+            quirk: getRandom(fleetData.quirks),
+            isFlagship: isFlagship
+        });
     }
-    
-    // Select Name
-    let shipName = "Unknown Vessel";
-    if (theme) {
-        shipName = theme.names[Math.floor(Math.random() * theme.names.length)] + " " + Math.floor(Math.random() * 99 + 1);
-    } else {
-        shipName = "Corsair " + Math.floor(Math.random() * 999);
-    }
-    
-    return {
-        role: role,
-        name: shipName,
-        chassisName: chassis.name,
-        materialName: material.name,
-        coreName: core.name,
-        propName: propulsion.name,
-        ac: ac,
-        hp: hp,
-        speed: speed,
-        weapons: weapons
-    };
+    return fleet;
 }
 
-function renderShipCard(ship) {
-    let weaponHTML = '';
-    ship.weapons.forEach(w => {
-        weaponHTML += `<div class="weapon-item"><strong>${w.name}:</strong> ${w.damage} (${w.range})</div>`;
-    });
-    
-    return `
-        <div class="ship-card ${ship.role}">
-            <div class="ship-role">${ship.role.toUpperCase()}</div>
-            <div class="ship-name">${ship.name}</div>
-            <div class="ship-chassis">${ship.materialName} ${ship.chassisName}</div>
-            
-            <div class="stat-row">
-                <span class="stat-label">Armor Class</span>
-                <span class="stat-value">${ship.ac}</span>
-            </div>
-            <div class="stat-row">
-                <span class="stat-label">Hit Points</span>
-                <span class="stat-value">${ship.hp}</span>
-            </div>
-            <div class="stat-row">
-                <span class="stat-label">Speed</span>
-                <span class="stat-value">${ship.speed}</span>
-            </div>
-            <div class="stat-row">
-                <span class="stat-label">Power Core</span>
-                <span class="stat-value">${ship.coreName}</span>
-            </div>
-            
-            <div class="weapon-list">
-                ${weaponHTML}
-            </div>
-        </div>
-    `;
-}
-
-document.getElementById('btn-generate-fleet').addEventListener('click', () => {
-    // Play dice roll sound
-    const audio = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=dice-roll.mp3');
-    audio.volume = 0.5;
-    audio.play().catch(e => console.log('Audio play prevented:', e));
-
-    const threat = document.getElementById('fleet-threat').value;
-    const faction = document.getElementById('fleet-faction').value;
-    const output = document.getElementById('fleet-output');
-    
-    let fleetComposition = [];
-    if (threat === 'skirmish') {
-        fleetComposition = ['escort', 'gunboat', 'gunboat'];
-    } else if (threat === 'raid') {
-        fleetComposition = ['flagship', 'escort', 'escort', 'gunboat', 'gunboat', 'gunboat'];
-    } else if (threat === 'armada') {
-        fleetComposition = ['flagship', 'flagship', 'escort', 'escort', 'escort', 'escort', 'gunboat', 'gunboat', 'gunboat', 'gunboat', 'gunboat', 'gunboat', 'gunboat', 'gunboat'];
-    }
-    
+function renderFleet(fleet) {
     let html = '';
-    let fleetData = [];
-    fleetComposition.forEach(role => {
-        const ship = generateShip(role, faction);
-        fleetData.push(ship);
-        html += renderShipCard(ship);
+    fleet.forEach((ship, index) => {
+        let borderColor = ship.isFlagship ? "#d4af37" : "#475569";
+        html += `
+            <div class="ship-card" data-index="${index}" style="border: 1px solid ${borderColor}; padding: 15px; margin-bottom: 10px; border-radius: 5px; background: rgba(15, 23, 42, 0.8);">
+                <h3 style="margin-top: 0; color: ${ship.isFlagship ? '#d4af37' : '#38bdf8'};">${ship.name}</h3>
+                <p><strong>Hull Type:</strong> ${ship.hull} | <strong>Faction:</strong> ${ship.faction}</p>
+                <p><strong>Combat Stats:</strong> AC ${ship.ac} | HP <input type="number" class="hp-tracker" data-index="${index}" value="${ship.hp}" style="width: 60px; background: #0f172a; color: white; border: 1px solid #475569;"></p>
+                ${ship.isFlagship ? `<p><strong>Captain:</strong> ${ship.captain}</p>` : ''}
+                <p style="font-size: 0.9em; font-style: italic; color: #94a3b8;">"${ship.quirk}"</p>
+                <button class="btn-delete-ship" data-index="${index}" style="margin-top: 10px; background-color: #ef4444; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">Sink Ship</button>
+            </div>
+        `;
     });
-    
-    output.innerHTML = html;
-    
-    // Save to LocalStorage
-    localStorage.setItem('bq_saved_fleet', html);
-    localStorage.setItem('bq_saved_fleet_json', JSON.stringify(fleetData, null, 2));
-});
+    return html;
+}
 
-// Restore on load
 document.addEventListener('DOMContentLoaded', () => {
-    const savedFleet = localStorage.getItem('bq_saved_fleet');
-    if (savedFleet) {
-        document.getElementById('fleet-output').innerHTML = savedFleet;
-    }
+    const display = document.getElementById('fleet-display');
+    const factionSelect = document.getElementById('fleet-faction');
+    const sizeSelect = document.getElementById('fleet-size');
+    const btnGenerate = document.getElementById('btn-generate-fleet');
+    const btnClear = document.getElementById('btn-clear-fleet');
     
-    const btnCopy = document.getElementById('btn-copy-fleet');
-    if (btnCopy) {
-        btnCopy.addEventListener('click', () => {
-            const json = localStorage.getItem('bq_saved_fleet_json');
-            if (json) {
-                navigator.clipboard.writeText(json).then(() => {
-                    btnCopy.textContent = "Copied!";
-                    setTimeout(() => btnCopy.textContent = "Copy as JSON", 2000);
-                });
+    let currentFleet = [];
+
+    // Load from LocalStorage
+    const savedFleet = localStorage.getItem('sablehook_fleet');
+    if (savedFleet) {
+        currentFleet = JSON.parse(savedFleet);
+        display.innerHTML = renderFleet(currentFleet);
+        attachEventListeners();
+    }
+
+    function saveFleet() {
+        localStorage.setItem('sablehook_fleet', JSON.stringify(currentFleet));
+    }
+
+    function attachEventListeners() {
+        // HP Tracker changes
+        const hpTrackers = document.querySelectorAll('.hp-tracker');
+        hpTrackers.forEach(input => {
+            input.addEventListener('change', (e) => {
+                const idx = e.target.getAttribute('data-index');
+                currentFleet[idx].hp = parseInt(e.target.value);
+                saveFleet();
+            });
+        });
+
+        // Delete Ship
+        const deleteBtns = document.querySelectorAll('.btn-delete-ship');
+        deleteBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = e.target.getAttribute('data-index');
+                currentFleet.splice(idx, 1);
+                display.innerHTML = renderFleet(currentFleet);
+                saveFleet();
+                attachEventListeners();
+            });
+        });
+    }
+
+    if (btnGenerate) {
+        btnGenerate.addEventListener('click', () => {
+            currentFleet = generateFleet(factionSelect.value, sizeSelect.value);
+            display.innerHTML = renderFleet(currentFleet);
+            saveFleet();
+            attachEventListeners();
+        });
+    }
+
+    if (btnClear) {
+        btnClear.addEventListener('click', () => {
+            if(confirm("Are you sure you want to clear the active armada?")) {
+                currentFleet = [];
+                localStorage.removeItem('sablehook_fleet');
+                display.innerHTML = '';
             }
         });
     }

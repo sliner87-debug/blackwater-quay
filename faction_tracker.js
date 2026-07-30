@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const factions = ['thessalan', 'covenant', 'crimson', 'ironborn'];
+    const factions = ['thessalan', 'covenant', 'crimson', 'ironborn', 'asmodeus', 'xoriat'];
     
     function updateFaction(faction) {
         const slider = document.getElementById(`slider-${faction}`);
