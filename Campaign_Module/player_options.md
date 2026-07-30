@@ -156,6 +156,38 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Description:** Your larynx is hollowed out and replaced with a resonant fey-metal mesh infused with necrotic cantor marrow.
 *   **Effect:** Once per day, as a standard action, you can release a concussive scream in a 15-ft. cone. All creatures in the area take 4d6 sonic damage and are *deafened* for 1d4 rounds (Fort DC 16 half, negates deafened).
 
+
+##### Obsidian Fey-Iron Jaw (Tri-Weave)
+*   **Cost:** 9,000 gp.
+*   **Description:** Your lower jaw is surgically shattered and replaced with a massive fey-metal and cold-iron mandible quenched in dark soul-ichor.
+*   **Effect:** You gain a bite attack (1d6 Medium). This bite naturally bypasses Damage Reduction as if it were Cold Iron, Magic, and Evil.
+*   **Drawback:** You suffer a permanent -2 penalty on Diplomacy and Bluff checks due to your terrifying visage and slightly slurred speech.
+
+##### Siren's Lure Vocal Cords (Arcane)
+*   **Cost:** 7,500 gp.
+*   **Description:** Spliced vocal cords harvested from aquatic sirens, strung with silver-wire.
+*   **Effect:** Once per day, by singing a short melody, you can cast *Suggestion* (Will DC 16). Furthermore, you gain a +4 competence bonus on Perform (Sing) checks.
+
+##### Kraken-Kin Gills (Biomantic)
+*   **Cost:** 4,000 gp.
+*   **Description:** Deep slits are cut into the sides of your neck and lined with pulsing, deep-purple kraken-spawn tissue.
+*   **Effect:** You can breathe underwater indefinitely. You also gain a +2 resistance bonus on saving throws against inhaled poisons and gases.
+
+##### Phrenic-Node Crown (Psionic)
+*   **Cost:** 12,000 gp.
+*   **Description:** Illithid-kin brain nodes are integrated directly into your skull, protruding slightly as pale, glowing bumps beneath the scalp.
+*   **Effect:** You gain Telepathy up to 100 ft. Additionally, the node creates an *Alien Mental Fortress*, granting you a +2 insight bonus on Will saves against enchantments, charms, and compulsions.
+
+##### Gorgon-Breath Gland (Arcane)
+*   **Cost:** 8,000 gp.
+*   **Description:** A heavy, alchemically-treated gland sits in the back of your throat, emitting a faint smell of sulfur and wet stone.
+*   **Effect:** Once per day, as a standard action, you can exhale a 15-ft. cone of petrifying green gas. Creatures in the cone must succeed on a Fort DC 15 save or suffer a -4 penalty to Dexterity for 1d4 rounds as their joints stiffen into stone.
+
+##### Mind-Flayer Mandibles (Psionic)
+*   **Cost:** 10,000 gp.
+*   **Description:** Your teeth are removed and your mouth is split four ways, lined with rows of hooked, lamprey-like teeth. 
+*   **Effect:** Your bite attack deals 1d6 piercing damage plus 1d4 psychic damage. Whenever you deal psychic damage with this bite, you heal 1 hit point.
+
 ---
 
 #### B. EYES SLOT GRAFTS
@@ -169,6 +201,38 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Cost:** 4,000 gp.
 *   **Description:** Spliced eyes harvested from aquatic sea-wolves, reflecting light with a silver mirror-sheen.
 *   **Effect:** You gain darkvision 60 ft. You can see clearly through water, mist, or silt up to 60 ft., completely ignoring concealment penalties caused by murky liquids or fog.
+
+
+##### Void-Glass Optical Lens (Arcane)
+*   **Cost:** 6,000 gp.
+*   **Description:** One eye is replaced entirely by a glowing green void-glass lens connected to your brain by silver wires.
+*   **Effect:** You gain the permanent effects of *See Invisibility*. 
+*   **Drawback:** The lens is hyper-sensitive to light. You suffer a -2 penalty on saving throws against blinding effects or light-based attacks (like *Color Spray*).
+
+##### Mindsight Pineal Gland (Psionic)
+*   **Cost:** 14,000 gp.
+*   **Description:** A third eye is implanted in the center of your forehead, usually kept tightly shut behind a leather flap.
+*   **Effect:** As a swift action, you can open the eye. While open, you gain Blindsight 30 ft. However, processing the psychic sensory input deals 1 point of nonlethal damage to you at the start of every round the eye remains open.
+
+##### Dragon-Scale Lids (Arcane)
+*   **Cost:** 3,000 gp.
+*   **Description:** Your eyelids are replaced with overlapping, brassy dragon scales that lock tightly shut.
+*   **Effect:** You gain immunity to magic sleep effects and a +2 natural armor bonus against critical hit confirmations aimed at your face.
+
+##### Thessalan Six-Eye Cluster (Tri-Weave)
+*   **Cost:** 15,000 gp.
+*   **Description:** Six small, spider-like secondary eyes are grafted in a ring around your native eye sockets, blinking out of sync.
+*   **Effect:** You gain *Uncanny Dodge* (you retain your Dexterity bonus to AC even if caught flat-footed or struck by an invisible attacker). If you already have Uncanny Dodge from a class, you gain *Improved Uncanny Dodge* instead.
+
+##### Deep-Trench Thermal Corneas (Biomantic)
+*   **Cost:** 4,500 gp.
+*   **Description:** Harvested from abyssal predators, these milky-white lenses detect heat instead of light.
+*   **Effect:** You gain Infravision. You can see the heat signatures of living creatures up to 60 ft., allowing you to track warm-blooded prey by their lingering thermal footprints (Survival DC 15 to track recent movement).
+
+##### Seraphim's Gaze (Divine)
+*   **Cost:** 11,000 gp.
+*   **Description:** Suture harvested these glowing golden eyes from a captured celestial. They weep a faint, luminous fluid.
+*   **Effect:** Once per day, you can unleash a smiting gaze as a swift action. The next evil-aligned creature that meets your gaze within 30 ft. takes 3d6 radiant damage (Will DC 16 half).
 
 ---
 
@@ -184,6 +248,39 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Description:** A pair of small, jointed chitinous limbs are grafted beneath your primary shoulders.
 *   **Effect:** These limbs are too weak to hold weapons, but they grant a +4 racial bonus on Sleight of Hand, Climb, and Disable Device checks. You can hold minor items (such as potions or lockpicks) in these limbs, allowing you to draw them as a free action.
 
+
+##### Bone-Blade Forearms (Biomantic)
+*   **Cost:** 6,000 gp.
+*   **Description:** Razor-sharp bone-blades are housed within thick tracks of scar tissue along your forearms, snapping out when you flex your wrists.
+*   **Effect:** You gain two retractable natural attacks (1d6 piercing/slashing for Medium). You gain a +4 bonus on checks made to conceal these weapons.
+
+##### Bio-Electric Shunts (Arcane)
+*   **Cost:** 8,000 gp.
+*   **Description:** Copper wiring and bio-electric glands from a Sea-Wolf are wired directly into your arm musculature.
+*   **Effect:** As a free action, you can electrify your arms. While active, your unarmed strikes or natural claw attacks deal an extra +1d4 electricity damage.
+
+##### Kraken-Tentacle Whip (Biomantic)
+*   **Cost:** 10,000 gp.
+*   **Description:** One of your arms is amputated at the shoulder and replaced entirely by a heavy, suckered kraken tentacle.
+*   **Effect:** The tentacle grants you a natural slam attack (1d6 bludgeoning) with a **10 ft. reach**. You gain a +4 racial bonus on grapple checks made with this arm.
+*   **Drawback:** You can no longer wield martial weapons or perform fine somatic spell components with this limb.
+
+##### Chitinous Rigger-Claws (Tri-Weave)
+*   **Cost:** 5,500 gp.
+*   **Description:** Your forearms are covered in heavy, overlapping insectoid chitin plates ending in jagged edges.
+*   **Effect:** When you fight defensively or take the total defense action, you gain an additional +2 natural armor bonus to AC.
+
+##### Marrow-Injected Muscle (Biomantic)
+*   **Cost:** 7,500 gp.
+*   **Description:** Scrag marrow is injected violently into your biceps and triceps, causing them to bulge with unnatural, fibrous mass.
+*   **Effect:** You gain a permanent +2 inherent bonus to your Strength score.
+*   **Drawback:** The massive, twitching muscles ruin your fine motor control, inflicting a permanent -2 penalty to your Dexterity score.
+
+##### Ghost-Weave Fingers (Psionic/Arcane)
+*   **Cost:** 12,000 gp.
+*   **Description:** Your hands are subjected to localized phase-shifting, appearing translucent and slightly out of focus.
+*   **Effect:** Once per round, when making a melee attack with a light weapon or unarmed strike, you can declare a *Ghost-Strike*. That single attack resolves as a melee touch attack, ignoring armor, natural armor, and shield bonuses.
+
 ---
 
 #### D. LEGS SLOT GRAFTS
@@ -197,6 +294,37 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Cost:** 6,500 gp.
 *   **Description:** Spliced troll sinew and coiled fey-metal wiring replace your calf muscles.
 *   **Effect:** Your land speed increases by +10 ft. (enhancement bonus). You also gain a +8 enhancement bonus on Jump checks, and you always count as having a running start for jump checks.
+
+
+##### Blink-Hound Tendons (Arcane)
+*   **Cost:** 12,000 gp.
+*   **Description:** The native tendons in your calves and ankles are replaced with phase-shifting tissue harvested from a Blink Hound.
+*   **Effect:** Once per encounter, as a swift action, you can teleport up to 15 feet to an unoccupied space you can see.
+
+##### Scrag-Toad Thighs (Biomantic)
+*   **Cost:** 5,000 gp.
+*   **Description:** Massive, bloated thigh muscles splice your lower body, stretching your skin taut.
+*   **Effect:** Your vertical and horizontal jump distances are tripled. Additionally, the shock-absorbing tissue grants you immunity to the first 30 feet of falling damage.
+
+##### Chitin-Spiked Knees (Tri-Weave)
+*   **Cost:** 3,500 gp.
+*   **Description:** Heavy bone-spikes protrude from your kneecaps, reinforced with fey-metal brackets.
+*   **Effect:** Whenever you successfully maintain a grapple, or whenever you hit an opponent with an unarmed strike, you deal an additional 1d4 piercing damage from knee-strikes.
+
+##### Aether-Step Hooves (Arcane)
+*   **Cost:** 8,000 gp.
+*   **Description:** Your feet are amputated and replaced with sleek, cloven fey hooves that leave no scent.
+*   **Effect:** You leave absolutely no tracks in natural terrain (as the *Pass without Trace* spell) and you can walk across liquid surfaces (such as water or acid) as if they were solid ground, so long as you end your turn on solid land.
+
+##### Centipede Crawl-Legs (Biomantic)
+*   **Cost:** 6,500 gp.
+*   **Description:** Four small, vestigial chitin legs run down the back of your calves, twitching independently.
+*   **Effect:** You gain a Climb speed equal to your base land speed. You retain your Dexterity bonus to AC while climbing and do not need to make Climb checks to traverse vertical surfaces.
+
+##### Phrenic Levitation Nodes (Psionic)
+*   **Cost:** 10,000 gp.
+*   **Description:** Pale metal nodes are bolted directly into your ankle bones, humming with low-frequency telekinetic force.
+*   **Effect:** You constantly hover exactly 1 inch off the ground. You are immune to non-magical difficult terrain, you do not trigger pressure plates, and you gain a +4 bonus on Move Silently checks.
 
 ---
 
@@ -222,6 +350,38 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Refractive Shielding:** The tentacles warp light around your torso, granting you a permanent 20% miss chance against all physical attacks.
 *   **Drawback:** The massive weight and kinetic spasms of the tentacles place an ongoing strain on your nervous system, inflicting a permanent -2 penalty to Dexterity and a -4 penalty on Hide checks made on land.
 
+
+##### Scrag-Heart Engine (Biomantic)
+*   **Cost:** 15,000 gp.
+*   **Description:** A secondary heart, cloned directly from Trench's regenerative marrow, is implanted beneath your ribcage.
+*   **Effect:** Once per day, if you are reduced to 0 or fewer hit points (but not killed outright), the Scrag-Heart forcefully restarts. You automatically stabilize and, at the start of your next turn, heal 1d8 + your Constitution modifier hit points.
+
+##### Manta-Dermal Glider Wings (Tri-Weave)
+*   **Cost:** 9,000 gp.
+*   **Description:** Living membranes harvested from abyssal manta-drakes are fused to your lats and ribs, extending to your wrists.
+*   **Effect:** You gain a glide speed of 40 ft. (average maneuverability). For every 5 feet you descend, you can travel 20 feet horizontally. You take no damage from falls if you have room to glide.
+
+##### Boiler-Lung Implants (Arcane)
+*   **Cost:** 7,500 gp.
+*   **Description:** Your lungs are replaced with alchemical bladders lined with copper filtration meshes.
+*   **Effect:** You are immune to inhaled poisons and toxic gases (like *Cloudkill*). Once per day, you can exhale the filtered toxins as a 10-ft. radius cloud of obscuring smoke that lasts for 1 minute.
+
+##### Ironwood Ribcage (Divine/Arcane)
+*   **Cost:** 11,000 gp.
+*   **Description:** Your native ribs are cracked out and replaced with living, enchanted Blackwater ironwood branches that weave around your vitals.
+*   **Effect:** You gain Damage Reduction 2/Slashing, as the ironwood splinters and absorbs blunt force and piercing strikes.
+
+##### Necrotic Soul-Sump (Divine)
+*   **Cost:** 18,000 gp.
+*   **Description:** A hollow, cold cavity is carved near your stomach, trapping a fractured, wailing soul bound by silver wire.
+*   **Effect:** Once per day, as an immediate action, you can "consume" the soul's energy to reroll a failed saving throw, or regain a spent spell slot of 3rd level or lower. 
+*   **Drawback:** Animals hate you and will act hostile toward you (starting attitude is Hostile). 
+
+##### Abattoir-Loom Suture-Clamps (Tri-Weave)
+*   **Cost:** 8,500 gp.
+*   **Description:** Skeletal, insectoid claws are retractably housed inside your lower ribs, designed to grip surgical subjects.
+*   **Effect:** The claws shoot out to secure prey. You gain a +4 equipment bonus on grapple checks, and your opponent cannot use the Escape Artist skill to break your grapple.
+
 ---
 
 #### F. SPINE SLOT GRAFTS
@@ -236,6 +396,37 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Description:** A heavy lead-silver bracket is bolted directly into your thoracic vertebrae.
 *   **Effect:** You are immune to teleportation attempts made by hostile entities. You also gain a +8 bonus on checks to resist telekinetic shoves, wind gusts, and planar gravity pulls.
 
+
+##### Calcified Snake-Graft (Biomantic)
+*   **Cost:** 7,000 gp.
+*   **Description:** A flexible, serpentine spinal column is spliced in, allowing your torso to bend in horrifying, non-Euclidean ways.
+*   **Effect:** You can contort your body to squeeze through spaces meant for creatures one size category smaller than you without suffering squeezing penalties. You also gain a +4 racial bonus on Escape Artist checks.
+
+##### Spinal Surge Node (Psionic)
+*   **Cost:** 12,500 gp.
+*   **Description:** A localized Illithid brain node is grafted to the base of your spine, bypassing your brain to process threat responses instantly.
+*   **Effect:** You gain a permanent +2 inherent bonus to your Initiative checks, and you retain your Dexterity bonus to AC even when caught flat-footed (as the Uncanny Dodge ability).
+
+##### Scrag-Nerve Sheathing (Biomantic)
+*   **Cost:** 14,000 gp.
+*   **Description:** Your synaptic pathways are coated in a thick, highly regenerative scrag marrow paste.
+*   **Effect:** The sheathing constantly repairs synaptic misfires. You are completely immune to *paralysis* and *stunning* effects.
+
+##### Wyvern-Stinger Tail (Arcane)
+*   **Cost:** 9,500 gp.
+*   **Description:** A heavy, muscular tail ending in a toxic stinger is grafted to your tailbone.
+*   **Effect:** You gain a secondary natural attack (1d4 piercing). On a hit, the target must succeed on a Fort DC 14 save or take 1d4 Constitution damage (initial and secondary).
+
+##### Aetheric Conductor Spine (Tri-Weave)
+*   **Cost:** 16,000 gp.
+*   **Description:** A copper and bone lattice is drilled into your vertebrae, acting as a lightning rod for magical weave energy.
+*   **Effect:** Whenever you cast a spell or manifest a psionic power, your effective Caster Level / Manifester Level is treated as 1 higher for the purposes of variables (duration, damage, etc.).
+
+##### Leviathan-Bone Keel (Divine)
+*   **Cost:** 8,000 gp.
+*   **Description:** A thick, unyielding plate of deep-trench leviathan bone is bolted directly over your spine.
+*   **Effect:** You become an immovable object. You gain a +8 bonus to resist Bull Rush, Trip, and Overrun attempts, and you cannot be knocked prone by any physical force.
+
 ---
 
 #### G. SKIN SLOT GRAFTS
@@ -244,6 +435,38 @@ Suture operates a hidden clinic in Sablehook, splicing grafts onto syndicate age
 *   **Cost:** 3,000 gp.
 *   **Description:** Runes of silver wire and lead foil are etched directly into your flesh, humming with abjuration magic.
 *   **Effect:** You gain Spell Resistance 15 against Divination spells and telepathic scans. Attempting to locate you via scrying fails automatically.
+
+
+##### Phase-Stutter Skin (Arcane/Psionic)
+*   **Cost:** 15,000 gp.
+*   **Description:** Displacer beast glands are braided directly into the dermis, giving your skin a constant, faint refractive shimmer.
+*   **Effect:** Once per day, as an immediate action in response to being attacked or failing a Reflex save, you can "stutter," teleporting up to 10 feet instantly to completely avoid the attack or area effect.
+
+##### Acidic Runes of the Node (Arcane)
+*   **Cost:** 6,500 gp.
+*   **Description:** Glowing green runes, mimicking the Elder Node's bio-luminescence, are burned into your flesh and filled with acidic mutagens.
+*   **Effect:** Anyone striking you with a non-reach melee weapon, an unarmed strike, or a natural attack takes 1d6 acid damage as the runes weep toxic blood.
+
+##### Chitinous Plating (Biomantic)
+*   **Cost:** 5,000 gp.
+*   **Description:** Thick, overlapping insectoid plates cover your forearms, shins, and shoulders, hardening like steel.
+*   **Effect:** You gain a +2 natural armor bonus to AC. 
+*   **Drawback:** The bulky plates increase your armor check penalty by -1 and add 10% to your arcane spell failure chance.
+
+##### Alchemical Caul-Sack Pores (Tri-Weave)
+*   **Cost:** 9,000 gp.
+*   **Description:** Your pores are heavily enlarged and constantly sweat a transmutational, fire-retardant blood-serum.
+*   **Effect:** You gain Fire Resistance 10. You also gain a +4 bonus on checks made to resist being grappled, as your skin is highly slippery.
+
+##### Shadow-Blend Melanocytes (Arcane)
+*   **Cost:** 11,000 gp.
+*   **Description:** Your skin pigmentation is controlled by grafted Shadar-Kai cells that react to ambient light levels.
+*   **Effect:** In any illumination other than bright daylight, your skin darkens to pitch black, granting you total concealment (50% miss chance) against attackers without darkvision or true seeing.
+
+##### Aboleth-Slime Glands (Biomantic)
+*   **Cost:** 8,000 gp.
+*   **Description:** Gelatinous glands implanted under the skin continuously secrete a thick, clear, breathable mucus over your body.
+*   **Effect:** You can breathe normally in any liquid (water, mud, etc.). Furthermore, the slime makes you impossible to hold; you can take 10 on Escape Artist checks even when threatened or distracted.
 
 ---
 

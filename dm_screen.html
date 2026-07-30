@@ -57,12 +57,36 @@
 </head>
 <body class="shipyard-body">
 
-            <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
+    <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
         <nav class="nav-container">
             <a href="index.html" class="logo-link">
                 <span class="logo-text">SABLEHOOK COVENANT</span>
             </a>
             <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Setting &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#antihero">Dark Hero</a>
+                        <a href="index.html#timeline">Chronal Timeline</a>
+                        <a href="index.html#map">Interactive Map</a>
+                        <a href="index.html#districts">Districts</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">The Novel &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="master_novel_complete.html">The Blackwater Trilogy</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropbtn">Campaign Modules &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="Campaign_Module/Act_IV_Descent_into_the_Deepmind_Annex.html">Act IV: The Deepmind Annex</a>
+                        <a href="Campaign_Module/The_Deepmind_Tear_Master_Module.html">The Deepmind Tear (Master)</a>
+                        <a href="Campaign_Module/The_Bleeding_Needle_Vessel_Manual.html">The Bleeding Needle</a>
+                        <a href="Campaign_Module/The_Onyx_Wake_Vessel_Manual.html">The Onyx Wake</a>
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="dropbtn">TTRPG Tools &#9662;</a>
                     <div class="dropdown-content">
@@ -71,24 +95,20 @@
                         <a href="blackwater_quay_codex.html">Blackwater Quay Codex</a>
                         <a href="shipyard.html" style="color: #38bdf8; font-weight: bold;">Sovereign Shipbuilder</a>
                         <a href="fleet_generator.html" style="color: #a855f7; font-weight: bold;">Fleet Generator</a>
-                        <a href="ambient_mixer.html" style="color: #10b981; font-weight: bold;">Ambient Mixer</a>
-                        <a href="https://sliner87-debug.github.io/Vanguard-Corsair-Generator/" style="color: #22d3ee; font-weight: bold;">Crew Generator</a>
-                        <a href="loot_generator.html" style="color: #f59e0b; font-weight: bold;">Loot Generator</a>
+                        <a href="crew_generator.html" style="color: #22d3ee; font-weight: bold;">Crew Generator</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropbtn" style="color: #d4af37; font-weight: bold;">Dungeon Master Codex &#9662;</a>
+                    <a href="#" class="dropbtn" style="color: #d4af37; font-weight: bold;">DM's Codex &#9662;</a>
                     <div class="dropdown-content">
                         <a href="dm_screen.html">The Complete Codex</a>
-                        <a href="dm_magic_items.html">Magic Items</a>
-                        <a href="dm_bestiary.html">Bestiary & NPCs</a>
-                        <a href="dm_player_options.html">Player Mechanics</a>
-                        <a href="dm_faction_renown.html">Faction Renown</a>
-                        <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
+                        <a href="dm_screen.html#magic-items">Magic Items</a>
+                        <a href="dm_screen.html#bestiary">Bestiary & NPCs</a>
+                        <a href="dm_screen.html#player-options">Player Mechanics</a>
+                        <a href="dm_screen.html#faction-renown">Faction Renown</a>
+                        <a href="dm_screen.html#vtt-prompts">VTT Prompts</a>
+                        <a href="dm_screen.html#lore-deep-dives">Lore Deep Dives</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#" onclick="document.dispatchEvent(new KeyboardEvent('keydown', {key: 'k', ctrlKey: true}))" style="color: #94a3b8; font-weight: bold;">Search (Ctrl+K)</a>
                 </li>
             </ul>
         </nav>
@@ -907,6 +927,43 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Description:</strong> Your larynx is hollowed out and replaced with a resonant fey-metal mesh infused with necrotic cantor marrow.</li>
 <li><strong>Effect:</strong> Once per day, as a standard action, you can release a concussive scream in a 15-ft. cone. All creatures in the area take 4d6 sonic damage and are <em>deafened</em> for 1d4 rounds (Fort DC 16 half, negates deafened).</li>
 </ul>
+<h5 id="obsidian-fey-iron-jaw-tri-weave">Obsidian Fey-Iron Jaw (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 9,000 gp.</li>
+<li><strong>Description:</strong> Your lower jaw is surgically shattered and replaced with a massive fey-metal and cold-iron mandible quenched in dark soul-ichor.</li>
+<li><strong>Effect:</strong> You gain a bite attack (1d6 Medium). This bite naturally bypasses Damage Reduction as if it were Cold Iron, Magic, and Evil.</li>
+<li><strong>Drawback:</strong> You suffer a permanent -2 penalty on Diplomacy and Bluff checks due to your terrifying visage and slightly slurred speech.</li>
+</ul>
+<h5 id="sirens-lure-vocal-cords-arcane">Siren's Lure Vocal Cords (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 7,500 gp.</li>
+<li><strong>Description:</strong> Spliced vocal cords harvested from aquatic sirens, strung with silver-wire.</li>
+<li><strong>Effect:</strong> Once per day, by singing a short melody, you can cast <em>Suggestion</em> (Will DC 16). Furthermore, you gain a +4 competence bonus on Perform (Sing) checks.</li>
+</ul>
+<h5 id="kraken-kin-gills-biomantic">Kraken-Kin Gills (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 4,000 gp.</li>
+<li><strong>Description:</strong> Deep slits are cut into the sides of your neck and lined with pulsing, deep-purple kraken-spawn tissue.</li>
+<li><strong>Effect:</strong> You can breathe underwater indefinitely. You also gain a +2 resistance bonus on saving throws against inhaled poisons and gases.</li>
+</ul>
+<h5 id="phrenic-node-crown-psionic">Phrenic-Node Crown (Psionic)</h5>
+<ul>
+<li><strong>Cost:</strong> 12,000 gp.</li>
+<li><strong>Description:</strong> Illithid-kin brain nodes are integrated directly into your skull, protruding slightly as pale, glowing bumps beneath the scalp.</li>
+<li><strong>Effect:</strong> You gain Telepathy up to 100 ft. Additionally, the node creates an <em>Alien Mental Fortress</em>, granting you a +2 insight bonus on Will saves against enchantments, charms, and compulsions.</li>
+</ul>
+<h5 id="gorgon-breath-gland-arcane">Gorgon-Breath Gland (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 8,000 gp.</li>
+<li><strong>Description:</strong> A heavy, alchemically-treated gland sits in the back of your throat, emitting a faint smell of sulfur and wet stone.</li>
+<li><strong>Effect:</strong> Once per day, as a standard action, you can exhale a 15-ft. cone of petrifying green gas. Creatures in the cone must succeed on a Fort DC 15 save or suffer a -4 penalty to Dexterity for 1d4 rounds as their joints stiffen into stone.</li>
+</ul>
+<h5 id="mind-flayer-mandibles-psionic">Mind-Flayer Mandibles (Psionic)</h5>
+<ul>
+<li><strong>Cost:</strong> 10,000 gp.</li>
+<li><strong>Description:</strong> Your teeth are removed and your mouth is split four ways, lined with rows of hooked, lamprey-like teeth. </li>
+<li><strong>Effect:</strong> Your bite attack deals 1d6 piercing damage plus 1d4 psychic damage. Whenever you deal psychic damage with this bite, you heal 1 hit point.</li>
+</ul>
 <hr />
 <h4 id="b-eyes-slot-grafts">B. EYES SLOT GRAFTS</h4>
 <h5 id="shatterglass-corneas">Shatterglass Corneas</h5>
@@ -920,6 +977,43 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Cost:</strong> 4,000 gp.</li>
 <li><strong>Description:</strong> Spliced eyes harvested from aquatic sea-wolves, reflecting light with a silver mirror-sheen.</li>
 <li><strong>Effect:</strong> You gain darkvision 60 ft. You can see clearly through water, mist, or silt up to 60 ft., completely ignoring concealment penalties caused by murky liquids or fog.</li>
+</ul>
+<h5 id="void-glass-optical-lens-arcane">Void-Glass Optical Lens (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 6,000 gp.</li>
+<li><strong>Description:</strong> One eye is replaced entirely by a glowing green void-glass lens connected to your brain by silver wires.</li>
+<li><strong>Effect:</strong> You gain the permanent effects of <em>See Invisibility</em>. </li>
+<li><strong>Drawback:</strong> The lens is hyper-sensitive to light. You suffer a -2 penalty on saving throws against blinding effects or light-based attacks (like <em>Color Spray</em>).</li>
+</ul>
+<h5 id="mindsight-pineal-gland-psionic">Mindsight Pineal Gland (Psionic)</h5>
+<ul>
+<li><strong>Cost:</strong> 14,000 gp.</li>
+<li><strong>Description:</strong> A third eye is implanted in the center of your forehead, usually kept tightly shut behind a leather flap.</li>
+<li><strong>Effect:</strong> As a swift action, you can open the eye. While open, you gain Blindsight 30 ft. However, processing the psychic sensory input deals 1 point of nonlethal damage to you at the start of every round the eye remains open.</li>
+</ul>
+<h5 id="dragon-scale-lids-arcane">Dragon-Scale Lids (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 3,000 gp.</li>
+<li><strong>Description:</strong> Your eyelids are replaced with overlapping, brassy dragon scales that lock tightly shut.</li>
+<li><strong>Effect:</strong> You gain immunity to magic sleep effects and a +2 natural armor bonus against critical hit confirmations aimed at your face.</li>
+</ul>
+<h5 id="thessalan-six-eye-cluster-tri-weave">Thessalan Six-Eye Cluster (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 15,000 gp.</li>
+<li><strong>Description:</strong> Six small, spider-like secondary eyes are grafted in a ring around your native eye sockets, blinking out of sync.</li>
+<li><strong>Effect:</strong> You gain <em>Uncanny Dodge</em> (you retain your Dexterity bonus to AC even if caught flat-footed or struck by an invisible attacker). If you already have Uncanny Dodge from a class, you gain <em>Improved Uncanny Dodge</em> instead.</li>
+</ul>
+<h5 id="deep-trench-thermal-corneas-biomantic">Deep-Trench Thermal Corneas (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 4,500 gp.</li>
+<li><strong>Description:</strong> Harvested from abyssal predators, these milky-white lenses detect heat instead of light.</li>
+<li><strong>Effect:</strong> You gain Infravision. You can see the heat signatures of living creatures up to 60 ft., allowing you to track warm-blooded prey by their lingering thermal footprints (Survival DC 15 to track recent movement).</li>
+</ul>
+<h5 id="seraphims-gaze-divine">Seraphim's Gaze (Divine)</h5>
+<ul>
+<li><strong>Cost:</strong> 11,000 gp.</li>
+<li><strong>Description:</strong> Suture harvested these glowing golden eyes from a captured celestial. They weep a faint, luminous fluid.</li>
+<li><strong>Effect:</strong> Once per day, you can unleash a smiting gaze as a swift action. The next evil-aligned creature that meets your gaze within 30 ft. takes 3d6 radiant damage (Will DC 16 half).</li>
 </ul>
 <hr />
 <h4 id="c-arms-slot-grafts">C. ARMS SLOT GRAFTS</h4>
@@ -935,6 +1029,44 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Description:</strong> A pair of small, jointed chitinous limbs are grafted beneath your primary shoulders.</li>
 <li><strong>Effect:</strong> These limbs are too weak to hold weapons, but they grant a +4 racial bonus on Sleight of Hand, Climb, and Disable Device checks. You can hold minor items (such as potions or lockpicks) in these limbs, allowing you to draw them as a free action.</li>
 </ul>
+<h5 id="bone-blade-forearms-biomantic">Bone-Blade Forearms (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 6,000 gp.</li>
+<li><strong>Description:</strong> Razor-sharp bone-blades are housed within thick tracks of scar tissue along your forearms, snapping out when you flex your wrists.</li>
+<li><strong>Effect:</strong> You gain two retractable natural attacks (1d6 piercing/slashing for Medium). You gain a +4 bonus on checks made to conceal these weapons.</li>
+</ul>
+<h5 id="bio-electric-shunts-arcane">Bio-Electric Shunts (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 8,000 gp.</li>
+<li><strong>Description:</strong> Copper wiring and bio-electric glands from a Sea-Wolf are wired directly into your arm musculature.</li>
+<li><strong>Effect:</strong> As a free action, you can electrify your arms. While active, your unarmed strikes or natural claw attacks deal an extra +1d4 electricity damage.</li>
+</ul>
+<h5 id="kraken-tentacle-whip-biomantic">Kraken-Tentacle Whip (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 10,000 gp.</li>
+<li><strong>Description:</strong> One of your arms is amputated at the shoulder and replaced entirely by a heavy, suckered kraken tentacle.</li>
+<li><strong>Effect:</strong> The tentacle grants you a natural slam attack (1d6 bludgeoning) with a <strong>10 ft. reach</strong>. You gain a +4 racial bonus on grapple checks made with this arm.</li>
+<li><strong>Drawback:</strong> You can no longer wield martial weapons or perform fine somatic spell components with this limb.</li>
+</ul>
+<h5 id="chitinous-rigger-claws-tri-weave">Chitinous Rigger-Claws (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 5,500 gp.</li>
+<li><strong>Description:</strong> Your forearms are covered in heavy, overlapping insectoid chitin plates ending in jagged edges.</li>
+<li><strong>Effect:</strong> When you fight defensively or take the total defense action, you gain an additional +2 natural armor bonus to AC.</li>
+</ul>
+<h5 id="marrow-injected-muscle-biomantic">Marrow-Injected Muscle (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 7,500 gp.</li>
+<li><strong>Description:</strong> Scrag marrow is injected violently into your biceps and triceps, causing them to bulge with unnatural, fibrous mass.</li>
+<li><strong>Effect:</strong> You gain a permanent +2 inherent bonus to your Strength score.</li>
+<li><strong>Drawback:</strong> The massive, twitching muscles ruin your fine motor control, inflicting a permanent -2 penalty to your Dexterity score.</li>
+</ul>
+<h5 id="ghost-weave-fingers-psionicarcane">Ghost-Weave Fingers (Psionic/Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 12,000 gp.</li>
+<li><strong>Description:</strong> Your hands are subjected to localized phase-shifting, appearing translucent and slightly out of focus.</li>
+<li><strong>Effect:</strong> Once per round, when making a melee attack with a light weapon or unarmed strike, you can declare a <em>Ghost-Strike</em>. That single attack resolves as a melee touch attack, ignoring armor, natural armor, and shield bonuses.</li>
+</ul>
 <hr />
 <h4 id="d-legs-slot-grafts">D. LEGS SLOT GRAFTS</h4>
 <h5 id="webbed-digits">Webbed Digits</h5>
@@ -948,6 +1080,42 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Cost:</strong> 6,500 gp.</li>
 <li><strong>Description:</strong> Spliced troll sinew and coiled fey-metal wiring replace your calf muscles.</li>
 <li><strong>Effect:</strong> Your land speed increases by +10 ft. (enhancement bonus). You also gain a +8 enhancement bonus on Jump checks, and you always count as having a running start for jump checks.</li>
+</ul>
+<h5 id="blink-hound-tendons-arcane">Blink-Hound Tendons (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 12,000 gp.</li>
+<li><strong>Description:</strong> The native tendons in your calves and ankles are replaced with phase-shifting tissue harvested from a Blink Hound.</li>
+<li><strong>Effect:</strong> Once per encounter, as a swift action, you can teleport up to 15 feet to an unoccupied space you can see.</li>
+</ul>
+<h5 id="scrag-toad-thighs-biomantic">Scrag-Toad Thighs (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 5,000 gp.</li>
+<li><strong>Description:</strong> Massive, bloated thigh muscles splice your lower body, stretching your skin taut.</li>
+<li><strong>Effect:</strong> Your vertical and horizontal jump distances are tripled. Additionally, the shock-absorbing tissue grants you immunity to the first 30 feet of falling damage.</li>
+</ul>
+<h5 id="chitin-spiked-knees-tri-weave">Chitin-Spiked Knees (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 3,500 gp.</li>
+<li><strong>Description:</strong> Heavy bone-spikes protrude from your kneecaps, reinforced with fey-metal brackets.</li>
+<li><strong>Effect:</strong> Whenever you successfully maintain a grapple, or whenever you hit an opponent with an unarmed strike, you deal an additional 1d4 piercing damage from knee-strikes.</li>
+</ul>
+<h5 id="aether-step-hooves-arcane">Aether-Step Hooves (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 8,000 gp.</li>
+<li><strong>Description:</strong> Your feet are amputated and replaced with sleek, cloven fey hooves that leave no scent.</li>
+<li><strong>Effect:</strong> You leave absolutely no tracks in natural terrain (as the <em>Pass without Trace</em> spell) and you can walk across liquid surfaces (such as water or acid) as if they were solid ground, so long as you end your turn on solid land.</li>
+</ul>
+<h5 id="centipede-crawl-legs-biomantic">Centipede Crawl-Legs (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 6,500 gp.</li>
+<li><strong>Description:</strong> Four small, vestigial chitin legs run down the back of your calves, twitching independently.</li>
+<li><strong>Effect:</strong> You gain a Climb speed equal to your base land speed. You retain your Dexterity bonus to AC while climbing and do not need to make Climb checks to traverse vertical surfaces.</li>
+</ul>
+<h5 id="phrenic-levitation-nodes-psionic">Phrenic Levitation Nodes (Psionic)</h5>
+<ul>
+<li><strong>Cost:</strong> 10,000 gp.</li>
+<li><strong>Description:</strong> Pale metal nodes are bolted directly into your ankle bones, humming with low-frequency telekinetic force.</li>
+<li><strong>Effect:</strong> You constantly hover exactly 1 inch off the ground. You are immune to non-magical difficult terrain, you do not trigger pressure plates, and you gain a +4 bonus on Move Silently checks.</li>
 </ul>
 <hr />
 <h4 id="e-torso-slot-grafts">E. TORSO SLOT GRAFTS</h4>
@@ -974,6 +1142,43 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Refractive Shielding:</strong> The tentacles warp light around your torso, granting you a permanent 20% miss chance against all physical attacks.</li>
 <li><strong>Drawback:</strong> The massive weight and kinetic spasms of the tentacles place an ongoing strain on your nervous system, inflicting a permanent -2 penalty to Dexterity and a -4 penalty on Hide checks made on land.</li>
 </ul>
+<h5 id="scrag-heart-engine-biomantic">Scrag-Heart Engine (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 15,000 gp.</li>
+<li><strong>Description:</strong> A secondary heart, cloned directly from Trench's regenerative marrow, is implanted beneath your ribcage.</li>
+<li><strong>Effect:</strong> Once per day, if you are reduced to 0 or fewer hit points (but not killed outright), the Scrag-Heart forcefully restarts. You automatically stabilize and, at the start of your next turn, heal 1d8 + your Constitution modifier hit points.</li>
+</ul>
+<h5 id="manta-dermal-glider-wings-tri-weave">Manta-Dermal Glider Wings (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 9,000 gp.</li>
+<li><strong>Description:</strong> Living membranes harvested from abyssal manta-drakes are fused to your lats and ribs, extending to your wrists.</li>
+<li><strong>Effect:</strong> You gain a glide speed of 40 ft. (average maneuverability). For every 5 feet you descend, you can travel 20 feet horizontally. You take no damage from falls if you have room to glide.</li>
+</ul>
+<h5 id="boiler-lung-implants-arcane">Boiler-Lung Implants (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 7,500 gp.</li>
+<li><strong>Description:</strong> Your lungs are replaced with alchemical bladders lined with copper filtration meshes.</li>
+<li><strong>Effect:</strong> You are immune to inhaled poisons and toxic gases (like <em>Cloudkill</em>). Once per day, you can exhale the filtered toxins as a 10-ft. radius cloud of obscuring smoke that lasts for 1 minute.</li>
+</ul>
+<h5 id="ironwood-ribcage-divinearcane">Ironwood Ribcage (Divine/Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 11,000 gp.</li>
+<li><strong>Description:</strong> Your native ribs are cracked out and replaced with living, enchanted Blackwater ironwood branches that weave around your vitals.</li>
+<li><strong>Effect:</strong> You gain Damage Reduction 2/Slashing, as the ironwood splinters and absorbs blunt force and piercing strikes.</li>
+</ul>
+<h5 id="necrotic-soul-sump-divine">Necrotic Soul-Sump (Divine)</h5>
+<ul>
+<li><strong>Cost:</strong> 18,000 gp.</li>
+<li><strong>Description:</strong> A hollow, cold cavity is carved near your stomach, trapping a fractured, wailing soul bound by silver wire.</li>
+<li><strong>Effect:</strong> Once per day, as an immediate action, you can "consume" the soul's energy to reroll a failed saving throw, or regain a spent spell slot of 3rd level or lower. </li>
+<li><strong>Drawback:</strong> Animals hate you and will act hostile toward you (starting attitude is Hostile). </li>
+</ul>
+<h5 id="abattoir-loom-suture-clamps-tri-weave">Abattoir-Loom Suture-Clamps (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 8,500 gp.</li>
+<li><strong>Description:</strong> Skeletal, insectoid claws are retractably housed inside your lower ribs, designed to grip surgical subjects.</li>
+<li><strong>Effect:</strong> The claws shoot out to secure prey. You gain a +4 equipment bonus on grapple checks, and your opponent cannot use the Escape Artist skill to break your grapple.</li>
+</ul>
 <hr />
 <h4 id="f-spine-slot-grafts">F. SPINE SLOT GRAFTS</h4>
 <h5 id="choker-spine">Choker Spine</h5>
@@ -988,6 +1193,42 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Description:</strong> A heavy lead-silver bracket is bolted directly into your thoracic vertebrae.</li>
 <li><strong>Effect:</strong> You are immune to teleportation attempts made by hostile entities. You also gain a +8 bonus on checks to resist telekinetic shoves, wind gusts, and planar gravity pulls.</li>
 </ul>
+<h5 id="calcified-snake-graft-biomantic">Calcified Snake-Graft (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 7,000 gp.</li>
+<li><strong>Description:</strong> A flexible, serpentine spinal column is spliced in, allowing your torso to bend in horrifying, non-Euclidean ways.</li>
+<li><strong>Effect:</strong> You can contort your body to squeeze through spaces meant for creatures one size category smaller than you without suffering squeezing penalties. You also gain a +4 racial bonus on Escape Artist checks.</li>
+</ul>
+<h5 id="spinal-surge-node-psionic">Spinal Surge Node (Psionic)</h5>
+<ul>
+<li><strong>Cost:</strong> 12,500 gp.</li>
+<li><strong>Description:</strong> A localized Illithid brain node is grafted to the base of your spine, bypassing your brain to process threat responses instantly.</li>
+<li><strong>Effect:</strong> You gain a permanent +2 inherent bonus to your Initiative checks, and you retain your Dexterity bonus to AC even when caught flat-footed (as the Uncanny Dodge ability).</li>
+</ul>
+<h5 id="scrag-nerve-sheathing-biomantic">Scrag-Nerve Sheathing (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 14,000 gp.</li>
+<li><strong>Description:</strong> Your synaptic pathways are coated in a thick, highly regenerative scrag marrow paste.</li>
+<li><strong>Effect:</strong> The sheathing constantly repairs synaptic misfires. You are completely immune to <em>paralysis</em> and <em>stunning</em> effects.</li>
+</ul>
+<h5 id="wyvern-stinger-tail-arcane">Wyvern-Stinger Tail (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 9,500 gp.</li>
+<li><strong>Description:</strong> A heavy, muscular tail ending in a toxic stinger is grafted to your tailbone.</li>
+<li><strong>Effect:</strong> You gain a secondary natural attack (1d4 piercing). On a hit, the target must succeed on a Fort DC 14 save or take 1d4 Constitution damage (initial and secondary).</li>
+</ul>
+<h5 id="aetheric-conductor-spine-tri-weave">Aetheric Conductor Spine (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 16,000 gp.</li>
+<li><strong>Description:</strong> A copper and bone lattice is drilled into your vertebrae, acting as a lightning rod for magical weave energy.</li>
+<li><strong>Effect:</strong> Whenever you cast a spell or manifest a psionic power, your effective Caster Level / Manifester Level is treated as 1 higher for the purposes of variables (duration, damage, etc.).</li>
+</ul>
+<h5 id="leviathan-bone-keel-divine">Leviathan-Bone Keel (Divine)</h5>
+<ul>
+<li><strong>Cost:</strong> 8,000 gp.</li>
+<li><strong>Description:</strong> A thick, unyielding plate of deep-trench leviathan bone is bolted directly over your spine.</li>
+<li><strong>Effect:</strong> You become an immovable object. You gain a +8 bonus to resist Bull Rush, Trip, and Overrun attempts, and you cannot be knocked prone by any physical force.</li>
+</ul>
 <hr />
 <h4 id="g-skin-slot-grafts">G. SKIN SLOT GRAFTS</h4>
 <h5 id="lead-silver-runes">Lead-Silver Runes</h5>
@@ -995,6 +1236,43 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><strong>Cost:</strong> 3,000 gp.</li>
 <li><strong>Description:</strong> Runes of silver wire and lead foil are etched directly into your flesh, humming with abjuration magic.</li>
 <li><strong>Effect:</strong> You gain Spell Resistance 15 against Divination spells and telepathic scans. Attempting to locate you via scrying fails automatically.</li>
+</ul>
+<h5 id="phase-stutter-skin-arcanepsionic">Phase-Stutter Skin (Arcane/Psionic)</h5>
+<ul>
+<li><strong>Cost:</strong> 15,000 gp.</li>
+<li><strong>Description:</strong> Displacer beast glands are braided directly into the dermis, giving your skin a constant, faint refractive shimmer.</li>
+<li><strong>Effect:</strong> Once per day, as an immediate action in response to being attacked or failing a Reflex save, you can "stutter," teleporting up to 10 feet instantly to completely avoid the attack or area effect.</li>
+</ul>
+<h5 id="acidic-runes-of-the-node-arcane">Acidic Runes of the Node (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 6,500 gp.</li>
+<li><strong>Description:</strong> Glowing green runes, mimicking the Elder Node's bio-luminescence, are burned into your flesh and filled with acidic mutagens.</li>
+<li><strong>Effect:</strong> Anyone striking you with a non-reach melee weapon, an unarmed strike, or a natural attack takes 1d6 acid damage as the runes weep toxic blood.</li>
+</ul>
+<h5 id="chitinous-plating-biomantic">Chitinous Plating (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 5,000 gp.</li>
+<li><strong>Description:</strong> Thick, overlapping insectoid plates cover your forearms, shins, and shoulders, hardening like steel.</li>
+<li><strong>Effect:</strong> You gain a +2 natural armor bonus to AC. </li>
+<li><strong>Drawback:</strong> The bulky plates increase your armor check penalty by -1 and add 10% to your arcane spell failure chance.</li>
+</ul>
+<h5 id="alchemical-caul-sack-pores-tri-weave">Alchemical Caul-Sack Pores (Tri-Weave)</h5>
+<ul>
+<li><strong>Cost:</strong> 9,000 gp.</li>
+<li><strong>Description:</strong> Your pores are heavily enlarged and constantly sweat a transmutational, fire-retardant blood-serum.</li>
+<li><strong>Effect:</strong> You gain Fire Resistance 10. You also gain a +4 bonus on checks made to resist being grappled, as your skin is highly slippery.</li>
+</ul>
+<h5 id="shadow-blend-melanocytes-arcane">Shadow-Blend Melanocytes (Arcane)</h5>
+<ul>
+<li><strong>Cost:</strong> 11,000 gp.</li>
+<li><strong>Description:</strong> Your skin pigmentation is controlled by grafted Shadar-Kai cells that react to ambient light levels.</li>
+<li><strong>Effect:</strong> In any illumination other than bright daylight, your skin darkens to pitch black, granting you total concealment (50% miss chance) against attackers without darkvision or true seeing.</li>
+</ul>
+<h5 id="aboleth-slime-glands-biomantic">Aboleth-Slime Glands (Biomantic)</h5>
+<ul>
+<li><strong>Cost:</strong> 8,000 gp.</li>
+<li><strong>Description:</strong> Gelatinous glands implanted under the skin continuously secrete a thick, clear, breathable mucus over your body.</li>
+<li><strong>Effect:</strong> You can breathe normally in any liquid (water, mud, etc.). Furthermore, the slime makes you impossible to hold; you can take 10 on Escape Artist checks even when threatened or distracted.</li>
 </ul>
 <hr />
 <h3 id="3-specialized-smuggling-gear">3. SPECIALIZED SMUGGLING GEAR</h3>
@@ -1158,133 +1436,109 @@ Wielded by the High Priests of the Choir of the Below, this weapon is a direct g
 <li><em>Perk (The Big Guns):</em> You are granted access to Sablehook's highest tier of tactical support. Once per Act, you can call upon <em>The Bleeding Needle</em> or <em>The Onyx Wake</em> to provide devastating artillery support (3 rounds of cannon-fire that deals 8d6 bludgeoning/fire damage in a 20-ft radius) or immediate naval extraction from anywhere in the Quay.</li>
 </ul>
 </li>
-</ul></div><hr style='border-color: #333; margin: 40px 0;'><div id='vtt-prompts' class='content-section' style='margin-bottom: 50px; display: none;'><h1 id="blackwater-quay-vtt-image-generation-prompts">Blackwater Quay: VTT Image Generation Prompts</h1>
+</ul></div><hr style='border-color: #333; margin: 40px 0;'><div id='vtt-prompts' class='content-section' style='margin-bottom: 50px;'><h1 id="blackwater-quay-vtt-image-generation-prompts">Blackwater Quay: VTT Image Generation Prompts</h1>
 <p>This document contains highly detailed, professional-grade image generation prompts tailored for Midjourney, Stable Diffusion, or similar AI generators. They are designed to produce consistent, high-quality VTT tokens, handouts, and environmental backgrounds that perfectly capture the "Grimdark Nautical Magetech" aesthetic of Blackwater Quay.</p>
 <hr />
 <h2 id="1-relics-magic-items">1. Relics &amp; Magic Items</h2>
 <h3 id="the-tri-weave-silver-blade">The Tri-Weave Silver Blade</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A close-up studio shot of a massive, ancient silver greatsword resting on dark, weathered wood. The blade is incredibly dense Dhakaani silver, perpetually frosted with cold. The fuller of the blade is etched with three distinct, overlapping glowing runic matrices: glowing blue arcane sigils, bright gold divine script, and jagged amethyst-purple psionic fractals. Dark fantasy artifact, grimdark, magical weapon, glowing runes, dramatic overhead lighting, macro photography, 8k resolution, highly detailed, trending on ArtStation.</p>
-<img src="images/vtt_relic_tri_weave_1785352874782.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="the-null-fang">The Null-Fang</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A jagged, eight-inch obsidian fang hanging from a heavy, cold-iron chain, wrapped tightly in tarnished silver wire. The fang is pitch black and seems to absorb the light around it, casting inverse shadows. Dark fantasy amulet, grimdark artifact, magical jewelry, resting on a velvet cloth inside a dimly lit ship captain's quarters, volumetric lighting, photorealistic, intricate details, cinematic lighting.</p>
-<img src="images/vtt_relic_null_fang_1785352970448.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="chronal-chronometer">Chronal Chronometer</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A beautiful, complex pocket watch resting in a gloved hand. The watch is made of polished brass and dark fey-metal gears. The glass face is slightly blurred at the edges, emitting a faint temporal distortion effect with tiny glowing blue embers of time magic. Steampunk meets dark fantasy, chronomancy artifact, highly detailed clockwork, macro lens, shallow depth of field, cinematic lighting, 8k, Unreal Engine 5 render style.</p>
-<img src="images/vtt_relic_chronometer_1785352978634.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="siphon-syringe">Siphon Syringe</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A heavy, intimidating medical syringe used for extracting biomantic fluids. Composed of reinforced alchemical glass, tarnished copper banding, and a wicked, hollow needle made of cold iron. The plunger is operated by a small, hand-cranked pneumatic gear system. The glass cylinder is half-filled with glowing, viscous purple soul-ichor. Grimdark medical instrument, dark fantasy alchemy, steampunk syringe, sitting on a blood-stained surgical table, moody lighting, photorealistic, intricate textures.</p>
-<img src="images/vtt_relic_syringe_1785352988272.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="fateshear-the-severing-scythe">FateShear (The Severing Scythe)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, terrifying two-handed scythe standing upright in a dark, stone dungeon. The haft is made of pale, petrified bone wrapped in flayed leather. The curved blade is not metal, but a shard of pure, crystallized void-matter—a localized tear in reality that looks like a window into a starless night sky. Dark fantasy weapon, grimdark, necromancy, eldritch artifact, swirling void energy, dramatic lighting, masterpiece, 8k resolution.</p>
-<img src="images/vtt_relic_scythe_1785352997804.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <hr />
 <h2 id="2-bestiary-npcs-vtt-tokens">2. Bestiary &amp; NPCs (VTT Tokens)</h2>
 <h3 id="the-chirg-illithid-elder-node-avatar">The Chirg-Illithid (Elder Node Avatar)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A bloated, horrific mind-flayer variant covered in slime. Its face is a mass of weeping purple tentacles, and its skin is translucent, revealing pulsing brain matter beneath. It stands in a flooded, subterranean stone sewer. Grimdark aberration, dark fantasy monster, eldritch horror, D&amp;D illithid, dripping wet, cinematic volumetric lighting, painted in the style of Greg Rutkowski, intricate details, 8k.</p>
-<img src="images/vtt_npc_chirg_1785353006615.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="thessalan-displacer-beast">Thessalan Displacer Beast</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A sleek, terrifying feline predator with dark blue fur, mutated with six glowing yellow eyes and a skeletal lower jaw. It has two long, fleshy tentacles growing from its shoulders, lined with copper needles and dripping with green mutagenic acid. Dark fantasy monster, grimdark displacer beast, bioweapon, dark dungeon background, dynamic combat pose, photorealistic, rim lighting.</p>
-<img src="images/vtt_npc_thessalan_beast_1785353014350.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="oraxis-true-bronze-dragon-form">Oraxis (True Bronze Dragon Form)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, ancient bronze dragon hovering in a massive subterranean cavern. Its scales are heavily armored and tarnished green with verdigris. Lightning crackles fiercely between its horns and along its wings. Dark fantasy dragon, D&amp;D bronze dragon, grimdark epic fantasy, dramatic lighting, thunder and lightning, cinematic composition, masterpiece, 8k.</p>
-<img src="images/vtt_npc_oraxis_dragon_1785353023135.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="oraxis-blind-monk-form">Oraxis (Blind Monk Form)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A tall, imposing human monk wearing simple, weathered saffron robes. He is completely blind, wearing a ragged cloth over his eyes. He leans on a simple wooden staff. Despite his humble appearance, he exudes an aura of immense, ancient power. Dark fantasy NPC, martial arts master, cinematic lighting, portrait photography, highly detailed face, grimdark fantasy.</p>
-<img src="images/vtt_npc_oraxis_monk_1785353041217.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="dreadjaw-rellis-orc-first-mate">Dreadjaw Rellis (Orc First Mate)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A brutal, heavily muscled Orc pirate first mate wearing a magical breastplate. His most prominent feature is his lower jaw, which is entirely replaced by a massive, mechanical fey-metal and cold-iron mandible quenched in dark ichor. He wields a massive cold-iron greataxe. Grimdark pirate, dark fantasy orc, cybernetic fantasy grafts, brutal, scarred, standing on the deck of a galleon at night, rain, dramatic lighting.</p>
-<img src="images/vtt_npc_dreadjaw_1785353050217.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="sea-wolf-hybrid">Sea-Wolf Hybrid</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A sleek, wolf-like humanoid with webbed digits and a fur coat that shifts color like water. Its collarbones and ribcage are bolted with heavy adamantine metal plates. It has silver-filmed mirror eyes and bio-electric sparks dancing across its claws. Grimdark aquatic werewolf, dark fantasy monster, biomantic experiment, standing waist-deep in black water, cinematic lighting, highly detailed.</p>
-<img src="images/vtt_npc_sea_wolf_1785353060102.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="chief-navigator-serris-vae">Chief Navigator Serris Vae</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A pale, beautiful fey-drow female wizard with white hair, operating the glowing navigational array of a magical ship's bridge. She wears practical but elegant dark leather clothing. Her eyes glow with faint blue temporal chronomancy magic. Dark fantasy drow, chronomancer, steampunk ship bridge background, magical holograms, dramatic lighting, masterpiece portrait.</p>
-<img src="images/vtt_npc_serris_1785353069750.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="slake-trench-the-deep-trench-scrag">Slake / Trench (The Deep-Trench Scrag)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, armor-plated aquatic troll (scrag). He wears heavy breastplate barding and wields a massive harpoon-cannon. His flesh is scarred and heavily modified with alchemical tubes and grafts. He is in a state of absolute, terrifying frenzy. Grimdark troll, dark fantasy aquatic monster, brutal berserker, underwater lighting, bubbles, dynamic action pose, 8k resolution.</p>
-<img src="images/vtt_npc_slake_1785353078979.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="reedsinger-hollow-stag">Reedsinger (Hollow Stag)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, terrifying undead skeletal stag standing in a deep, foggy swamp. Its ribcage is filled with hollow, flute-like bone growths that resemble a pipe organ. Glowing green spiritual energy emanates from its eye sockets and ribs. Dark fantasy undead monster, grimdark feywild, eerie swamp background, fog, moonlight, cinematic lighting, masterpiece.</p>
-<img src="images/vtt_npc_reedsinger_1785353088618.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="dire-displacer-rhino">Dire Displacer Rhino</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, terrifying rhinoceros mutated with displacer-beast biomechanics. It has dark blue skin, four razor-sharp tentacles sprouting from its shoulders, and a massive, dull-grey adamantine horn. Dark fantasy siege beast, grimdark monster, charging through a stone wall, debris flying, dynamic action, photorealistic, 8k.</p>
-<img src="images/vtt_npc_dire_rhino_1785353097181.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="cerebrilith-psionic-demon">Cerebrilith (Psionic Demon)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, hulking demonic brute whose skull is split open, revealing a massive, pulsating exposed brain that crackles with purple psionic lightning. It has sharp claws and jagged teeth. Dark fantasy demon, grimdark outsider, psionic monster, standing in a dark abyssal landscape, volumetric lighting, epic composition.</p>
-<img src="images/vtt_npc_cerebrilith_1785353106499.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="scour-harrow">Scour-Harrow</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A horrifying, shambling golem made entirely of rusty blades, iron chains, and necrotic black sludge. The sludge binds the jagged metal pieces together into a humanoid shape. Dark fantasy construct, grimdark golem, terrifying, blood-stained metal, dark dungeon background, cinematic lighting, highly detailed textures.</p>
-<img src="images/vtt_npc_scour_harrow_1785353124893.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="larklet-cinder-constructs">Larklet &amp; Cinder (Constructs)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> Two mechanical constructs in a dark fantasy workshop. One is a delicate, intricate clockwork songbird made of polished brass (Larklet). The other is a heavily-armored, steam-powered mechanical badger with a rotating adamantine drill for a snout (Cinder). Steampunk fantasy constructs, highly detailed brass and iron, moody lighting, macro lens.</p>
-<img src="images/vtt_npc_constructs_1785353133435.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="aurelion-warding-construct">Aurelion (Warding Construct)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A floating, spherical astrolabe constructed of overlapping, rotating golden rings. At the center of the rings is a glowing, pulsating core of pure blue force energy. It floats in a dark, ancient stone vault. Dark fantasy construct, magical guardian, glowing runes, cinematic volumetric lighting, 8k resolution, highly detailed.</p>
-<img src="images/vtt_npc_aurelion_1785353141275.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="manta-planar-membrane-beast">Manta (Planar Membrane Beast)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A massive, translucent, ghostly manta ray swimming through the air in a dark, subterranean cavern. Its body is slightly ethereal, showing stars and void within its flesh. It has a long, wicked stinger on its tail. Dark fantasy extraplanar monster, ethereal, glowing, deep cave background, bioluminescence, photorealistic.</p>
-<img src="images/vtt_npc_manta_1785353148956.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <hr />
 <h2 id="3-locations-environments-vtt-backgrounds">3. Locations &amp; Environments (VTT Backgrounds)</h2>
 <h3 id="the-sluices-flooded-shantytown">The Sluices (Flooded Shantytown)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A vast, subterranean flooded shantytown built inside a massive ancient sewer system. Rickety wooden docks and suspended walkways connect rotting barges. The water is pitch black and freezing. Faint, sickly green and yellow lanterns cut through the oppressive fog and steam. Grimdark city, dark fantasy environment, underground slums, cinematic lighting, highly detailed environmental concept art, 8k.</p>
-<img src="images/vtt_env_sluices_1785353156692.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="the-fleshwarped-foundry">The Fleshwarped Foundry</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A horrifying, subterranean biomantic laboratory. Massive copper vats filled with glowing green and purple fluids line the stone walls, containing mutated biological shapes. Alchemical pipes and tubes run across the ceiling. Dark fantasy laboratory, grimdark dungeon, mad scientist lab, eerie lighting, steampunk aesthetics, highly detailed concept art.</p>
-<img src="images/vtt_env_foundry_1785353164681.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="the-bleeding-needle-sutures-dreadnought">The Bleeding Needle (Suture's Dreadnought)</h3>
 <blockquote>
 <p><strong>Prompt:</strong> A terrifying, massive grimdark galleon sailing through an underground canal. The ship is a floating abattoir; its hull is dark, rotting wood reinforced with cold iron plates. Sickly green alchemical smoke billows from its stacks. The sails are dark and tattered. Dark fantasy pirate ship, dreadnought, underground river, dramatic lighting, gothic horror, highly detailed, 8k.</p>
-<img src="images/vtt_env_needle_1785353172957.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote>
 <h3 id="the-deepmind-annex">The Deepmind Annex</h3>
 <blockquote>
 <p><strong>Prompt:</strong> An ancient, cyclopean cavern deep underground. The architecture is alien, non-Euclidean, and unsettling, made of smooth, iridescent black stone. At the center is a massive, pulsing, fleshy mass of brain tissue and tentacles (The Elder Node). Dark fantasy dungeon, eldritch horror environment, Lovecraftian architecture, glowing purple psionic energy, cinematic lighting, masterpiece.</p>
-<img src="images/vtt_env_annex_1785353181913.jpg" alt="VTT Token" style="width: 100%; max-width: 400px; margin-top: 15px; border: 2px solid #444; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </blockquote></div><hr style='border-color: #333; margin: 40px 0;'><div id='lore-deep-dives' class='content-section' style='margin-bottom: 50px;'><h1 id="lore-deep-dives-the-dungeon-masters-arcanum">Lore Deep-Dives: The Dungeon Master's Arcanum</h1>
 <p>This document contains the absolute truths behind the greatest mysteries of Blackwater Quay. Game Masters should read this to understand the deeper motivations of the factions, the underlying metaphysics of the setting, and the hidden mechanics driving the campaign's central conflicts. Do not share this document with players.</p>
 <hr />
@@ -1344,158 +1598,5 @@ The Elder Node is not a portal, a machine, or a crystal. It is a <strong>Dormant
 </ul></div><hr style='border-color: #333; margin: 40px 0;'>
     </div>
 
-
-
-
-
-<!-- DM SOUNDBOARD WIDGET -->
-<style>
-    #dm-soundboard {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 300px;
-        background: rgba(15, 23, 42, 0.6);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        border-radius: 12px;
-        padding: 15px;
-        box-shadow: 0 0 30px rgba(0,0,0,0.8), inset 0 0 15px rgba(212,175,55,0.05);
-        z-index: 10000;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        color: #e2e8f0;
-        font-family: 'Inter', sans-serif;
-        transform: translateY(calc(100% - 45px));
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    #dm-soundboard.expanded {
-        transform: translateY(0);
-    }
-    .sb-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        font-weight: bold;
-        color: #d4af37;
-        margin-bottom: 15px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        padding-bottom: 8px;
-        text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
-    }
-    .sb-track {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 8px;
-        padding: 6px;
-        background: rgba(30, 41, 59, 0.7);
-        border-radius: 6px;
-        border: 1px solid #475569;
-        transition: border-color 0.2s;
-    }
-    .sb-track:hover {
-        border-color: #d4af37;
-    }
-    .sb-btn {
-        background: #334155;
-        color: #e2e8f0;
-        border: none;
-        border-radius: 4px;
-        padding: 5px 12px;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-weight: bold;
-    }
-    .sb-btn:hover {
-        background: #475569;
-    }
-    .sb-btn.playing {
-        background: #047857;
-        color: #fff;
-        box-shadow: 0 0 10px #047857;
-    }
-    
-    .sb-volume {
-        margin-top: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.9em;
-        color: #94a3b8;
-    }
-    .sb-volume input[type=range] {
-        flex-grow: 1;
-        accent-color: #d4af37;
-    }
-</style>
-
-<div id="dm-soundboard">
-    <div class="sb-header" onclick="document.getElementById('dm-soundboard').classList.toggle('expanded')">
-        <span>&#9835; DM Ambiance Soundboard</span>
-        <span style="font-size: 0.8em;">&#9650; Toggle</span>
-    </div>
-    
-    <div class="sb-track">
-        <span style="font-size: 0.9em;">Deep Water</span>
-        <button class="sb-btn toggle-track" data-track="audio-water">Play</button>
-        <audio id="audio-water" src="https://actions.google.com/sounds/v1/water/waves_crashing.ogg" loop></audio>
-    </div>
-    <div class="sb-track">
-        <span style="font-size: 0.9em;">Void Whispers</span>
-        <button class="sb-btn toggle-track" data-track="audio-void">Play</button>
-        <audio id="audio-void" src="https://actions.google.com/sounds/v1/horror/monster_breath_loop.ogg" loop></audio>
-    </div>
-    <div class="sb-track">
-        <span style="font-size: 0.9em;">Tavern Brawl</span>
-        <button class="sb-btn toggle-track" data-track="audio-tavern">Play</button>
-        <audio id="audio-tavern" src="https://actions.google.com/sounds/v1/crowds/restaurant_chatter.ogg" loop></audio>
-    </div>
-    <div class="sb-track">
-        <span style="font-size: 0.9em;">Clockwork Engine</span>
-        <button class="sb-btn toggle-track" data-track="audio-clockwork">Play</button>
-        <audio id="audio-clockwork" src="https://actions.google.com/sounds/v1/foley/mechanical_clock_ticking.ogg" loop></audio>
-    </div>
-    
-    <div class="sb-volume">
-        <span>Master Vol</span>
-        <input type="range" id="sb-master-vol" min="0" max="1" step="0.05" value="0.5">
-    </div>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll('.toggle-track');
-        const masterVol = document.getElementById('sb-master-vol');
-        const audios = document.querySelectorAll('#dm-soundboard audio');
-        
-        // Init volume
-        audios.forEach(a => a.volume = masterVol.value);
-        
-        masterVol.addEventListener('input', (e) => {
-            audios.forEach(a => a.volume = e.target.value);
-        });
-
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const trackId = this.dataset.track;
-                const audioEl = document.getElementById(trackId);
-                
-                if (this.classList.contains('playing')) {
-                    this.classList.remove('playing');
-                    this.innerText = 'Play';
-                    audioEl.pause();
-                } else {
-                    this.classList.add('playing');
-                    this.innerText = 'Stop';
-                    audioEl.play();
-                }
-            });
-        });
-    });
-</script>
-<!-- /DM SOUNDBOARD WIDGET -->
-
-    <script src="search.js"></script>
 </body>
 </html>
