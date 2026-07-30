@@ -3,10 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleet Generator</title>
+    <title>Fleet Generator | Blackwater Quay</title>
     <link rel="stylesheet" href="webpage.css">
+    <style>
+        .fleet-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .fleet-controls {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .control-group label {
+            color: #94a3b8;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .control-group select {
+            padding: 10px;
+            background: #1e293b;
+            color: #e2e8f0;
+            border: 1px solid #475569;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-generate {
+            background: #d4af37;
+            color: #0f172a;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .btn-generate:hover {
+            background: #bfa031;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .fleet-output {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .ship-card {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid #475569;
+            border-radius: 8px;
+            padding: 20px;
+            color: #e2e8f0;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .ship-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+        }
+        .flagship::before { background: #d4af37; box-shadow: 0 0 10px #d4af37; }
+        .escort::before { background: #38bdf8; box-shadow: 0 0 10px #38bdf8; }
+        .gunboat::before { background: #a855f7; box-shadow: 0 0 10px #a855f7; }
+        
+        .ship-role {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .flagship .ship-role { color: #d4af37; }
+        .escort .ship-role { color: #38bdf8; }
+        .gunboat .ship-role { color: #a855f7; }
+        
+        .ship-name {
+            font-size: 1.5em;
+            color: #f8fafc;
+            margin-bottom: 5px;
+            font-family: 'Cinzel', serif;
+        }
+        .ship-chassis {
+            color: #94a3b8;
+            font-style: italic;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        .stat-label { color: #94a3b8; }
+        .stat-value { color: #e2e8f0; font-weight: bold; }
+        
+        .weapon-list {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #334155;
+        }
+        .weapon-item {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+        .weapon-item strong { color: #ef4444; }
+    </style>
 </head>
-<body>
+<body class="shipyard-body">
     <header class="site-header" style="position: relative; z-index: 10000; font-family: 'Inter', sans-serif;">
         <nav class="nav-container">
             <a href="index.html" class="logo-link">
@@ -28,20 +152,49 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="dropbtn" style="color: #d4af37; font-weight: bold;">Dungeon Master Codex &#9662;</a>
                     <div class="dropdown-content">
-        <a href="dm_screen.html">The Complete Codex</a>
-        <a href="dm_magic_items.html">Magic Items</a>
-        <a href="dm_bestiary.html">Bestiary & NPCs</a>
-        <a href="dm_player_options.html">Player Mechanics</a>
-        <a href="dm_faction_renown.html">Faction Renown</a>
-        <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
-    </div>
+                        <a href="dm_screen.html">The Complete Codex</a>
+                        <a href="dm_magic_items.html">Magic Items</a>
+                        <a href="dm_bestiary.html">Bestiary & NPCs</a>
+                        <a href="dm_player_options.html">Player Mechanics</a>
+                        <a href="dm_faction_renown.html">Faction Renown</a>
+                        <a href="dm_lore_deep_dives.html">Lore Deep Dives</a>
+                    </div>
                 </li>
             </ul>
         </nav>
     </header>
-    <div class="container" style="padding: 150px 20px; text-align: center; color: white;">
-        <h1>Fleet Generator</h1>
-        <p>Under Construction.</p>
+
+    <div class="fleet-container" style="padding-top: 100px;">
+        <h1 style="color: #a855f7; margin-bottom: 10px; font-size: 3em; text-shadow: 0 0 20px rgba(168,85,247,0.5);">Fleet Generator</h1>
+        <p style="color: #94a3b8; margin-bottom: 40px; font-size: 1.1em;">Instantly generate cohesive armadas and strike forces using the Sovereign Shipbuilder catalog.</p>
+        
+        <div class="fleet-controls">
+            <div class="control-group">
+                <label>Threat Level</label>
+                <select id="fleet-threat">
+                    <option value="skirmish">Skirmish (1 Escort, 2 Gunboats)</option>
+                    <option value="raid">Raid (1 Flagship, 2 Escorts, 3 Gunboats)</option>
+                    <option value="armada">Armada (2 Flagships, 4 Escorts, 8 Gunboats)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Faction</label>
+                <select id="fleet-faction">
+                    <option value="abyssal">The Abyssal Court (Void/Organic)</option>
+                    <option value="exchange">The Gilded Exchange (Clockwork/Brass)</option>
+                    <option value="sablehook">The Sablehook Covenant (Pirate/Scrap)</option>
+                    <option value="random">Random / Mercenary</option>
+                </select>
+            </div>
+            <button id="btn-generate-fleet" class="btn-generate">Deploy Fleet</button>
+        </div>
+
+        <div id="fleet-output" class="fleet-output">
+            <!-- Ship cards injected here -->
+        </div>
     </div>
+
+    <script src="ship_catalog.js"></script>
+    <script src="fleet_generator.js"></script>
 </body>
 </html>
